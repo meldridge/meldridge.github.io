@@ -38,7 +38,7 @@ The result is that I can generate payloads with an embedded  domain name pointin
 
 If it sounds complicated, it's not. The whole thing can be done in a single line:
 
-```bash
+```
 # Connect to proxy server and catch connections to port 443
 ssh root@proxy -R 443:localhost:443
 ```
@@ -57,7 +57,7 @@ The easiest method is to use the native SSH remote port forwarding functionality
 
 Once the server has been configured, the client command looks like this:
 
-```bash
+```
 ssh root@proxy -R 443:localhost:443
 ```
 
@@ -73,7 +73,7 @@ Another method requires [socat](https://www.linux.com/news/socat-general-bidirec
 
 The script I use is called `ssh-socat.sh`, which is slightly more complicated because it sets up port-forwarding for five ports in total: 80, 443, 8080, 8443, and 1194.
 
-```bash
+```
 #!/bin/bash
 # Connect to proxy server and catch connections to multiple ports
 ssh -t user@proxy \
