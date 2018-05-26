@@ -3,8 +3,6 @@ layout: email
 title: Efail and Chrome HTTPS indicators
 ---
 
-Good morning.
-
 It was a big week in security, but before we get stuck into the news, another book recommendation (I've been on a roll with my reading lately): [*The Big Four: The Curious Past and Perilous Future of the Global Accounting Monopoly*](https://www.amazon.com/Big-Four-Perilous-Accounting-Monopoly/dp/1523098015).
 
 For those of you who currently work for a Big Four firm, don't be too alarmed by the blurb. It's an extremely interesting book, and it describes the history of the [Medici Bank](https://en.wikipedia.org/wiki/Medici_Bank) and its importance in creating the franchise and partnership model used by the Big Four today. 
