@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Weekly summary 20/05/2018: Efail and Chrome HTTPS indicators
+title: Weekly summary 20/05/2018 - Efail and Chrome HTTPS indicators
 ---
 
 *This is one of my weekly summary emails. If you're interested in receiving these emails directly, you can [subscribe here](http://eepurl.com/dlZTVv)*
