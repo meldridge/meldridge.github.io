@@ -7,10 +7,7 @@ layout: default
   
 	{%if post.layout == "email" %}
 	<article class="email">
-
 	  <h3><a href="{{ site.baseurl }}{{ post.url }}">Weekly Update {{ post.date | date: "%d-%m-%Y" }}: {{ post.title }}</a></h3>
-
-	  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
 	</article>
 	{% else %}
 	<article class="post">
