@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-I'm a software engineer and former penetration tester with a background in satellite communications and embedded systems. I currently live in Stockholm, Sweden.
+I'm a software engineer and former penetration tester with a background in satellite communications and embedded systems. 
+
+I grep up in Adelaide, South Australia, and I currently live in Stockholm.
 
 ### Security mailing list
 
