@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm a software engineer and former penetration tester with a background in satellite communications and embedded systems. I currently live in Stockholm, Sweden.
 
-### More Information
+### Security mailing list
 
-A place to include any other types of information that you'd like to include about yourself.
+I operate a mailing list for security news summaries and analysis, with emails sent roughly weekly. If you'd like to sign up, you can [subscribe here](http://eepurl.com/dlZTVv).
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+The easiest way to get in touch is via @markeldo on [Twitter](https://twitter.com/markeldo).
+
+I can also be reached via email: mark [at] markeldo [dot] com
