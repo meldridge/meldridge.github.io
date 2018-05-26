@@ -1,6 +1,6 @@
 ---
-layout: post
-title: Weekly summary: Efail and Chrome HTTPS indicators
+layout: email
+title: Weekly summary 20/05/2018: Efail and Chrome HTTPS indicators
 ---
 
 Good morning.
