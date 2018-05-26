@@ -18,8 +18,10 @@ html {
 }
 
 body {
-	background: $white;
-  font: 16px/1.4 $helvetica;
+  background: $white;
+  font-family: $helvetica;
+  font-size: 16px;
+  line-height: 1.5;
   color: $darkGray;
 }
 
