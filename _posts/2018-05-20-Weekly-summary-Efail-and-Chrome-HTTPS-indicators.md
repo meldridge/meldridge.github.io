@@ -63,6 +63,3 @@ Another couple of excellent articles which are worth saving for your next flight
 The first is a topic near-and-dear to my heart. I'm extremely appreciative of the six years I spent writing satellite communications waveforms, because it forced me to learn more about low-level networking than the average Computer Science graduate ever encounters either during their studies or once they start working in industry. Understanding how things work under the hood is essential in security, and very useful everywhere else. 
 
 The second link is a fantastic Quora answer about the Stuxnet malware. Most of you would be familiar with the story behind Stuxnet, but even if you are, it's one of the better summaries I've seen.
-
-Cheers,  
-Mark
