@@ -1,9 +1,9 @@
 ---
-layout: email
+layout: post
 title: Weekly summary 20/05/2018: Efail and Chrome HTTPS indicators
 ---
 
-Good morning.
+*This is one of my weekly summary emails. If you're interested in receiving these emails directly, you can [subscribe here](http://eepurl.com/dlZTVv)*
 
 It was a big week in security, but before we get stuck into the news, another book recommendation (I've been on a roll with my reading lately): [*The Big Four: The Curious Past and Perilous Future of the Global Accounting Monopoly*](https://www.amazon.com/Big-Four-Perilous-Accounting-Monopoly/dp/1523098015).
 
