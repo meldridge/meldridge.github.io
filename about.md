@@ -4,9 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm a software engineer and former penetration tester with a background in satellite communications and embedded systems. 
-
-I grep up in Adelaide, South Australia, and I currently live in Stockholm.
+I'm an information security specialist and software engineer with a background in penetration testing and military satellite communications. I currently perform internal security for a financial services company based in Stockholm, Sweden.
 
 ### Security mailing list
 
