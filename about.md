@@ -14,6 +14,6 @@ I operate a mailing list for security news summaries and analysis, with emails s
 
 ### Contact me
 
-The easiest way to get in touch is via @markeldo on [Twitter](https://twitter.com/markeldo).
+The easiest way to get in touch is via [Twitter](https://twitter.com/markeldo).
 
 I can also be reached via email: mark [at] markeldo [dot] com
