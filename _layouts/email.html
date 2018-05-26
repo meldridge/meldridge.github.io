@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article class="email">
+  <h1>Weekly Update {{ page.date | date: "%B %e, %Y" }}: {{ page.title }}</h1>
+    
+  <div class="preamble">
+	<p style="text-align:center;">This is one of my weekly summary emails. If you're interested in receiving these emails directly, you can <a href="http://eepurl.com/dlZTVv">subscribe here</a>.</p>
+  </div>
+  
+  <hr>
+  
+  <div class="entry">
+    {{ content }}
+  </div>
+    
+  {% include disqus.html %}
+</article>
