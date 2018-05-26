@@ -10,10 +10,6 @@ layout: default
 
 	  <h3><a href="{{ site.baseurl }}{{ post.url }}">Weekly Update {{ post.date | date: "%d-%m-%Y" }}: {{ post.title }}</a></h3>
 
-	  <div class="entry">
-		{{ post.excerpt }}
-	  </div>
-
 	  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
 	</article>
 	{% else %}
@@ -22,6 +18,10 @@ layout: default
 	  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 	  <div class="date">
 		{{ page.date | date: "%B %e, %Y" }}
+	  </div>
+
+	  <div class="entry">
+		{{ post.excerpt }}
 	  </div>
 
 	  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
