@@ -1,6 +1,6 @@
 ---
 layout: email
-title: Credential theft and Windows 10: SACL Auditing and Credential Guard
+title: Credential theft and Windows 10 - SACL Auditing and Credential Guard
 ---
 
 A technical catfact today: all about credential theft. 
