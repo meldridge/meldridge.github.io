@@ -45,7 +45,7 @@ The result will look like this following:
 
 In a remarkably prescient post, [Troy Hunt](https://twitter.com/troyhunt) wrote about exactly this issue on the 7th of May:
 
-[The Decreasing Usefulness of Positive Visual Security Indicators (and the Importance of Negative Ones)](https://www.troyhunt.com/the-decreasing-usefulness-of-positive-visual-security-indicators-and-the-importance-of-negative-ones/)
+[**The Decreasing Usefulness of Positive Visual Security Indicators (and the Importance of Negative Ones)**](https://www.troyhunt.com/the-decreasing-usefulness-of-positive-visual-security-indicators-and-the-importance-of-negative-ones/)
 
 >On those changes, there will likely be a time where the positive visual indicator that is the padlock can be removed entirely. Think about it - when (almost) every site is HTTPS anyway, why have it? You could instead fall back to ever more *negative* visual indicators when sites aren't served over HTTPS and [we're only a couple of months out from seeing the beginning of that](https://techcrunch.com/2018/02/08/chrome-will-soon-mark-all-unencrypted-pages-as-not-secure/). Wouldn't it be great if we could kill the padlock and the indication of the HTTPS scheme off altogether and just flag the exceptions? We're getting there. 
 
