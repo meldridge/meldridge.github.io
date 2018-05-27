@@ -271,6 +271,15 @@ nav {
   border-bottom: none;
 }
 
+.posts > .email > .date {
+  padding: 0 0 0 0;
+  font-style: italic;
+  color: $gray;
+  a {
+	color: inherit;
+  }
+}
+
 .post {
   blockquote {
     margin: 1.8em .8em;
