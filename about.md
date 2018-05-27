@@ -4,7 +4,9 @@ title: About
 permalink: /about/
 ---
 
-I'm an information security specialist and software engineer with a background in penetration testing and military satellite communications. I currently perform internal security for a financial services company based in Stockholm, Sweden.
+I'm an information security specialist and software engineer with a background in penetration testing and military satellite communications. 
+
+I currently perform internal security for a financial services company based in Stockholm, Sweden.
 
 ### Security mailing list
 
