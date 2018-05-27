@@ -253,10 +253,20 @@ nav {
 //
 
 .posts > .post {
+  padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
 }
 
 .posts > .post:last-child {
+  padding-bottom: 1em;
+  border-bottom: none;
+}
+
+.posts > .email {
+  border-bottom: 1px solid $lightGray;
+}
+
+.posts > .email:last-child {
   padding-bottom: 1em;
   border-bottom: none;
 }
@@ -277,7 +287,6 @@ nav {
   .read-more {
     text-transform: uppercase;
     font-size: 15px;
-	padding-bottom: 2em;
   }
 }
 
