@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm an information security specialist and software engineer with a background in penetration testing and military satellite communications. 
+I'm an information security specialist and software engineer with a background in penetration testing and military satellite communications. I've co-written a [paper](https://link.springer.com/chapter/10.1007/978-3-319-68687-5_8) on the security of online voting systems, and my [Master's thesis](https://arxiv.org/abs/1805.02202) covered the same topic.
 
 I currently perform internal security for a financial services company based in Stockholm, Sweden.
 
