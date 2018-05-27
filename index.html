@@ -6,16 +6,20 @@ layout: default
   {% for post in site.posts %}
   
 	{%if post.layout == "email" %}
+	
 	<article class="email">
-	  <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>
 	  <div class="date">
-		Weekly Update {{ post.date | date: "%d/%m/%Y" }}
+		<a href="{{ site.baseurl }}{{ post.url }}">Weekly Update {{ post.date | date: "%d/%m/%Y" }}</a>
 	  </div>
+	  
+	  <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h4>  
 	</article>
+	
 	{% else %}
+	
 	<article class="post">
-
 	  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+	  
 	  <div class="date">
 		{{ post.date | date: "%B %e, %Y" }}
 	  </div>
@@ -26,6 +30,7 @@ layout: default
 
 	  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
 	</article>
+	
 	{% endif %}
 	
   {% endfor %}
