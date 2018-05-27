@@ -1,6 +1,6 @@
 ---
 layout: email
-title: Risky Business hits several nails
+title: The Security industry sucks at getting people to trust us
 ---
 
 As a follow-up to the previous email, this article from Threatpost is well worth reading:
