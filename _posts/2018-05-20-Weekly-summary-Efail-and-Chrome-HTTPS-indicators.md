@@ -41,7 +41,7 @@ This one is a big deal: [Chrome will be removing the 'Secure' indicator for HTTP
 
 The result will look like this following:
 
-![Chrome HTTPS labelling](B:\Dropbox\Writing\Blog\markdown\images\chrome-secure.png)
+![Chrome HTTPS labelling](../images/chrome-secure.png)
 
 In a remarkably prescient post, [Troy Hunt](https://twitter.com/troyhunt) wrote about exactly this issue on the 7th of May:
 
