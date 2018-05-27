@@ -12,8 +12,17 @@ layout: default
   
   <hr>
   
+  <div class="date">
+    {{ page.date | date: "%B %e, %Y" }}
+  </div>
+  
   <div class="entry">
     {{ content }}
+  </div>
+  
+  <div class="postamble">
+	<p style="text-align:center;"><em>This is one of my weekly summary emails containing security news and analysis. <br />
+	If you're interested in receiving these emails directly, you can <a href="http://eepurl.com/dlZTVv">subscribe here</a>.</em></p>
   </div>
     
   {% include disqus.html %}
