@@ -35,7 +35,7 @@ Of course, I can't really crow too loudly here since I made the same mistake a c
 
 There was also the New York Times, with something which should bring a smile to the face to anyone who's been involved in a Reply-All war:
 
-[![Ben Thompson on the NYT Reply-All war](../images/ben-thompson-nyt-gdpr.png)](https://twitter.com/benthompson/status/1000172240367857664)
+[<img src="../images/ben-thompson-nyt-gdpr.png" alt="Ben Thompson on the NYT Reply-All war" width="500">](https://twitter.com/benthompson/status/1000172240367857664)
 
 (Incidentally, if you're not already reading Ben Thompson's [Stratechery](https://stratechery.com/) blog, I'd highly recommend it. The podcast is also excellent.)
 
@@ -43,7 +43,7 @@ A large number of American news websites and [other services](https://www.thever
 
 USA Today, however, did something different: for European users, they disabled all of their tracking scripts:
 
-[![@USATODAY launched a lightweight version of their site for the EU to comply with #GDPR. The US site is 5.5MB and contains 835 requests loaded from 188 hosts. When loaded from France it's 297KB, 36 requests and contains no 3rd party content.  And it's a lot faster! #perfmatters](../images/paul-calvano-usa-today-gdpr.png)](https://twitter.com/paulcalvano/status/1000094333524201473)
+[<img src="../images/paul-calvano-usa-today-gdpr.png" alt="Ben Thompson on the NYT Reply-All war" width="500">](https://twitter.com/paulcalvano/status/1000094333524201473)
 
 That probably says more about modern website practices (and [business models](https://stratechery.com/2017/the-local-news-business-model/)*) than anything else, but it's a nice little perk of GDPR.
 
