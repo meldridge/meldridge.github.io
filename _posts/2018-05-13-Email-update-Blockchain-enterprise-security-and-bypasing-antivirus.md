@@ -7,7 +7,7 @@ Good morning.
 
 A short one today. I have a longer post regarding Online Voting in the works (partly driven by my Thesis finally making it onto [arXiv](https://arxiv.org/abs/1805.02202)), but that will have to wait a few days.
 
-In minor techie news, I've switched from AWS to using [DigitalOcean](https://www.digitalocean.com/) for my cheap cloud server (the one I use to [catch shells](https://medium.com/@markeldo/reach-out-and-catch-shells-with-ssh-port-forwarding-bdeba3cf440b)). I was previously on the [AWS free tier](https://aws.amazon.com/free/), but after that expired I was looking for other options, and settled on DigitalOcean over both AWS and Azure. DigtalOcean's pricing is far less anxiety-inducing—it's a fixed price per month—and their control panel is easily the best interface of all three. If you're after a cheap server, I'd give them a look.
+In minor techie news, I've switched from AWS to using [DigitalOcean](https://www.digitalocean.com/) for my cheap cloud server (the one I use to [catch shells](/Reach-out-and-catch-shells-with-SSH-port-forwarding/)). I was previously on the [AWS free tier](https://aws.amazon.com/free/), but after that expired I was looking for other options, and settled on DigitalOcean over both AWS and Azure. DigtalOcean's pricing is far less anxiety-inducing—it's a fixed price per month—and their control panel is easily the best interface of all three. If you're after a cheap server, I'd give them a look.
 
 ### Attack of the 50 Foot Blockchain
 
