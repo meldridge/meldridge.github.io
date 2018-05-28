@@ -3,9 +3,9 @@ layout: email
 title: Cisco and Cryptomining
 ---
 
-There's a lot to get through in today's email, but first of all I wanted to make another mention of the SpaceX Falcon Heavy Launch, which went off extremely well last Tuesday. I was honestly expecting the thing to break apart and explode either shortly after lift-off or when it hit Max-Q (maximum dynamic pressure), but the rocket worked beautifully.
+There's a lot to get through in today's email, but first of all I wanted to make another mention of the SpaceX Falcon Heavy Launch, which went off extremely well last Tuesday. 
 
-The simultaneous side-booster landing was one of the most impressive things I've ever seen: https://www.youtube.com/watch?v=u0-pfzKbh2k
+I was honestly expecting the thing to break apart and explode either shortly after lift-off or when it hit Max-Q (maximum dynamic pressure), but the rocket worked beautifully. The [simultaneous side-booster landing](https://www.youtube.com/watch?v=u0-pfzKbh2k) was one of the most impressive things I've ever seen.
 
 I know I'm fanboying a bit with this SpaceX stuff, but I can't help it. Landing and re-using a booster like this was considered to be impossible only a couple of years ago. It's a game-changer for commercial spaceflight, and SpaceX now has the most powerful rocket in the word by a factor of two - for half the price-per-launch of its nearest competitor.
 
