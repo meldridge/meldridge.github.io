@@ -38,6 +38,3 @@ In the meantime, Steve Bellovin from Columbia University has written an excellen
 >Everyone knows about Bitcoin. Opinions are divided: it's either a huge bubble, best suited for buying tulip bulbs, or, as one Twitter rather hyperbolically expressed it, "the most important application of cryptography in human history". I personally am in the bubble camp, but I think there's another lesson here, on the difference between science and engineering. Bitcoin and the blockchain are interesting ideas that escaped the laboratory without proper engineering—and it shows.
 
 It's well worth reading, and is quite short.
-
-Cheers,
-Mark

@@ -1,6 +1,6 @@
 ---
 layout: email
-title: Blockchain and Voting
+title: Strava follow-up
 ---
 
 Some quick follow up on yesterday's email: the Strava fitness tracker story has been making headlines, although some of the headlines are quite dumb:
