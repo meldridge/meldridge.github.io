@@ -4,11 +4,17 @@ layout: default
 
 <article class="post">
   <h2>{{ page.title }}</h2>
+      
+  <div class="preamble">
+	<p style="text-align:center;"><em>This is a weekly summary email containing security news and analysis. <br />
+	If you're interested in receiving these emails directly, you can <a href="http://eepurl.com/dlZTVv">subscribe here</a>.</em></p>
+  </div>
+  
+  <hr>
   
   <div class="date">
 	Email update {{ page.date | date: "%d/%m/%Y" }}
   </div>
- 
   
   <div class="entry">
     {{ content }}
