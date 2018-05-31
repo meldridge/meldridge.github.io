@@ -3,7 +3,11 @@ layout: default
 ---
 
 <article class="post">
-  <h2>Email update {{ page.date | date: "%d/%m/%Y" }}: {{ page.title }}</h2>
+  <h2>{{ page.title }}</h2>
+  
+  <div class="date">
+	<a href="{{ site.baseurl }}{{ post.url }}">Email update {{ page.date | date: "%d/%m/%Y" }}</a>
+  </div>
     
   <div class="preamble">
 	<p style="text-align:center;"><em>This is a weekly summary email containing security news and analysis. <br />
