@@ -129,8 +129,13 @@ img {
 }
 
 .date {
+  padding-top: 0em;
+  margin-top: 0em;
   font-style: italic;
   color: $gray;
+  a {
+	color: inherit;
+  }
 }
 
 // Specify the color of the selection

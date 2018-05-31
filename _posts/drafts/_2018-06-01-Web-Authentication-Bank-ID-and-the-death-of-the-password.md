@@ -7,7 +7,7 @@ Good morning.
 
 ### Web Authentication
 
-In the last email we spoke about Alex Stamos' Twitter takedown of the 'Digi-ID' authentication solution. Buried in the exchange was a mention by Stamos of the *Web Authentication* standard, which is something you'll be hearing a lot more about in coming months. 
+In the [last email](/Email-update-Tweetstorms-Technical-vs-management-and-blockchain-authentication/) we spoke about Alex Stamos' Twitter takedown of the 'Digi-ID' authentication solution. Buried in the exchange was a mention by Stamos of the *Web Authentication* standard, which is something you'll be hearing a lot more about in coming months. 
 
 Web Authentication (or WebAuthn) is a method for using trusted devices such as smartphones or hardware tokens to authenticate users. It's an excellent piece of work, and makes it realistically possible to get rid of passwords entirely.
 
