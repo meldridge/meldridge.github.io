@@ -6,9 +6,6 @@ excerpt: In my last email I mentioned Alex Stamos' Twitter takedown of the 'Digi
 
 In my [last email](/Email-update-Tweetstorms-Technical-vs-management-and-blockchain-authentication/) I mentioned Alex Stamos' [Twitter takedown](https://twitter.com/alexstamos/status/999769878071406592) of the 'Digi-ID' authentication solution. Buried in the exchange was a mention by Stamos of the *Web Authentication* standard, which is something you'll be hearing a lot more about in coming months. 
 
-![The Yubico Security Key](../images/Security-Key-with-key-ring-720x720.jpg)
-*A Yubico Security Key (Credit: [Yubico](https://www.yubico.com/product/security-key-by-yubico/))*
-
 [Web Authentication](https://www.w3.org/TR/webauthn/) (or WebAuthn) is a method for using trusted devices such as smartphones or [hardware tokens](https://www.yubico.com/product/security-key-by-yubico/) to authenticate users. The standard is an excellent piece of work, and it makes it realistically possible to get rid of passwords entirely.
 
 Duo Security has an excellent explanation of the standard (which just so happens to use the example website "*cat-facts.com*"):
