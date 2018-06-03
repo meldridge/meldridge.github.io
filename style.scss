@@ -264,6 +264,16 @@ nav {
   border-bottom: none;
 }
 
+.posts > .post > .date {
+  padding-top: 0em;
+  margin-top: 0em;
+  font-style: italic;
+  color: $gray;
+  a {
+	color: inherit;
+  }
+}
+
 .posts > .email {
   border-bottom: 1px solid $lightGray;
   padding-bottom: 1em;

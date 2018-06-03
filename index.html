@@ -11,7 +11,7 @@ layout: default
 	  <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>  
 	  
 	  <div class="date">
-		<a href="{{ site.baseurl }}{{ post.url }}">Email update {{ post.date | date: "%d/%m/%Y" }}</a>
+		<a href="{{ site.baseurl }}{{ post.url }}">Email update {{ post.date | date: "%B %e, %Y" }}</a>
 	  </div>
 	</article>
 	
@@ -21,7 +21,7 @@ layout: default
 	  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 	  
 	  <div class="date">
-		{{ post.date | date: "%B %e, %Y" }}
+		<a href="{{ site.baseurl }}{{ post.url }}">Blog post {{ post.date | date: "%B %e, %Y" }}</a>
 	  </div>
 
 	  <div class="entry">
