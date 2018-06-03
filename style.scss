@@ -264,49 +264,29 @@ nav {
 //
 
 .posts > .post {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
   border-bottom: 1px solid $lightGray;
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
+  }
+
+  .date {
+    padding-top: 0em;
+    margin-top: 0em;
+    font-style: italic;
+    color: $gray;
+    a {
+      color: inherit;
+    }
+  }
 }
 
 .posts > .post:last-child {
   padding-bottom: 1em;
   border-bottom: none;
-}
-
-.posts > .post > .date {
-  padding-top: 0em;
-  margin-top: 0em;
-  font-style: italic;
-  color: $gray;
-  a {
-	color: inherit;
-  }
-}
-
-.posts > .email {
-  border-bottom: 1px solid $lightGray;
-  padding-bottom: 1em;
-  
-  h1, h2, h3, h4, h5, h6 {
-	color: inherit;
-	padding-bottom: 0em;
-	margin-bottom: 0em;
-  }
-}
-
-.posts > .email:last-child {
-  padding-bottom: 1em;
-  border-bottom: none;
-}
-
-.posts > .email > .date {
-  padding-top: 0em;
-  margin-top: 0em;
-  font-style: italic;
-  color: $gray;
-  a {
-	color: inherit;
-  }
 }
 
 .post {
