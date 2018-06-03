@@ -74,4 +74,4 @@ In the short term, we're likely to see many services start supporting the WebAut
 
 In the long term, we might be able to ditch passwords entirely and use our phones or hardware tokens to log into services. Once this happens, the days of being able to hijack dozens of corporate accounts using [password spraying](https://www.ncsc.gov.uk/blog-post/spray-you-spray-me-defending-against-password-spraying-attacks) with *"Password123!"* or *"Summer2018"* will be a thing of the past, and we'll no longer have to spend Christmas with our family trying to persuade them to [use a password manager](https://www.troyhunt.com/password-managers-dont-have-to-be-perfect-they-just-have-to-be-better-than-not-having-one/).
 
-For these reasons alone, WebAuthn is something everyone in security can get behind.
+For these reasons and many others, Web Authentication is a standard that everyone in security can get behind.
