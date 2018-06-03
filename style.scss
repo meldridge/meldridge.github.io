@@ -113,6 +113,14 @@ em, i {
   font-style: italic;
 }
 
+// Image captions
+img + em {
+  display: block;
+  font-style: italic;
+  text-align: center;
+  color: $gray;
+}
+
 strong, b {
   font-weight: bold;
 }
