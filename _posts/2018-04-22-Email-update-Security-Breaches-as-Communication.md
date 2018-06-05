@@ -23,7 +23,7 @@ This article from the UK National Cyber Security Centre was written way back in 
 >
 >Stories like this are commonplace in every large organisation, and lead to the popular refrain that 'people are the weakest link' in cyber security. But users aren't breaking the rules because they're bad people, or because they want to annoy their managers, or make life difficult for security staff. They know full well that they're breaking the rules, and they usually feel bad about it. But in the vast majority of cases, people break the rules because they need to get the job done, and they're taking what seems at the time like the best option available to them.”
 
-This is particularly relevant given last year's news that UK Members of Parliament [share their login passwords with their staff](www.bbc.co.uk/news/uk-politics-42216622), a revelation which led to lots of hand wringing and gnashing of teeth by security experts.
+This is particularly relevant given last year's news that UK Members of Parliament [share their login passwords with their staff](http://www.bbc.co.uk/news/uk-politics-42216622), a revelation which led to lots of hand wringing and gnashing of teeth by security experts.
 
 To be clear, this *is* stupid, and the MPs should know better given the sort of information they have access to, but it's hard to change people's behaviour via ridicule - something which a large part of our industry has yet to learn.
 
