@@ -11,7 +11,7 @@ There's a lot of news to get through, but I wanted to briefly recommend a podcas
 
 I've mentioned The Secure Developer podcast before, but this one is my favourite so far. it's with [Masha Sedova](https://twitter.com/modmasha) of Elevate Security.
 
-During the podcast Masha speaks at length about the challenge of getting employees to care about security in a way which actually improves not only the security of an organisation, but also the retention of those employees. It's a great podcast, and I now want to work for Elevate.
+During the podcast Masha speaks at length about the challenge of getting employees to care about security in a way which actually improves not only the security of an organisation, but also the retention of those employees. It's a great podcast (and now I want to work for Elevate).
 
 Onto the news:
 
