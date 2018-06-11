@@ -31,7 +31,9 @@ Strong hashing functions (MD5 is not one) are intended to make it impossible, or
 
 For example, the MD5 hash for `“pAssword”` is `“2d152c2e223139101ba9a8fa9b327842”`. A tiny change from ‘a’ to ‘A’ in the input causes almost every character in the output to change.
 
-Hashes are used everywhere in security, because this property means we can verify that data hasn’t been modified or tampered with. Some hashing functions are better than others: MD5 is famously broken because it is possible to deliberately create collisions. A collision is where (for example) you give me the output of an MD5 function for some sort of input data, such as your Microsoft update signing certificate, and I generate completely different input data which will generate the **same** MD5 hash. I’ve modified the input, but the hash makes it look like I haven’t. This sort of attack is how the [Flame](https://en.wikipedia.org/wiki/Flame_(malware)) and [Stuxnet](https://en.wikipedia.org/wiki/Stuxnet) malware fooled systems into trusting them.
+Hashes are used everywhere in security, because this property means we can verify that data hasn’t been modified or tampered with. Some hashing functions are better than others: MD5 is famously broken because it is possible to deliberately create *collisions*. 
+
+A collision is where (for example) you give me the output of an MD5 function for some sort of input data, such as your Microsoft update signing certificate, and I generate completely different input data which will generate the **same** MD5 hash. I’ve modified the input, but the hash makes it look like I haven’t. This sort of attack is how the [Flame](https://en.wikipedia.org/wiki/Flame_(malware)) and [Stuxnet](https://en.wikipedia.org/wiki/Stuxnet) malware fooled systems into trusting them.
 
 ### When it comes to hashing passwords, faster is not better
 
