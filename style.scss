@@ -266,17 +266,6 @@ nav {
 .posts > .post {
   padding-bottom: 1em;
   border-bottom: 1px solid $lightGray;
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: inherit;
-    padding-bottom: 0.2em;
-    margin-bottom: 0em;
-  }
-  
-  .entry {
-    padding-top: 1em;
-    padding-bottom: 1em;
-  }
 
   .date {
     padding-top: 0em;
@@ -286,6 +275,11 @@ nav {
     a {
       color: inherit;
     }
+  }
+  
+  .read-more {
+    text-transform: uppercase;
+    font-size: 15px;
   }
 }
 
@@ -317,11 +311,6 @@ nav {
 
   .comments {
     margin-top: 10px;
-  }
-
-  .read-more {
-    text-transform: uppercase;
-    font-size: 15px;
   }
 }
 
