@@ -1,4 +1,41 @@
 
+https://twitter.com/jpwarren/status/1011900214725054464
+"Digital Delivery of Government Services" report
+
+http://ashtonkemerling.com/blog/2018/02/21/no-you-probably-dont-need-a-blockchain/
+
+
+Ticketmaster UK announces it's suffered a data breach due to malware in a third-party software product from Inbenta. Personal and payment info may have been compromised.
+https://twitter.com/MartinSFP/status/1012003067909300226
+
+AusGov IT Fail-o-Rama™
+https://docs.google.com/spreadsheets/d/14z6rl8zHTTEPktjAfnu5QXlhYDmfdroBe2FnkYVWMeA/htmlview
+
+
+https://theregister.co.uk/2018/06/12/yahoo_250k_ico_fine/
+https://linkedin.com/pulse/military-capability-acquisition-cyber-worthiness-mick-lehmann/
+
+https://smh.com.au/politics/federal/former-spy-boss-alarmed-by-dutton-proposals-for-electronic-computer-attacks-20180610-p4zkne.html
+https://washingtonpost.com/news/powerpost/paloma/the-cybersecurity-202/2018/05/21/the-cybersecurity-202-we-surveyed-100-security-experts-almost-all-said-state-election-systems-were-vulnerable/5b0189b030fb0425887995e2/?noredirect=on&utm_term=.e6e6d4e643f1
+
+https://troyhunt.com/cloudflare-ssl-and-unhealthy-security-absolutism/
+
+https://thewest.com.au/politics/federal-politics/digital-minister-michael-keenan-flags-plan-for-multibillion-dollar-id-plan-ng-b88862627z
+
+http://metzdowd.com/pipermail/cryptography/2018-February/033788.html
+
+https://www.contextis.com/blog/frag-grenade-a-remote-code-execution-vulnerability-in-the-steam-client
+
+https://whisperlab.org/blog/2017/Trust-Implications-of-DDoS-Protection-in-Online-Elections.html
+
+https://exchange.telstra.com.au/business-email-compromise-scams/
+
+http://cd.textfiles.com/cuteskunk/Unix-Hacking-Documents/improve_by_breakin.txt
+
+https://twitter.com/patio11/status/957469600681140226
+https://twitter.com/SwiftOnSecurity/status/1002383281550233601
+
+
 "Living off the Land" (report by Symantec):
 https://www.symantec.com/content/dam/symantec/docs/security-center/white-papers/istr-living-off-the-land-and-fileless-attack-techniques-en.pdf
 
