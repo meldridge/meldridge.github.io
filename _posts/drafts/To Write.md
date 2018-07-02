@@ -1,26 +1,15 @@
 
-https://twitter.com/jpwarren/status/1011900214725054464
-"Digital Delivery of Government Services" report
-
-http://ashtonkemerling.com/blog/2018/02/21/no-you-probably-dont-need-a-blockchain/
-
+### Ticketmaster UK supply-chain attack
 
 Ticketmaster UK announces it's suffered a data breach due to malware in a third-party software product from Inbenta. Personal and payment info may have been compromised.
 https://twitter.com/MartinSFP/status/1012003067909300226
 
-AusGov IT Fail-o-Rama™
-https://docs.google.com/spreadsheets/d/14z6rl8zHTTEPktjAfnu5QXlhYDmfdroBe2FnkYVWMeA/htmlview
-
 
 https://theregister.co.uk/2018/06/12/yahoo_250k_ico_fine/
-https://linkedin.com/pulse/military-capability-acquisition-cyber-worthiness-mick-lehmann/
 
-https://smh.com.au/politics/federal/former-spy-boss-alarmed-by-dutton-proposals-for-electronic-computer-attacks-20180610-p4zkne.html
 https://washingtonpost.com/news/powerpost/paloma/the-cybersecurity-202/2018/05/21/the-cybersecurity-202-we-surveyed-100-security-experts-almost-all-said-state-election-systems-were-vulnerable/5b0189b030fb0425887995e2/?noredirect=on&utm_term=.e6e6d4e643f1
 
 https://troyhunt.com/cloudflare-ssl-and-unhealthy-security-absolutism/
-
-https://thewest.com.au/politics/federal-politics/digital-minister-michael-keenan-flags-plan-for-multibillion-dollar-id-plan-ng-b88862627z
 
 http://metzdowd.com/pipermail/cryptography/2018-February/033788.html
 
