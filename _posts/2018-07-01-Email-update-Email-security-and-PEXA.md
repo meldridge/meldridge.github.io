@@ -39,11 +39,11 @@ One of these attacks hit headline news in Australia recently, in large part beca
 >
 >Unbeknown to Ms Venn and her conveyancer, Sargeants Knox Conveyancing, the proceeds of the sale were transferred to a fraudster’s bank account after hackers accessed the conveyancer’s electronic property transfer account and added themselves as another user.
 
-This example was slightly more sophisticated than a simple email man-in-the-middle: in this case, the attackers actually accessed the Conveyancer's account on Property Exchange Australia (PEXA), but they did so by first gaining access to the Conveyancer's email (likely through a guessed password), and then used their email access to create a new PEXA account where they could modify the settlement details.
+This example was slightly more sophisticated than a simple email man-in-the-middle: in this case, the attackers actually accessed the conveyancer’s account on Property Exchange Australia (PEXA). They did so by first gaining access to the conveyancer’s email (likely through a guessed password), and then used their email access to create a new PEXA account where they could modify the settlement details.
 
-At first glance this sounds like a security failure on PEXA's end. There are a lot of online systems which have the same flaw (first compromise a user's email, then reset password at leisure), but a system designed for settlement of multi-million dollar transactions should be held to a higher standard than a Facebook account. 
+At first glance this sounds like a security failure on PEXA’s end. There are a lot of online systems which have the same flaw (first compromise a user’s email, then reset their password), but a system designed for settlement of multi-million dollar transactions should be held to a higher standard than a Facebook account.
 
-At the very least, PEXA's security model shouldn't be relying on conveyancers and real estate agents—who in many cases are individuals or small businesses with limited security knowledge or resources—to properly secure their email.
+At the very least, PEXA's security model shouldn't be relying on conveyancers and real estate agents—who in many cases are individuals or small businesses with limited security knowledge and resources—to properly secure their email.
 
 Making things more complicated, it's not at all clear who has legal responsibility for this sort of this incident. Immediately after the story broke, PEXA denied any responsibility for the loss, and the banks involved could quite rightly claim that they were simply acting on the instructions from their client. 
 
