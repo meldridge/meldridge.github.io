@@ -12,4 +12,12 @@ This isn’t a new concept - engineering is build around the concept of trade of
 
 Etc
 
+### Links
+
+https://troyhunt.com/cloudflare-ssl-and-unhealthy-security-absolutism/
+
+Rule 777:
+If you don’t make a system usable and secure, the user will make it usable and insecure.
+https://twitter.com/SwiftOnSecurity/status/1002383281550233601
+ 
  
