@@ -1,4 +1,9 @@
 
+Fitness app Polar exposed locations of spies and military personnel
+Location data revealed the home addresses of intelligence officers -- even when their profiles were set to private.
+https://www.zdnet.com/article/fitness-app-polar-exposed-locations-of-spies-and-military-personnel/
+
+
 https://washingtonpost.com/news/powerpost/paloma/the-cybersecurity-202/2018/05/21/the-cybersecurity-202-we-surveyed-100-security-experts-almost-all-said-state-election-systems-were-vulnerable/5b0189b030fb0425887995e2/?noredirect=on&utm_term=.e6e6d4e643f1
 
 
