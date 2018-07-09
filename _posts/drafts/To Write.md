@@ -1,23 +1,8 @@
-https://itnews.com.au/news/asd-chief-frets-over-cyber-recruits-496523
-
-https://sbs.com.au/news/centrelink-website-crashes-as-parents-rush-to-claim-new-childcare-subsidies
-
-https://www.theregister.co.uk/AMP/2018/07/05/gentoo_github_hack_weak_password_no_2fa/
-
-https://blog.sucuri.net/2018/07/coinimp-cryptominer-and-fully-qualified-domain-names.html
-
-### Ticketmaster UK supply-chain attack
-
-Ticketmaster UK announces it's suffered a data breach due to malware in a third-party software product from Inbenta. Personal and payment info may have been compromised.
-https://twitter.com/MartinSFP/status/1012003067909300226
-
-
 
 https://washingtonpost.com/news/powerpost/paloma/the-cybersecurity-202/2018/05/21/the-cybersecurity-202-we-surveyed-100-security-experts-almost-all-said-state-election-systems-were-vulnerable/5b0189b030fb0425887995e2/?noredirect=on&utm_term=.e6e6d4e643f1
 
 
-
-http://metzdowd.com/pipermail/cryptography/2018-February/033788.html
+http://www.metzdowd.com/pipermail/cryptography/2018-February/033788.html/
 
 https://www.contextis.com/blog/frag-grenade-a-remote-code-execution-vulnerability-in-the-steam-client
 
@@ -25,13 +10,11 @@ https://whisperlab.org/blog/2017/Trust-Implications-of-DDoS-Protection-in-Online
 
 http://cd.textfiles.com/cuteskunk/Unix-Hacking-Documents/improve_by_breakin.txt
 
+Patrick McKenzie @patio11
+"Accounting controls" has to be way, way up there on the list of "systemically important technologies that almost no one would say One Of The Most Important Things Ever Invented."
+
+This is about 60% of the reason why Bitcoin exchanges keep blowing up while everyone looks on.
 https://twitter.com/patio11/status/957469600681140226
-https://twitter.com/SwiftOnSecurity/status/1002383281550233601
-
-
-"Living off the Land" (report by Symantec):
-https://www.symantec.com/content/dam/symantec/docs/security-center/white-papers/istr-living-off-the-land-and-fileless-attack-techniques-en.pdf
-
 
 
 ## Telegram Unicode RTL
@@ -70,9 +53,7 @@ https://twitter.com/patio11/status/957469600681140226
 
 *hdsh*
 
-## JavaScript supply chain
 
-https://www.troyhunt.com/the-javascript-supply-chain-paradox-sri-csp-and-trust-in-third-party-libraries/
 
 ## Exploit development rant by Bas Alberts
 
@@ -106,12 +87,3 @@ network and segmenting accordingly.
 
 "Containment is the name of the game. Not prevention. The compromise is
 inevitable and the routes are legion. It is going to happen."
-
-https://blog.conscioushacker.io/index.php/2017/10/25/evading-microsofts-autoruns/
-
-https://www.bleepingcomputer.com/news/security/lokibot-android-banking-trojan-turns-into-ransomware-when-you-try-to-remove-it/
-
-https://www.reddit.com/r/netsec/comments/746hrb/superstealthy_droppers_diskless_binary_execution/
-https://0x00sec.org/t/super-stealthy-droppers/3715
-``
-https://speakerdeck.com/ange/infosec-and-failures
