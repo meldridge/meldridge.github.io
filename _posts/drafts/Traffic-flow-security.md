@@ -17,7 +17,7 @@ So far we haven’t been detected by the enemy, and we’ve been regularly provi
 
 One evening, we receive a very simple message from headquarters: *“We attack at dawn. Be prepared.”*
 
-Immediately after we receive this message, the enemy’s communications goes crazy - sudden short messages all over the place, and constant communications to a recipient we’ve previously identified as the enemy’s own headquarters.
+Immediately after we receive this message, the enemy’s communication channel goes crazy: sudden short messages all over the place, and near-continuous communications to a recipient we’ve previously identified as the enemy’s own headquarters.
 
 Even though we have no idea what the messages contain, there’s a good chance that we’ve been blown: either the enemy has a spy in our HQ, or they intercepted and decrypted our own communications. Either way, it’s probably safe to say that the enemy knows about the upcoming attack.
 

@@ -1,6 +1,6 @@
 ---
 layout: email
-title: #CentrelinkFail, IBM wins billion-dollar contract
+title: \#CentrelinkFail, IBM wins billion-dollar contract
 ---
 
 Good morning.
