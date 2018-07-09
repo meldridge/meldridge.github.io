@@ -7,7 +7,7 @@ Good morning.
 
 I'll be on annual leave from next week until mid-August, so I'm planning on sending out a few additional emails this week to compensate. As always, I welcome any feedback.
 
-### #CentrelinkFail
+### #CentrelinkFail and Aus Gov IT cynicism
 
 In the [last email](https://markeldo.com/Email-update-Australian-Digital-Government-Report-and-myGovID/) we discussed the high-profile failures in Australian Government IT delivery. A day later, the website for Centrelink (the government social security provider) crashed during a critical time for parents trying to access childcare subsidies, nicely underlining the point.
 
