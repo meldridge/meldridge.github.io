@@ -17,6 +17,13 @@ This is about 60% of the reason why Bitcoin exchanges keep blowing up while ever
 https://twitter.com/patio11/status/957469600681140226
 
 
+## wald0 on enterprise infosec
+https://twitter.com/_wald0/status/1015939331012247552
+
+>Imagine preparing a house for a home invasion, but you don’t know how the rooms are connected. And there’s 10,000 rooms with secret passages you don’t know about. And every time anyone enters a room, they leave a copy of their key behind. And no one is 100% sure just how many doors a given key will unlock. This is the state of enterprise information security.
+
+
+
 ## Telegram Unicode RTL
 
 https://securelist.com/zero-day-vulnerability-in-telegram/83800/
