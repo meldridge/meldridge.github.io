@@ -11,7 +11,7 @@ On macOS, as with any Unix-based system, 'root' is effectively God (with some ca
 
 Patrick Wardle has written up an excellent explanation of how the bug works and how it was likely introduced, which is worth a read:
 
-[Why <blank> Gets You Root](https://objective-see.com/blog/blog_0x24.html)
+[Why \<blank\> Gets You Root](https://objective-see.com/blog/blog_0x24.html)
 
 >First, let's look what's happening at a high level. When a user (or attacker) attempts to log into an account that is not currently enabled (i.e. root), for some unknown reason, the system will naively create that account with whatever password the user specifies...even if that password is blank. Then the user (or attacker) can readily log into that account.
 
