@@ -1,11 +1,18 @@
 ---
 layout: email
-title: Gentoo, Ticketmaster UK, and supply-chain attacks
+title: Blacklisting vs Whitelisting, Gentoo, and Ticketmaster UK
 ---
 
 Good morning.
 
+My last email contained a fairly significant typo in the third-last paragraph: 'proscriptive' vs 'prescriptive'. Hopefully most of you knew what I meant!
+
+### Dot-terminating domain names for domain blacklisting
+
 A quick one to start with: Sucuri has an excellent [blog post](https://blog.sucuri.net/2018/07/coinimp-cryptominer-and-fully-qualified-domain-names.html) regarding the use of dot-terminated domain names to bypass domain blacklists. It's a cute trick, and yet another example of why blacklists are a fragile security measure.
+
+
+
 
 ### Gentoo's GitHub account hacked
 
