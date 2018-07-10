@@ -52,7 +52,7 @@ More generally, the debate over "compliance-based" or "risk-based" approaches to
 
 I'm personally not a fan of the compliance-focused approach taken by many organisations, where adherence to policy can often take priority over actual technical security measures. In some cases, it's enough to have a firewall in place to "tick the box", and whether or not the firewall does anything useful (or is maintained properly) is a secondary consideration.
 
-Proponents of the compliance model would argue that this is a fault of the checklist not being explicit enough, which is a fair point, but making these models overly proscriptive can hamstring defenders into building their network "the right way" (according to the particular compliance framework being used), with no allowances for business realities or the risk appetite of the organisation.
+Proponents of the compliance model would argue that this is a fault of the checklist not being explicit enough, which is a fair point, but making these models overly prescriptive can hamstring defenders into building their network "the right way" (according to the particular compliance framework being used), with no allowances for business realities or the risk appetite of the organisation.
 
 With apologies to Douglas Bader, compliance checklists exist for the guidance of good security teams, and the blind obedience of bad ones.
 
