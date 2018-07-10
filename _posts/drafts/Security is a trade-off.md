@@ -21,3 +21,5 @@ If you don’t make a system usable and secure, the user will make it usable and
 https://twitter.com/SwiftOnSecurity/status/1002383281550233601
  
  
+ 
+https://www.theregister.co.uk/2018/07/09/conran_amazon_password_notebooks/
