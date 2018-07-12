@@ -1,6 +1,6 @@
 ---
 layout: email
-title: Supply-chain attacks: Gentoo, Arch, and Ticketmaster UK
+title: Supply-chain attacks: Arch, Gentoo, and Ticketmaster UK
 ---
 
 Follow-up to previous KATTFAKTA - mention that risk based has the issue where company just accepts risks even if it shouldn’t
