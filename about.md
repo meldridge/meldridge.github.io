@@ -8,7 +8,7 @@ I am a software engineer and information security specialist with a background i
 
 ### Newsletter
 
-I operate a newsletter containing information security news and analysis, with emails sent roughly weekly. If you'd like to sign up, you can [subscribe here](http://eepurl.com/dlZTVv).
+I author a newsletter containing information security news and analysis, with emails sent roughly weekly. If you'd like to sign up, you can [subscribe here](http://eepurl.com/dlZTVv).
 
 ### Contact me
 
