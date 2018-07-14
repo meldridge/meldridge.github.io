@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Reach out and catch shells with SSH port forwarding
+image: "/images/shellcatching.png"
 ---
 
 This is a very simple trick for catching shells locally on a device which doesn't have a public IP, such as a laptop sitting behind a NATted Wi-Fi network.

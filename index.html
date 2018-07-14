@@ -11,6 +11,10 @@ layout: default
 	  <div class="date">
 		<a href="{{ site.baseurl }}{{ post.url }}">Blog post, {{ post.date | date: "%e %B %Y" }}</a>
 	  </div>
+    
+    <div class="image">
+    <img src="{{ post.image }}">
+    </div>
 
 	  <div class="entry">
 		{{ post.excerpt }}

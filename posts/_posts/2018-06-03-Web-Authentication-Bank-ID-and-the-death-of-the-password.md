@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Web Authentication, BankID, and the death of passwords
-image: 
+image: "/images/handelsbanken-bankid-login.png"
 excerpt: In my last email I mentioned Alex Stamos' Twitter takedown of the 'Digi-ID' authentication solution. Buried in the exchange was a mention by Stamos of the <em>Web Authentication</em> standard, which is something you'll be hearing a lot more about in coming months. 
 ---
 
