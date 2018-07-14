@@ -133,10 +133,10 @@ img {
 }
 
 // Smaller images for post previews
-.image-preview img {
-  max-width: 50%;
+.image-preview {
+  height: 115px;
+  overflow: hidden;
   display: block;
-  margin: 0 auto;
 }
 
 // Fixes images in popup boxes from Google Translate

@@ -9,15 +9,15 @@ layout: default
 	  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 	  
 	  <div class="date">
-		<a href="{{ site.baseurl }}{{ post.url }}">Blog post, {{ post.date | date: "%e %B %Y" }}</a>
+      <a href="{{ site.baseurl }}{{ post.url }}">Blog post, {{ post.date | date: "%e %B %Y" }}</a>
 	  </div>
     
     <div class="image-preview">
-    <img src="{{ post.image }}">
+      <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ post.image }}"></a>
     </div>
 
 	  <div class="entry">
-		{{ post.excerpt }}
+      {{ post.excerpt }}
 	  </div>
 
 	  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
