@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="posts">
+  {% for post in site.categories.emails %}
+	
+	<article class="post">	  
+	  <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>  
+	  
+	  <div class="date">
+		<a href="{{ site.baseurl }}{{ post.url }}">Email update, {{ post.date | date: "%e %B %Y" }}</a>
+	  </div>
+	</article>
+	
+  {% endfor %}
+</div>

@@ -5,6 +5,16 @@ title: Supply-chain attacks: Arch, Gentoo, and Ticketmaster UK
 
 Follow-up to previous KATTFAKTA - mention that risk based has the issue where company just accepts risks even if it shouldn’t
 
+ASD follow-up:
+https://zdnet.com/article/asd-restructure-trouble-at-t-cyber-mill/
+https://asd.gov.au/publications/plans/ASD-Corporate-Plan-2018.pdf
+https://warontherocks.com/2018/07/fish-out-of-water-how-the-military-is-an-impossible-place-for-hackers-and-what-to-do-about-it/
+
+NPM hacked:
+https://twitter.com/npmstatus/status/1017441729656455168
+https://status.npmjs.org/incidents/dn7c1fgrr7ng
+https://theregister.co.uk/2018/07/12/npm_eslint/
+
 
 This commit:
 https://aur.archlinux.org/cgit/aur.git/commit/?h=acroread&id=b3fec9f2f16703c2dae9e793f75ad6e0d98509bc

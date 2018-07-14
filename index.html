@@ -3,20 +3,8 @@ layout: default
 ---
 
 <div class="posts">
-  {% for post in site.posts %}
+  {% for post in site.categories.posts %}
   
-	{%if post.layout == "email" %}
-	
-	<article class="post">	  
-	  <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>  
-	  
-	  <div class="date">
-		<a href="{{ site.baseurl }}{{ post.url }}">Email update, {{ post.date | date: "%e %B %Y" }}</a>
-	  </div>
-	</article>
-	
-	{% else %}
-	
 	<article class="post">
 	  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
 	  
@@ -30,8 +18,6 @@ layout: default
 
 	  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
 	</article>
-	
-	{% endif %}
 	
   {% endfor %}
 </div>
