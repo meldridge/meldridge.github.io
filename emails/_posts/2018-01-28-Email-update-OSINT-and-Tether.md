@@ -18,7 +18,7 @@ Strava presents this data in an extremely cool map, which allows you to see wher
 
 Naturally, this happened:
 
-![Strava global heatmap](../images/strava-heatmap.png)
+![Strava global heatmap](/images/strava-heatmap.png)
 
 There are some [excellent examples](https://twitter.com/stilgherrian/status/957466138316701697) on Twitter of using this data to discover all sorts of interesting things, such as patrol routes on military bases, or where employees go for a jog during lunchtime. Of course, anyone with a good set of binoculars could get the same information, but the Strava data makes things a hell of a lot easier.
 

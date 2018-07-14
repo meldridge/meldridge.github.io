@@ -45,6 +45,6 @@ To briefly summarise:
 
 It was beautiful, really:
 
-[<img src="../images/stamos-digi-id.png" alt="Stamos on Digi-ID" width="500">](https://twitter.com/alexstamos/status/999868096075718656)
+[<img src="/images/stamos-digi-id.png" alt="Stamos on Digi-ID" width="500">](https://twitter.com/alexstamos/status/999868096075718656)
 
 Ouch. Lesson learned: don't try to bullshit Alex Stamos.

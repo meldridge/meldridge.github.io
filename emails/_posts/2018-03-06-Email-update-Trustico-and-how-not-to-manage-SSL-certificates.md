@@ -47,11 +47,11 @@ Trustico tried to justify their action by stating they kept the private keys "fo
 
 This is where the story gets really fun, because the next bit of news popped up on Twitter:
 
-![local.txt](../images/trustico-injection.png)
+![local.txt](/images/trustico-injection.png)
 
 Followed by:
 
-![proof.txt](../images/trustico-root.png)
+![proof.txt](/images/trustico-root.png)
 
 What's happening in the first image is that there is a form on Trustico's website which takes user input and doesn't sanitise it properly, which means that you can run arbitrary commands on their webserver by just typing them in. (That's bad.)
 
@@ -59,7 +59,7 @@ In the second image, someone realised that the commands were being run as root, 
 
 Sure enough:
 
-![rm -rf /](../images/trustico-503.png)
+![rm -rf /](/images/trustico-503.png)
 
 I should be clear here: dropping a vulnerability like this over Twitter this is a real *dick move*, and a good example of irresponsible disclosure. 
 

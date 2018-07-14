@@ -5,7 +5,7 @@ title: Reach out and catch shells with SSH port forwarding
 
 This is a very simple trick for catching shells locally on a device which doesn't have a public IP, such as a laptop sitting behind a NATted Wi-Fi network.
 
-![Catching an Empire listener using SSH port forwarding](../images/shellcatching.png)
+![Catching an Empire listener using SSH port forwarding](/images/shellcatching.png)
 
 About a year ago I purchased a [Hak5 Bash Bunny](https://hakshop.com/products/bash-bunny), and started using it for basic security demonstrations at work and university. For my demonstrations I wanted something a little more realistic than a VM with internal guest networking, including potentially injecting Powershell Empire payloads into arbitrary systems (with their owner's permission, obviously). 
 

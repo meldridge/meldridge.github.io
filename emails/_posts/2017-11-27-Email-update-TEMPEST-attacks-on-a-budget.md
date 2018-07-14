@@ -23,7 +23,7 @@ These days, with the increasing availability of software defined radio (SDR) too
 
 It's kind of hard to picture what this means in practice, so this tweet should make it a lot easier:
 
-![TEMPEST SDR](../images/tempest-sdr.png)
+![TEMPEST SDR](/images/tempest-sdr.png)
 
 To explain: in that photo Jessop has a computer hooked up to a monitor on the left. On the right, he is using an antenna and the [TempestSDR library](https://github.com/martinmarinov/TempestSDR) to sniff the RF radiation produced by the DVI cable, and then recreating the image from that signal.
 

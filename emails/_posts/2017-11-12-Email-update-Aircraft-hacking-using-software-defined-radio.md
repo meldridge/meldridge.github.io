@@ -30,7 +30,7 @@ As I said, it might not be sexy Hollywood Hacking, but this is still a serious p
 Australia's own [Balint Seeber](https://twitter.com/spenchdotnet) has been presenting on this topic since 2011, and worked for Ettus Research (makers of the [USRP](https://www.ettus.com/product/category/USRP-X-Series) software defined radio platform) for three years until 2015. His presentation at Ruxcon 2011 is well worth a watch:
 
 [**All your RFz Belong to Me: Hacking the Wireless World with GNU Radio**]()
-[![All your RFz Belong to Me: Hacking the Wireless World with GNU Radio - Balint Seeber](../images/balint-seeber-all-your-RFz.png)](https://www.youtube.com/watch?v=pbgeLRvjirI)
+[![All your RFz Belong to Me: Hacking the Wireless World with GNU Radio - Balint Seeber](/images/balint-seeber-all-your-RFz.png)](https://www.youtube.com/watch?v=pbgeLRvjirI)
 
 During the presentation he discusses just how easy it is to mess with the radio systems on modern aircraft, because they were never designed with security in mind, and it was assumed that the specialised radio equipment need to spoof or jam these signals would make it prohibitive for anyone non-military to bother.
 

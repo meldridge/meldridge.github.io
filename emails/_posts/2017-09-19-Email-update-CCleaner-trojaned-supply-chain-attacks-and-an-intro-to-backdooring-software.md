@@ -39,13 +39,13 @@ VirusTotal is a website run by Google which scans uploaded files with a number o
 If none of the above words made sense, don't worry, the details aren't important. What is important is the comparison between the screenshots below:
 
 **Screenshot 1 - raw Meterpreter executable ([VirusTotal link](https://www.virustotal.com/#/file/ca58713ed155898e677de4f3c54f1f0a13c45c0fcc1a757be218a62224ff78a4/detection)):**
-![Raw Meterpreter executable](../images/vt-raw-meterpreter.png)
+![Raw Meterpreter executable](/images/vt-raw-meterpreter.png)
 
 The first screenshot is the basic Meterpreter malware, without any attempt at avoiding detection by antivirus (AV) solutions. It's sitting there naked. This one gets 49/64 detections, with all of the major tools detecting the malware. This is actually worse than I'd expect - only the really really useless AV solutions should miss something this obvious.
 
 ​**Screenshot 2 and 3 - plink.exe infected with Meterpreter ([VirusTotal link](https://www.virustotal.com/#/file/a306e457efbffff03c2c9e756acd64f25d207f4bcd3442ffad5ecf0066b53dc4/detection)):**
-![plink.exe infected with Meterpreter](../images/vt-plink-1.png)
-![plink.exe infected with Meterpreter](../images/vt-plink-2.png)
+![plink.exe infected with Meterpreter](/images/vt-plink-1.png)
+![plink.exe infected with Meterpreter](/images/vt-plink-2.png)
 
 The second and third screenshots show what happens when I backdoor the popular plink.exe administration tool with the same Meterpreter payload (Plink is the command-line version of Putty, for those familiar with the latter). The result is an executable which works exactly the same way that a normal Putty/Plink user would expect, but in the background it executes the Meterpreter malware and calls back to me.
 

@@ -5,7 +5,7 @@ title: Strava follow-up
 
 Some quick follow up on yesterday's email: the Strava fitness tracker story has been making headlines, although some of the headlines are quite dumb:
 
-![SMH on Strava](../images/strava-aussie-student.png)
+![SMH on Strava](/images/strava-aussie-student.png)
 
 To be clear, if your "secret army base" is visible on a satellite view, it's not secret.
 
@@ -15,6 +15,6 @@ Jake Williams made a [series](https://twitter.com/MalwareJake/status/95775710907
 
 Also, as the grugq aptly points out below, this makes Strava themselves a massive target for any nation state who didn't already have this data. After all, the dataset probably isn't anonymized until it hits the heatmap, so if you pulled it from the source directly you'd likely have usernames, emails, and other personal information to go along with your GPS coordinates.
 
-![The grugq on Strava](../images/grugq-strava.jpg)
+![The grugq on Strava](/images/grugq-strava.jpg)
 
 Zing.

@@ -19,7 +19,7 @@ This sort of attack is absolutely devastating to organisations who use a shared 
 Credential theft is one of those things which is way easier to demonstrate than it is to explain in text. Conveniently, I made a demonstration video for some Adelaide Uni cyber security workshops to demonstrate how basic credential theft works. (Those of you who are already familiar with this can skip to the next subheading.)
 
 [**Demonstration: Password Recovery**](https://www.youtube.com/watch?v=GSlvHAbzCIM)
-[![Demonstration: Password Recovery](../images/cysec-demo-password-recovery-mimikatz.png)](https://www.youtube.com/watch?v=GSlvHAbzCIM)
+[![Demonstration: Password Recovery](/images/cysec-demo-password-recovery-mimikatz.png)](https://www.youtube.com/watch?v=GSlvHAbzCIM)
 
 The video isn't narrated, so some explanation is necessary:
 

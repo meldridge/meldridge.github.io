@@ -11,12 +11,12 @@ It's pretty clear that Equifax's security practices were bad to the point of neg
 
 [The grugq](https://twitter.com/thegrugq) nicely pointed out the hypocrisy, given that a good portion of the security industry is made up of 90's counter-culture hackers who typically scoff at formal education:
 
-![The grugq on infosec degrees](../images/grugq-degrees-in-infosec.png)
+![The grugq on infosec degrees](/images/grugq-degrees-in-infosec.png)
 
 In other news, [Haroon Meer](https://twitter.com/haroonmeer) made some excellent posts about the Excillum breach and how property security practices are designed to limit the damage from an inevitable breach, not just prevent them from ever happening:
 
-![Haroon Meer on learning the right lessons (1/2)](../images/haroon-learning-lessons-1.png)
-![Haroon Meer on learning the right lessons (2/2)](../images/haroon-learning-lessons-2.png)
+![Haroon Meer on learning the right lessons (1/2)](/images/haroon-learning-lessons-1.png)
+![Haroon Meer on learning the right lessons (2/2)](/images/haroon-learning-lessons-2.png)
 
 Haroon is the founder of Thinkst, who makes the [Canary](https://canary.tools/) line of honeypot/intrusion detection tools. It's actually quite hard to describe their tech, because "Canaries" has become the generic term for that sort of tool. 
 

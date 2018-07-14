@@ -35,11 +35,11 @@ The story seems to have generated a lot more media interest than would normally 
 
 It's actually worth reading Stilgherrian's [recent Twitter posts](https://twitter.com/stilgherrian/status/917907205717770240) (he took photos of the presentation), as there's some really interesting tidbits in there. One example, a summary of the victim network:
 
-![Victim network summary slide](../images/stilgherrian-aus-defence-contractor-owned-1.jpg)
+![Victim network summary slide](/images/stilgherrian-aus-defence-contractor-owned-1.jpg)
 
 And an example of ASD's frustration at seeing this all the time (I can relate):
 
-![Victim patient zero slide](../images/stilgherrian-aus-defence-contractor-owned-2.jpg)
+![Victim patient zero slide](/images/stilgherrian-aus-defence-contractor-owned-2.jpg)
 
 Some further links, all with varying amounts of detail:
 * https://www.itnews.com.au/news/defence-contractors-it-systems-breached-475047
