@@ -8,7 +8,9 @@ I am a software engineer and information security specialist with a background i
 
 ### Newsletter
 
-I author a newsletter containing information security news and analysis, with emails sent roughly weekly. If you'd like to sign up, you can [subscribe here](http://eepurl.com/dlZTVv).
+I author a newsletter containing information security news and analysis, with emails sent roughly weekly. Past emails can be found [here](https://markeldo.com/emails/). 
+
+If you'd like to sign up to receive these emails directly, you can [subscribe here](http://eepurl.com/dlZTVv).
 
 ### Contact me
 
