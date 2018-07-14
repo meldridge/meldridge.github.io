@@ -8,7 +8,7 @@ I am a software engineer and information security specialist with a background i
 
 ### Security mailing list
 
-I operate a mailing list for security news summaries and analysis, with emails sent roughly weekly. If you'd like to sign up, you can [subscribe here](http://eepurl.com/dlZTVv).
+I operate a mailing list for security news and analysis, with emails sent roughly weekly. If you'd like to sign up, you can [subscribe here](http://eepurl.com/dlZTVv).
 
 ### Contact me
 
