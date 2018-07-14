@@ -134,7 +134,7 @@ img {
 
 // Smaller images for post previews
 .image-preview {
-  height: 115px;
+  height: 150px;
   overflow: hidden;
   display: block;
 }
@@ -277,6 +277,7 @@ nav {
   .date {
     padding-top: 0em;
     margin-top: 0em;
+    margin-bottom: 1em;
     font-style: italic;
     color: $gray;
     a {
