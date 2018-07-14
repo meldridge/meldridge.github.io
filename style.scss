@@ -132,6 +132,13 @@ img {
   margin: 0 auto;
 }
 
+// Smaller images for post previews
+.image-preview img {
+  max-width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
