@@ -1,4 +1,6 @@
+### Dot-terminating domain names for domain blacklisting
 
+A quick one to start with: Sucuri has an excellent [blog post](https://blog.sucuri.net/2018/07/coinimp-cryptominer-and-fully-qualified-domain-names.html) regarding the use of dot-terminated domain names to bypass domain blacklists. It's a cute trick, and yet another example of why blacklists are a fragile security measure.
 
 
 

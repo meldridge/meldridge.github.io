@@ -41,7 +41,7 @@ That's the worst possible lesson to learn from these messes, but you can't blame
 
 This one was bound to happen sooner or later. 
 
-In my last email I mentioned the excellent [Hackernoon post by David Gilbertson](https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5), where he described a hypothetical piece of malicious Javascript introduced as an NPM package and surreptitiously included in websites all over the internet to harvest credit card details.
+In a [previous email](/Email-update-The-cabinet-files-and-supply-chain-attacks-at-scale/) I mentioned the excellent [Hackernoon post by David Gilbertson](https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5), where he described a hypothetical piece of malicious Javascript introduced as an NPM package and surreptitiously included in websites all over the internet to harvest credit card details.
 
 Well, apparently someone took the lesson to heart, and decided to do the same thing with a JavaScript cryptocurrency miner:
 

@@ -2,6 +2,14 @@
 
 Everything we do in the information security industry is a trade-off between convenience (or productivity) and security. 
 
+Whenever we make a decision to increase the security of a system, we are making a compromise between pure convenience (zero security) and pure security (zero convenience). 
+
+There are obviously plenty of occasions where a (poor) design decision can result in sub-optimal outcomes for *both* convenience and security, but for the sake of this post let's leave them aside. 
+
+This isn't to downplay those cases—there are *plenty* of real-world examples where systems are both inconvenient to use and also horribly insecure, and fixing them is the low-hanging fruit of our industry— but putting too much attention on them can let us avoid confronting the very real trade-offs we will inevitably have to make when we encounter a system where we have to make a choice between one or the other.
+
+Failure to make these 
+
 Trade-offs occur everywhere in engineering. One example is [leverage](https://en.wikipedia.org/wiki/Lever). Leverage lets us amplify a small force, by applying it at the end of a long lever. The trade-off is that this force amplification requires the lever to begin with, which means we need a lot more space to work in - space for the lever itself, and space to move it.
 
 ![Leverage](/images/Leverage.jpg)
@@ -10,8 +18,43 @@ Where this becpmes
 
 The real skill in engineering is determine which compromises to make, and when, in order to meet the design requirements of whatever you are building.
 
+## How long should a password be?
+
+Pop quiz: 
+
+_**If I need to secure something with a password that only I know, how long should that password be?**_
+
+Answer:  
+a) Three digits (`"326"`)  
+b) 12 characters, alphanumeric and symbols (`"MyPassword!1"`)  
+c) 64 hexadecimal characters (`"2dd6d6d4008e8f19a69be71f30e3c89641c9db4d3674590033790f6924be64ad"`)
+
+If you enter this question into Google, you'll get a lot of answers tailored to online accounts (email, Facebook, Twitter, etc), and some will look like answer b) above.
+
+Of course, this is a trick question. The correct answer is:
+
+**It depends on what you're trying to secure, and who you're trying to secure it from**.
+
+## First, know your threat model
+
+In very simple terms, a *threat model* is a combination of the following two pieces of knowledge:
+- What you are trying to protect
+- What sort of attacker is likely to attack it
+
+For example: I have a medicine cupboard at ground-level, and I want to prevent my children from accessing it. 
+
+For this threat model, I decide to use a combination lock with a three-digit code.
+
+
+To meet my security objective—stop the children getting into the cupboard—I have a few options: I could move the cupboard higher where it's out of reach from a child, or I could put a lock on it.
+
+
+I'm trying to keep out my 6-year old kid from a medicine drawer, and my only option is a floor-level cupboard.
+
+This can sound obvious, but 
+
 *Briefly* describe threat modelling
-Convenient/Productivity
+Convenience/Productivity
 
 (Example of a 3-digit PIN combination lock to keep out the kids)
 If your threat model is a 6-year old...
@@ -53,6 +96,10 @@ If you don’t make a system usable and secure, the user will make it usable and
 https://twitter.com/SwiftOnSecurity/status/1002383281550233601
  
 
+
+
+
+
 Notebooks for password managers
  
 https://www.theregister.co.uk/2018/07/09/conran_amazon_password_notebooks/
@@ -75,5 +122,3 @@ they are a reverse proxy for all incoming connections, and TLS connections are t
 Still important to remember that there is a trade-off here: it’s just one which most websites are justified in making - their threat model is one where the trade-off is the right decision. 
 
 Trade-off 
-
-
