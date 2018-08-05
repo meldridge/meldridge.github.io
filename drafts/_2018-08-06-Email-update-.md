@@ -7,6 +7,8 @@ Good morning.
 
 Today's article is all about Blockchain. Some of you may be getting sick of this topic (I don't blame you!), so feel free to skip to the last story.
 
+https://www.weeklystandard.com/haley-byrd/this-former-british-spy-exposed-the-russian-hackers
+
 ### Blockchain: hype meets reality
 
 This piece by Kai Stinchcombe has been sitting in my list for a while. It's well worth reading in full, as it makes an excellent summary of all of the hype behind blockchain.
