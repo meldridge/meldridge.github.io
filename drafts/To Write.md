@@ -20,6 +20,8 @@ This is about 60% of the reason why Bitcoin exchanges keep blowing up while ever
 https://twitter.com/patio11/status/957469600681140226
 
 
+
+
 ## wald0 on enterprise infosec
 https://twitter.com/_wald0/status/1015939331012247552
 
