@@ -9,7 +9,17 @@ This story has been major news in Australia for the last few weeks, ever since t
 
 I'll avoid going into too much detail here, but to briefly summarise: the My Health Record system is a major Australian Government IT project which aims to consolidate every citizen's healthcare information into an electronic record which can be accessed by any healthcare provider they might use.
 
-It's a great idea in principle, and many countries already have similar systems. In Sweden for example, all of my healthcare information is linked to my government-issued *personnummer*, which means I can pick up any prescription simply by showing my ID at the pharmacist. It's extremely convenient - no more printed scripts!
+It's a great idea in principle, and many countries already have similar systems. In Sweden for example, all of my healthcare information is linked to my government-issued *personnummer*, which means I can pick up any prescription simply by showing my ID at the pharmacist. It's extremely convenient - no more printed scripts! 
+
+Similarly, 
+
+The problem is that good ideas don't always translate into good implementations. In [previous](/Email-update-Australian-Digital-Government-Report-and-myGovID/) [emails](/Email-update-CentrelinkFail-and-IBM-wins-billion-dollar-contract/) I've touched on the long history of Australian Government IT failures:
+
+>Part of the problem is that the repeated failure of large government IT projects has made the Australian public extremely jaded when it comes to what might otherwise be understandable technical outages, and the government doesn’t do itself any favours by creating situations where website downtime can have large real-world financial consequences.
+>
+>This tendency to tar all systems with the same brush was something I noted in the survey results for my [Master’s thesis](/docs/Thesis-Final.pdf): when describing their concerns about the security of electronic voting systems, a large number of respondents specifically called out the failure of the 2016 eCensus as evidence that the Australian government couldn’t operate an online voting system securely.
+>
+>People can have long memories when tech fails them, and annoyance can quickly turn to contempt. It doesn’t take much to shift an attitude from “this government IT system sucks” to “the government sucks at IT systems”.
 
 
 "Security is only as good as your weakest link," said Alexandra Wedutenko, a partner at law firm Clayton Utz.
