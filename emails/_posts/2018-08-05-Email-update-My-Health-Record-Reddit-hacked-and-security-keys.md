@@ -23,7 +23,7 @@ This story has been major news in Australia for the last few weeks, ever since t
 
 To briefly summarise: the My Health Record system is a major Australian Government IT project which aims to consolidate every citizen's healthcare information into an electronic record which can be accessed by any healthcare provider they might use.
 
-I'm planning to write a proper blog post about this topic in the next couple of weeks, because it sits nicely at the intersection of many of the issues we've covered in [previous](/Email-update-Australian-Digital-Government-Report-and-myGovID/) [emails](/Email-update-CentrelinkFail-and-IBM-wins-billion-dollar-contract/) (not to mention my [Master’s thesis](/docs/Thesis-Final.pdf)): security, public trust, and the Australian government's history of failed IT projects.
+I'm planning to write a proper blog post about this topic in the next couple of weeks, because it sits nicely at the intersection of many of the issues we've covered in [previous](https://markeldo.com/Email-update-Australian-Digital-Government-Report-and-myGovID/) [emails](https://markeldo.com/Email-update-CentrelinkFail-and-IBM-wins-billion-dollar-contract/) (not to mention my [Master’s thesis](https://markeldo.com/docs/Thesis-Final.pdf)): security, public trust, and the Australian government's history of failed IT projects.
 
 In the meantime, [this article](https://www.canberratimes.com.au/politics/act/bungled-my-health-record-launch-represents-a-missed-opportunity-20180718-p4zs6z.html) is a good summary, as is [this interview](https://overcast.fm/+i39C_reY) with Paul Shetler, the former head of the Government's Digital Transformation Agency.
 
