@@ -1,3 +1,7 @@
+Online voting is one of the hardest problems in computer science
+
+If you have an IT background you might be wondering what the difficulty is. after all, can’t you just make a website like this?
+
 ### Online voting security
 
 CSO Online recently published an excellent article on the security of online voting systems:

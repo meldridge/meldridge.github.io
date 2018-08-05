@@ -1,3 +1,20 @@
+https://krebsonsecurity.com/2018/07/google-security-keys-neutralized-employee-phishing/
+
+https://arstechnica.com/information-technology/2018/07/a-225-gps-spoofer-can-send-autonomous-vehicles-into-oncoming-traffic/
+
+
+### Blockchain
+
+“You actually see it over and over again. Blockchain systems are supposed to be more trustworthy, but in fact they are the least trustworthy systems in the world. Today, in less than a decade, three successive top bitcoin exchanges have been hacked, another is accused of insider trading, the demonstration-project DAO smart contract got drained, crypto price swings are ten times those of the world’s most mismanaged currencies, and bitcoin, the “killer app” of crypto transparency, is almost certainly artificially propped up by fake transactions involving billions of literally imaginary dollars.
+
+
+How exactly does blockchain stop this guy from spraying pesticides?
+Blockchain systems do not magically make the data in them accurate or the people entering the data trustworthy, they merely enable you to audit whether it has been tampered with. A person who sprayed pesticides on a mango can still enter onto a blockchain system that the mangoes were organic. A corrupt government can create a blockchain system to count the votes and just allocate an extra million addresses to their cronies. An investment fund whose charter is written in software can still misallocate funds.”
+
+Blockchain is not only crappy technology but a bad vision for the future
+https://medium.com/@kaistinchcombe/decentralized-and-trustless-crypto-paradise-is-actually-a-medieval-hellhole-c1ca122efdec
+
+
 ### Dot-terminating domain names for domain blacklisting
 
 A quick one to start with: Sucuri has an excellent [blog post](https://blog.sucuri.net/2018/07/coinimp-cryptominer-and-fully-qualified-domain-names.html) regarding the use of dot-terminated domain names to bypass domain blacklists. It's a cute trick, and yet another example of why blacklists are a fragile security measure.
