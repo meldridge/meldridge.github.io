@@ -1,3 +1,10 @@
+
+[Experts criticize West Virginia’s plan for smartphone voting](https://arstechnica.com/tech-policy/2018/08/experts-criticize-west-virginias-plan-for-smartphone-voting/)
+
+>Advocates of online voting point out that people perform sensitive financial operations over the Internet all the time. But the difference is that financial networks keep records of all transactions that are available for inspection by both customers and banks. By contrast, our election system is based on the principle of the secret ballot, which rules out the kind of after-the-fact auditing that helps secure financial networks.
+
+
+
 Online voting is one of the hardest problems in computer science
 
 If you have an IT background you might be wondering what the difficulty is. after all, can’t you just make a website like this?

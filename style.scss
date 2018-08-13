@@ -331,6 +331,13 @@ nav {
 footer {
   padding: 20px 0;
   text-align: center;
+  color: $gray;
+}
+
+.newsletter-description {
+  padding: 20px 0;
+  text-align: center;
+  color: $gray;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
