@@ -5,9 +5,25 @@ title:
 
 Good morning.
 
-Today's article is all about Blockchain. Some of you may be getting sick of this topic (I don't blame you!), so feel free to skip to the last story.
+### Matt Tait, and technical literacy vs fluency
 
-https://www.weeklystandard.com/haley-byrd/this-former-british-spy-exposed-the-russian-hackers
+Some more catch-up articles today, starting with [this excellent piece from The Weekly Standard](https://www.weeklystandard.com/haley-byrd/this-former-british-spy-exposed-the-russian-hackers) on former GCHQ operator Matt Tait, who goes by the handle ['pwnallthethings'](https://twitter.com/pwnallthethings) on Twitter.
+
+Later in the article is some information regarding Tait's current position:
+
+>Today, Tait is a professor at the University of Texas at Austin’s Strauss Center for International Security and Law, where he teaches a graduate course, “Cybersecurity Foundations: Introduction to the Relevant Technology for Law and Policy.”
+>
+>He describes the class as “a technical course for students who are not technical” that tackles questions including why cybersecurity vulnerabilities exist, why developers create vulnerabilities, how software can be defended, and how to clean up after someone has broken into a system. Tait notes that his material does not make moral judgments—“It’s not saying hackers are good and defenders are bad, because of course, depending on the context, it might be the other way ’round.”
+>
+>The objective is for students to become better prepared if and when they encounter cybersecurity issues in the professional world.
+>
+>“Matt Tait is almost unique in his ability to speak to all of these audiences very intelligently,” says Chesney, who also serves as director of the Strauss Center. “Maybe it’s his wonderful accent, maybe it’s the personal charm. He’s a very friendly, funny, and positive person, and those are qualities that make for great teaching on any subject.” Chesney argues there is a need for students to gain a firm grasp of the fundamentals of cybersecurity. “They need literacy, not fluency. Fluency is great, but we just need lawyers and policymakers to be literate,” he says.
+
+This last part touches on a theme we've [covered](https://markeldo.com/Email-update-Tweetstorms-Technical-vs-management-and-blockchain-authentication/) [previously](https://markeldo.com/Email-update-Australian-Digital-Government-Report-and-myGovID/): a lack of technical proficiency in policy and project management, which manifests in problems all throughout Government.
+
+The last quote from Chesney—*literacy*, versus *fluency*—is an excellent way to articulate the problem. We could some courses like Tait's in Australia.
+
+On a related note:
 
 ### Blockchain: hype meets reality
 
@@ -36,10 +52,18 @@ collectively, to the tune of 4 gigawatts of energy expenditure, could be
 accomplished in a centralized system by a Raspberry Pi hooked to the
 Internet by a 28.8kbps modem.
 
+This is the dirty secret of blockchain: unless you have very, *very* specific requirements for distributed trust—and really only cryptocurrencies are in this category—it's a worse solution than a traditional database on almost every conceivable metric.
+
+The sheer level of hype surrounding cryptocurrencies and blockchain seems to have convinced people that blockchain is a sort of "Internet 2.0".
+
+Sure enough, reality is starting to catch up to the hype. From [Bloomberg](https://www.bloomberg.com/news/articles/2018-07-31/blockchain-once-seen-as-a-corporate-cure-all-suffers-slowdown):
+
+>A number of software projects based on the distributed ledger technology will be wound down this year, according to Forrester Research Inc. And some companies pushing ahead with pilot tests are scaling back their ambitions and timelines. In 90 percent of cases, the experiments will never become part of a company’s operations, the firm estimates. [...]
+>
+>“The disconnect between the hype and the reality is significant -- I’ve never seen anything like it,” said Rajesh Kandaswamy, an analyst at Gartner Inc. “In terms of actual production use, it’s very rare.”
+
 ### Offensive Security now requiring webcam for OSCP exam attempts
 
-A final quick story which will be of interest to some of you: Offensive Security is now requiring proctoring via webcam for all OSCP exam attempts, to combat an increase in cheating by people paying others to sit the exam for them. Apparently the going rate was around 500 USD, which is pretty cheap all things considered (the exam is 24-hours long). 
+A final quick story which will be of interest to some of you: Offensive Security is now [requiring proctoring via webcam](https://www.offensive-security.com/offsec/proctoring/) for all OSCP exam attempts, to combat an increase in cheating by people paying others to sit the exam for them. Apparently the going rate was around 500 USD, which is pretty cheap all things considered (the exam is 24-hours long). 
 
-Unfortunately this was inevitable
-
-https://www.offensive-security.com/offsec/proctoring/
+Unfortunately this change was inevitable. The OSCP has became a well-regarded cert for technical security roles (and required for some pentesting positions), and this will always lead to cheating if people think they can get away with it.
