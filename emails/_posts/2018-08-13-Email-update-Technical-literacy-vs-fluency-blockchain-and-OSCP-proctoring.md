@@ -1,6 +1,7 @@
 ---
 layout: email
 title: Technical literacy vs fluency, blockchain, and OSCP proctoring
+image: "/images/bitcoin-bitmain.jpg"
 ---
 
 Good morning.
