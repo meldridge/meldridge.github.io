@@ -99,3 +99,8 @@ network and segmenting accordingly.
 
 "Containment is the name of the game. Not prevention. The compromise is
 inevitable and the routes are legion. It is going to happen."
+
+
+## Admin permissions on Windows systems
+
+[![](/images/swift-administrator.PNG)](https://twitter.com/SwiftOnSecurity/status/1031592610622832640)
