@@ -1,22 +1,29 @@
-# Security is a trade-off
+---
+layout: post
+title: Security is a Trade-off
+image: "/images/security-trade-off.png"
+excerpt: Trade-offs and compromises occur everywhere in engineering. The real skill in engineering is determine which compromises to make, and when, in order to meet the design requirements of whatever you are building.
+---
 
-Everything we do in the information security industry is a trade-off between convenience (or productivity) and security. 
+# Security is a Trade-off
 
-Whenever we make a decision to increase the security of a system, we are making a compromise between pure convenience (zero security) and pure security (zero convenience). 
+Trade-offs and compromises occur everywhere in engineering. The real skill in engineering is determine which compromises to make, and when, in order to meet the design requirements of whatever you are building.
 
-There are obviously plenty of occasions where a (poor) design decision can result in sub-optimal outcomes for *both* convenience and security, but for the sake of this post let's leave them aside. 
-
-This isn't to downplay those cases—there are *plenty* of real-world examples where systems are both inconvenient to use and also horribly insecure, and fixing them is the low-hanging fruit of our industry— but putting too much attention on them can let us avoid confronting the very real trade-offs we will inevitably have to make when we encounter a system where we have to make a choice between one or the other.
-
-Failure to make these 
-
-Trade-offs occur everywhere in engineering. One example is [leverage](https://en.wikipedia.org/wiki/Lever). Leverage lets us amplify a small force, by applying it at the end of a long lever. The trade-off is that this force amplification requires the lever to begin with, which means we need a lot more space to work in - space for the lever itself, and space to move it.
+Take [leverage](https://en.wikipedia.org/wiki/Lever) for example. Leverage lets us amplify a small force, by applying it at the end of a long lever. This is extremely useful, because it means we move very large objects using a lever with a much lower force than if we applied the force directly.
 
 ![Leverage](/images/Leverage.jpg)
 
-Where this becpmes 
+The trade-off for this is that we need a lot more space to work in: space for the lever itself, and space to move it. The larger the force amplification, the longer the lever required, and the further we need to move it. 
 
-The real skill in engineering is determine which compromises to make, and when, in order to meet the design requirements of whatever you are building.
+If you have unlimited space, this isn't a problem. If you're working in a confined area, it might make using a lever completely impossible.
+
+## Convenience vs Security
+
+Everything we do in the information security industry is a trade-off between convenience and security. Whenever we make a decision to increase the security of a system, we are making a compromise between pure convenience (zero security) and pure security (zero convenience).
+
+There are obviously [plenty of occasions](https://www.ncsc.gov.uk/articles/problems-forcing-regular-password-expiry) where a poor design decision can result in bad outcomes for both convenience *and* security: it's easy to find examples of systems which are inconvenient to use and also horribly insecure.
+
+Fixing these systems is the low-hanging fruit of our industry (and makes for easy wins) but putting too much attention on them can let us avoid confronting the very real trade-offs we will inevitably have to make when we encounter a system where we can't have it both ways.
 
 ## How long should a password be?
 
@@ -26,66 +33,57 @@ _**If I need to secure something with a password that only I know, how long shou
 
 Answer:  
 a) Three digits (`"326"`)  
-b) 12 characters, alphanumeric and symbols (`"MyPassword!1"`)  
-c) 64 hexadecimal characters (`"2dd6d6d4008e8f19a69be71f30e3c89641c9db4d3674590033790f6924be64ad"`)
+b) 12 characters, alphanumeric and symbols (`"JasperTato!7"`)  
+c) 32 hexadecimal characters (`"41c9db4d3674590033790f6924be64ad"`)
 
-If you enter this question into Google, you'll get a lot of answers tailored to online accounts (email, Facebook, Twitter, etc), and some will look like answer b) above.
+Of course, this is a trick question: the correct answer is that **it depends on what you're trying to secure, and who you're trying to secure it from**.
 
-Of course, this is a trick question. The correct answer is:
+## Know your threat model
 
-**It depends on what you're trying to secure, and who you're trying to secure it from**.
+In very simple terms, a *threat model* is a combination of two pieces of knowledge:
+1. What you are trying to protect from attack
+2. What sort of person is likely to attack it
 
-## First, know your threat model
+One example: I have a medicine cupboard at ground-level in my house, and I want to prevent my children from accessing it. For this threat model, I decide to use a combination lock with a three-digit code (answer 'a' above).
 
-In very simple terms, a *threat model* is a combination of the following two pieces of knowledge:
-- What you are trying to protect
-- What sort of attacker is likely to attack it
+Another: I need a password to protect my personal email account, and I want to prevent criminal groups from trivially guessing it. In this case, I decide to use a 12+ character password, ideally a phrase I can easily remember but which can't be easily guessed (answer 'b').
 
-For example: I have a medicine cupboard at ground-level, and I want to prevent my children from accessing it. 
+Finally: I need to encrypt a file for 20+ years, and I need it to be secure from even a government agency with access to billions of dollars worth of computing power. Along with a [good encryption method](https://stackoverflow.com/questions/28247821/openssl-vs-gpg-for-encrypting-off-site-backups), I use a 32-character alphanumeric password (answer 'c').
 
-For this threat model, I decide to use a combination lock with a three-digit code.
+Why the difference? It might seem obvious, but that's because we tend to do the threat modelling intuitively. *Obviously* I shouldn't use a 3-digit code for my email account (even if the service allowed me to). *Obviously* I don't need a 12+ character password protecting the medicine cupboard.
 
+We've made a compromise between convenience and security, without really thinking about it.
 
-To meet my security objective—stop the children getting into the cupboard—I have a few options: I could move the cupboard higher where it's out of reach from a child, or I could put a lock on it.
+## The security spectrum
 
+Continuing with the password examples, let's look at 'convenience' vs 'security' as if they were a spectrum: one extreme representing maximum convenience (minimum security), and the other representing maximum security (minimum convenience).
 
-I'm trying to keep out my 6-year old kid from a medicine drawer, and my only option is a floor-level cupboard.
+![Security trade-offs in password practices](/images/security-trade-off-cropped.png)
+*Security is always a trade-off.*
 
-This can sound obvious, but 
+The most convenient password is not to have one at all, but let's assume we're being forced to pick *something*. In that case, the most convenient solution is to just use something ridiculously obvious for the password (like the word "`password`"), and use the same one for every service.
 
-*Briefly* describe threat modelling
-Convenience/Productivity
+This is very convenient—I never need to remember a password again—but is also incredibly insecure.
 
-(Example of a 3-digit PIN combination lock to keep out the kids)
-If your threat model is a 6-year old...
+On the other extreme, we have the best possible password security: I'm going to randomly generate 200 character passwords in my head for every service I use. I won't write them down (that would be less secure), so I have to memorise them all.
 
-A 3-digit pin is probably fine - a 6 year-old probably won’t be sitting there brute-forcing combinations
+Clearly, this isn't convenient or practical. There are a [handful](https://www.ndtv.com/india-news/21-year-old-memorises-70-000-pi-digits-sets-guinness-record-1226747) of people on the planet with a memory this good, but chances are you're not one of them. Even if you were, this is ridiculous overkill for nearly any application. Even the seed phrase for a bitcoin wallet—potentially holding millions of dollars—is usually 70-100 characters (roughly 12 words).
 
-![Security trade-offs in password practices](/images/security-trade-off.png)
+## Making the correct trade-off
 
-Security is always a trade-off between convenience and security
-In this case, on the right hand we have the best possible password security:
-I'm going to randomly generate 200 character passwords in my head for every service I use, and memorise them in my impossibly perfect memory
-Clearly, that's not convenient or practical. There might be three people on the planet who can pull that off, and the convenience trade-off is not worth it for the security benefit.
-Shortly down from that we have passwords written in a physical notebook and stored in a safe
-This is actually extremely secure - I can't hack a paper notebook over the internet
-But it's also extremely inconvenient. I have to type the passwords in manually (can't copy-paste from a notebook), and I won't have access to it if I need to log into something while I'm away from my safe. 
-I could take my notebook with me, but that would defeat the security benefit.
-On the other end of the spectrum - the left hand side, we have the worst possible security
-I'm going to use a single password for everything, and my password is "password".
-That's incredibly convenient: I never have to worry about passwords again! But I think we'd all agree that it's too much of a security tradeoff
-Most people are here.
-We tend to have 3 to 5 passwords that are moderately strong (though often too short), and we rotate them around with minor variations for every service
+When it comes to passwords, the majority of people are towards the red end of our spectrum diagram - the bit labelled "most users". [People tend to have a small handful of passwords](https://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/) which they use for absolutely everything, and they're frequently not very strong.
+
+If we want to fix this problem, we could generate random passwords for each service, write them in a physical notebook, and store them in a filing cabinet at home. Contrary to popular belief, [this quite a good method for storing passwords](https://www.troyhunt.com/password-managers-dont-have-to-be-perfect-they-just-have-to-be-better-than-not-having-one/). Your passwords are written down on paper, but anyone who wants to steal them needs to physically break into your house—a much bigger ask than just guessing `"Password123"` or `"Summer2018"` from the other side of the world.
+
+The problem with the physical notebook solution is that it's inconvenient: every time I need to log into a service, I need to pull out the notebook, and I can't copy-paste. If I need to log into something while I'm away from home, I need to bring the notebook with me. Very quickly, we'll end up sliding down that spectrum towards the "insecure" end, because our original solution was too inconvenient.
+
+## Use a password manager
+
+The correct trade-off for most people is to use a [Password Manager](https://en.wikipedia.org/wiki/Password_manager). 
 
 You want to be here. Use a password manager, use it to generate unique passwords for everything, and then you only need to remember your master password.
 This is the correct tradeoff of security and convenience for the vast majority of people.
 
-
-This isn’t a new concept - engineering is build around the concept of trade offs - but not understanding it is the root of many disagreements I seee online. 
-
-“You should use PGP, it’s more secure!”
-
-Etc
 
 ### Links
 
