@@ -5,6 +5,28 @@
 
 
 
+### CDNs, DDoS mitigation, and MITM-as-a-service
+
+https://troyhunt.com/cloudflare-ssl-and-unhealthy-security-absolutism/
+
+Should maybe save this for the online voting post?
+
+using a CDN like cloudflare is a good idea for most websites
+
+can provide TLS
+
+sifnificantly improve loadntikes for users and reduce bandwidth costs for you
+
+remember how a CDN works
+they are a reverse proxy for all incoming connections, and TLS connections are terminated there
+
+Still important to remember that there is a trade-off here: it’s just one which most websites are justified in making - their threat model is one where the trade-off is the right decision. 
+
+Trade-off 
+
+
+
+
 Online voting is one of the hardest problems in computer science
 
 If you have an IT background you might be wondering what the difficulty is. after all, can’t you just make a website like this?
