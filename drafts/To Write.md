@@ -1,24 +1,10 @@
 
-https://arstechnica.com/information-technology/2018/07/a-225-gps-spoofer-can-send-autonomous-vehicles-into-oncoming-traffic/
-
-
-https://washingtonpost.com/news/powerpost/paloma/the-cybersecurity-202/2018/05/21/the-cybersecurity-202-we-surveyed-100-security-experts-almost-all-said-state-election-systems-were-vulnerable/5b0189b030fb0425887995e2/?noredirect=on&utm_term=.e6e6d4e643f1
-
-
-http://www.metzdowd.com/pipermail/cryptography/2018-February/033788.html/
 
 https://www.contextis.com/blog/frag-grenade-a-remote-code-execution-vulnerability-in-the-steam-client
 
 https://whisperlab.org/blog/2017/Trust-Implications-of-DDoS-Protection-in-Online-Elections.html
 
 http://cd.textfiles.com/cuteskunk/Unix-Hacking-Documents/improve_by_breakin.txt
-
-Patrick McKenzie @patio11
-"Accounting controls" has to be way, way up there on the list of "systemically important technologies that almost no one would say One Of The Most Important Things Ever Invented."
-
-This is about 60% of the reason why Bitcoin exchanges keep blowing up while everyone looks on.
-https://twitter.com/patio11/status/957469600681140226
-
 
 
 
