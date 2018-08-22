@@ -9,7 +9,7 @@ excerpt: Everything we do in the security industry is a trade-off between conven
 
 Trade-offs occur everywhere in engineering. Take [leverage](https://en.wikipedia.org/wiki/Lever) for example:
 
-<img src="/images/leverage.jpg" alt="Leverage" width="200"/>
+![Leverage](/images/leverage.jpg)
 
 Leverage allows us to amplify a small force, by applying it at the end of a long lever. This is extremely useful, because it means we can move very large objects with much less effort than if we applied the force directly.
 
