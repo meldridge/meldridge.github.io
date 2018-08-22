@@ -2,7 +2,7 @@
 layout: post
 title: Security is always a Trade-off
 image: "/images/security-trade-off.png"
-excerpt: Everything we do in the security industry is a trade-off between convenience and security.
+excerpt: Everything we do in the security industry is a trade-off between convenience and security. The important thing is to be honest about the compromises you are making, and why they are necessary.
 ---
 
 # Security is always a Trade-off
