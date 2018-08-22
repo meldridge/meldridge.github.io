@@ -13,9 +13,9 @@ Trade-offs occur everywhere in engineering. Take [leverage](https://en.wikipedia
 
 Leverage allows us to amplify a small force, by applying it at the end of a long lever. This is extremely useful, because it means we can move very large objects with much less effort than if we applied the force directly.
 
-This might seem like a free win, but it isn't. The trade-off is that we need more space to work in: more space for the lever, and more space to move it. If you have unlimited space, this isn't a problem. If you're working in a confined area, it might make using a lever completely impossible.
+This might seem like a free win, but it isn't. The trade-off is that we need more space to work in: more space for the lever, and more space to move it. If you have unlimited space, this isn't a problem. If you're working in a confined area, it might make using a lever impossible.
 
-The real skill in engineering is knowing which trade-offs to make, and when, in order to meet the design requirements of whatever you are building.
+Engineering always involves compromises. The real skill is in knowing which trade-offs to make, and when, in order to meet the design requirements of whatever you are building.
 
 ## Convenience vs Security
 
@@ -23,25 +23,21 @@ Everything we do in the security industry is a trade-off between convenience and
 
 The latter is what I like to call the *"turn everything off and go home"* approach to security: after all, you can't remotely hack a server if it's always off, and no one can steal your corporate information if you never do any work!
 
-This is an extreme example, but we see trade-offs everywhere. Having to lock your computer every time you leave your office desk is inconvenient, but most organisations accept it as a necessary security precaution. Spam filtering can end up blocking legitimate email, but we see it as a worthwhile risk given the alternative.
+This is an extreme example, but you encounter this trade-off everywhere. Having to lock your computer every time you leave your office desk is inconvenient, but most organisations accept it as a necessary security precaution. Spam filtering can end up blocking legitimate email, but we see it as a worthwhile risk given the alternative.
 
 There are also plenty of occasions where a system is designed poorly enough that it ends up being both inconvenient to use *and*  insecure. These are the low-hanging fruit in our industry (everyone likes a win-win), but focusing on them can make us complacent. Eventually we'll run into a problem where we can't have it both ways: we have to make a trade-off between convenience and security.
 
-Even once we've made our decision, it gets more complicated, because making a security solution too inconvenient can be counterproductive. If it's too much hassle to follow a security policy or use a system correctly, people will work around it -  especially if they don't agree with the requirement or understand why it's necessary.
+Even once we've made our decision, it gets more complicated, because making a security solution overly inconvenient tends to backfire. If it's too much hassle to follow a security policy or to use a system correctly, people will work around it - especially if they don't agree with the requirement or understand why it's necessary.
 
 They simply disagree with the trade-off you've made, and [they're correcting it for you](https://twitter.com/SwiftOnSecurity/status/1002383281550233601). 
 
-[IMAGE OF GOLDBLUM]
-*Life finds a way.*
-
 ## The security spectrum
 
-Continuing with the password examples, lets assume we're trying to protect our online accounts. I have roughly 400 of them: everything from Google and Facebook through to my local gym and tiny online merchants I only used once.
+We also have to deal with this trade-off in our personal lives. For example, lets assume we're trying to protect our online accounts. I have roughly 400 of them: everything from Google and Facebook through to my local gym and tiny online merchants I only used once.
 
-Let's also look at convenience and security as if they were a spectrum: one extreme representing maximum convenience (minimum security), and the other representing maximum security (minimum convenience).
+In this example, we can look at convenience and security as if they were a spectrum: one extreme representing maximum convenience (minimum security), and the other representing maximum security (minimum convenience).
 
-![Security trade-offs in password practices](/images/security-trade-off-cropped.png)
-*Security is always a trade-off.*
+![Security trade-offs in password practices](/images/security-trade-off.png)
 
 The most convenient password is not to have one at all, but let's assume we're being forced to pick *something*. In that case, the easiest solution is to just use something ridiculously obvious for the password (like the word "`password`"), and use the same one for every service.
 
