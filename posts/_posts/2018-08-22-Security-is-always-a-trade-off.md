@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Security is always a Trade-off
-image: "/images/security-trade-off.png"
+image: "/images/security-trade-off-cropped.png"
 excerpt: Everything we do in the security industry is a trade-off between convenience and security. The important thing is to be honest about the compromises you are making, and why they are necessary.
 ---
 
@@ -13,7 +13,7 @@ Leverage allows us to amplify a small force, by applying it at the end of a long
 
 This might seem like a free win, but the trade-off is that we need more space to work in: more space for the lever, and more space to move it. If you have unlimited space, this isn't a problem. If you're working in a confined area, it might make using a lever impossible.
 
-Engineering always involves compromises. The real skill is in knowing which trade-offs to make, and when, in order to meet the design requirements of whatever you are building.
+Engineering always involves compromises. The real skill is in knowing which ones to make, and when, in order to meet the design requirements of whatever you are building.
 
 ## Convenience vs Security
 
@@ -31,7 +31,7 @@ Cormac Herley from Microsoft Research wrote a seminal paper on this topic [back 
 
 >It is often suggested that users are hopelessly lazy and unmotivated on security questions. They chose weak passwords, ignore security warnings, and are oblivious to certificates errors. We argue that users’ rejection of the security advice they receive is entirely rational from an economic perspective. The advice offers to shield them from the direct costs of attacks, but burdens them with far greater indirect costs in the form of effort.
 
-If it's too much hassle to follow a security policy or to use a system correctly, people will work around it - especially if they don't agree with the requirement or understand why it's necessary.
+If it's too much hassle to follow a security policy or to use a system correctly, people will work around it. This is especially true if they don't appreciate the requirement or understand why it's necessary.
 
 They simply disagree with the trade-off you've made, and [they're correcting it for you](https://twitter.com/SwiftOnSecurity/status/1002383281550233601). 
 
