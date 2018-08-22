@@ -25,7 +25,7 @@ This is an extreme example, but you encounter this trade-off everywhere. Having 
 
 There are also plenty of occasions where a system is designed poorly enough that it ends up being both inconvenient to use *and*  insecure. These are the low-hanging fruit in our industry (everyone likes a win-win), but focusing on them can make us complacent. Eventually we'll run into a problem where we can't have it both ways: we have to make a trade-off between convenience and security.
 
-Even once we've made our decision, it gets more complicated, because making a security solution overly inconvenient tends to backfire. 
+Even once we've made our decision, it gets more complicated. We might have selected the correct trade-off for our system, but our users might not agree—and making a security solution inconvenient for users tends to backfire. 
 
 Cormac Herley from Microsoft Research wrote a seminal paper on this topic [back in 2009](https://www.nspw.org/2009/proceedings/2009/nspw2009-herley.pdf):
 
