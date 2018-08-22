@@ -11,7 +11,7 @@ Trade-offs occur everywhere in engineering. Take [leverage](https://en.wikipedia
 
 ![Leverage](/images/Leverage.jpg)
 
-Leverage allows us to amplify a small force, by applying it at the end of a long lever. This is extremely useful, because it means we move very large objects with much less effort than if we applied the force directly.
+Leverage allows us to amplify a small force, by applying it at the end of a long lever. This is extremely useful, because it means we can move very large objects with much less effort than if we applied the force directly.
 
 This might seem like a free win, but it isn't. The trade-off is that we need more space to work in: more space for the lever, and more space to move it. If you have unlimited space, this isn't a problem. If you're working in a confined area, it might make using a lever completely impossible.
 
