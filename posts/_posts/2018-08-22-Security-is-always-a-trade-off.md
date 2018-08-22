@@ -5,8 +5,6 @@ image: "/images/security-trade-off.png"
 excerpt: Everything we do in the security industry is a trade-off between convenience and security. The important thing is to be honest about the compromises you are making, and why they are necessary.
 ---
 
-# Security is always a Trade-off
-
 Trade-offs occur everywhere in engineering. Take [leverage](https://en.wikipedia.org/wiki/Lever) for example:
 
 ![Leverage](/images/leverage.jpg)
