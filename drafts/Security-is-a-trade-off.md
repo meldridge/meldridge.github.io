@@ -50,7 +50,7 @@ Clearly, this isn't convenient or practical. There are a [handful](https://www.n
 
 ## Making the correct trade-off
 
-When it comes to passwords, the majority of users are at the red end of our spectrum. [People tend to have a small handful of passwords which they use for absolutely everything](https://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/), and they're frequently not very strong.
+When it comes to passwords, the majority of users are at the red end of our spectrum. [People tend to have a small handful of passwords which they use for absolutely everything](https://nakedsecurity.sophos.com/2013/04/23/users-same-password-most-websites/), and they're usually not very good.
 
 On the other end of the spectrum, if I want to make the "random passwords" method a bit more practical, I can write them in a physical notebook, and store them in a drawer at home. Contrary to popular belief, [this is quite a good method for storing passwords](https://www.troyhunt.com/password-managers-dont-have-to-be-perfect-they-just-have-to-be-better-than-not-having-one/). Anyone who wants to steal my notebook needs to physically break into my house, which significantly cuts down the number of attackers I need to worry about.
 
@@ -68,15 +68,13 @@ Everything is a trade-off in engineering, but for this particular problem, it's 
 
 Of course, there are many other factors to consider: such as the fact that not everyone rates convenience the same way. For me, using a physical notebook for my passwords is incredibly convenient. For someone who isn't confident with technology or doesn't want to pay for a password manager, and who only logs into their accounts from their home desktop, it's a different equation.
 
-## Be explicit about the trade-offs you are making
+## Be honest about the trade-offs you are making
 
-This is a fairly contrived example. The convenience downside of using a password manager is not particularly significant for most people (modern password managers are very good), so this solution comes close to being a win-win.
+This is a fairly contrived example. The convenience downside of using a password manager is not too significant for most people (modern password managers are very good), so this solution comes close to being a win-win.
 
-The difficulty in security is when it's not quite this simple, and the convenience compromise is more obvious (and painful). 
+The difficulty in security is when it's not quite this simple, and the convenience compromise is more obvious and painful for the user. 
 
 When this happens, it's important to be honest and transparent about the trade-off you have decided to make. Users know that security improvements often mean jumping through more hoops. If they think you're not being honest with them, you'll just make things more difficult.
-
-## Show them how to hack
 
 Sometimes this can also mean being better at articulating the risk you're trying to mitigate. For most users, "hacking" is something which happens to other people or in movies, and it's treated as a magical power. In reality, being a [script kiddie](https://en.wikipedia.org/wiki/Script_kiddie) has never been easier, and even moderately skilled hackers can completely upend a company using freely accessible tools. This stuff isn't as hard as hollywood makes it look.
 
