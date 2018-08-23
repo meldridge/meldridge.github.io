@@ -79,10 +79,10 @@ Everything is a trade-off in engineering, but for this particular problem, it's 
 
 For most people, using a password manager is a very easy compromise to make. Modern password managers are very convenient, so this solution comes close to being a win-win.
 
-Security decisions become much more difficult when the convenience downside is obvious and painful for the user, but the change is nevertheless justified by the security improvement you are making.[^2]
+Security decisions become much more difficult when the convenience downside is obvious and painful for the user, but the change is nevertheless justified by the security improvement.[^2]
 
 [^2]: Removing administrative privileges from users is a very common example of this, particularly for development teams and other technical employees.
 
-When this happens, it's important to be honest and transparent about the trade-off you are making. Users know that security improvements often mean jumping through more hoops, and that increasing security usually makes their life more difficult. If they think you're not being honest with them, or if you haven't properly explained why the compromise is necessary, you'll encounter much more resistance.
+When this happens, it's important to be honest and transparent about the trade-off you are making. Users know that security improvements usually make their life more difficult. If they think you're not being honest with them, or if you haven't properly explained why the compromise is necessary, you'll encounter much more resistance.
 
 There's always a trade-off. If we want people to sacrifice convenience for security, it's important to be honest about the downside, and properly articulate why it's worth it.

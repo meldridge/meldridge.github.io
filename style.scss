@@ -325,11 +325,11 @@ nav {
     padding: 3px;
 //    text-decoration: underline;
 
-    a::before {
+    a:before {
       content: "[";
     }
     
-    a::after {
+    a:after {
       content: "]";
     }
   }
