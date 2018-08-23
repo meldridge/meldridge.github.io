@@ -63,7 +63,7 @@ On the other end of the spectrum, if I want to make the "random passwords" metho
 
 The problem with the physical notebook solution is that it's inconvenient: every time I need to log into a service, I need to get my notebook out of the drawer, and I can't copy-paste. If I need to log into something while I'm away from home, I need to bring the notebook with me. Very quickly, I'll end up sliding down that spectrum by making compromises, because the solution was too much of a pain to use consistently.[^1]
 
-[^1]: Note that perception of 'convenience' will differ. For me, using a physical notebook for my passwords is incredibly inconvenient. For someone who isn't confident with technology or doesn't want to pay for a password manager, and who only logs into their accounts from their home desktop, it's a different equation.
+[^1]: Remember that perception of 'convenience' will differ. For me, using a physical notebook for my passwords is incredibly inconvenient. For someone who isn't confident with technology or doesn't want to pay for a password manager, and who only logs into their accounts from their home desktop, it's a different equation.
 
 Again: overly inconvenient solutions tend to be self-correcting, to the detriment of security.
 
@@ -77,7 +77,7 @@ Everything is a trade-off in engineering, but for this particular problem, it's 
 
 ## Be honest about the trade-offs you are making
 
-For most people, using a password manager is a very easy compromise to make. Modern password managers are very convenient, so this solution comes close to being a win-win.
+For most people, using a password manager is an easy compromise to make. Modern password managers are very convenient, so this solution comes close to being a win-win.
 
 Security decisions become much more difficult when the convenience downside is obvious and painful for the user, but the change is nevertheless justified by the security improvement.[^2]
 
