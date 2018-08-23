@@ -321,9 +321,14 @@ nav {
     background: $lightGray
   }
   
+  footnote {
+    padding: 3px;
+    text-decoration: underline;
+  }
+  
   .footnotes {
     color: $gray;
-    padding-top: 1em;
+    padding-top: 0.75em;
     font-size: 14px;
   }
 
