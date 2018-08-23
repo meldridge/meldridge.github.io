@@ -77,7 +77,7 @@ Everything is a trade-off in engineering, but for this particular problem, it's 
 
 ## Be honest about the trade-offs you are making
 
-The convenience downside of using a password manager is not too significant for most people (modern password managers are very good), so this solution comes close to being a win-win.
+For most people, using a password manager is a very easy compromise to make. Modern password managers are very convenient, so this solution comes close to being a win-win.
 
 Security decisions become much more difficult when the convenience downside is obvious and painful for the user, but the change is nevertheless justified by the security improvement you are making.[^2]
 

@@ -324,6 +324,14 @@ nav {
   .footnote {
     padding: 3px;
 //    text-decoration: underline;
+
+    a::before {
+      content: "[";
+    }
+    
+    a::after {
+      content: "]";
+    }
   }
   
   .footnotes {
