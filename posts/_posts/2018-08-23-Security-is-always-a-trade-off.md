@@ -7,7 +7,7 @@ excerpt: Everything we do in the security industry is a trade-off between conven
 
 Trade-offs occur everywhere in engineering. Take [leverage](https://en.wikipedia.org/wiki/Lever) for example:
 
-<img src="/images/leverage.jpg" alt="Leverage" style="width: 80%; display: block; margin-left: auto; margin-right: auto"/>
+<img src="/images/leverage.jpg" alt="Leverage" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto"/>
 
 Leverage allows us to amplify a small force, by applying it at the end of a long lever. This is extremely useful, because it means we can move very large objects with much less effort than if we applied the force directly.
 
@@ -21,7 +21,7 @@ Everything we do in the security industry is a trade-off between convenience and
 
 The latter is what I like to call the *"turn everything off and go home"* approach to security: 
 
-<img src="/images/meme-cant-get-hacked2.jpg" alt="Can't get hacked if everything is off" style="width: 80%; display: block; margin-left: auto; margin-right: auto"/>
+<img src="/images/meme-cant-get-hacked2.jpg" alt="Can't get hacked if everything is off" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto"/>
 <em>Problem solved.</em>
 
 After all, you can't remotely hack a server if it's always off, and no one can steal your corporate information if you never do any work!
