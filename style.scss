@@ -325,13 +325,12 @@ nav {
     padding: 3px;
 //    text-decoration: underline;
 
-    ::before {
+  a.footnote::before {
       content: "[";
-    }
+  }
     
-    ::after {
+  a.footnote::after {
       content: "]";
-    }
   }
   
   .footnotes {
