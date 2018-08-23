@@ -7,11 +7,11 @@ excerpt: Everything we do in the security industry is a trade-off between conven
 
 Trade-offs occur everywhere in engineering. Take [leverage](https://en.wikipedia.org/wiki/Lever) for example:
 
-<img src="/images/leverage.jpg" alt="Leverage" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto"/>
+<img src="/images/leverage.jpg" alt="Leverage" style="width: 80%; max-width: 600px; display: block; margin: 0 auto;"/>
 
 Leverage allows us to amplify a small force, by applying it at the end of a long lever. This is extremely useful, because it means we can move very large objects with much less effort than if we applied the force directly.
 
-This might seem like a free win, but the trade-off is that we need more space to work in: more space for the lever, and more space to move it. If you have unlimited space, this isn't a problem. If you're working in a confined area, it might make using a lever impossible.
+This might seem like a free win, but the trade-off is that we need more space to work in: more space for the lever, and more space to move it. If you have plenty of space, this isn't a problem. If you're working in a confined area, it might make using a lever impossible.
 
 Engineering always involves compromises. The real skill is in knowing which ones to make, and when, in order to meet the design requirements of whatever you are building.
 
@@ -19,14 +19,12 @@ Engineering always involves compromises. The real skill is in knowing which ones
 
 Everything we do in the security industry is a trade-off between convenience and security. Whenever we design a system, we are making a compromise between pure convenience (zero security) and pure security (zero convenience). 
 
-The latter is what I like to call the *"turn everything off and go home"* approach to security: 
+The latter is what I like to call the *"turn everything off and go home"* approach to security. After all, you can't remotely hack a server if it's always off, and no one can steal your corporate information if you never do any work! 
 
-<img src="/images/meme-cant-get-hacked2.jpg" alt="Can't get hacked if everything is off" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto"/>
+<img src="/images/meme-cant-get-hacked2.jpg" alt="Can't get hacked if everything is off" style="width: 80%; max-width: 600px; display: block; margin: 0 auto; "/>
 <em>Problem solved.</em>
 
-After all, you can't remotely hack a server if it's always off, and no one can steal your corporate information if you never do any work!
-
-This is an extreme example, but we're all familiar with compromising convenience for security. Having to lock your computer is annoying, but we accept it as a necessary security precaution. Spam filtering can end up blocking legitimate email, but we see it as a worthwhile risk given the alternative.
+This is an extreme example, but we're all familiar with compromising convenience for security. Having to lock your computer is annoying, but we accept it as a necessary security precaution. Legitimate email gets caught in spam folders, but we still see the filtering as worthwhile.
 
 There are also plenty of occasions where a system is designed so poorly that it ends up being both inconvenient to use *and*  insecure. These are the low-hanging fruit in our industry (everyone likes a win-win), but focusing on these cases can make us complacent. Eventually we'll run into a problem where we can't have it both ways: we have to make a trade-off between convenience and security.
 
