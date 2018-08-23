@@ -123,6 +123,7 @@ em, i {
 img + em {
   display: block;
   font-style: italic;
+  font-size: 15px;
   text-align: center;
   color: $gray;
 }
@@ -324,6 +325,7 @@ nav {
   a.footnote {
     padding: 3px;
 //    text-decoration: underline;
+  }
 
   a.footnote::before {
       content: "[";
