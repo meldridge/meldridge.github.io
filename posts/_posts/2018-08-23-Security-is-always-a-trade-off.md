@@ -71,15 +71,15 @@ The correct trade-off for most people is to use a [Password Manager](https://en.
 
 The concept of a password manager is very simple: you only need to remember one password, which then unlocks access to all of your other passwords. This means you can generate random and unique passwords for every service, and still have the convenience of having easy access to them.
 
-This is still a compromise, of course. Compared with the notebook method, trusting another service with my passwords reduces my security (especially if the notebook is stored in a safe when I'm not using it). Compared with using the same handful of passwords for everything, it's less convenient (especially if I have to pay for the Password Manager).
+This is still a compromise. Compared with the notebook method, trusting another service with my passwords reduces my security (especially if the notebook is stored in a safe when I'm not using it). Compared with using the same handful of passwords for everything, it's less convenient (especially if I have to pay for the Password Manager).
 
-Everything is a trade-off in engineering, but for this particular problem, it's the right one to make.
+Everything is a trade-off in engineering, but for this particular problem, it's the correct trade-off to make.
 
 ## Be honest about the trade-offs you are making
 
-This is a very simple example of the convenience/security trade-off. The convenience downside of using a password manager is not too significant for most people (modern password managers are very good), so this solution comes close to being a win-win.
+The convenience downside of using a password manager is not too significant for most people (modern password managers are very good), so this solution comes close to being a win-win.
 
-The difficulty comes when the convenience downside is more obvious and painful for the user, but the change is nevertheless justified by the security improvement you are making.[^2]
+Security decisions become much more difficult when the convenience downside is obvious and painful for the user, but the change is nevertheless justified by the security improvement you are making.[^2]
 
 [^2]: Removing administrative privileges from users is a very common example of this, particularly for development teams and other technical employees.
 

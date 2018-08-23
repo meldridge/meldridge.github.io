@@ -322,12 +322,9 @@ nav {
   }
   
   .footnotes {
-    p {
-      font-size: 15px;
-      color: $gray;
-      text-indent: -1em;
-      padding-left: 1em;
-    }
+    color: $gray;
+    padding-top: 1em;
+    font-size: 14px;
   }
 
   .comments {
