@@ -321,15 +321,15 @@ nav {
     background: $lightGray
   }
   
-  .footnote {
+  a.footnote {
     padding: 3px;
 //    text-decoration: underline;
 
-    a:before {
+    ::before {
       content: "[";
     }
     
-    a:after {
+    ::after {
       content: "]";
     }
   }
