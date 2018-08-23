@@ -88,6 +88,12 @@ a {
   }
 }
 
+sup {
+  line-height: 0px;
+  vertical-align: super;
+  font-size: smaller;
+}
+
 ul, ol {
   margin: 15px 0;
   padding-left: 30px;
@@ -313,6 +319,15 @@ nav {
     padding: 0.3em 1em 0.3em 1em;
     font-size: 15px;
     background: $lightGray
+  }
+  
+  .footnotes {
+    p {
+      font-size: 15px;
+      color: $gray
+      text-indent: -1em;
+      padding-left: 1em;
+    }
   }
 
   .comments {
