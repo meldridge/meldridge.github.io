@@ -9,9 +9,7 @@ My last email had problems rendering correctly on certain clients, notably Outlo
 
 ### Maersk and NotPeta
 
-Wired has published [an excellent long-form piece](https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/) on last year's NotPetya attack by Russia and how it wiped out the IT infrastructure of Maersk. We've covered the attack [extensively](https://www.google.com/search?q=notpetya+site%3Amarkeldo.com) in previous emails, and for good reason.
-
-We already knew that the attack forced Maersk to rebuild their entire IT environment from scratch. One amazing tidbit from this Wired story is that this including flying a technician to Nigeria to pick up an image of their only intact Domain Controller, which had survived by being off due to a power outage.
+Wired has published [an excellent long-form piece](https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/) on last year's NotPetya attack by Russia and how it wiped out the IT infrastructure of Maersk.
 
 As Ned Pyle [pointed out](https://twitter.com/NerdPyle/status/1032740918917386240), one excerpt in particular _"should be required reading for every C-suite and IT director on this planet"_:
 
