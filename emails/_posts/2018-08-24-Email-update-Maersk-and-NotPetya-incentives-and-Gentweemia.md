@@ -1,6 +1,6 @@
 ---
 layout: email
-title: 'Maersk and NotPetya, incentives, and "Gentweemia"'
+title: Maersk and NotPetya, incentives, and Gentweemia
 ---
 
 Good morning.
