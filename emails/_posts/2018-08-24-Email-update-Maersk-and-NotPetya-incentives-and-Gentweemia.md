@@ -1,6 +1,7 @@
 ---
 layout: email
 title: 'Maersk and NotPetya, incentives, and "Gentweemia"'
+image: ""
 ---
 
 Good morning.
