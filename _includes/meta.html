@@ -28,4 +28,7 @@
     {% if page.image %}
     <meta property="og:image" content="{{ page.image }}" />
     <meta property="twitter:image" content="{{ page.image }}" />
+    {% else %}
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="twitter:image" content="/images/logo.png" />
     {% endif %}
