@@ -10,7 +10,7 @@ Yesterday's email had problems rendering correctly on certain clients, notably O
 
 ## Maersk and NotPeta
 
-Wired has an [excellent long-form piece](https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/) on last year's NotPetya attack by Russia and how it completely wiped out the IT infrastructure of Maersk. 
+Wired has published [an excellent long-form piece](https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/) on last year's NotPetya attack by Russia and how it wiped out the IT infrastructure of Maersk. The attack forced Maersk to rebuild almost their entire IT environment from scratch, including flying technicians to 
 
 As Ned Pyle [pointed out](https://twitter.com/NerdPyle/status/1032740918917386240), one excerpt in particular "should be required reading for every C-suite and IT director on this planet".
 
