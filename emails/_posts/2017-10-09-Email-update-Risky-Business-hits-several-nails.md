@@ -13,7 +13,7 @@ First off the rank is Episode #470, which starts with a good discussion with [Na
 
 Haroon's main thesis from the latter discussion (direct timestamp link [here](https://overcast.fm/+IyHL5-3Q/45:00)) is that security teams need to improve their software engineering skills - actually building tools to fit in their company's production environments, rather than relying on vendor products to do the same. 
 
-He gives some excellent examples here: all of the best security teams from places like Facebook and Google have the software engineering expertise to write their own tools, and aren't reliant on black bock products from security vendors. There's a reason, for instance, that [osquery](https://osquery.io/) was spun out of an internal Facebook project.
+He gives some excellent examples here: all of the best security teams from places like Facebook and Google have the software engineering expertise to build their own security solutions, and aren't reliant on black box products from security vendors. There's a reason, for instance, that [osquery](https://osquery.io/) was spun out of an internal Facebook project.
 
 The general idea is that with sufficient in-house development skills, security teams can have the confidence to write their own tools and do things with their production environments which actually make a big difference to security. Historically this has been frowned upon, because the security vendors are experts in their field, and (the theory goes) you shouldn't re-invent the wheel by trying to duplicate their work in-house yourself.
 
