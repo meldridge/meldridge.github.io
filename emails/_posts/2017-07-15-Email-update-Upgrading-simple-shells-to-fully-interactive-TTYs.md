@@ -3,7 +3,7 @@ layout: email
 title: Upgrading simple shells to fully interactive TTYs
 ---
 
-A technical CATFACT for your Monday morning. This one is about converting limited shells to interactive ones: https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
+A technical CATFACT for your Monday morning. This one is about converting limited shells to interactive ones: [**Upgrading simple shells to fully interactive TTYs**](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
 
 Those of you who have done some pentesting will be familiar with some of these tricks. I hadn’t seen the “stty” method-it’s really neat and I need to try it.
 

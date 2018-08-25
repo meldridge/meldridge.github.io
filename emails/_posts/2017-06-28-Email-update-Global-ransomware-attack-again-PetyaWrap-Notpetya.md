@@ -7,7 +7,7 @@ Big news overnight. There’s another ransomware worm on the move, which appears
 
 Several places are calling it PetyaWrap, NotPetya, or (if they’re lazy) just Petya.
 
-https://threatpost.com/second-global-ransomware-outbreak-under-way/126549/
+[**Second Global Ransomware Outbreak Under Way**](https://threatpost.com/second-global-ransomware-outbreak-under-way/126549/)
 
 All of the below is based on early reverse-engineering from other sources, so take it with a hefty grain of salt. Detailed analysis is always difficult this early on.
 
@@ -50,7 +50,6 @@ Even if you’re fully patched, if you’re sitting on a network with someone el
 Here’s the best summary I’ve seen written so far, [by Dan Goodin at Ars Technica](https://arstechnica.com/security/2017/06/a-new-ransomware-outbreak-similar-to-wcry-is-shutting-down-computers-worldwide/): 
 
 >The malware attack, according to researchers at Kaspersky and AV provider F-Secure, uses a modified version of EternalBlue. Researchers from AV provider Eset said in an e-mail that the malware also used the PSExec command-line tool. The precise relationship among the various infection methods isn't yet clear. Eset said it appears the attacks use EternalBlue to get inside a network and then use PSExec to spread from machine to machine. "This dangerous combination may be the reason why this outbreak has spread globally and rapidly, even after the previous outbreaks have generated media headlines, and hopefully most vulnerabilities have been patched," an Eset researcher told Ars. "It only takes one unpatched computer to get inside the network, and the malware can get administrator rights and spread to other computers.
-
 
 and
 
