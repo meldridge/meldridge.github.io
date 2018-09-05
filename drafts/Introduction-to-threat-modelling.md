@@ -24,6 +24,6 @@ Another: I need a password to protect my personal email account, and I want to p
 
 Finally: I need to encrypt a file for 20+ years, and I need it to be secure from even a government agency with access to billions of dollars worth of computing power. Along with a good encryption method, I use a 32-character alphanumeric password (answer 'c').
 
-The differences in these answers seem obvious, because we tend to do basic threat modelling intuitively. *Obviously* I shouldn't use a 3-digit code for my email account (even if the service allowed me to). *Obviously* I don't need a 12+ character password protecting the medicine cupboard. *Obviously* neither of these is going to be good enough against the NSA.
+The differences in these answers seem obvious, because we tend to do basic threat modelling intuitively. *Obviously* I shouldn't use a 3-digit code for my email account (even if the service allowed me to). *Obviously* I don't need a 12+ character password protecting the medicine cupboard. *Obviously* neither of these is likely to be good enough against the NSA.
 
 We've made a compromise between convenience and security, without really thinking about it.
