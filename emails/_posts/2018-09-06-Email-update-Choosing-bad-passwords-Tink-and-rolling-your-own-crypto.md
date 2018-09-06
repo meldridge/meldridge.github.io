@@ -23,7 +23,7 @@ The [full report](https://audit.wa.gov.au/reports-and-publications/reports/infor
 
 Only a few days after the report was made public, Troy Hunt released a version of his [Pwned Passwords list](https://www.troyhunt.com/pwned-passwords-now-as-ntlm-hashes/) in NTLM hash format, which makes this sort of work significantly easier (no need to crack the hashes at all, just compare them with the list).
 
-Of course, rather than conducting another audit in 5 years time showing the same result, it would be much more effective for the agencies concerned to proactively prevent the use of these sorts of passwords—which is exactly what the Pwned Passwords list was intended for.
+Of course, rather than conducting another audit in 5 years time showing the same result, it would be much more effective for the agencies to proactively prevent the use of these sorts of passwords by users. This is exactly what the Pwned Passwords list was intended to be used for.
 
 ## Google introduces the Tink crypto library
 
@@ -38,7 +38,7 @@ and
 
 I discussed this problem [last year](https://markeldo.com/Email-update-KRACK-Attacks/) when serious vulnerabilities were discovered in WPA2 Wi-Fi encryption:
 
->The broad takeaway is this: when it comes to using modern crypto protocols: if you ever use the same nonce twice for a given encryption key, you’re screwed.
+>The broad takeaway is this: when it comes to using modern crypto protocols, if you ever use the same nonce twice for a given encryption key, you’re screwed.
 
 The Tink library is designed to prevent these problems, and it's a great initiative by Google.
 
