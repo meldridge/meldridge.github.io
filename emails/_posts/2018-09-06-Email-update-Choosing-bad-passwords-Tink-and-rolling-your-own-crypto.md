@@ -9,7 +9,7 @@ It's been a while since my last update, partly due to some personal news: this w
 
 In infosec news, it's been another busy few weeks: there was yet another [supply-chain attack](https://www.zdnet.com/article/mega-nz-chrome-extension-caught-stealing-passwords-cryptocurrency-private-keys/) which stole passwords and cryptocurrency private keys using the MEGA.nz Chrome extension, Chrome itself is planning some [big changes](https://www.wired.com/story/google-wants-to-kill-the-url) to how URLs are displayed in the browser, and finally, in very unsurprising news:
 
-## People choose bad passwords
+### People choose bad passwords
 
 [From the ABC](http://www.abc.net.au/news/2018-08-22/weak-passwords-putting-sensitive-wa-data-at-risk-report-finds/10149278):
 
@@ -25,7 +25,7 @@ Only a few days after the report was made public, Troy Hunt released a version o
 
 Of course, rather than conducting another audit in 5 years time showing the same result, it would be much more effective for the agencies to proactively prevent the use of these sorts of passwords by users. This is exactly what the Pwned Passwords list was intended to be used for.
 
-## Google introduces the Tink crypto library
+### Google introduces the Tink crypto library
 
 Google has released an open source cryptographic software library called [Tink](https://security.googleblog.com/2018/08/introducing-tink-cryptographic-software.html). 
 One of the cardinal rules of secure development is _["don't roll your own crypto"](https://motherboard.vice.com/en_us/article/wnx8nq/why-you-dont-roll-your-own-crypto)_, for reasons nicely explained by Google themselves:
