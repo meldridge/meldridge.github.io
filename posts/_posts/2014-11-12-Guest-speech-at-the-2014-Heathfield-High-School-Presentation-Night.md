@@ -5,7 +5,7 @@ image: /images/2014-HHS-presentation-night-speech.jpg
 excerpt: This is a transcript of a guest speech made at the Heathfield High School Presentation Night in October 2014. A video of the speech is available [here](https://www.youtube.com/watch?v=PSGr-ekeNFw).
 ---
 
-<em>This is a transcript of a guest speech made at the Heathfield High School Presentation Night in October 2014. A video of the speech is available [here](https://www.youtube.com/watch?v=PSGr-ekeNFw).</em>
+_This is a transcript of a guest speech made at the Heathfield High School Presentation Night in October 2014. A video of the speech is available [here](https://www.youtube.com/watch?v=PSGr-ekeNFw)._
 
 Thank you Amanda, and good evening to everyone.
 
