@@ -2,7 +2,7 @@
 layout: post
 title: Guest speech at the 2014 Heathfield High School Presentation Night
 image: /images/2014-HHS-presentation-night-speech.jpg
-excerpt: This is a transcript of a guest speech made at the Heathfield High School Presentation Night in October 2014. A video of the speech is available [here](https://www.youtube.com/watch?v=PSGr-ekeNFw).
+excerpt: This is a transcript of a guest speech made at the Heathfield High School Presentation Night in October 2014.
 ---
 
 _This is a transcript of a guest speech made at the Heathfield High School Presentation Night in October 2014. A video of the speech is available [here](https://www.youtube.com/watch?v=PSGr-ekeNFw)._
