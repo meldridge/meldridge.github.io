@@ -41,7 +41,7 @@ The status quo for security teams is to play whack-a-mole. There's a constant gr
 
 In a modern DevOps environment, this works very differently: the development teams are in control of their own deployments, which includes the security of those systems. In an environment where deployments happen several times a day, this model scales far better than the historical practice of security acting as a gatekeeper to production. 
 
-There's an obvious catch to this: your development teams need the skills and tools to do this properly. This is easier said than done—good developers with security skills are sadly still quite rare.
+There's an obvious catch to this: your development teams need the skills and tools to secure things properly. This is easier said than done—good developers with security skills are sadly still quite rare.
 
 Even so, you can get a long way with some basic training. To paraphrase [Robert Chesney](https://markeldo.com/Email-update-Technical-literacy-vs-fluency-blockchain-and-OSCP-proctoring/): you need developers who are security *literate*, but not necessarily *fluent*. 
 
@@ -61,4 +61,4 @@ This approach is much less appealing for mission-critical software, such as when
 
 For this sort of project,  ["move fast and break things"](https://www.brainyquote.com/quotes/mark_zuckerberg_453439) is _extremely_ literal.
 
-Overall, DevOps is a fantastic method for writing and deploying modern consumer software, but it's important to remember that not all software is consumer software.  Sometimes, you'll still need the gatekeeper.
+Overall, DevOps is a great methodology for shipping  consumer software, but it's important to remember that not all software is consumer software.  Sometimes, you'll still need the gatekeeper.
