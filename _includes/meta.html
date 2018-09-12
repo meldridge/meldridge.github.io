@@ -6,31 +6,30 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
+    <meta name="author" content="{{ site.name }}">
     {% if page.excerpt %}
-    <meta name="description" content="{{ page.excerpt| strip_html }}" />
-    <meta name="twitter:description" property="og:description" content="{{ page.excerpt| strip_html }}" />
+    <meta name="description" content="{{ page.excerpt| strip_html }}">
+    <meta name="twitter:description" property="og:description" content="{{ page.excerpt| strip_html }}">
     {% else %}
     <meta name="description" content="{{ site.description }}">
-    <meta name="twitter:description" property="og:description" content="{{ site.description }}" />
-    <meta  content="{{ site.description }}" />
+    <meta name="twitter:description" property="og:description" content="{{ site.description }}">
     {% endif %}
-    <meta name="author" content="{{ site.name }}" />
 
     {% if page.title %}
-    <meta name="twitter:title" property="og:title" content="{{ page.title }}" />
+    <meta name="twitter:title" property="og:title" content="{{ page.title }}">
     {% else %}
-    <meta name="twitter:title" property="og:title" content="{{ site.title }}" />
+    <meta name="twitter:title" property="og:title" content="{{ site.title }}">
     {% endif %}
 
     {% if page.image %}
-    <meta name="twitter:image" property="og:image" content="{{ site.url }}/{{ page.image }}" />
     <meta name="twitter:card"  content="summary_large_image">
+    <meta name="twitter:image" property="og:image" content="{{ site.url }}{{ page.image }}">
     {% else %}
-    <meta name="twitter:image" property="og:image" content="{{ site.url }}/images/logo.png" />
     <meta name="twitter:card"  content="summary">
+    <meta name="twitter:image" property="og:image" content="{{ site.url }}/images/logo.png">
     {% endif %}
