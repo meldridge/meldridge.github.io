@@ -12,8 +12,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     <meta name="author" content="{{ site.name }}">
-     
-    
     {% if page.excerpt %}
     <meta name="description" content="{{ page.excerpt| strip_html }}">
     <meta name="twitter:description" property="og:description" content="{{ page.excerpt| strip_html }}">
@@ -21,15 +19,15 @@
     <meta name="description" content="{{ site.description }}">
     <meta name="twitter:description" property="og:description" content="{{ site.description }}">
     {% endif %}
-
     {% if page.title %}
     <meta name="twitter:title" property="og:title" content="{{ page.title }}">
     <meta name="og:type" content="article">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     {% else %}
-    <meta name="twitter:title" property="og:title" content="{{ site.title }}">
-    <meta name="og:type" content="website">
+    <meta name="twitter:title" property="og:title" content="{{ site.name }} – {{ site.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}">
     {% endif %}
-
     {% if page.image %}
     <meta name="twitter:card"  content="summary_large_image">
     <meta name="twitter:image" property="og:image" content="{{ site.url }}{{ page.image }}">
