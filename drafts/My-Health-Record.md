@@ -5,6 +5,20 @@ image:
 excerpt: 
 ---
 
+https://twitter.com/philkernick/status/1030722007518695424
+
+“Concerns were raised about the logging of organisations that have accessed people’s My Health Records rather than the individuals who have done so, with the ADHA advising that people can contact the agency or the organisation listed in the audit log to help determine the source of any activity.
+
+“We understand the challenges to consumers around monitoring access by organisation rather than individual healthcare providers. If a consumer has a concern with information provided in their record’s audit log, they can contact the System Operator or the organisation directly to understand who has accessed their record,” the ADHA said.”
+
+Exclusive: Leaked ADHA document shows the agency grappling with My Health Record concerns
+https://www.healthcareit.com.au/article/exclusive-leaked-adha-document-shows-agency-grappling-my-health-record-concerns
+via Instapaper
+
+http://www.abc.net.au/news/health/2018-08-21/lax-hospital-security-culture-could-undermine-my-health-record/10128274
+
+**mention breach fatigue**
+
 This story has been major news in Australia for the last few weeks, ever since the [opt-out period started](https://www.computerworld.com.au/article/643821/my-health-record-opt-out-window-opens/) on July 16.
 
 I'll avoid going into too much detail here, but to briefly summarise: the My Health Record system is a major Australian Government IT project which aims to consolidate every citizen's healthcare information into an electronic record which can be accessed by any healthcare provider they might use.
@@ -86,3 +100,15 @@ Then this:
 So the initial vector was through a compromised workstation which could browse the web and also had access to the SingHealth database.
 
 Let’s be clear about this: the attackers MIGHT have been sophisticated, but with a network designed like this, they didn’t need to be. If I can pop one of your workstations with a phishing email or a drive-by browser exploit/download, and then use this access to pull out 1.5 million records without being detected and stopped, that’s not a sophisticated attack. That’s well within the capability of a casual hacker, let alone a criminal gang.
+
+### Health providers’ security flaws will leave My Health Record open for hacking | The Strategist
+
+“In addition to hospitals and large health providers, a range of small providers will be able to access My Health Record. These include not only general practitioners and medical specialists, but also allied health professionals such as physiotherapists, speech pathologists, osteopaths, optometrists and dentists, who can also register to access My Health Record. There are many thousands of these small health providers across Australia and most are small clinics with only a handful of staff.
+
+What this amounts to is an attack surface comprising hundreds of thousands of endpoints, most of which have a level of cybersecurity that is virtually non-existent. This is further compounded by staff who have little or no cybersecurity awareness. As an IT service provider with over 14 years’ experience working exclusively with small businesses, including small health providers, I believe these organisations are ill-equipped to provide an acceptable level of security. .....
+
+“My Health Record will put vast amounts of confidential health data into a single online database, and no matter how well the central repository itself is protected, it can only ever be as secure as the weakest link. With thousands of small health providers that have only minimal cybersecurity arrangements accessing My Health Record, it has the potential to leak like the proverbial sieve.”
+
+Health providers’ security flaws will leave My Health Record open for hacking | The Strategist
+https://www.aspistrategist.org.au/health-providers-security-flaws-will-leave-my-health-record-open-for-hacking/
+via Instapaper

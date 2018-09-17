@@ -1,7 +1,26 @@
+https://www.theverge.com/2018/9/7/17832876/us-election-hacking-2016-voting-online-tampering-paper-ballots
+https://arstechnica.com/tech-policy/2018/08/georgia-defends-voting-system-despite-243-percent-turnout-in-one-precinct/
+https://arstechnica.com/tech-policy/2018/08/experts-criticize-west-virginias-plan-for-smartphone-voting/
+https://medium.com/s/the-crypto-collection/blockchain-disciples-have-a-new-goal-running-our-next-election-2bfe4dff3c7
+
+https://twitter.com/GossiTheDog/status/1026603800365330432
+
+https://markeldo.com/Email-update-Blockchain-and-Voting/
+https://twitter.com/mattblaze/status/1034486679925678080
 
 [Experts criticize West Virginia’s plan for smartphone voting](https://arstechnica.com/tech-policy/2018/08/experts-criticize-west-virginias-plan-for-smartphone-voting/)
 
 >Advocates of online voting point out that people perform sensitive financial operations over the Internet all the time. But the difference is that financial networks keep records of all transactions that are available for inspection by both customers and banks. By contrast, our election system is based on the principle of the secret ballot, which rules out the kind of after-the-fact auditing that helps secure financial networks.
+
+
+### Flaws in ACT election systems could reveal voters' votes | ZDNet
+https://www.zdnet.com/article/flaws-in-act-election-systems-could-reveal-voters-votes/
+via Instapaper
+
+“Wilson-Brown said their motivation for this research was the issue of control.
+
+"If I want to keep my vote secret, then that's my decision. We shouldn't have to trust the person voting next to us, or the electoral commission, to keep our votes private. The system should be designed so votes are private," they told ZDNet.”
+
 
 
 

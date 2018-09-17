@@ -1,3 +1,13 @@
+### The threat gets a vote
+
+"The enemy gets a vote"
+
+>“Organizations often blame the end user who clicked the link. What about the actions taken after the initial click? This scenario indicates an organization’s entire security model may depend on users not clicking a link in an email. The organization does not intend to hinge all security on a single user, but the actions taken to defend their systems often say otherwise.”
+
+Threat Gets A Vote: Applying a Threat Based Approach to Security Testing
+https://posts.specterops.io/threat-gets-a-vote-applying-a-threat-based-approach-to-security-testing-5e7f72412759
+via Instapaper
+
 ## How long is a piece of string?
 
 Pop quiz: 

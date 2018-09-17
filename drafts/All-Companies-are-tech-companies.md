@@ -2,6 +2,13 @@
 
 https://twitter.com/swardley/status/1025196909823242240
 
+https://www.cnbc.com/2018/09/06/companies-worry-more-about-access-to-software-developers-than-capital.html
+
+https://twitter.com/atomicthumbs/status/1032939617404645376
+
+http://theconversation.com/lack-of-technical-knowledge-in-leadership-is-a-key-reason-why-so-many-it-projects-fail-101889
+https://markeldo.com/Email-update-British-Airways-technical-leadership-and-cold-boot-attacks/
+
 
 ### Why Do the Biggest Companies Keep Getting Bigger? It’s How They Spend on Tech
 
@@ -17,6 +24,8 @@ https://www.wsj.com/articles/why-do-the-biggest-companies-keep-getting-bigger-it
 
 
 ### The U.S. Air Force learned to code—and saved the Pentagon millions
+
+https://www.fastcompany.com/40588729/the-air-force-learned-to-code-and-saved-the-pentagon-millions
 
 “The most effective way to broaden change is to “set the right example, and don’t try to do everybody’s work for them,” according to former Carter. “This isn’t the kind of thing that it’s useful to make people do.”
 
