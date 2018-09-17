@@ -11,7 +11,7 @@ The name is a bit corny, but the course itself was excellent. It uses the [Throw
 
 It's a lot of content for two days, and it helps to have a development background, but I'd highly recommend it for anyone working in offensive security, or in a blue team with sophisticated threats.
 
-## British Airways gets Ticketmaster'd
+### British Airways gets Ticketmaster'd
 
 [Yet another supply-chain attack](https://markeldo.com/Email-update-The-Mueller-Indictments-NPM-Arch-Gentoo-and-Ticketmaster-UK/) against a major website. 
 
@@ -23,7 +23,7 @@ From [Ars Technica](https://arstechnica.com/information-technology/2018/09/briti
 
 This is going to get worse before it gets better.
 
-## Technical projects need technical leaders
+### Technical projects need technical leaders
 
 I had to read this one a few times, because it fit my confirmation bias a little _too_ well.
 
@@ -37,7 +37,7 @@ I recently had a fairly candid discussion with a senior Swedish executive, who c
 
 As I said, I have an obvious bias, but I think there's something to this. These days, _every_ large company is a tech company—it's just a question of degree.
 
-## F-Secure demonstrates new cold boot mitigation bypass
+### F-Secure demonstrates new cold boot mitigation bypass
 
 One of the _cooler_ SEC-T talks (sorry) was by Olle Segerdahl and Pasi Saarinen from F-Secure. They introduced a new way to bypass modern protections against [cold boot attacks](https://en.wikipedia.org/wiki/Cold_boot_attack), allowing them to decrypt a laptop using full-disk encryption such as BitLocker if they were able to obtain the laptop while it was in sleep mode.
 
