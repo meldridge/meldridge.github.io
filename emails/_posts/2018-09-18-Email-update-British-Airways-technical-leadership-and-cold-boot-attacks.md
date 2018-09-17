@@ -1,6 +1,6 @@
 ---
 layout: email
-title: 
+title: British Airways, technical leadership, and cold boot attacks
 ---
 
 Good morning.
