@@ -29,9 +29,17 @@ I had to read this one a few times, because it fit my confirmation bias a little
 
 From [The Conversation](http://theconversation.com/lack-of-technical-knowledge-in-leadership-is-a-key-reason-why-so-many-it-projects-fail-101889):
 
->Australian public companies are investing in very large information systems projects and many of these are at risk. When these projects fail it can have a direct material impact on a company and its share price. And when projects are delivered with less than the required functionality, or at an inflated price, they negatively impact upon the performance and effectiveness of those businesses.
+>We examined previous research alongside a case study of a large-scale public sector IT project failure. Reports on the project and documents obtained through freedom of information requests created a rich pool of data that allowed us to examine the life of the project as it unfolded over many years.
 >
->Effective oversight requires competence and experience. This means that the boards need some measure of IT knowledge if they expect to provide effective governance, risk management and strategic oversight of IT projects.
+>One of our main findings was underpinned by the idea that leaders require more than a passing familiarity with the technical skills required to do the job if they are to identify competence in those carrying out the work. Without this, the projects have a poor chance of success.
+>
+>Technological competence needs to be specific, not generalised. The most senior executive with day-to-day accountability for the project, and who has a direct and material impact on project outcomes, must have experience with, and knowledge of, the technology being developed.
+>
+>An inexperienced project leader will be incapable of comprehending the advice being provided if they lack the specific experience in the technical domain being managed. That means that it’s not sufficient to surround an inexperienced manager with experts upon whom they would theoretically turn to for advice.
+
+Yep. It's not enough to have a non-technical project manager with technical advisors—the person making the decisions needs to have the technical competence to weigh all of the options properly. If they're entirely reliant on their more technical advisors, what value are they adding?
+
+Once again, this is going to get worse before it gets better. There are very few large projects which don't include a significant IT component (even non-IT projects are delivered using IT), and good managers with technical skills are hard to find.
 
 I recently had a fairly candid discussion with a senior Swedish executive, who commented that they might be the last generation of executives who can get away without having a technical background. 
 
