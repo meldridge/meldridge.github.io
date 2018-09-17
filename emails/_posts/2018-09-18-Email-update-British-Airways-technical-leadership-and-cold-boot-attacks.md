@@ -45,6 +45,8 @@ A cold boot attack relies upon two things:
 1. While running, the operating system stores sensitive information (such as drive encyption keys) in physical memory.
 2. Memory is usually wiped when it loses power, but can store its contents for a short time - especially if you cool it down.
 
+If you're quick enough, you can power off a laptop while the keys are still in memory, and then either remove the memory entirely or boot back into a different operating system to extract the keys before they're erased.
+
 If you're interested in the details, it's worth reading the [original paper](https://citp.princeton.edu/research/memory/) by Halderman et. al. back in 2008 which described cold boot attacks in detail. This paper prompted the modern BIOS/EFI protections which Segerdahl and Saarinen bypassed in their talk.
 
 The full SEC-T presentation is available [here](https://www.youtube.com/watch?v=RqvPZnLkP70), and it's worth a watch if only for the physical demonstration of the attack (~16 minutes in). On the scale of _"gutsy things to demo in front of a live audience"_, this is right up there.
