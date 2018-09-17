@@ -42,8 +42,8 @@ As I said, I have an obvious bias, but I think there's something to this. These 
 One of the _cooler_ SEC-T talks (sorry) was by Olle Segerdahl and Pasi Saarinen from F-Secure. They introduced a new way to bypass modern protections against [cold boot attacks](https://en.wikipedia.org/wiki/Cold_boot_attack), allowing them to decrypt a laptop using full-disk encryption such as BitLocker if they were able to obtain the laptop while it was in sleep mode.
 
 A cold boot attack relies upon two things:
-1) While running, the operating system stores sensitive information (such as drive encyption keys) in physical memory.
-2) Memory is usually wiped when it loses power, but can store its contents for a short time - especially if you cool it down.
+1. While running, the operating system stores sensitive information (such as drive encyption keys) in physical memory.
+2. Memory is usually wiped when it loses power, but can store its contents for a short time - especially if you cool it down.
 
 If you're interested in the details, it's worth reading the [original paper](https://citp.princeton.edu/research/memory/) by Halderman et. al. back in 2008 which described cold boot attacks in detail. This paper prompted the modern BIOS/EFI protections which Segerdahl and Saarinen bypassed in their talk.
 
