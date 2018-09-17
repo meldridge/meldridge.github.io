@@ -37,7 +37,9 @@ From [The Conversation](http://theconversation.com/lack-of-technical-knowledge-i
 >
 >An inexperienced project leader will be incapable of comprehending the advice being provided if they lack the specific experience in the technical domain being managed. That means that it’s not sufficient to surround an inexperienced manager with experts upon whom they would theoretically turn to for advice.
 
-Yep. It's not enough to have a non-technical project manager with technical advisors—the person making the decisions needs to have the technical competence to weigh all of the options properly. If they're entirely reliant on their more technical advisors, what value are they adding?
+Yep. It's not enough to have a non-technical project manager with technical advisors—the person making the decisions needs to have the technical competence to weigh all of the options properly. 
+
+In other words: if they're entirely reliant on their more technical advisors to make project decisions, what value are they adding?
 
 Once again, this is going to get worse before it gets better. There are very few large projects which don't include a significant IT component (even non-IT projects are delivered using IT), and good managers with technical skills are hard to find.
 
