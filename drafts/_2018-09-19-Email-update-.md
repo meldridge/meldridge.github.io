@@ -4,7 +4,7 @@ title:
 ---
 
 
-
+https://www.xkcd.com/2044/
 
 ### URLS are bad
 
