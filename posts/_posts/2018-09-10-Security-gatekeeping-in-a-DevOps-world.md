@@ -16,7 +16,9 @@ The book [Building a Modern Security Program](https://www.safaribooksonline.com/
 
 Zane Lackey has been discussing this topic for quite a while, notably in a [Duo Tech Talk](https://www.youtube.com/watch?v=scQyykJwTsQ) back in 2014, as well in a [Security Conversations podcast](https://overcast.fm/+NvEIQ62xg) in April of this year.
 
-As Lackey notes, the definition of 'DevOps' is rubbery (_"ask 10 people, get 11 answers"_), but in general use it tends to mean two things: 1) developers having direct access to production infrastructure, and 2) rapid deployments of new software builds to production, sometimes dozens of times each day. 
+As Lackey notes, the definition of 'DevOps' is rubbery (_"ask 10 people, get 11 answers"_), but in general use it tends to mean two things: 
+1. Developers having direct access to production infrastructure, and
+2. Rapid deployments of new software builds to production, sometimes dozens of times each day. 
 
 This second component is related to the [Agile software development methodology](https://en.wikipedia.org/wiki/Agile_software_development) which sprang up in the early 2000's. At this point the word 'Agile' has become a corporate buzzword and bastardised to the point of meaninglessness, but in the context of software development it was popularised by the [Agile Manifesto](http://agilemanifesto.org/) back in 2001. The manifesto was itself a reaction to the methodologies in common use at the time: primarily the [waterfall model](https://en.wikipedia.org/wiki/Waterfall_model).
 
