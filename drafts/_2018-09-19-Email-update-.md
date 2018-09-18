@@ -3,6 +3,9 @@ layout: email
 title: 
 ---
 
+
+
+
 ### URLS are bad
 
 http://www.abc.net.au/news/science/2018-09-16/google-time-to-reinvent-the-url-web-browser/10238296

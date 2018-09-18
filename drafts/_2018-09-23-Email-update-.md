@@ -1,5 +1,14 @@
+https://www.schneier.com/blog/archives/2018/08/future_cyberwar.html
 
 Security articles: https://twitter.com/grittygrease/status/1028769194643353600
+
+
+### Malware automation
+
+https://www.zdnet.com/article/new-xbash-malware-combines-ransomware-coinminer-botnet-and-worm-features-in-deadly-combo/
+
+https://usa.kaspersky.com/resource-center/threats/computer-viruses-vs-worms
+
 
 ### WireGuard
 
