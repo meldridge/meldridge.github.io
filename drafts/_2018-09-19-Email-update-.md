@@ -3,14 +3,22 @@ layout: email
 title: 
 ---
 
+Good morning.
 
-https://www.xkcd.com/2044/
+A recent [XKCD comic](https://www.xkcd.com/2044/) made me chuckle:
 
-### URLS are bad
+<img src="https://imgs.xkcd.com/comics/sandboxing_cycle.png" alt="XKCD 2044" style="width: 100%; max-width: 400px; display: block; margin: 0 auto; "/>
+<em style="width: 100%; max-width: 460px; display: block; margin: 0 auto; ">"All I want is a secure system where it's easy to do anything I want. Is that so much to ask?"</em>
 
-http://www.abc.net.au/news/science/2018-09-16/google-time-to-reinvent-the-url-web-browser/10238296
+This is a theme I constantly return to: [security is always a tradeoff](/Security-is-always-a-trade-off/).
 
-https://www.youtube.com/watch?v=UD-ukjVoeLc&feature=youtu.be
+### Reinventing the URL
+
+The ABC recently did a [feature](http://www.abc.net.au/news/science/2018-09-16/google-time-to-reinvent-the-url-web-browser/10238296) on the Uniform Resource Locator we now take for granted, and the move by Google to rethink how URLs are displayed in Chrome.
+
+The ABC feature did an excellent job explaining the security issues with URLs for a non-technical audience, and it's worth a look.
+
+If you have 30 minutes free, I'd also highly recommended [this talk](https://www.youtube.com/watch?v=UD-ukjVoeLc) by Emily Schechter from the Chrome Security team. URLs are a classic case of bad usability making security difficult for end users, and Schechter's talk covers all of the reasons why.
 
 ### Security resiliance
 
