@@ -16,4 +16,4 @@ If you'd like to sign up to receive these emails directly, you can [subscribe he
 
 The easiest way to get in touch is via [Twitter](https://twitter.com/markeldo).
 
-I can also be reached via email: mark [at] markeldo [dot] com
+I can also be reached by email: mark [at] markeldo [dot] com
