@@ -2,6 +2,7 @@
 layout: email
 title: AMSI for Office macros, iPhone authenticated pointers, reinventing the URL, and infosec resilience
 image: "/images/word-macro-2.png"
+excerpt: "Office macros are incredibly useful when it comes to obtaining an initial foothold on a network, because they're one of the only ways to guarantee reliable code execution."
 ---
 
 Good morning.
