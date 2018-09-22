@@ -1,6 +1,6 @@
 ---
 layout: email
-title: AMSI for Office macros, authenticated pointers, reiventing the URL, and infosec resilience
+title: AMSI for Office macros, iPhone authenticated pointers, reinventing the URL, and infosec resilience
 ---
 
 Good morning.
