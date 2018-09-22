@@ -8,7 +8,7 @@ Good morning.
 A recent [XKCD comic](https://www.xkcd.com/2044/) made me chuckle:
 
 <img src="https://imgs.xkcd.com/comics/sandboxing_cycle.png" alt="XKCD 2044" style="width: 100%; max-width: 400px; display: block; margin: 0 auto; "/>
-<em>"All I want is a secure system where it's easy to do anything I want. Is that so much to ask?"</em>
+<em>"All I want is a secure system where it's easy to do anything I want.</br>Is that so much to ask?"</em>
 
 This is a theme I constantly return to: [security is always a tradeoff](/Security-is-always-a-trade-off/).
 
@@ -30,7 +30,9 @@ In contrast, Office macros are a *feature*, and a critical one for many large or
 
 The result is that in most corporate networks, using a macro as your delivery mechanism is the easiest and most reliable way to get code execution, and you won't need to spend resources on discovering new exploits.
 
-Of course, Office macros don't automatically execute when opened, but it's very easy to engineer users into enabling them for you. For example, below is one I prepared earlier:
+Of course, Office macros don't automatically execute when opened, but it's very easy to engineer users into enabling them for you.
+
+For example, below is one I prepared earlier:
 
 <img src="/images/word-macro-2.png" alt="Malicious Word macro" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
 <em>Go on, tell me you wouldn't fall for that on a Monday morning.</em>
