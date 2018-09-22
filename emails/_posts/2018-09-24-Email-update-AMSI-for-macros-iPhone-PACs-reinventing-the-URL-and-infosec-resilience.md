@@ -39,7 +39,7 @@ For example, below is one I prepared earlier:
 
 According to Cofense (formerly PhishMe), Office documents containing malicious macros accounted for [45% of malware delivery mechanisms](https://cofense.com/microsoft-office-macros-still-leader-malware-delivery/) in the month prior. 
 
-Another popular techniques is to write the malware in JavaScript or VBScript and then name the file  `invoice.pdf.js` or `invoice.pdf.vbs` - relying on the default Windows behaviour to "helpfully" strip the file extension and leave the file appearing as `invoice.pdf`. When the user double-clicks the file, it's executed as code just as if they'd opened `invoice.pdf.exe`.
+Another popular techniques is to [write the malware in JavaScript or VBScript](https://nakedsecurity.sophos.com/2016/06/20/ransomware-thats-100-pure-javascript-no-download-required/) and then name the file  `"invoice.pdf.js"` or `"invoice.pdf.vbs"` - relying on the default Windows behaviour to "helpfully" strip the file extension and leave the file appearing as `"invoice.pdf"`. When the user double-clicks the file, it's executed as code just as if they'd opened `"invoice.pdf.exe"`.
 
 With Microsoft's new update, AMSI now also integrates with the JavaScript and VBScript scripting engines, which also should make these attacks much easier to detect.
 
