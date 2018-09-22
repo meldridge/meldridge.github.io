@@ -39,7 +39,7 @@ For example, below is one I prepared earlier:
 <img src="/images/word-macro-2.png" alt="Malicious Word macro" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
 <em>Go on, tell me you wouldn't fall for that on a Monday morning.</em>
 
-According to Cofense (formerly PhishMe), Office documents containing malicious macros accounted for [45% of malware delivery mechanisms](https://cofense.com/microsoft-office-macros-still-leader-malware-delivery/) in the month prior. 
+According to Cofense (formerly PhishMe), Office documents containing malicious macros accounted for [45% of malware delivery mechanisms](https://cofense.com/microsoft-office-macros-still-leader-malware-delivery/) in the month to 13 September.
 
 Another popular techniques is to [write the malware in JavaScript or VBScript](https://nakedsecurity.sophos.com/2016/06/20/ransomware-thats-100-pure-javascript-no-download-required/) and then name the file  `"invoice.pdf.js"` or `"invoice.pdf.vbs"` - relying on the default Windows behaviour to "helpfully" strip the file extension and leave the file appearing as `"invoice.pdf"`. When the user double-clicks the file, it's executed as code just as if they'd opened `"invoice.pdf.exe"`.
 
