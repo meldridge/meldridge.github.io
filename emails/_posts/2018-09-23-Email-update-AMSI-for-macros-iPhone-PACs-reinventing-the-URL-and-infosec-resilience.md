@@ -1,6 +1,7 @@
 ---
 layout: email
 title: AMSI for Office macros, iPhone authenticated pointers, reinventing the URL, and infosec resilience
+image: "/images/word-macro-2.png"
 ---
 
 Good morning.
