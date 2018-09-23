@@ -10,7 +10,7 @@ Good morning.
 A recent [XKCD comic](https://www.xkcd.com/2044/) made me chuckle:
 
 <img src="https://imgs.xkcd.com/comics/sandboxing_cycle.png" alt="XKCD 2044" style="width: 100%; max-width: 400px; display: block; margin: 0 auto; "/>
-<em>"All I want is a secure system where it's easy to do anything I want."</br>"Is that so much to ask?"</em>
+<em style="width: 100%; max-width: 460px; display: block; margin: 0 auto;">"All I want is a secure system where it's easy to do anything I want. Is that so much to ask?"</em>
 
 This is a theme I constantly return to: [security is always a tradeoff](/Security-is-always-a-trade-off/).
 
