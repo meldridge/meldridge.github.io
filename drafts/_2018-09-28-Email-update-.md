@@ -38,13 +38,13 @@ As Ryan Cobb puts it in his [SharpSploit post](https://posts.specterops.io/intro
 
 >There seems to be a trend developing on the offensive side of the security community in porting existing PowerShell toolsets to C#, particularly with the recent releases from my SpecterOps teammates, including: @harmj0y's GhostPack toolset and @0xthirteen's SharpView. And SharpSploit is another piece to that puzzle. With the added security features in PowerShell (ie. ScriptBlock Logging, AMSI, etc.), it makes sense that red teamers are investing in other options. And C# is the logical next step from PowerShell, seeing that they both are based on the .NET framework and porting toolsets from PowerShell to C# is fairly easy to do.
 
-I always found PowerShell a horrible language to write complex software in, so I can't say I'm saddened by this development.
+I always found PowerShell a horrible language to write complex software in, so I can't say I'm saddened by this development. Cobb's post describes some of the complications introduced by using C# rather than PowerShell for post-exploitation, and it's well worth a read if you're interested.
 
-Cobb's post describes some of the complications introduced by using C# rather than PowerShell for post-exploitation, and it's well worth a read if you're interested.
-
-Another big release is Will Schroeder's [Rubeus](https://posts.specterops.io/from-kekeo-to-rubeus-86d2ec501c14) project. The explanatory post is excellent, and goes into depth on the Kerberos protocol which is now the standard authentication protocol used in enterprise networks, at least if they're using Active Directory. 
+Another big release is Will Schroeder's [Rubeus project](https://posts.specterops.io/from-kekeo-to-rubeus-86d2ec501c14):
 
 >Today I’m releasing Rubeus, the start of a C# reimplementation of some (not all) of Kekeo’s functionality. I’ve wanted to dive deeper into Kerberos structures and exchanges for a while in order to better understand the entire system, and this project provided the perfect excuse to jump right in.
+
+The post goes into depth on the Kerberos authentication protocol which is the de-facto standard for enterprise networks, at least if they're using Microsoft's Active Directory.
 
 I have fond memories of drawing Kerberos diagrams on a whiteboard in several previous jobs, so this was right up my alley. (Your mileage may vary.)
 
