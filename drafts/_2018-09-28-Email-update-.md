@@ -1,0 +1,67 @@
+---
+layout: email
+title: 
+---
+
+Good morning.
+
+Some quick links before we get into the news: 
+
+Bruce Schneier recently linked to a [report](https://csis-prod.s3.amazonaws.com/s3fs-public/publication/180227_Cancian_CopingWithSurprise_wAppen_Web.pdf?0rD0fcMI7gGXNLM1AYJWoVsNT_xSxOiu) on future cyber warfare by Mark Cancian from the Centre for Strategic and International Studies. I'd recommend reading [this excerpt](https://www.schneier.com/blog/archives/2018/08/future_cyberwar.html) on Schneier's blog, it's compelling stuff.
+
+Also, if you're in the mood for reading security papers, Nick Sullivan from Cloudflare has posted [this Twitter thread](https://twitter.com/grittygrease/status/1028769194643353600), which links to some of the seminal works in the field of security and cryptography. It's an excellent list. My personal favourite is Ken Thompson's [Reflections on Trusting Trust](https://www.archive.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf), which also featured in my Thesis. (It's short.)
+
+Onto the main stories!
+
+### Skills Shortages and Security Education
+
+Many of you would be familiar with the [OverTheWire wargames](http://overthewire.org/wargames/). I've used them as training tools several times, and they provide an excellent, gamified introduction to a number of security topics.
+
+They're not without their downsides, however. From the 
+[Ret2 systems blog](https://blog.ret2.io/2018/09/11/scalable-security-education/):
+
+>Traditional exploitation based wargames often require players to `ssh` into an open (educational) linux server that hosts the wargame’s challenge binaries. By exploiting the first challenge, players will gain access to a protected flag file that contains the password to the next level, allowing them to login to the next level and continue the game.
+>
+>The problem with using these resources for self-guided education is that there often isn’t a clear understanding of what knowledge is required to complete a given challenge. On top of that, the metric for success is often black and white, making it hard for players to know if they are progressing down the right path or simply wasting their time.
+
+Ret2 systems has developed a really neat browser-based education platform which aims to address these criticisms, and which simulates all of the tools you'd normally use for binary exploit development and reverse-engineering: an x86 disassembler, debugger, python interpreter, etc. Typically you'd have to install and configure these on a dedicated system, which is quite a lot of hassle.
+
+You can try the [Corruption wargame](https://wargames.ret2.systems/level/corruption) for free, and it's quite impressive. I wish I'd had access to this sort of tool during my undergraduate degree.
+
+### SharpSploit, Rubeus, and the shift to C# post-exploitation tools
+
+There have been a few excellent offensive security tools released recently by the SpecterOps team, including [GhostPack](https://www.harmj0y.net/blog/redteaming/ghostpack/), [SharpView](https://github.com/tevora-threat/SharpView), and now [SharpSploit](https://posts.specterops.io/introducing-sharpsploit-a-c-post-exploitation-library-5c7be5f16c51) and [Rubeus](https://posts.specterops.io/from-kekeo-to-rubeus-86d2ec501c14).
+
+Many of these tools are ports or re-implementations of existing PowerShell post-exploitation tools in C# .NET, because Microsoft has made such a vast improvement in detecting and blocking malicious PowerShell with PowerShell v5 and the Antimalware Scripting Interface (AMSI), which I mentioned in my [last email](/Email-update-AMSI-for-macros-iPhone-PACs-reinventing-the-URL-and-infosec-resilience/).
+
+As Ryan Cobb puts it in his [SharpSploit post](https://posts.specterops.io/introducing-sharpsploit-a-c-post-exploitation-library-5c7be5f16c51):
+
+>There seems to be a trend developing on the offensive side of the security community in porting existing PowerShell toolsets to C#, particularly with the recent releases from my SpecterOps teammates, including: @harmj0y's GhostPack toolset and @0xthirteen's SharpView. And SharpSploit is another piece to that puzzle. With the added security features in PowerShell (ie. ScriptBlock Logging, AMSI, etc.), it makes sense that red teamers are investing in other options. And C# is the logical next step from PowerShell, seeing that they both are based on the .NET framework and porting toolsets from PowerShell to C# is fairly easy to do.
+
+I always found PowerShell a horrible language to write complex software in, so I can't say I'm saddened by this development.
+
+Cobb's post describes some of the complications introduced by using C# rather than PowerShell for post-exploitation, and it's well worth a read if you're interested.
+
+Another big release is Will Schroeder's [Rubeus](https://posts.specterops.io/from-kekeo-to-rubeus-86d2ec501c14) project. The explanatory post is excellent, and goes into depth on the Kerberos protocol which is now the standard authentication protocol used in enterprise networks, at least if they're using Active Directory. 
+
+>Today I’m releasing Rubeus, the start of a C# reimplementation of some (not all) of Kekeo’s functionality. I’ve wanted to dive deeper into Kerberos structures and exchanges for a while in order to better understand the entire system, and this project provided the perfect excuse to jump right in.
+
+I have fond memories of drawing Kerberos diagrams on a whiteboard in several previous jobs, so this was right up my alley. (Your mileage may vary.)
+
+### WireGuard and Complexity as the antithesis of Security
+
+There's a new work-in-progress VPN project called [WireGuard](https://www.wireguard.com/) which has been making waves recently. It's billed as a simpler and more secure VPN alternative to the solutions commonly in use (IPSec, OpenVPN, etc).
+
+From [Ars Technica](https://arstechnica.com/gadgets/2018/08/wireguard-vpn-review-fast-connections-amaze-but-windows-support-needs-to-happen/):
+
+>WireGuard weighs in at around 4,000 lines of code; this compares to 600,000 total lines of code for OpenVPN + OpenSSL or 400,000 total lines of code for XFRM+StrongSwan for an IPSEC VPN. Two orders of magnitude fewer lines of code mean a lot less attack surface to find flaws in.
+
+Complexity is always the antithesis of security: the more complex a system is, the harder it is to find all of the problems.
+
+Google's Thoma Dullien has given several excellent talks on precisely this topic, including [here](https://www.youtube.com/watch?v=PLJJY5UFtqY) and [here](https://www.youtube.com/watch?v=q98foLaAfX8). 
+
+(In the first talk above, Dullien also goes into some detail about how enterprises approach security risk, and contrasts this with how they approach financial risk. It's well worth watching in full.)
+
+One of the other nice aspects of WireGuard is that it's [opinionated](https://stackoverflow.com/questions/802050/what-is-opinionated-software) about how it handles cryptography: the designers have selected sensible defaults, rather than giving users enough rope to hang themselves with. 
+
+I'm a big proponent of this approach in general when it comes to software design, but especially for security tools which are intended to be used by non-techies.
