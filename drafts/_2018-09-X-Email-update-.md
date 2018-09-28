@@ -5,10 +5,14 @@ title:
 
 Good morning.
 
+iOS 12/iPhone XS PAC bypass: https://twitter.com/SparkZheng/status/1045265728318754816
+
 https://www.scmagazine.com/home/news/decline-in-chinese-cyberattacks-against-u-s-suggests-attacks-getting-more-efficient/
 
 
 ### Fancy bear and firmware implants
+
+https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-courtesy-sednit-group/
 
 https://www.wired.com/story/fancy-bear-hackers-uefi-rootkit/?mbid=social_twitter
 
