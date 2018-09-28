@@ -1,3 +1,7 @@
+https://www.theregister.co.uk/2018/09/28/defcon_vote_hacking/
+https://arstechnica.com/tech-policy/2018/08/georgia-defends-voting-system-despite-243-percent-turnout-in-one-precinct/
+
+
 https://medium.com/@mattbernhard/how-to-steal-every-vote-in-the-state-of-georgia-adc511b1ae9a
 
 https://www.theverge.com/2018/9/7/17832876/us-election-hacking-2016-voting-online-tampering-paper-ballots
