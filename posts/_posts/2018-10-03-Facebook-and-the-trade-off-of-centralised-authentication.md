@@ -5,8 +5,6 @@ image: "/images/facebook-shatter.jpg"
 excerpt: "Having 50 million accounts breached is bad enough, but the bigger issue is that a huge number of third-party services use Facebook to authenticate their users."
 ---
 
-![Facebook](/images/facebook-shatter.jpg)
-
 To put it mildly, Facebook has had a bad week.
 
 From [Motherboard](https://motherboard.vice.com/en_us/article/bja7qq/how-50-million-facebook-users-were-hacked):
