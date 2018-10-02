@@ -22,7 +22,7 @@ To summarise:
 - These bugs meant that it was possible to obtain a [User Access Token](https://developers.facebook.com/docs/facebook-login/access-tokens/) for a different user than the one you were logged in as, without needing their password.
 - The attackers performed the above for 50 million accounts, which meant they could impersonate any one of these 50 million users on Facebook *and any other services they use Facebook to authenticate to.*
 - An additional 40 million accounts had been subject to a "View As" lookup in the time since the bug was originally introduced, and therefore could potentially have been compromised as well.
-- Facebook has since invalidated all User Access Tokens for the 90 million affected accounts (which manifests to the user as a forced log-out). No password reset is necessary.
+- Facebook has since invalidated all User Access Tokens for the 90 million affected accounts. This manifests to the user as a forced log-out. No password reset is necessary, because passwords were never compromised.
 
 That last bit can seem confusing to many people, since we tend to think the password is an essential part of impersonating a user. 
 
