@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Facebook and the double-edged sword of centralised authentication
-image: "/images/security-gatekeeping.jpg"
-excerpt: 
+title: Facebook and the trade-off of centralised authentication
+image: "/images/facebook-shatter.jpg"
+excerpt: "Having 50 million accounts breached is bad enough, but the major issue is that a huge number of other services utilise Facebook login to authenticate users."
 ---
+
+![Facebook](/images/facebook-shatter.jpg)
 
 To put it mildly, Facebook has had a bad week.
 
@@ -11,11 +13,9 @@ From [Motherboard](https://motherboard.vice.com/en_us/article/bja7qq/how-50-mill
 
 >On Friday, Facebook revealed that hackers broke into the company’s servers and potentially stole the data of up to 50 million people.
 >
->The social network forced 90 million people—around 50 million victims plus an additional 40 million that may have been affected, according to the company—to log out and log back in again. That’s because the hackers stole their “access tokens,” a sort of digital key that Facebook creates when you log in and allows you to stay logged in when the Facebook mobile app wants to open another part of Facebook inside a browser, for example (this might occur when you click a link.)
->
->An access token doesn’t include a user’s password, but since it allows a user to stay logged in having an access token means you can completely control the account.
+>The social network forced 90 million people—around 50 million victims plus an additional 40 million that may have been affected, according to the company—to log out and log back in again.
 
-I'm not a fan of the _broke into the company's servers_ description, because it implies that the attackers got a shell on Facebook's servers and then exfiltrated data. That's not what happened.
+I'm not a fan of the _"broke into the company's servers"_ description, because it implies that the attackers got a shell on Facebook's servers and then exfiltrated data. That's not what happened.
 
 To summarise:
 - There were three separate bugs in Facebook relating to the "View As" feature and a video upload tool. 
@@ -26,7 +26,7 @@ To summarise:
 
 That last bit can seem confusing to many people, since we tend to think the password is an essential part of impersonating a user. 
 
-In reality, once you have a User Access Token for a user **you are that user**, from the perspective of the Facebook API. The username/password (and 2FA, if enabled) is just the prerequisite for obtaining a valid token to begin with.
+In reality, once you have a User Access Token for a user, *you are that user* from the perspective of the Facebook API. The username/password (and 2FA, if enabled) is just the prerequisite for obtaining a valid token to begin with.
 
 That's part of what makes this compromise such a big deal: it didn't matter how good your password was, or what level of multi-factor authentication you were using to protect your Facebook account. This bug meant that the attackers could walk right around those security measures and obtain a token directly.
 
@@ -34,7 +34,7 @@ That's part of what makes this compromise such a big deal: it didn't matter how 
 
 Having 50 million accounts breached is bad enough, but the major issue is that a huge number of other services utilise [Facebook login](https://developers.facebook.com/docs/facebook-login/) to authenticate users. This includes services like Instagram, Tinder, Spotify, Airbnb, Duolingo, and even [GitHub](https://help.github.com/articles/recovering-your-account-if-you-lose-your-2fa-credentials/). 
 
-There are [hundreds](https://www.slideshare.net/Neolane/analysis-of-150-websites-using-facebook-login) of services which use Facebook in this way, and for good reason: if you don't *need* to control user accounts directly, and you don't have the development resources to do it properly, it's much easier and more secure to let Facebook handle it for you.
+There are [hundreds](https://www.slideshare.net/Neolane/analysis-of-150-websites-using-facebook-login) of services which use Facebook in this way, and for good reason: if you're running an online service and you don't *need* to control user accounts directly, it's much easier and more secure to let Facebook handle it for you.
 
 The downside is that this means that if an attacker manages to steal a valid Facebook User Access Token for *"Jane Doe"*, they can also impersonate Jane across all of the other services as well. Even if Jane doesn't care about her Facebook account being hacked, she might to care a lot more about Tinder, Airbnb, or GitHub.
 
@@ -62,6 +62,6 @@ This is yet another [security trade-off](https://markeldo.com/Security-is-always
 
 The trade-off, of course, is that you're putting all of your eggs in one basket.
 
-Still, I'd argue that for Google accounts in particular, this trade-off is worth it. Google [supports](https://landing.google.com/advancedprotection/) the most secure multi-factor authentication methods, and generally tends to do a good job with account security. Besides, if an attacker has access to your Google account they can already access password reset emails.
+Still, I'd argue that for Google accounts in particular, this trade-off is worth it. Google [supports](https://landing.google.com/advancedprotection/) the most secure multi-factor authentication methods, and generally tends to do a good job with account security. Besides, if an attacker has access to your Google account, and you use Gmail, they can already access password reset emails.
 
 Just don't forget: when you use a centralised authentication provider, you're trusting the provider with access to everything you link it to. For some threat models, this is the wrong trade-off to make.
