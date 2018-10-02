@@ -38,14 +38,14 @@ The downside is that this means that if an attacker manages to steal a valid Fac
 
 Matt Blaze [summarised](https://twitter.com/mattblaze/status/1045833186603872264) this problem well:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">We&#39;re seeing the flip side of concentrating authentication into a few giants like Facebook, Google, etc. They almost certainly DO do a better job securing sensitive data than a zillion small sites would. But when they get breached, it&#39;s a catatrasophe of ecological proportion.</p>&mdash; matt blaze (@mattblaze) <a href="https://twitter.com/mattblaze/status/1045833186603872264?ref_src=twsrc%5Etfw">September 29, 2018</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">We&#39;re seeing the flip side of concentrating authentication into a few giants like Facebook, Google, etc. They almost certainly DO do a better job securing sensitive data than a zillion small sites would. But when they get breached, it&#39;s a catatrasophe of ecological proportion.</p>&mdash; matt blaze (@mattblaze) <a href="https://twitter.com/mattblaze/status/1045833186603872264?ref_src=twsrc%5Etfw">September 29, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Google provides a similar authentication system with [Google Sign-In](https://developers.google.com/identity/), which covers even more services than Facebook does. One notable example is cloud infrastructure provider [DigitalOcean](https://www.digitalocean.com/docs/accounts/security/#use-google-sso-for-login), a competitor to Amazon Web Services and Microsoft Azure. 
 
 Imagine for a moment if there was a similar bug in Google's services which caused 90 million Google accounts to be breached, and you're an organisation using DigitalOcean for all of your cloud infrastructure, and several of your engineers were affected...
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">For those unfamiliar with the subtext:<br><br>If this happened to Google, something like a majority of all major online applications everywhere would require days to (in many cases) weeks of expensive forensics investigations. <br><br>A mind-bending catastrophe.</p>&mdash; Thomas H. Ptacek (@tqbf) <a href="https://twitter.com/tqbf/status/1045825117362814976?ref_src=twsrc%5Etfw">September 28, 2018</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">For those unfamiliar with the subtext:<br><br>If this happened to Google, something like a majority of all major online applications everywhere would require days to (in many cases) weeks of expensive forensics investigations. <br><br>A mind-bending catastrophe.</p>&mdash; Thomas H. Ptacek (@tqbf) <a href="https://twitter.com/tqbf/status/1045825117362814976?ref_src=twsrc%5Etfw">September 28, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
@@ -65,4 +65,6 @@ The trade-off, of course, is that you're putting all of your eggs in one basket.
 
 Still, I'd argue that for Google accounts in particular, this trade-off is worth it. Google [supports](https://landing.google.com/advancedprotection/) the most secure multi-factor authentication methods, and generally tends to do a good job with account security. Besides, if an attacker has access to your Google account, and you use Gmail, they can already access password reset emails.
 
-Just don't forget: when you use a centralised authentication provider, you're trusting the provider with access to everything you link it to. For some threat models, this is the wrong trade-off to make.
+Just don't forget: when you use any centralised authentication provider, you're placing a lot of trust in that provider. They, and anyone who compromises their systems, will have access to any other service you link via single sign-on.
+
+For *most* users and *most* services, this is worth the risk. For some, this is the wrong trade-off.
