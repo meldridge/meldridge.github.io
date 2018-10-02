@@ -38,15 +38,14 @@ The downside is that this means that if an attacker manages to steal a valid Fac
 
 Matt Blaze [summarised](https://twitter.com/mattblaze/status/1045833186603872264) this problem well:
 
-<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">We&#39;re seeing the flip side of concentrating authentication into a few giants like Facebook, Google, etc. They almost certainly DO do a better job securing sensitive data than a zillion small sites would. But when they get breached, it&#39;s a catatrasophe of ecological proportion.</p>&mdash; matt blaze (@mattblaze) <a href="https://twitter.com/mattblaze/status/1045833186603872264?ref_src=twsrc%5Etfw">September 29, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://twitter.com/mattblaze/status/1045833186603872264"><img src="/images/facebook-sso-blaze.png" alt="Tweet by Matt Blaze" style="width: 100%; max-width: 450px; display: block; margin: 0 auto; "/></a>
 
 Google provides a similar authentication system with [Google Sign-In](https://developers.google.com/identity/), which covers even more services than Facebook does. One notable example is cloud infrastructure provider [DigitalOcean](https://www.digitalocean.com/docs/accounts/security/#use-google-sso-for-login), a competitor to Amazon Web Services and Microsoft Azure. 
 
 Imagine for a moment if there was a similar bug in Google's services which caused 90 million Google accounts to be breached, and you're an organisation using DigitalOcean for all of your cloud infrastructure, and several of your engineers were affected...
 
-<blockquote class="twitter-tweet tw-align-center" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">For those unfamiliar with the subtext:<br><br>If this happened to Google, something like a majority of all major online applications everywhere would require days to (in many cases) weeks of expensive forensics investigations. <br><br>A mind-bending catastrophe.</p>&mdash; Thomas H. Ptacek (@tqbf) <a href="https://twitter.com/tqbf/status/1045825117362814976?ref_src=twsrc%5Etfw">September 28, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a href="https://twitter.com/tqbf/status/1045825117362814976"><img src="/images/facebook-sso-ptacek.png" alt="Tweet by Thomas H. Ptacek" style="width: 100%; max-width: 450px; display: block; margin: 0 auto; "/></a>
+
 
 
 Yep. At the very least, this would mean checking through your audit logs to make sure that none of your compromised accounts were used by the attacker to access your infrastructure. At worst... well, not every service provides good audit logs.
