@@ -5,9 +5,9 @@ title:
 
 Good morning.
 
-iOS 12/iPhone XS PAC bypass: https://twitter.com/SparkZheng/status/1045265728318754816
+Some quick follow-up items: in a [previous email](https://markeldo.com/Email-update-AMSI-for-macros-iPhone-PACs-reinventing-the-URL-and-infosec-resilience/) we discussed the use of authenticated pointers (PAC) in the latest iPhones, and how the technology is likely to make iOS exploit development significantly more difficult.
 
-https://www.scmagazine.com/home/news/decline-in-chinese-cyberattacks-against-u-s-suggests-attacks-getting-more-efficient/
+Of course, no mitigation is perfect. Apparently a Chinese team has [already written an iOS 12 jailbreak](https://twitter.com/SparkZheng/status/1045265728318754816) which bypasses PAC.
 
 
 ### Fancy bear and firmware implants
@@ -27,3 +27,11 @@ When it comes to [persistence mechanisms](https://attack.mitre.org/wiki/Persiste
 https://www.zdnet.com/article/new-xbash-malware-combines-ransomware-coinminer-botnet-and-worm-features-in-deadly-combo/
 
 https://usa.kaspersky.com/resource-center/threats/computer-viruses-vs-worms
+
+### iOS 12 jailbreak bypasses PAC
+
+
+
+### Innovative phishing style
+
+https://stuffwithaurum.blog/2018/09/30/an-innovative-phishing-style/
