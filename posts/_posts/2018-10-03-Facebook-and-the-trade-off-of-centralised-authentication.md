@@ -2,7 +2,7 @@
 layout: post
 title: Facebook and the trade-off of centralised authentication
 image: "/images/facebook-shatter.jpg"
-excerpt: "Having 50 million accounts breached is bad enough, but the major issue is that a huge number of other services utilise Facebook login to authenticate users."
+excerpt: "Having 50 million accounts breached is bad enough, but the bigger issue is that a huge number of third-party services use Facebook to authenticate their users."
 ---
 
 ![Facebook](/images/facebook-shatter.jpg)
@@ -32,7 +32,7 @@ That's part of what makes this compromise such a big deal: it didn't matter how 
 
 ### Facebook login: a single key to unlock many doors
 
-Having 50 million accounts breached is bad enough, but the major issue is that a huge number of other services utilise [Facebook login](https://developers.facebook.com/docs/facebook-login/) to authenticate users. This includes services like Instagram, Tinder, Spotify, Airbnb, Duolingo, and even [GitHub](https://help.github.com/articles/recovering-your-account-if-you-lose-your-2fa-credentials/). 
+Having 50 million accounts breached is bad enough, but the bigger issue is that a huge number of other services utilise [Facebook login](https://developers.facebook.com/docs/facebook-login/) to authenticate users. This includes services like Instagram, Tinder, Spotify, Airbnb, Duolingo, and even [GitHub](https://help.github.com/articles/recovering-your-account-if-you-lose-your-2fa-credentials/). 
 
 There are [hundreds](https://www.slideshare.net/Neolane/analysis-of-150-websites-using-facebook-login) of services which use Facebook in this way, and for good reason: if you're running an online service and you don't *need* to control user accounts directly, it's much easier and more secure to let Facebook handle it for you.
 
