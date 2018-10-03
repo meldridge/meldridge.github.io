@@ -5,9 +5,21 @@ title:
 
 Good morning.
 
-Some quick follow-up items: in a [previous email](https://markeldo.com/Email-update-AMSI-for-macros-iPhone-PACs-reinventing-the-URL-and-infosec-resilience/) we discussed the use of authenticated pointers (PAC) in the latest iPhones, and how the technology is likely to make iOS exploit development significantly more difficult.
+Some follow-up to my Facebook post from earlier in the week: https://twitter.com/jpolakis/status/1046094369831485440
 
-Of course, no mitigation is perfect. Apparently a Chinese team has [already written an iOS 12 jailbreak](https://twitter.com/SparkZheng/status/1045265728318754816) which bypasses PAC.
+Also, in a [previous email](https://markeldo.com/Email-update-AMSI-for-macros-iPhone-PACs-reinventing-the-URL-and-infosec-resilience/) we discussed the use of authenticated pointers (PAC) in the latest iPhones, and how the technology is likely to make iOS exploit development significantly more difficult. Of course, no mitigation is perfect. Apparently a Chinese team has [already written an iOS 12 jailbreak](https://twitter.com/SparkZheng/status/1045265728318754816) which bypasses PAC.
+
+Office kills DDE by default:
+- https://twitter.com/secbughunter/status/1047230349732864000
+- https://support.office.com/en-us/article/disabling-dynamic-data-exchange-dde-with-group-policy-1cad6409-5c06-485d-bbed-614b3195b091
+
+### Reconnaissance and open-Source intelligence
+
+OSINT
+
+https://posts.specterops.io/gathering-open-source-intelligence-bee58de48e05
+https://github.com/chrismaddalena/ODIN
+
 
 
 ### Fancy bear and firmware implants
