@@ -7,9 +7,15 @@ Good morning.
 
 What a week. It's becoming difficult to make these _weekly_ summaries, because there's just so much going on in the infosec world these days.
 
+### Dutch intelligence breaks up GRU cyber operation
+
+In any normal week... https://twitter.com/gordoncorera/status/1047788913690140673
+
 ### Bloomberg reports that Supermicro servers had hardware trojans
 
-Bloomberg broke [this story](https://www.bloomberg.com/news/features/2018-10-04/the-big-hack-how-china-used-a-tiny-chip-to-infiltrate-america-s-top-companies) yesterday, and it's an incredible read. Citing 17 sources including six "current and former senior national security officials", Bloomberg's story states that in 2015 it was discovered that server motherboards manufactured by Supermicro had hardware trojans installed during manufacture:
+Bloomberg broke [this story](https://www.bloomberg.com/news/features/2018-10-04/the-big-hack-how-china-used-a-tiny-chip-to-infiltrate-america-s-top-companies) yesterday, and it's an incredible read. 
+
+Citing 17 sources including six "current and former senior national security officials", the story states that server motherboards manufactured by Supermicro have been shipped with hardware trojans installed, and had been discovered in datacentres owned by Amazon and Apple:
 
 >Nested on the servers’ motherboards, the testers found a tiny microchip, not much bigger than a grain of rice, that wasn’t part of the boards’ original design. Amazon reported the discovery to U.S. authorities, sending a shudder through the intelligence community. Elemental’s servers could be found in Department of Defense data centers, the CIA’s drone operations, and the onboard networks of Navy warships. And Elemental was just one of hundreds of Supermicro customers.
 >
@@ -17,9 +23,13 @@ Bloomberg broke [this story](https://www.bloomberg.com/news/features/2018-10-04/
 >
 >This attack was something graver than the software-based incidents the world has grown accustomed to seeing. Hardware hacks are more difficult to pull off and potentially more devastating, promising the kind of long-term, stealth access that spy agencies are willing to invest millions of dollars and many years to get.
 
-The story would be enough of a blockbuster on its own, but making things more interesting is the blanket denials 
+The story would be enough of a bombshell on its own, but making things more interesting is the vehement denials of the story's accuracy by both [Apple](https://www.apple.com/newsroom/2018/10/what-businessweek-got-wrong-about-apple/) and [Amazon](https://aws.amazon.com/blogs/security/setting-the-record-straight-on-bloomberg-businessweeks-erroneous-article/).
+
+As a few people [pointed out](https://twitter.com/SwiftOnSecurity/status/1047946250035875841), this sort of direct refutation of a story isn't what you'd expect to see from SEC-regulated companies unless they're very sure that they'll be proven right by a subsequent investigation. It's a weird situation to be in.
 
 <a href="https://twitter.com/TheRegister/status/1047952621762297857"><img src="/images/supermicro-register-antimatter.png" alt="Tweet by The Register" class="tweet"/></a>
+
+Until we get more information (or someone finds a compromised Supermicro motherboard and pulls it apart), the grugq has a good writeup of the story [here](https://medium.com/@thegrugq/supply-chain-security-speculation-b7b6357a5d05), and Patrick Gray released a Risky Business [feature interview](https://risky.biz/RB516_feature/) on the Bloomberg story and hardware attacks generally. Both are well worth the time.
 
 ### Own the BMC, own the server
 
@@ -45,7 +55,12 @@ Back in 2014, it was made public that Supermicro's BMC [would send you the plain
 
 Earlier this year, a group of researchers discovered that the login for HP's BMC software could be bypassed by simply [entering a 29 'A' characters in a connection header](https://www.bleepingcomputer.com/news/security/you-can-bypass-authentication-on-hpe-ilo4-servers-with-29-a-characters/).
 
-A group of researchers presented on exactly this topic earlier this year: [_Backdooring your server through its BMC: the HPE iLO4 case_]()
+A group of researchers presented on exactly this topic earlier this year: [_Backdooring your server through its BMC: the HPE iLO4 case_](https://airbus-seclab.github.io/ilo/SSTIC2018-Slides-EN-Backdooring_your_server_through_its_BMC_the_HPE_iLO4_case-perigaud-gazet-czarny.pdf)
+
+### Hardware hacking: how to compromise a BMC bootloader
+
+Thread: (and unrolled [here](https://securinghardware.com/articles/hardware-implants/)
+https://twitter.com/securelyfitz/status/1047942844738981889
 
 
 ### Facebook follow-up: third-party website SSO implementations
