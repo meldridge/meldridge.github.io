@@ -22,7 +22,7 @@ Everything we do in the security industry is a trade-off between convenience and
 The latter is what I like to call the *"turn everything off and go home"* approach to security. After all, you can't remotely hack a server if it's always off, and no one can steal your corporate information if you never do any work! 
 
 <img src="/images/meme-cant-get-hacked2.jpg" alt="Can't get hacked if everything is off" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
-<em>Problem solved.</em>
+<em class="caption">Problem solved.</em>
 
 This is an extreme example, but we're all familiar with compromising convenience for security. Having to lock your computer is annoying, but we accept it as a necessary security precaution. Legitimate email gets caught in spam folders, but we still see the filtering as worthwhile.
 
@@ -45,7 +45,7 @@ We also have to compromise between security and convenience in our personal live
 In this example, we can look at convenience and security as if they were a spectrum: one extreme representing maximum convenience (minimum security), and the other representing maximum security (minimum convenience).
 
 ![Security trade-offs in password practices](/images/security-trade-off-cropped.png)
-*Security is always a trade-off*
+<em class="caption">Security is always a trade-off</em>
 
 The most convenient password is not to have one at all, but for these online services I'm forced to pick *something*. In that case, the easiest solution is to just use something ridiculously obvious for the password (like the word `"password"`), and use the same one for every service.
 

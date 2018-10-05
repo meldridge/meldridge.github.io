@@ -42,8 +42,8 @@ And an example of ASD's frustration at seeing this all the time (I can relate):
 ![Victim patient zero slide](/images/stilgherrian-aus-defence-contractor-owned-2.jpg)
 
 Some further links, all with varying amounts of detail:
-* https://www.itnews.com.au/news/defence-contractors-it-systems-breached-475047
-* http://www.smh.com.au/federal-politics/political-news/hacker-codenamed-in-honour-of-alf-from-home-and-away-stole-sensitive-data-about-australian-military-projects-20171011-gyz1hb.html
-* http://www.abc.net.au/news/2017-10-10/defence-contractors-files-stolen-in-hacking:-security-report/9032290?pfmredir=sm
+* <https://www.itnews.com.au/news/defence-contractors-it-systems-breached-475047>
+* <http://www.smh.com.au/federal-politics/political-news/hacker-codenamed-in-honour-of-alf-from-home-and-away-stole-sensitive-data-about-australian-military-projects-20171011-gyz1hb.html>
+* <http://www.abc.net.au/news/2017-10-10/defence-contractors-files-stolen-in-hacking:-security-report/9032290?pfmredir=sm>
 
-The story even made the New York Times: https://www.nytimes.com/2017/10/10/world/australia/cybersecurity-data-breach.html
+The story even made the New York Times: <https://www.nytimes.com/2017/10/10/world/australia/cybersecurity-data-breach.html>

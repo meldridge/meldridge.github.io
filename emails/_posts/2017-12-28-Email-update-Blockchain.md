@@ -29,4 +29,4 @@ In the case of the ASX, access is restricted to particular parties, in exactly t
 
 To summarise: the technology behind blockchain is interesting, but we still don’t have all that many compelling use cases for it. Matt Blaze [summed it up](https://mobile.twitter.com/mattblaze/status/872194910220374017) better than anyone:
 
-![Matt Blaze on blockchain](/images/matt-blaze-blockchain.jpg)
+<a href="https://twitter.com/mattblaze/status/872194910220374017"><img src="/images/matt-blaze-blockchain.png" alt="Tweet by Matt Blaze" class="tweet"/></a>

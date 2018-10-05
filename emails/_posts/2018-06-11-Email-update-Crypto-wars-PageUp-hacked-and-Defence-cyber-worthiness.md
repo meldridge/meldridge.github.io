@@ -62,7 +62,7 @@ To be frank, my reaction to this one was about equal-parts approval and eyeroll.
 
 However, some of these statements on "cyber-whatever" have a tendency to... well, I'll let Jake Williams [provide an example](https://twitter.com/MalwareJake/status/985569769846865922):
 
-[<img src="/images/jake-williams-cyber-tanks.png" alt="Cyber Tanks" width="500">](https://twitter.com/MalwareJake/status/985569769846865922)
+<a href="https://twitter.com/MalwareJake/status/985569769846865922"><img src="/images/jake-williams-cyber-tanks.png" alt="Tweet by Jake Williams" class="tweet"/></a>
 
 He goes on to elaborate:
 

@@ -119,15 +119,6 @@ em, i {
   font-style: italic;
 }
 
-// Image captions
-img + em {
-  display: block;
-  font-style: italic;
-  font-size: 15px;
-  text-align: center;
-  color: $gray;
-}
-
 strong, b {
   font-weight: bold;
 }
@@ -320,6 +311,25 @@ nav {
     padding: 0.3em 1em 0.3em 1em;
     font-size: 15px;
     background: $lightGray
+  }
+
+  img.tweet {
+    // Tweet screenshots - generate using Medium's embedding
+    width: 100%; 
+    max-width: 470px; 
+    display: block; 
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 15px;
+    border: 2px solid $lightGray;
+  }
+
+  em.caption {
+      display: block;
+      font-style: italic;
+      font-size: 15px;
+      text-align: center;
+      color: $gray;
   }
   
   a.footnote {

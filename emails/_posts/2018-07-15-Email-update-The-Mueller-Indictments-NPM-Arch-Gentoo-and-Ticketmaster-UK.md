@@ -17,7 +17,7 @@ One of the major stories of the week was the [indictment of 12 members of Russia
 
 Tangentially related was this [Twitter thread](https://twitter.com/pwnallthethings/status/1018164868640329728) by Matt Tait ([@pwnallthethings](https://twitter.com/pwnallthethings)):
 
-[![Modern spearphishing - 1](/images/matt-tait-phishing-1.PNG)](https://twitter.com/pwnallthethings/status/1018164868640329728)
+<a href="https://twitter.com/pwnallthethings/status/1018166157206016002"><img src="/images/matt-tait-phishing.PNG" alt="Tweet by Matt Tait" class="tweet"/></a>
 
 It's worth reading the whole thread, especially the two tweets containing screenshots of the actual phishing email sent to John Podesta, as well as the fake website set up to steal his credentials. They're quite eye-opening if you've never seen a sophisticated phishing campaign.
 
