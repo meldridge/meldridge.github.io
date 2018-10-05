@@ -23,17 +23,27 @@ Citing 17 sources including six "current and former senior national security off
 >
 >This attack was something graver than the software-based incidents the world has grown accustomed to seeing. Hardware hacks are more difficult to pull off and potentially more devastating, promising the kind of long-term, stealth access that spy agencies are willing to invest millions of dollars and many years to get.
 
-The story would be enough of a bombshell on its own, but making things more interesting is the vehement denials of the story's accuracy by both [Apple](https://www.apple.com/newsroom/2018/10/what-businessweek-got-wrong-about-apple/) and [Amazon](https://aws.amazon.com/blogs/security/setting-the-record-straight-on-bloomberg-businessweeks-erroneous-article/).
+The story would be enough of a bombshell on its own, but making things more interesting is the vehement denials of the story by both [Apple](https://www.apple.com/newsroom/2018/10/what-businessweek-got-wrong-about-apple/) and [Amazon](https://aws.amazon.com/blogs/security/setting-the-record-straight-on-bloomberg-businessweeks-erroneous-article/).
 
-As a few people [pointed out](https://twitter.com/SwiftOnSecurity/status/1047946250035875841), this sort of direct refutation of a story isn't what you'd expect to see from SEC-regulated companies unless they're very sure that they'll be proven right by a subsequent investigation. It's a weird situation to be in.
+As a few people [pointed out](https://twitter.com/SwiftOnSecurity/status/1047946250035875841), this sort of direct and specific refutation isn't what you'd expect to see from SEC-regulated companies unless they're very sure that they'll be proven right by a subsequent investigation. It's a weird situation to be in.
 
 <a href="https://twitter.com/TheRegister/status/1047952621762297857"><img src="/images/supermicro-register-antimatter.png" alt="Tweet by The Register" class="tweet"/></a>
 
 Until we get more information (or someone finds a compromised Supermicro motherboard and pulls it apart), the grugq has a good writeup of the story [here](https://medium.com/@thegrugq/supply-chain-security-speculation-b7b6357a5d05), and Patrick Gray released a Risky Business [feature interview](https://risky.biz/RB516_feature/) on the Bloomberg story and hardware attacks generally. Both are well worth the time.
 
+Joe FitzPatrick from SecuringHardware.com also posted a [set of tweets](https://twitter.com/securelyfitz/status/1047942844738981889) (unrolled [here](https://securinghardware.com/articles/hardware-implants/)) detailing how such an attack might be performed:
+
+>With hardware access, there are plenty of ways to backdoor a server. Someone knowledgable could quickly pick out a dozen well marked places malicious firmware could hide on a board and dozens of more components large enough to contain a capable implant inside them.
+>
+>The biggest target is the BMC. It’s trivial to modify the firmware of most BMCs, and many of them are trivial to exploit remotely because of the poor quality, outdated software they run.
+
+It's worth expanding on this, as not many people will know what a BMC does unless they've spent some time administering or securing servers.
+
 ### Own the BMC, own the server
 
-Modern servers come with a Baseboard Management Controller (BMC), which provides out-of-band management: allowing administrators to remotely control the server hardware independent of the operating system running on top of it. In the simplest case, if you have access to the BMC you can remotely interact with the server as if you were physically in front of it with a monitor and keyboard.
+Modern servers come with a Baseboard Management Controller (BMC), which provides something called [out-of-band management](https://en.wikipedia.org/wiki/Out-of-band_management): allowing administrators to remotely control the server hardware independent of the operating system running on top of it. 
+
+In the simplest case, if you have access to the BMC you can remotely interact with the server as if you were physically in front of it with a monitor and keyboard.
 
 [This article by The Register](https://www.theregister.co.uk/2018/09/07/supermicro_bmcs_hole/) back in September (coincidentally also about Supermicro servers) gives a good summary:
 
@@ -41,26 +51,31 @@ Modern servers come with a Baseboard Management Controller (BMC), which provides
 >
 >Because BMCs operate at such a low level, they are also valuable targets for hackers.
 
-Many BMCs are also responsible for also have direct access to 
+Yep. We'll come back to that.
 
-https://airbus-seclab.github.io/ilo/SSTIC2018-Slides-EN-Backdooring_your_server_through_its_BMC_the_HPE_iLO4_case-perigaud-gazet-czarny.pdf
+Many BMCs are also responsible for loading the firmware for other devices on the board such as network controllers, and they often have the ability to directly interact with the host operating system via Direct Memory Access (DMA). This means that if you manage to compromise the BMC, you can inject malicious code into the actual host operating system running on the server itself.
 
-With this much power over the underlying system, access to the BMC is incredibly sensitive: if you own the BMC, you own the server. 
+With this much power over the server's hardware and the host operating system, access to the BMC is incredibly sensitive: if you own the BMC, you own the server. 
 
-Unfortunately, BMC security has historically been... poor. 
+Unfortunately, BMC security has historically been... poor.  As the grugq put it:
 
-[This blog post](https://blog.rapid7.com/2013/07/02/a-penetration-testers-guide-to-ipmi/) by Rapid7's HD Moore goes into detail about BMC security and a fundamental weakness in the IPMI 2.0 protocol (an industry standard for BMCs). 
+>**"Baseboard Management Controllers (BMC) and the Intelligent Platform Management Interface (IPMI) protocol are a horrendous tire fire for cyber security."**
 
-Back in 2014, it was made public that Supermicro's BMC [would send you the plaintext admin password](https://arstechnica.com/information-technology/2014/06/at-least-32000-servers-broadcast-admin-passwords-in-the-clear-advisory-warns/) if you just sent a particular HTTP GET request to a certain port. 
+### A long history of poor security practices
 
-Earlier this year, a group of researchers discovered that the login for HP's BMC software could be bypassed by simply [entering a 29 'A' characters in a connection header](https://www.bleepingcomputer.com/news/security/you-can-bypass-authentication-on-hpe-ilo4-servers-with-29-a-characters/).
+[This blog post](https://blog.rapid7.com/2013/07/02/a-penetration-testers-guide-to-ipmi/) by Rapid7's HD Moore goes into detail about BMC security and the IPMI protocol which is an industry standard for communicating with BMCs. There are plenty of problems to highlight, but my favourite is this fundamental weakness in the IPMI 2.0 protocol specification:
 
-A group of researchers presented on exactly this topic earlier this year: [_Backdooring your server through its BMC: the HPE iLO4 case_](https://airbus-seclab.github.io/ilo/SSTIC2018-Slides-EN-Backdooring_your_server_through_its_BMC_the_HPE_iLO4_case-perigaud-gazet-czarny.pdf)
+>In short, the authentication process for IPMI 2.0 mandates that the server send a salted SHA1 or MD5 hash of the requested user's password to the client, prior to the client authenticating. You heard that right - the BMC will tell you the password hash for any valid user account you request. This password hash can broken using an offline bruteforce or dictionary attack. Since this issue is a key part of the IPMI specification, there is no easy path to fix the problem, short of isolating all BMCs into a separate network.
 
-### Hardware hacking: how to compromise a BMC bootloader
+It gets worse. Back in 2014, it was made public that Supermicro's BMC [would send you the plaintext admin password](https://arstechnica.com/information-technology/2014/06/at-least-32000-servers-broadcast-admin-passwords-in-the-clear-advisory-warns/) if you just sent a particular HTTP GET request to a certain port:
 
-Thread: (and unrolled [here](https://securinghardware.com/articles/hardware-implants/)
-https://twitter.com/securelyfitz/status/1047942844738981889
+<a href="https://twitter.com/cynicalsecurity/status/479743473344872448"><img src="/images/supermicro-psblock.png" alt="Tweet by Arrigo Triulzi" class="tweet"/></a>
+
+That's right - send a GET request to a particular port on the BMC interface, and the server will dutifully send you the admin password.  I've had great fun with this one on previous engagements.
+
+Finally, a group of researchers discovered this year that the login for HP's BMC software could be bypassed by simply [entering a 29 'A' characters in a connection header](https://www.bleepingcomputer.com/news/security/you-can-bypass-authentication-on-hpe-ilo4-servers-with-29-a-characters/). This also allowed them to obtain code execution in the BMC, and then use DMA to compromise the Linux host OS running on the server. The full presentation is here: [_Backdooring your server through its BMC: the HPE iLO4 case_](https://airbus-seclab.github.io/ilo/SSTIC2018-Slides-EN-Backdooring_your_server_through_its_BMC_the_HPE_iLO4_case-perigaud-gazet-czarny.pdf).
+
+The list of security problems in BMC software is long, so to summarise: it's bad. We don't do a good enough job of securing this part of the software stack, and once it's compromised, it's very difficult to detect or remove.
 
 
 ### Facebook follow-up: third-party website SSO implementations
