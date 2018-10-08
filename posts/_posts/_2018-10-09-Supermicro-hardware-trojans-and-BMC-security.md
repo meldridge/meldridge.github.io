@@ -80,7 +80,7 @@ The list of security problems in BMC software is long, so to summarise: it's bad
 
 ### Intel Management Engine: the BMC you didn't even know you had
 
-It's not limited to servers, either. Intel's own Management Engine (IME) acts as a BMC for desktop and laptop systems, and has had plenty of [high-profile problems](https://www.theregister.co.uk/2017/11/20/intel_flags_firmware_flaws/) of its own.
+It's not limited to servers, either. Intel's own Management Engine (IME) acts as a BMC for desktop and laptop systems, and has had [plenty of](https://www.theregister.co.uk/2017/11/20/intel_flags_firmware_flaws/) [high-profile problems](https://www.theregister.co.uk/2018/10/03/intel_management_engine_hole/) of its own.
 
 Last November, I wrote this in an [email update](https://markeldo.com/Email-update-Intel-Management-Engine-causes-everyone-headaches-again/):
 
