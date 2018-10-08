@@ -2,11 +2,11 @@
 layout: post
 title: Supermicro, hardware trojans, and BMC security
 image: "/images/supermicro-bmc-cropped.jpg"
-excerpt: ""
+excerpt: "We need to take two things much more seriously: the security of our supply-chain, and the security of our baseboard management controllers."
 ---
 
-<img src="/images/supermicro-bmc-cropped.jpg" alt="supermicro-bmc-cropped" style="width: 100%; max-width: 600px; display: block; margin: 0 auto; "/>
-<em class="caption">A Supermicro Baseboard Management Controller (Source: <a href="https://img.alicdn.com/imgextra/i4/53172813/TB2KWHEAv5TBuNjSspcXXbnGFXa_!!53172813.jpg">Alibaba</a>)</em>
+![supermicro-bmc-cropped](/images/supermicro-bmc-cropped.jpg)
+<em class="caption">A Supermicro B1DRi board, showing the baseboard management controller (Source: <a href="https://img.alicdn.com/imgextra/i4/53172813/TB2KWHEAv5TBuNjSspcXXbnGFXa_!!53172813.jpg">Alibaba</a>)</em>
 
 Bloomberg broke [this story](https://www.bloomberg.com/news/features/2018-10-04/the-big-hack-how-china-used-a-tiny-chip-to-infiltrate-america-s-top-companies) last week, and it's an incredible read. 
 
@@ -54,11 +54,11 @@ In the simplest case, if you have access to the BMC you can remotely interact wi
 
 Yep. We'll come back to that.
 
-Many BMCs are also responsible for loading the firmware for other devices on the board such as network controllers, and they usually have the ability to directly interact with the host operating system via Direct Memory Access (DMA) and hardware interrupts. This means that if you manage to compromise the BMC, you can inject malicious code into the actual host operating system running on the server itself.
+Many BMCs are also responsible for loading the firmware for other devices on the board such as network controllers, and they have the ability to directly interact with the host operating system via direct memory access (DMA) and hardware interrupts. This means that if you manage to compromise the BMC, you can inject malicious code into the actual host operating system running on the server itself.
 
 With this much power over the server's hardware and the host operating system, access to the BMC is incredibly sensitive: if you own the BMC, you own the server. 
 
-Unfortunately, BMC security has historically been... poor.  As the grugq put it:
+Unfortunately, BMC security has historically been... poor. As the grugq succinctly [put it](https://medium.com/@thegrugq/supply-chain-security-speculation-b7b6357a5d05):
 
 >**"Baseboard Management Controllers (BMC) and the Intelligent Platform Management Interface (IPMI) protocol are a horrendous tire fire for cyber security."**
 
@@ -72,11 +72,11 @@ It gets worse. Back in 2014, it was made public that Supermicro's BMC [would sen
 
 <a href="https://twitter.com/cynicalsecurity/status/479743473344872448"><img src="/images/supermicro-psblock.png" alt="Tweet by Arrigo Triulzi" class="tweet"/></a>
 
-That's right - send a GET request to a particular port on the BMC interface, and the server will dutifully send you the admin password.  I've had great fun with this one on previous engagements.
+That's right: send a GET request to a particular port on the BMC interface, and the server will dutifully send you the admin password.  I've had great fun with this one on previous engagements.
 
-Finally, a group of researchers discovered this year that the login for HP's BMC software could be bypassed by simply [entering a 29 'A' characters in a connection header](https://www.bleepingcomputer.com/news/security/you-can-bypass-authentication-on-hpe-ilo4-servers-with-29-a-characters/). This also allowed them to obtain code execution in the BMC, and then use DMA to compromise the Linux host OS running on the server. The full presentation is here: [_Backdooring your server through its BMC: the HPE iLO4 case_](https://airbus-seclab.github.io/ilo/SSTIC2018-Slides-EN-Backdooring_your_server_through_its_BMC_the_HPE_iLO4_case-perigaud-gazet-czarny.pdf).
+Finally, a group of researchers discovered this year that the login for HP's BMC software could be bypassed by simply [entering a 29 'A' characters in a connection header](https://www.bleepingcomputer.com/news/security/you-can-bypass-authentication-on-hpe-ilo4-servers-with-29-a-characters/). This also allowed them to obtain code execution in the BMC, and then use DMA to compromise the Linux host OS running on the server. (The full presentation is [here](https://airbus-seclab.github.io/ilo/SSTIC2018-Slides-EN-Backdooring_your_server_through_its_BMC_the_HPE_iLO4_case-perigaud-gazet-czarny.pdf).)
 
-The list of security problems in BMC software is long, so to summarise: it's bad. We don't do a good enough job of securing this part of the software stack, and once it's compromised, it's very difficult to detect or remove.
+The list of security problems in BMC software is long, so to summarise: it's bad. We don't do a good enough job of securing this layer of our IT systems, and once it's compromised, it's very difficult to detect or remove.
 
 ### Intel Management Engine: the BMC you didn't even know you had
 
@@ -91,9 +91,9 @@ Last November, I wrote this in an [email update](https://markeldo.com/Email-upda
 
 That last point is arguably the biggest problem: many organisations aren't even aware that this is a risk they need to worry about. 
 
-Hardware trojans are outside the threat model for many enterprises, but attacks against insecure BMC and IME installations are well within the skillset of sophisticated criminal groups.
-
 ### An apocryphal story can still teach important lessons
+
+Hardware trojans like those described in the Bloomberg article are probably outside the threat model for many enterprises, but software attacks against insecure BMC and IME installations are well within the skillset of sophisticated criminal groups.
 
 We should know in a few week's time whether or not specific parts of the Bloomberg story were accurate, and at this point it's [not looking good](https://twitter.com/riskybusiness/status/1049083377733652480). 
 
