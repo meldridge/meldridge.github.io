@@ -164,13 +164,6 @@
 		body strong{
 			font-weight:600;
 		}
-		body img+em{
-			display:block;
-			font-style:italic;
-			text-align:center;
-			color:#666;
-			padding-bottom:.5em;
-		}
 		body hr{
 			height:0;
 			margin:15px 0;
@@ -966,6 +959,25 @@
 		body img[align=left]{
 			padding-right:20px;
 		}
+		body img.tweet {
+		    // Tweet screenshots - generate using Medium's embedding
+		    width: 100%; 
+		    max-width: 470px; 
+		    display: block; 
+		    margin: 0 auto;
+		    padding: 5px;
+		    border-radius: 15px;
+		    border: 2px solid #eee;
+		    margin-bottom:.5em;
+		}
+		body em.caption {
+		    display: block;
+		    font-style: italic;
+		    font-size: 15px;
+		    text-align: center;
+		    color: #666;
+		    margin-bottom:.5em;
+	    }
 		body code{
 			padding:.2em .4em;
 			margin:0;
@@ -1095,8 +1107,11 @@
   <p>The same image, manually centred and with a max-width of 400</p>
   <p style="text-align:center;"><img src="https://gallery.mailchimp.com/54013eac813b779a06af915aa/images/1d4072b1-71a8-40d2-99d4-b922682d9ad4.png" alt="Logging into Handelsbanken using Mobile BankID" width="400">
   </p>
+  <p>Now an embedded tweet screenshot with a link:</p>
+  <a href="https://twitter.com/TheRegister/status/1047952621762297857"><img src="https://gallery.mailchimp.com/54013eac813b779a06af915aa/images/5e78fd9a-e153-413e-8d86-60915df89214.png" alt="Tweet by The Register" class="tweet"/></a>
   <p>New image with a caption</p>
-  <img src="https://www.yubico.com/wp-content/uploads/2018/02/Security-Key-with-key-ring-720x720.jpg" alt="The Yubico Security Key"><em>A Yubico Security Key (Credit: <a href="https://www.yubico.com/product/security-key-by-yubico/">Yubico</a>)</em>
+  <img src="https://www.yubico.com/wp-content/uploads/2018/02/Security-Key-with-key-ring-720x720.jpg" alt="The Yubico Security Key">
+  <em class="caption">A Yubico Security Key (Credit: <a href="https://www.yubico.com/product/security-key-by-yubico/">Yubico</a>)</em>
   <p>Text immediately following the caption, to check if there is enough padding following the caption.</p>
   <h2 id="lists">Lists</h2>
   <p>(In this example, leading and trailing spaces are shown with with dots: ⋅)</p>
