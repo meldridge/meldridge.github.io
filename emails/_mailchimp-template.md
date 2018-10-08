@@ -960,22 +960,22 @@
 			padding-right:20px;
 		}
 		body img.tweet {
-		    // Tweet screenshots - generate using Medium's embedding
-		    width: 100%; 
-		    max-width: 470px; 
-		    display: block; 
-		    margin: 0 auto;
-		    padding: 5px;
-		    border-radius: 15px;
-		    border: 2px solid #eee;
+		    width:100%; 
+		    max-width:470px;
+		    box-sizing:content-box; 
+		    display:block; 
+		    margin:0 auto;
+		    padding:5px;
+		    border-radius:15px;
+		    border:2px solid #eee;
 		    margin-bottom:.5em;
 		}
 		body em.caption {
-		    display: block;
-		    font-style: italic;
-		    font-size: 15px;
-		    text-align: center;
-		    color: #666;
+		    display:block;
+		    font-style:italic;
+		    font-size:15px;
+		    text-align:center;
+		    color:#666;
 		    margin-bottom:.5em;
 	    }
 		body code{
