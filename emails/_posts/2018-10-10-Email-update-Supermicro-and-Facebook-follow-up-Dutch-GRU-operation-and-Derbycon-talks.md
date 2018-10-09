@@ -13,7 +13,7 @@ This story is 'developing', so stay tuned. In the meantime, Motherboard has a go
 
 ### Follow-up: Supermicro, hardware trojans, and BMC security
 
-Since [Monday's post](https://markeldo.com/Supermicro-hardware-trojans-and-BMC-security/) there have been some more developments in the Supermicro hardware trojan story.
+Since [Monday's post](https://markeldo.com/Supermicro-hardware-trojans-and-BMC-security/) there have been some more developments in the original Supermicro hardware trojan story - the one which implicated servers at Apple and Amazon.
 
 First up: Patrick Gray recorded [another podcast episode](https://risky.biz/RB517_feature/) where he interviewed Joe Fitzpatrick, one of the few named sources  in the original Bloomberg article. If you don't have time to listen to the episode, Apple Insider has a good summary [here](https://appleinsider.com/articles/18/10/08/security-researcher-cited-in-bloombergs-china-spy-chip-investigation-casts-doubt-on-storys-veracity).
 
