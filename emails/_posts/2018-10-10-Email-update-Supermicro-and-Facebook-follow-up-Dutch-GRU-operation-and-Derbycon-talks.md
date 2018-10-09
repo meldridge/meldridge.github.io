@@ -7,7 +7,11 @@ Good morning.
 
 What a week. It's becoming difficult to make these _weekly_ summaries, because there's just so much going on in the security world these days.
 
-### Supermicro follow-up
+Case in point: I was almost finished drafting this email when a [new Bloomberg story](https://www.bloomberg.com/news/articles/2018-10-09/new-evidence-of-hacked-supermicro-hardware-found-in-u-s-telecom) dropped, this time alleging that Supermicro servers at a "major U.S. telecommunications company" were discovered with hardware implants built into ethernet ports. The story is again short on technical detail, but this time names a source: [Yossi Appleboum](https://twitter.com/yossiapple) from Sepio Systems.
+
+This story is 'developing', so stay tuned. In the meantime, Motherboard has a good summary of everything [here](https://motherboard.vice.com/en_us/article/qv9npv/bloomberg-china-supermicro-apple-hack), including the fact that no one really knows what to believe at this point.
+
+### Follow-up: Supermicro, hardware trojans, and BMC security
 
 Since [Monday's post](https://markeldo.com/Supermicro-hardware-trojans-and-BMC-security/) there have been some more developments in the Supermicro hardware trojan story.
 
