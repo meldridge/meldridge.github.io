@@ -7,7 +7,7 @@ excerpt: This is a transcript of a speech made on 28 October 2014 to Heathfield 
 
 _This is a transcript of a speech made on 28 October 2014 to Heathfield High School, my alma mater. Heathfield is located in the Adelaide Hills, South Australia._
 
-_A video of this speech is available [here](https://www.youtube.com/watch?v=PSGr-ekeNFw)._
+_A video of this speech is available [here](https://www.youtube.com/watch?v=2S8W6fDGA3I)._
 
 <hr/>
 
