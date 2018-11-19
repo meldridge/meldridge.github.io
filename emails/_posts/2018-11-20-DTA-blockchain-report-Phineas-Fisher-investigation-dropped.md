@@ -1,7 +1,6 @@
 ---
 layout: email
 title: DTA blockchain report, Phineas Fisher investigation dropped
-image: "/images/bankid-card.jpg"
 ---
 
 Good morning.
