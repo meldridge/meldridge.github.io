@@ -6,7 +6,7 @@ image: "/images/bankid-card.jpg"
 
 Good morning.
 
-It's been over a month since my last email, and I have some bittersweet news to share: my wife was recently offered a great job opportunity back home in Adelaide, so we'll be moving back to Australia in mid December. I'll sincerely miss Stockholm and the friends we've made over the last year (not to mention the [internet connectivity](/images/stockholm-broadband.png)), but I am looking forward to seeing friends and family back home. 
+It's been over a month since my last email, and I have some bittersweet news to share: my wife was recently offered a great job opportunity back home in Adelaide, so we'll be moving back to Australia in mid December. I'll sincerely miss Stockholm and the friends we've made over the last year (not to mention the <a href="/images/stockholm-broadband.png" target="_blank">internet connectivity</a>), but I am looking forward to seeing friends and family back home. 
 
 I'm now on the hunt for good security or software engineering positions in Adelaide. I have a few leads already, but please feel free to get in contact if you know of anywhere my skills might be a good fit.
 
