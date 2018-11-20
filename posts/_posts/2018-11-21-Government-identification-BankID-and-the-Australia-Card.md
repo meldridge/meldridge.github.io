@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Government identification: BankID and the Australia Card"
+title: "Government Identification: BankID and the Australia Card"
 image: "/images/bankid-card.jpg"
 excerpt: "One of the less fun aspects of moving countries is that you're a walking edge-case for many IT systems. Being an expat also means becoming intimately familiar with all of the differences in how government services verify the identity of their users."
 ---
