@@ -17,7 +17,7 @@ A big story broke just before Christmas. From [ZDNet](https://www.zdnet.com/arti
 >
 >On Friday, the US formally attributed these attacks to China's Ministry of State Security (MSS) in its indictment of two Chinese nationals who it alleges are members of the group.
 
-The main story here is the indictments and the public "calling out" of China by western governments. The actual campaign by APT10 has been publicly known for almost two years. PricewaterhouseCoopers released a report on these attacks way back in April of 2017, terming them ["Operation Cloud Hopper"](https://www.pwc.co.uk/issues/cyber-security-data-privacy/insights/operation-cloud-hopper.html):
+The main story here is the indictments and the public "calling out" of China by western governments. The actual campaign by APT10 has been publicly known for almost two years. PwC released a report on these attacks way back in April of 2017, terming them ["Operation Cloud Hopper"](https://www.pwc.co.uk/issues/cyber-security-data-privacy/insights/operation-cloud-hopper.html):
 
 >Since late 2016, PwC and BAE Systems have been collaborating to research the threat, brief the global security community and assist known victims. The threat actor behind the campaign is widely known within the security community as ‘APT10’, referred to within PwC UK as ‘Red Apollo’.
 >
@@ -45,7 +45,7 @@ From [the same ZDNet article](https://www.zdnet.com/article/at-least-nine-global
 
 It's worth following the link to the ACSC advice, as the material is quite good. There's even a [list of questions](https://cyber.gov.au/business/publications/msp-questions-for-msps/MSP_Questionnaire.pdf) for clients of MSPs to ask before they sign a contract. 
 
-As always, the problem here is that if the client doesn't have the technical competence to judge the answers, having better questions won't help. (It's far too easy to bullshit your way to victory in the security industry.)
+As always, the problem here is that if the client doesn't have the technical competence to judge the answers, having better questions won't help. (It's still far too easy to bullshit your way to victory in the security industry.)
 
 ### NotPetya, cyber insurance, and war exclusion clauses
 
