@@ -45,7 +45,7 @@ In Active Directory, a 'forest' is usually the boundary (in Windows terms) for a
 
 (Taking the previous story for example: Mollema's post was describing a way to compromise an entire forest with access to a single Exchange mailbox.)
 
-In some cases, an organisation's forest will have a "trust" with another forest. For example: if Wombat Petroleum acquires Kangaroo Gas, part of the usual digestion process will involve setting up a trust between their respective forests, so that users in one company can access systems in the other.
+In some cases, an organisation's forest will have a "trust" with another forest. For example: if _Wombat Petroleum_ acquires _Kangaroo Gas_, part of the usual digestion process will involve setting up a trust between their respective forests, so that users in one company can access systems in the other.
 
 In theory, this is a robust security boundary: setting up a trust with another forest doesn't automatically give them access to your stuff - only the specific things you want them to. As long as you do it correctly, a trust doesn't automatically increase the risk of your own forest being compromised.
 
