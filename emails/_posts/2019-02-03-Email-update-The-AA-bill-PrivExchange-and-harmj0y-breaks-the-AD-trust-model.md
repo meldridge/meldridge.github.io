@@ -1,6 +1,6 @@
 ---
 layout: email
-title: The AA bill, PrivExchange, and harmj0y breaks the Active Directory trust model
+title: The AA bill, PrivExchange, and harmj0y breaks the AD trust model
 ---
 
 Good evening.
