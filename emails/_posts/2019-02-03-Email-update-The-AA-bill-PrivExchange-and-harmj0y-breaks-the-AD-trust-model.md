@@ -7,7 +7,7 @@ Good evening.
 
 Many of you would be aware of the Australian [Assistance and Access Bill](https://www.aph.gov.au/Parliamentary_Business/Bills_Legislation/Bills_Search_Results/Result?bId=r6195) which was passed on the last sitting day of parliament last year. I haven't covered the bill in great detail here for the simple reason that there was already plenty of good coverage available, and I hadn't spent enough time reading the legislation to feel like I was adding to it.
 
-Having said that, there has also been a lot of uninformed noise surrounding the bill, so in the interest of helping boost the signal - [this piece by Stilgherrian](https://www.zdnet.com/article/whats-actually-in-australias-encryption-laws-everything-you-need-to-know/) provides a good summary, and there's a FAQ [here](https://github.com/alfiedotwtf/AABillFAQ/blob/master/README.md) which seems to be reasonably well put-together.
+Having said that, there has also been a lot of uninformed noise surrounding the bill, so in the interest of helping boost the signal: [this piece by Stilgherrian](https://www.zdnet.com/article/whats-actually-in-australias-encryption-laws-everything-you-need-to-know/) provides a good summary, and there's a FAQ [here](https://github.com/alfiedotwtf/AABillFAQ/blob/master/README.md) which seems to be reasonably well put-together.
 
 Onto the news.
 
