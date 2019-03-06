@@ -31,7 +31,7 @@ This is an interesting story. From [itnews](https://www.itnews.com.au/news/acsc-
 >
 >The capability will block known and likely malicious threats based on threat feeds and provide information to customers and the ACSC to “uplift the whole of Australia security posture”.
 
-DNS is one of those critical web technologies we tend to take for granted. At it's most basic, DNS is what your device uses to turn a domain name (such as `markeldo.com`) into an IP address (such as `185.199.108.153`). This translation is the first step in any web request you make. Without DNS, this translation isn't possible, and [everything breaks](https://en.wikipedia.org/wiki/2016_Dyn_cyberattack).
+DNS is one of those critical web technologies we tend to take for granted. At its most basic, DNS is what your device uses to turn a domain name (such as `markeldo.com`) into an IP address (such as `185.199.108.153`). This translation is the first step in any web request you make. Without DNS, this translation isn't possible, and [everything breaks](https://en.wikipedia.org/wiki/2016_Dyn_cyberattack).
 
 DNS is just as critical to cyber attacks: attackers need to choose a domain name for phishing pages or any malware command & control channels, and will often [carefully maintain fresh domains](https://posts.specterops.io/being-a-good-domain-shepherd-57754edd955f), or hijack legitimate ones, in order to bypass reputation blacklists in corporate internet filters.
 
