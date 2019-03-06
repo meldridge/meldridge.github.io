@@ -5,6 +5,8 @@ title: Parliament hack follow-up, ACSC secure DNS, and infecting BMCs
 
 Good evening.
 
+I've had persistent issues getting these emails to render properly in Outlook 2016, so my apologies to those affected. If you have any issues, the easiest workaround is to click the "view in browser" link at the top of the email.
+
 I'm pleased to report that one of my articles was accepted into the 2019 mnemonic [Security Report](https://www.mnemonic.no/security-report/): a lightly edited version of my [secure DevOps](https://markeldo.com/Security-gatekeeping-in-a-DevOps-world/) post from last September.
 
 The [full report](https://www.mnemonic.no/security-report/) is worth a read, although you will need to provide your details to download the PDF. (Fortunately you can at least rest knowing that Norway is under the GDPR, so any subsequent spam should be easier to deal with!)
