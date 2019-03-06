@@ -60,7 +60,7 @@ One of the saving graces about these vulnerabilities is that there's basically n
 
 There has been a lot of ink spilled over this, and there will be a lot more to come. In the meantime, I've compiled the links below for your reading pleasure:
 
-* [https://spectreattack.com/] (and [https://meltdownattack.com] - both point to the same site)
-* [https://googleprojectzero.blogspot.se/2018/01/reading-privileged-memory-with-side.html] (Google's Project Zero writeup)
-* [http://blog.cyberus-technology.de/posts/2018-01-03-meltdown.html] (Excellent summary of the ‘Meltdown’ vulnerability by one of the researchers)
-* [https://arstechnica.com/gadgets/2018/01/meltdown-and-spectre-every-modern-processor-has-unfixable-security-flaws/] (Good summary of both vulnerabilities and the root cause)
+* <https://spectreattack.com/> (and <https://meltdownattack.com> - both point to the same site)
+* <https://googleprojectzero.blogspot.se/2018/01/reading-privileged-memory-with-side.html> (Google's Project Zero writeup)
+* <http://blog.cyberus-technology.de/posts/2018-01-03-meltdown.html> (Excellent summary of the ‘Meltdown’ vulnerability by one of the researchers)
+* <https://arstechnica.com/gadgets/2018/01/meltdown-and-spectre-every-modern-processor-has-unfixable-security-flaws/> (Good summary of both vulnerabilities and the root cause)
