@@ -11,7 +11,7 @@ The [full report](https://www.mnemonic.no/security-report/) is worth a read, alt
 
 ### Australian Parliament attack follow-up
 
-Some follow-up on the [Australian Parliament hack](https://www.abc.net.au/news/2019-02-18/prime-minister-scott-morrison-cyber-attack-hackers/10821170): The Australian Cyber Security Centre declassified some of the samples from the attack, and Italian security company Yoroi has quite a good analysis of them. It's quite technical, but worth a read if you're interested.
+Some follow-up on the [Australian Parliament hack](https://www.abc.net.au/news/2019-02-18/prime-minister-scott-morrison-cyber-attack-hackers/10821170): Italian security company Yoroi has quite a good analysis of some of the declassified samples from the attack. It's quite technical, but worth a read if you're interested.
 
 [**The Arsenal Behind the Australian Parliament Hack**](https://blog.yoroi.company/research/the-arsenal-behind-the-australian-parliament-hack/)
 
