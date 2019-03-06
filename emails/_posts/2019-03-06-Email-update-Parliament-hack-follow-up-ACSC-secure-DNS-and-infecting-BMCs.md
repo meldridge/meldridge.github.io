@@ -59,7 +59,7 @@ From [ZDNet](https://www.zdnet.com/article/hackers-can-hijack-bare-metal-cloud-s
 >
 >BMC stands for baseboard management controller, and is a computer/server component that contains its own CPU, storage system, and LAN interface that allows a remote admin to connect to or send instructions to the PC/server to perform various operations, such as modify OS settings, reinstall the OS, or update drivers.
 
-As I stated in my post back in October last year, having control of the BMC is incredibly powerful:
+As I stated in [my post](https://markeldo.com/Supermicro-hardware-trojans-and-BMC-security/) back in October last year, having control of the BMC is incredibly powerful:
 
 >Many BMCs are also responsible for loading the firmware for other devices on the board such as network controllers, and they have the ability to directly interact with the host operating system via direct memory access (DMA) and hardware interrupts. This means that if you manage to compromise the BMC, you can inject malicious code into the actual host operating system running on the server itself.
 >
