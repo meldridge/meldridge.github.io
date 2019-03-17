@@ -74,9 +74,10 @@ sass:
 
 # Use the following plug-ins
 plugins:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-sitemap  # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed     # Create an Atom feed using the official Jekyll feed gem
   - jekyll-redirect-from  
+  - jekyll-paginate
 
 # Exclude these files from your production _site
 exclude:
@@ -85,3 +86,22 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  
+# Paginate posts (only applies to blog posts, not emails)
+paginate: 6
+paginate_path: "/page:num/"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: "emails"
+      type: "posts"
+    values:
+      hidden: true      # Set emails to hidden for pagination
+      layout: "email"

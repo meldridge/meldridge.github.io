@@ -1,5 +1,4 @@
 ---
-layout: email
 title: Parliament hack follow-up, ACSC secure DNS, and infecting BMCs
 ---
 

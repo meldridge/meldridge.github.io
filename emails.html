@@ -2,14 +2,14 @@
 layout: default
 ---
 
-<div class="newsletter-description">
+<div class="emails-description">
 	These are archived newsletters containing security news and analysis. <br />
 	If you're interested in receiving these emails directly, you can <a href="http://eepurl.com/dlZTVv">subscribe here</a>.
 </div>
 
 <div class="posts">
   {% for post in site.categories.emails %}
-	
+  	
 	<article class="post">	  
 	  <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>  
 	  

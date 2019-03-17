@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="posts">
-  {% for post in site.categories.posts %}
+  {% for post in paginator.posts %}
   
 	<article class="post">
 	  <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
@@ -16,12 +16,46 @@ layout: default
       <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ post.image }}"></a>
     </div>
 
-	  <div class="entry">
+	  <div class="excerpt">
       {{ post.excerpt }}
 	  </div>
 
-	  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+	  <div class="read-more">
+      <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+    </div>
 	</article>
 	
   {% endfor %}
+</div>
+
+<!-- Pagination links -->
+<div class="pagination">
+
+  <div class="column">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    {% else %}
+    <!-- 
+    <a href="#" onclick="return false;" class="previous">Previous</a> 
+    -->   
+    &nbsp;
+    {% endif %}
+  </div>
+  
+  <div class="column">
+    <span class="page_number">
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+  </div>
+  
+  <div class="column">   
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+    <!-- 
+    <a href="#" onclick="return false;" class="next">Next</a>
+    -->
+    &nbsp;
+    {% endif %}
+  </div>
 </div>
