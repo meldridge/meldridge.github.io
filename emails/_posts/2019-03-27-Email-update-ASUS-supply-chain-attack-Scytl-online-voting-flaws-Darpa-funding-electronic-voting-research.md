@@ -6,7 +6,7 @@ Good evening.
 
 Before I get into today's update, I wanted to acknowledge the horrific terrorist attack by an Australian which occurred in Christchurch two weeks ago, and offer my deepest sympathies to all of those affected. I've been putting off writing this update partly because I found it so hard to put my feelings into words, and under the circumstances it felt a bit empty to write about security news. 
 
-There are security and tech implications to the attack which I don't want to get into at the moment, but I would strongly recommend listening to the latest episode of [Risky Business](https://risky.biz/RB535/). Pat does an excellent job covering it.
+There are security and tech implications from the attack which I don't want to get into at the moment, but I would strongly recommend listening to the latest episode of [Risky Business](https://risky.biz/RB535/). Pat does an excellent job covering it.
 
 I was lucky enough to visit Christchurch many years ago. It's a beautiful place full of friendly and welcoming people, and just so happens to be a sister city of Adelaide. I encourage you to visit if you're ever in New Zealand.
 
@@ -32,7 +32,7 @@ From [Kim Zetter again](https://motherboard.vice.com/en_us/article/zmakk3/resear
 
 This was a major story over the last few weeks, particularly because of the recent New South Wales election in Australia (NSW uses the iVote online voting system, which was [also affected](https://www.itnews.com.au/news/nsw-electoral-commission-confirms-ivote-contains-critical-scytl-crypto-defect-520460)).
 
-For more detail, it's worth reading [this article](https://pursuit.unimelb.edu.au/articles/what-a-second-flaw-in-switzerland-s-svote-means-for-nsw-s-ivote) by the authors of the paper (disclosure: Prof. Teague was a co-author on [another paper](https://link.springer.com/chapter/10.1007/978-3-319-68687-5_8) relating to iVote).
+For more detail, it's worth reading [this article](https://pursuit.unimelb.edu.au/articles/what-a-second-flaw-in-switzerland-s-svote-means-for-nsw-s-ivote) by the authors of the paper _(disclosure: Prof. Teague was a co-author on [another paper](https://link.springer.com/chapter/10.1007/978-3-319-68687-5_8) relating to iVote)._
 
 In short, the flaw would allow an insider with access to the voting system to undetectably modify the ballots, without breaking the cryptographic verification which is intended to prevent them from doing exactly that.
 
