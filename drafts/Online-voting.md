@@ -1,3 +1,54 @@
+---
+title: There are hard security problems, and then there is online voting
+---
+
+
+From Cory Doctorow at [BoingBoing](https://boingboing.net/2019/03/13/principal-agent-problems.html):
+
+>You might be thinking, "Well, what is the big deal? If you don't trust the people administering an election, you can't trust the election's outcome, right?" Not really: we design election systems so that multiple, uncoordinated people all act as checks and balances on each other. To suborn a well-run election takes massive coordination at many polling- and counting-places, as well as independent scrutineers from different political parties, as well as outside observers, etc.
+
+This is point is critical, because it's the reason election security is such an incredibly hard problem. There is no way to effectively scrutineer an online election, so we approximate it as best we can using complicated cryptography and 'proofs' that votes were cast and counted correctly. This is doubly tricky because we don't want voters to be able to provide this proof to anyone else, or they could sell their vote (vote buying and coercion used to be major problems, and are the reason we have polling places and the secret ballot).
+
+
+This is point is critical, because it's the reason election security is such an incredibly hard problem.
+
+It's common to hear comparisons between online voting and online banking, but with online banking I _have_ to trust my bank. Technically speaking, I have no guarantee that when I go to withdraw my money, it will actually be there. Similarly, if someone breaks into my account and transfers money out, there's a record of the transaction and who id
+
+ when you're so reliant on particular cryptographic systems being implemented correctly.
+
+This is why online voting is such a hard problem - and by that I mean [unsolved problem](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_computer_science), not just "difficult, but we'll figure it out eventually". Most of the problems aren't technical, and they're not getting easier over time.
+
+
+
+Switzerland has rather unique election requirements owing to its use of [direct democracy](https://en.wikipedia.org/wiki/Direct_democracy#Switzerland) in many areas of government. Swiss elections (managed by Swiss Post) allow online voting, and their latest system is developed by Spanish company Scytl, which is also responsible for the iVote system used in some Australian state elections.
+
+Back in February Swiss Post [announced](https://www.evoting-blog.ch/en/pages/2019/public-hacker-test-on-swiss-post-s-e-voting-system) that they would allow a Public Intrusion Test and bug bounty program on the new online voting system. Coinciding with this was a leak of the source code and technical documentation for the system.
+
+From Kim Zetter at [Vice Motherboard](https://motherboard.vice.com/en_us/article/vbwz94/experts-find-serious-problems-with-switzerlands-online-voting-system-before-public-penetration-test-even-begins):
+
+>Cryptography experts who spent just a few hours examining the leaked code say the system is a poorly constructed and convoluted maze that makes it difficult to follow what’s going on and effectively evaluate whether the cryptography and other security measures deployed in the system are done properly.
+>
+>“Most of the system is split across hundreds of different files, each configured at various levels,” Sarah Jamie Lewis, a former security engineer for Amazon as well as a former computer scientist for England’s GCHQ intelligence agency, told Motherboard. “I’m used to dealing with Java code that runs across different packages and different teams, and this code somewhat defeats even my understanding.”
+>
+>She said the system uses cryptographic solutions that are fairly new to the field and that have to be implemented in very specific ways to make the system auditable, but the design the programmers chose thwarts this.
+>
+>“It is simply not the standard we would expect."
+
+These are the sorts of problems which raise alarm bells. Online voting is an incredibly difficult security problem, _even if_ the cryptography used in the system is implemented correctly and can be audited easily. The problem is that 
+
+From [Kim Zetter again](https://motherboard.vice.com/en_us/article/zmakk3/researchers-find-critical-backdoor-in-swiss-online-voting-system):
+
+>An international group of researchers who have been examining the source code for an internet voting system Switzerland plans to roll out this year have found a critical flaw in the code that would allow someone to alter votes without detection.
+>
+>The cryptographic backdoor exists in a part of the system that is supposed to verify that all of the ballots and votes counted in an election are the same ones that voters cast. But the flaw could allow someone to swap out all of the legitimate ballots and replace them with fraudulent ones, all without detection.
+
+
+Many of you will are familiar with my work on electronic voting systems, and the iVote system in particular (if you're not, I can recommend my [Masters thesis](https://arxiv.org/abs/1805.02202) on the topic). To try and summarise: online voting is an _incredibly_ hard security problem, 
+
+
+
+
+
 https://news.westernu.ca/2018/10/expert-e-voting-no-way-run-democracy/
 
 https://www.nytimes.com/2018/09/26/magazine/election-security-crisis-midterms.html
@@ -98,3 +149,6 @@ Modern DDoS mitigation is effectively *"eavesdropping as-a-service"*, where you 
 For those of you who only joined this mailing list recently, my Master's thesis was on the security of electronic voting systems, and included more detail on the iVote work. Not to toot my own horn too much, but I think my thesis did a slightly better job of explaining the iVote problems than our actual paper (it helped that I didn't have a page limit).
 
 If you'd like some bedtime reading, all 100+ pages of my thesis can be found here: [****]()
+
+
+
