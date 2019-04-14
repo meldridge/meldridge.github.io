@@ -4,7 +4,7 @@ title: Navy cyber review, jamming Wi-Fi, and Microsoft fixes forest trusts
 
 Good evening.
 
-Some quick follow-up on the ASUS supply-chain attack from my [last email](https://markeldo.com/Email-update-Navy-cybersecurity-review-jamming-wi-fi-and-Microsoft-fixes-forest-trusts/): the most recent [episode of Risky Business](https://overcast.fm/+IbKxX1iK80) covered it quite extensively, and is worth a listen.
+Some quick follow-up on the ASUS supply-chain attack from my [last email](https://markeldo.com/Email-update-ASUS-supply-chain-attack-Scytl-online-voting-flaws-Darpa-funding-electronic-voting-research/): the most recent [episode of Risky Business](https://overcast.fm/+IbKxX1iK80) covered it quite extensively, and is worth a listen.
 
 ### U.S. Navy Cybersecurity Readiness Review
 
