@@ -3,6 +3,15 @@ title: There are hard security problems, and then there is online voting
 ---
 
 
+“(There’s another really cool trick in Bitcoin, which is the incentive system for database maintainers: they get rewarded in Bitcoin for doing their database maintenance part, which makes the whole system self-sustaining. Super cool, but off topic for today.)
+
+It’s important to realize that the true Bitcoin/Blockchain innovation is actually in this very specific trust setting of a dynamically changing set of database maintainers. If your use case doesn’t call for that, if you can designate the maintainers at the start of your protocol and have them authenticate to each other, then you don’t need the full Blockchain toolkit. You need only fairly standard cryptography and your use case was achievable 20 years ago.”
+
+Blockchain and Voting
+https://benlog.com/2017/12/28/blockchain-and-voting/
+via Instapaper
+
+
 From Cory Doctorow at [BoingBoing](https://boingboing.net/2019/03/13/principal-agent-problems.html):
 
 >You might be thinking, "Well, what is the big deal? If you don't trust the people administering an election, you can't trust the election's outcome, right?" Not really: we design election systems so that multiple, uncoordinated people all act as checks and balances on each other. To suborn a well-run election takes massive coordination at many polling- and counting-places, as well as independent scrutineers from different political parties, as well as outside observers, etc.
