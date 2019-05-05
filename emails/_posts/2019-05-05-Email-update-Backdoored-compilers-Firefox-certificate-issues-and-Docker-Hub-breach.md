@@ -1,5 +1,5 @@
 ---
-title: Backdoored compilers, Firefox certificate issues, and the Docker Hub breach
+title: Backdoored compilers, Firefox certificate issues, and Docker Hub breach
 ---
 
 Good evening.
