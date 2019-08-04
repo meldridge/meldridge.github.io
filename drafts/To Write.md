@@ -26,7 +26,7 @@ https://twitter.com/_wald0/status/1015939331012247552
 
 >Imagine preparing a house for a home invasion, but you don’t know how the rooms are connected. And there’s 10,000 rooms with secret passages you don’t know about. And every time anyone enters a room, they leave a copy of their key behind. And no one is 100% sure just how many doors a given key will unlock. This is the state of enterprise information security.
 
-
+<a href="https://mobile.twitter.com/thegrugq/status/1141945136122740736"><img src="/images/grugq-knife-door-handle.png" alt="Tweet by The Grugq" class="tweet"/></a>
 
 ## Telegram Unicode RTL
 
@@ -103,3 +103,9 @@ inevitable and the routes are legion. It is going to happen."
 ## Admin permissions on Windows systems
 
 [![](/images/swift-administrator.PNG)](https://twitter.com/SwiftOnSecurity/status/1031592610622832640)
+
+
+### Security Keys and Phishing
+
+Okay, here’s the deal with Security Keys and #phishing, because even some experts don’t really get it. HT @boblord and @runasand for the idea 1/
+https://twitter.com/mrisher/status/1111651130570792962
