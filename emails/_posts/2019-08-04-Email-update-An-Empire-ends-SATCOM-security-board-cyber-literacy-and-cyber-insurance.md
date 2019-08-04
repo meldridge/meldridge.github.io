@@ -1,5 +1,5 @@
 ---
-title: An Empire ends, SATCOM security, boards, cyber literacy, and cyber insurance
+title: An Empire ends, SATCOM security, board cyber literacy, and cyber insurance
 ---
 
 Good evening.
