@@ -11,8 +11,6 @@ excerpt: "A short set of tips for students attempting the Offensive Security Cer
 <hr/>
 <br/>
 
-## Housekeeping
-
 ### Time yourself
 
 Set a timer for 1hr, repeating. Each time it goes off, stop and evaluate your progress. If you haven't made any progress for 2 hours, move on to the next machine.
@@ -23,15 +21,15 @@ Set a timer for 1hr, repeating. Each time it goes off, stop and evaluate your pr
 
 Recognise when you're stuck, and go for a walk. Sometimes all it takes is some fresh air and a clear head for you to figure out the next step.
 
-**You have more time than you think.** It's extremely uncommon to pass the exam with less than an hour to spare. Usually students pass within 16 hours, or not at all. Take a break when you need to, and you'll be more likely to end up in that first category.
+**You have more time than you think.** It's extremely uncommon to pass the exam with less than an hour to spare. Usually students pass within 18 hours, or not at all. Take a break when you need to, and you'll be more likely to end up in that first category.
 
-### Record everything
+### RTFM and Record everything
 
 Read the [exam guide](https://support.offensive-security.com/oscp-exam-guide/) very carefully. If you pop a box but don't take the required screenshots, you're SooL. If you use a prohibited tool, you're SooL. If you misuse Metasploit/Meterpreter, you're SooL.
 
 Set your terminal scrollback to infinite, and keep terminal tabs open if you're prone to forgetting to screenshot.
 
-### Prepare yourself
+### Prepare beforehand
 
 It pays to have everything well prepared before the exam. This can include precompiling privesc exploits for common platforms, especially ones which were used in the course material or labs. 
 
@@ -91,7 +89,7 @@ gobuster -u http://$IP -w /usr/share/seclists/Discovery/Web_Content/Top1000-Robo
 gobuster -u http://$IP -w /usr/share/seclists/Discovery/Web_Content/common.txt
 ```
 
-if nothing, find more web word lists.
+If nothing, try more web word lists.
 
 *Browse the site* but keep an eye on the burp window / source code / cookies etc.
 
@@ -101,7 +99,7 @@ Things to look out for:
 - SQL-injectable GET/POST params
 - LFI/RFI through ?page=foo type params
 - LFI:
-  - `/etc/passwd` | `/etc/shadow` insta-win
+  - `/etc/passwd` | `/etc/shadow`
   - `/var/www/html/config.php` or similar paths to get SQL etc creds
   - `?page=php://filter/convert.base64-encode/resource=../config.php`
   - `../../../../../boot.ini` to find out windows version
@@ -133,7 +131,7 @@ Read the actual SSL CERT to:
 - Do you have UPLOAD potential?
   - Can you trigger execution of uploads?
   - Swap binaries?
-- Vulnerabilities in version / RCE / #WINNING?-D
+- Vulnerabilities in version / RCE
 
 ### SMB - 139, 445
 
@@ -196,7 +194,7 @@ Also: ***CHECK VERSIONS*** and `searchsploit`
 
 1. Determine length of overflow trigger w/ binary search "A"x1000
 2. Determine exact EIP with `pattern_create.rb` & `pattern_offset.rb`
-3. Determine badchars to make sure all of your payload is getting through **(Do not skip this step)**
+3. Determine badchars to make sure all of your payload is getting through _**(Do not skip this step)**_
 4. Develop exploit
   - Is the payload right at ESP 
     - `JMP ESP`
@@ -241,7 +239,7 @@ Useful links:
 1. **Check current access first**:
   - Am I in sudoers?
   - Do I have sudoedit access to useful files?
-1. **Enumerate!**
+2. **Enumerate!**
   - Try [LinEnum](https://github.com/rebootuser/LinEnum), make sure to check it in thorough mode too
   - Check for world-writeable files, interesting setuid/setgid binaries, unusual things in crontab/cron.d or user cron (`crontab -l`)
 
