@@ -24,7 +24,7 @@ Recognise when you're stuck, and go for a walk. Sometimes all it takes is some f
 
 **You have more time than you think.** It's extremely uncommon to pass the exam with less than an hour to spare. Usually students pass within 18 hours, or not at all. Take a break when you need to, and you'll be more likely to end up in that first category.
 
-### RTFM and Record everything
+### RTFM and record everything
 
 Read the [exam guide](https://support.offensive-security.com/oscp-exam-guide/) very carefully. If you pop a box but don't take the required screenshots, you're SooL. If you use a prohibited tool, you're SooL. If you misuse Metasploit/Meterpreter, you're SooL.
 
@@ -65,7 +65,7 @@ Perform a full port scan of your target. I used my fork of [DarkEnumeration](htt
 2. Actually **read** Nikto/Dirb/nmap NSE script output
 3. Run the port scan again if you think something might have been missed
 
-Be aware of your network conditions and its impact on your scanning tools. When I did my exam attempt my round-trip time to the exam servers was over 250ms, and packet loss was a concern.
+Be aware of your network conditions and its impact on your scanning tools. When I did my exam, the round-trip time to the exam servers was over 250ms, and packet loss was a concern.
 
 Unicornscan can be set to particular PPS (packets per second) and can be configured to test each port multiple times. This is well worth the additional time investment: you *really* don't want a single lost packet causing a false-negative which fails you the exam.
 
