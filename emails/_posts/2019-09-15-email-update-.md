@@ -3,10 +3,23 @@ title: Blah
 ---
 
 
+https://www.zdnet.com/article/at-least-20-texas-local-governments-hit-in-coordinated-ransomware-attack/
+
+### Imperva Incapsula breach
+
+https://www.zdnet.com/article/imperva-discloses-security-incident-impacting-cloud-firewall-users/
+
+https://krebsonsecurity.com/2019/08/cybersecurity-firm-imperva-discloses-breach/
+
+https://www.imperva.com/blog/ceoblog/
+
+
+https://www.themandarin.com.au/114746-wheres-the-proof-internet-voting-is-secure-a-response-to-victorias-electoral-commissioner/
+
 
 ### Webmin utility backdoored
 
-Yet another software supply-chain attack. This time, it's Webmin: a fairly popular web-application for managing Unix-based servers (including Linux).
+Yet another software supply-chain attack. This time, it's [Webmin](http://www.webmin.com/): a fairly popular web-application for managing Unix-like systems (including Linux).
 
 The attack was discovered accidentally, by a security researcher who thought it was a vulnerability in the Webmin code. As it turned out, it was a deliberate backdoor which had been in place for more than a year, allowing anyone who knew of its existence to remotely run commands as the root user.
 
@@ -18,6 +31,8 @@ From Catalin Cimpanu at [ZDNet](https://www.zdnet.com/article/backdoor-found-in-
 
 It's an interesting story, and worth reading in full.
 
+ALSO ARS TECHNICA ARTICLE: [The year-long rash of supply chain attacks against open source is getting worse | Ars Technica](https://arstechnica.com/information-technology/2019/08/the-year-long-rash-of-supply-chain-attacks-against-open-source-is-getting-worse/)
+
 ### Bluetooth encryption design flaw
 
 https://arstechnica.com/information-technology/2019/08/new-attack-exploiting-serious-bluetooth-weakness-can-intercept-sensitive-data/
@@ -25,6 +40,8 @@ https://arstechnica.com/information-technology/2019/08/new-attack-exploiting-ser
 ### Consumer device security continues to be awful
 
 A lesson in incentives:
+
+https://cyber-itl.org/2019/08/26/iot-data-writeup.html
 
 https://securityledger.com/2019/08/huge-survey-of-firmware-finds-no-security-gains-in-15-years/
 
