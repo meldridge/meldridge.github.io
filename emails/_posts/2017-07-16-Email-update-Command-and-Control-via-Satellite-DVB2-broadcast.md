@@ -1,11 +1,11 @@
 ---
 layout: email
-title: "Satellite Turla: APT Command and Control in the Sky"
+title: "Command and Control via satellite DVB2 broadcast"
 ---
 
 It’s a Sunday, but this one was so cool I wanted to share it immediately before I forgot about it. 
 
-[Command and Control via satellite DVB2 broadcast!](https://securelist.com/satellite-turla-apt-command-and-control-in-the-sky/72081)
+From [Securelist](https://securelist.com/satellite-turla-apt-command-and-control-in-the-sky/72081):
 
 >Although relatively rare, since 2007 several elite APT groups have been using — and abusing — satellite links to manage their operations — most often, their C&C infrastructure. Turla is one of them. Using this approach offers some advantages, such as making it hard to identify the operators behind the attack, but it also poses some risks to the attackers.
 >
