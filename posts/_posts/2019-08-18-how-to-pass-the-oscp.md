@@ -209,10 +209,10 @@ Also: ***CHECK VERSIONS*** and `searchsploit`
 
 ## Limited Shells
 
-- python -c 'import pty; pty.spawn("/bin/sh")'
-- echo os.system('/bin/bash')
-- /bin/sh -i
-- perl —e 'exec "/bin/sh";'
+- `python -c 'import pty; pty.spawn("/bin/sh")'`
+- `echo os.system('/bin/bash')`
+- `/bin/sh -i`
+- `perl -e 'exec "/bin/sh";'`
 
 ### Upgrading from limited shell to full TTY
 Source: [RopNop's blog](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
