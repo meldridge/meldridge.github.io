@@ -218,16 +218,16 @@ Also: ***CHECK VERSIONS*** and `searchsploit`
 Source: [RopNop's blog](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
 
 1. In reverse shell
-- $ python -c 'import pty; pty.spawn("/bin/bash")'
-- Ctrl-Z
+- `$ python -c 'import pty; pty.spawn("/bin/bash")'`
+- `Ctrl-Z`
 2. In Kali
-- $ stty raw -echo
-- $ fg
+- `$ stty raw -echo`
+- `$ fg`
 3. In reverse shell
-- $ reset
-- $ export SHELL=bash
-- $ export TERM=xterm-256color
-- $ stty rows X columns Y
+- `$ reset`
+- `$ export SHELL=bash`
+- `$ export TERM=xterm-256color`
+- `$ stty rows X columns Y`
 
 Useful links: 
  - <https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/>
