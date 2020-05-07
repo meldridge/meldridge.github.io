@@ -219,8 +219,9 @@ Source: [RopNop's blog](https://blog.ropnop.com/upgrading-simple-shells-to-fully
 
 1. In reverse shell
 - `$ python -c 'import pty; pty.spawn("/bin/bash")'`
-- `Ctrl-Z`
+- `Ctrl-Z` to background shell
 2. In Kali
+- `$ stty -a` to get terminal colour and dimensions (for `rows X columns Y` later)
 - `$ stty raw -echo`
 - `$ fg`
 3. In reverse shell
