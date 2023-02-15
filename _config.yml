@@ -86,6 +86,9 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+# Include these files (which would normally be hidden)
+include: [".well-known"]
   
 # Paginate posts (only applies to blog posts, not emails)
 paginate: 6
