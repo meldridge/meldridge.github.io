@@ -62,7 +62,7 @@ Microsoft evidently agrees on how serious this issue is, or perhaps is starting 
 
 As a sidebar - it can be hard to explain how unconstrained delegation works, so for those of you who have done work with Linux systems and Active Directory/Kerberos: you might have encountered a version of unconstrained delegation before without realising it. It's this option here:
 
-<img src="/images/gssapi-credential-delegation.png" alt="GSSAPI credential delegation in Putty" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
+<img src="https://markeldo.com/images/gssapi-credential-delegation.png" alt="GSSAPI credential delegation in Putty" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
 
 If you're logging into a Linux system using Putty and enable this option, a copy of your Kerberos Ticket Granting Ticket (TGT) will be sent to the server when you connect and dropped in the `/tmp` folder. This is mainly useful in situations where you subsequently want to log into another system from the first server - with your TGT already available, you don't need to re-authenticate. 
 

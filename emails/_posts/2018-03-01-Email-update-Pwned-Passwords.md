@@ -21,7 +21,7 @@ At the time, Troy explained that this was partly a reaction to the new NIST Digi
 
 It also included this:
 
-![NIST Guidance](/images/nist-password-guidance.png)
+![NIST Guidance](https://markeldo.com/images/nist-password-guidance.png)
 
 Meeting this requirement was exactly what the Pwned Passwords list was intended for.
 

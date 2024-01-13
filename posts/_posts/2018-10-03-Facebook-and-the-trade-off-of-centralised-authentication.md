@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Facebook and the trade-off of centralised authentication
-image: "/images/facebook-shatter.jpg"
+image: "https://markeldo.com/images/facebook-shatter.jpg"
 excerpt: "Having 50 million accounts breached is bad enough, but the bigger issue is that a huge number of third-party services use Facebook to authenticate their users."
 ---
 
@@ -38,13 +38,13 @@ The downside is that this means that if an attacker manages to steal a valid Fac
 
 Matt Blaze [summarised](https://twitter.com/mattblaze/status/1045833186603872264) this problem well:
 
-<a href="https://twitter.com/mattblaze/status/1045833186603872264"><img src="/images/facebook-sso-blaze.png" alt="Tweet by Matt Blaze" class="tweet"/></a>
+<a href="https://twitter.com/mattblaze/status/1045833186603872264"><img src="https://markeldo.com/images/facebook-sso-blaze.png" alt="Tweet by Matt Blaze" class="tweet"/></a>
 
 Google provides a similar authentication system with [Google Sign-In](https://developers.google.com/identity/), which covers even more services than Facebook does. One notable example is cloud infrastructure provider [DigitalOcean](https://www.digitalocean.com/docs/accounts/security/#use-google-sso-for-login), a competitor to Amazon Web Services and Microsoft Azure. 
 
 Imagine for a moment if there was a similar bug in Google's services which caused 90 million Google accounts to be breached, and you're an organisation using DigitalOcean for all of your cloud infrastructure, and several of your engineers were affected...
 
-<a href="https://twitter.com/tqbf/status/1045825117362814976"><img src="/images/facebook-sso-ptacek.png" alt="Tweet by Thomas H. Ptacek" class="tweet"/></a>
+<a href="https://twitter.com/tqbf/status/1045825117362814976"><img src="https://markeldo.com/images/facebook-sso-ptacek.png" alt="Tweet by Thomas H. Ptacek" class="tweet"/></a>
 
 Yep. At the very least, this would mean checking through your audit logs to make sure that none of your compromised accounts were used by the attacker to access your infrastructure. At worst... well, not every service provides good audit logs.
 

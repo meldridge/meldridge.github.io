@@ -27,7 +27,7 @@ I'm sure most of you would have heard the news last month regarding a [major bug
 
 It turned out that the bug had been reported to Apple before it was made public, but that Apple had failed to follow-up the report correctly. This is actually quite common, as Matt Linton detailed in an excellent Twitter thread:
 
-<a href="https://twitter.com/0xMatt/status/1090676753306025984"><img src="/images/linton-analyst-fatigue.png" alt="Tweet by Matt Linton" class="tweet"/></a>
+<a href="https://twitter.com/0xMatt/status/1090676753306025984"><img src="https://markeldo.com/images/linton-analyst-fatigue.png" alt="Tweet by Matt Linton" class="tweet"/></a>
 
 This problem is not unique to security, and is not an easy problem to solve. Linton does a very good job of explaining why.
 
@@ -45,6 +45,6 @@ The talk is 20 minutes, but if you don't have time to watch it in full there's a
 
 If this sounds familiar, it's because you may have seen it before:
 
-<a href="https://twitter.com/mattblaze/status/872194910220374017"><img src="/images/matt-blaze-blockchain.png" alt="Tweet by Matt Blaze" class="tweet"/></a>
+<a href="https://twitter.com/mattblaze/status/872194910220374017"><img src="https://markeldo.com/images/matt-blaze-blockchain.png" alt="Tweet by Matt Blaze" class="tweet"/></a>
 
 Yep.

@@ -21,11 +21,11 @@ However, it's now also trivial to get a trusted TLS certificate for your phishin
 
 Consider the below image, which is what you see if you visit a site with what's called a Domain Validated certificate, or "**DV cert**". 
 
-![HTTPS Domain Validated Certificates](/images/https-dv.png)
+![HTTPS Domain Validated Certificates](https://markeldo.com/images/https-dv.png)
 
 Compare with the next one, which is what you see if you visit a site with an Extended Validation certificate, or "**EV cert**". 
 
-![HTTPS Extended Validation Certificates](/images/https-ev.png)
+![HTTPS Extended Validation Certificates](https://markeldo.com/images/https-ev.png)
 
 Both screenshots are from Chrome, and you'll notice that there isn't a dramatic visual difference between the two, especially if you're not looking for it.
 
@@ -50,7 +50,7 @@ The problem with TLS certificates is that you only really have assurance of poin
 
 Remember: if you click on the link to dodgy.mcdodgyson's phishing domain, the URL bar will still have the nice shiny green lock, and you might completely miss the fact that the URL itself looks off:
 
-![HTTPS Extended Validation Certificates](/images/https-dv-phishing.png)
+![HTTPS Extended Validation Certificates](https://markeldo.com/images/https-dv-phishing.png)
 
 With this domain and some clever wording in my phishing emails, I'll probably have quite a bit of success capturing credentials by sending people that link. Especially if the organisation I'm phishing happens to use something like Office 365 or Google Docs.
 

@@ -19,7 +19,7 @@ During the "Rump Session" at E-Vote-ID I presented a brief demo of a Human Inter
 The video of the demo is here:
 
 [**Intro to HID Attacks: E-Vote-ID 2017 Rump Session Presentation**](https://www.youtube.com/watch?v=1ohSJiXx93w)
-[![Intro to HID Attacks: E-Vote-ID 2017 Rump Session Presentation](/images/e-vote-id-intro-to-hid-attacks.png)](https://www.youtube.com/watch?v=1ohSJiXx93w)
+[![Intro to HID Attacks: E-Vote-ID 2017 Rump Session Presentation](https://markeldo.com/images/e-vote-id-intro-to-hid-attacks.png)](https://www.youtube.com/watch?v=1ohSJiXx93w)
 
 The demo was filmed by [Susan Greenhalgh](https://twitter.com/segreenhalgh?lang=en) of [Verified Voting](https://www.verifiedvoting.org/). Susan asked an excellent question at 4:12 regarding the possibility of this attack being used on air-gapped systems to re-enable any on-board wireless networking capability. Unfortunately I completely misunderstood her question at the time. Lesson learned: there's a reason that good presenters re-state a question before they start answering it!
 

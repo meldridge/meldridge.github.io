@@ -35,13 +35,13 @@ I'll let Slightly Snarky Wikipedia Editor [summarise the issue](https://en.wikip
 
 The point is that apps on Windows tend to assume that they can write to these folders, and they run into issues when Controlled Folder Access stops them from doing so. The results can be confusing:
 
-![Controlled Folder Access 'touch' test](/images/cfa-touch-test.png)
+![Controlled Folder Access 'touch' test](https://markeldo.com/images/cfa-touch-test.png)
 
 For those of you who aren't familiar with *nix, that's me running the `touch` command to create a file called 'test'. It succeeds in `C:\Users\Mark`, but fails in `C:\Users\Mark\Documents`. That's very confusing as a user, and the error message in the terminal window makes little sense - how can I get a "no such file or directory" error for a file I'm creating?
 
 Fortunately, Windows Defender **does** provide a notification explaining that it blocked the executable. If I click on that notification, I end up at the control panel allowing me to 'allow' (or whitelist) particular applications:
 
-![Controlled Folder Access whitelist](/images/cfa-whitelist.png)
+![Controlled Folder Access whitelist](https://markeldo.com/images/cfa-whitelist.png)
 
 (As you can see, I've been to this page a few times by now.)
 

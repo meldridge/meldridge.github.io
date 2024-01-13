@@ -45,6 +45,6 @@ To briefly summarise:
 
 It was beautiful, really:
 
-<a href="https://twitter.com/alexstamos/status/999868096075718656"><img src="/images/stamos-digi-id.png" alt="Tweet by Alex Stamos" class="tweet"/></a>
+<a href="https://twitter.com/alexstamos/status/999868096075718656"><img src="https://markeldo.com/images/stamos-digi-id.png" alt="Tweet by Alex Stamos" class="tweet"/></a>
 
 Ouch. Lesson learned: don't try to bullshit Alex Stamos.

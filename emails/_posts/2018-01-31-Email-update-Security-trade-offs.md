@@ -14,7 +14,7 @@ There were two major themes of my presentation: the fact that this stuff is a lo
 
 All security decisions are a trade-off between convenience and security. In my presentation, I use the example of choosing good passwords:
 
-![Security is always a trade-off](/images/security-trade-off.png)
+![Security is always a trade-off](https://markeldo.com/images/security-trade-off.png)
 
 This applies to more than just password practices: privileged account restrictions, web filtering, PED policies, application whitelisting, network segmentation... in infosec, every tool at our disposal comes with tradeoffs. The important thing is to recognise that fact, and decide where on the spectrum you need to be for your particular threats and risk profile. 
 

@@ -21,6 +21,6 @@ In other news, it turns out the Equifax uses a facepalmingly-stupid method for g
 
 Unfortunately, Equifax’s method for generating the PINs was just a timestamp of when you registered. If someone else knew the approximate date and time that you registered, they’d have a pretty easy time guessing your PIN:
 
-<a href="https://twitter.com/webster/status/906346071210778625"><img src="/images/webster-equifax-freeze-pins.png" alt="Tweet by Tony Webster" class="tweet"/></a>
+<a href="https://twitter.com/webster/status/906346071210778625"><img src="https://markeldo.com/images/webster-equifax-freeze-pins.png" alt="Tweet by Tony Webster" class="tweet"/></a>
 
 Not ideal.

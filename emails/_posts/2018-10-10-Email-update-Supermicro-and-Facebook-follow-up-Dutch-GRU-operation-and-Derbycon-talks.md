@@ -19,11 +19,11 @@ First up: Patrick Gray recorded [another podcast episode](https://risky.biz/RB51
 
 Since the original story broke, Fitzpatrick has also written some excellent Twitter threads on hardware implants generally. One example (from the end of the thread):
 
-<a href="https://twitter.com/securelyfitz/status/1049415623011266560"><img src="/images/supermicro-fitzpatrick.png" alt="Tweet by Joe Fitzpatrick" class="tweet"/></a>
+<a href="https://twitter.com/securelyfitz/status/1049415623011266560"><img src="https://markeldo.com/images/supermicro-fitzpatrick.png" alt="Tweet by Joe Fitzpatrick" class="tweet"/></a>
 
 Former NSA member Robert M. Lee also weighed in regarding a previous Bloomberg story authored by the same journalists, which claimed that a pipeline explosion in Turkey was a Russian cyber attack:
 
-<a href="https://twitter.com/RobertMLee/status/1049617855396933632"><img src="/images/supermicro-lee.png" alt="Tweet by Robert M. Lee" class="tweet"/></a>
+<a href="https://twitter.com/RobertMLee/status/1049617855396933632"><img src="https://markeldo.com/images/supermicro-lee.png" alt="Tweet by Robert M. Lee" class="tweet"/></a>
 
 In both cases, it's worth reading the full thread.
 
@@ -35,7 +35,7 @@ And finally, Brian Krebs has written an excellent [blog post](https://krebsonsec
 
 Some follow-up to my [Facebook post](https://markeldo.com/Facebook-and-the-trade-off-of-centralised-authentication/) from last week, via Jason Polakis:
 
-<a href="https://twitter.com/jpolakis/status/1046094369831485440"><img src="/images/facebook-sso-polakis.png" alt="Tweet by Jason Polakis" class="tweet"/></a>
+<a href="https://twitter.com/jpolakis/status/1046094369831485440"><img src="https://markeldo.com/images/facebook-sso-polakis.png" alt="Tweet by Jason Polakis" class="tweet"/></a>
 
 I'd highly recommend reading the whole thread, but to rephrase this part: if a third-party service you use (like Tinder or Airbnb) has integrated with Facebook Login to allow single-sign-on (SSO), but you personally don't use this functionality, it may still be possible for an attacker who has a copy of your Facebook user access token to log into the third-party service as you.
 

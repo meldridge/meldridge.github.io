@@ -5,7 +5,7 @@ title: DTA blockchain report, Phineas Fisher investigation dropped
 
 Good morning.
 
-It's been over a month since my last email, and I have some bittersweet news to share: my wife was recently offered a great job opportunity back home in Adelaide, so we'll be moving back to Australia in mid December. I'll sincerely miss Stockholm and the friends we've made over the last year (not to mention the <a href="/images/stockholm-broadband.png" target="_blank">internet connectivity</a>), but I am looking forward to seeing friends and family back home. 
+It's been over a month since my last email, and I have some bittersweet news to share: my wife was recently offered a great job opportunity back home in Adelaide, so we'll be moving back to Australia in mid December. I'll sincerely miss Stockholm and the friends we've made over the last year (not to mention the <a href="https://markeldo.com/images/stockholm-broadband.png" target="_blank">internet connectivity</a>), but I am looking forward to seeing friends and family back home. 
 
 I'm now on the hunt for good security or software engineering positions in Adelaide. I have a few leads already, but please feel free to get in contact if you know of anywhere my skills might be a good fit.
 
@@ -25,7 +25,7 @@ Yep. This might sound familiar to those of you who have been reading my emails o
 
 The news of the DTA report prompted the following tweet from David Gerard, author of [*Attack of the 50 Foot Blockchain: Bitcoin, Blockchain, Ethereum & Smart Contracts*](https://read.amazon.com/kp/kshare?asin=B073CPP581&id=i4gu5GpfQa6ogjTupqEGcA&reshareId=AQS20S8SX9F33BHVX4VF&reshareChannel=system):
 
-<a href="https://twitter.com/davidgerard/status/1054510812059066373"><img src="/images/gerard-blockchain.png" alt="Tweet by David Gerard" class="tweet"/></a>
+<a href="https://twitter.com/davidgerard/status/1054510812059066373"><img src="https://markeldo.com/images/gerard-blockchain.png" alt="Tweet by David Gerard" class="tweet"/></a>
 
 Nice.
 

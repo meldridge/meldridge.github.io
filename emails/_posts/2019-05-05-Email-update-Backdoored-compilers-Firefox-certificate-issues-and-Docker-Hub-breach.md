@@ -26,7 +26,7 @@ Mozilla has had a bad weekend: their Firefox browser is suffering from an [expir
 
 SwiftOnSecurity posted  good [thread on Twitter](https://mobile.twitter.com/SwiftOnSecurity/status/1124545069078536192) explaining why this protection was added to begin with:
 
-<a href="https://mobile.twitter.com/SwiftOnSecurity/status/1124545734538407937"><img src="/images/swiftonsecurity-firefox.png" alt="Tweet by SwiftOnSecurity" class="tweet"/></a>
+<a href="https://mobile.twitter.com/SwiftOnSecurity/status/1124545734538407937"><img src="https://markeldo.com/images/swiftonsecurity-firefox.png" alt="Tweet by SwiftOnSecurity" class="tweet"/></a>
 
 This isn't the first time major software has been affected by a failure to update security certificates. Last year [the same thing happened](https://www.theverge.com/2018/3/8/17095414/oculus-rift-software-fix-certificate-expiry) to Facebook's Oculus Virtual Reality headset, and the certificate failure also broke the auto-update mechanism which might have been used by Facebook to fix the issue. The only resolution was to require users to manually download and apply an update.
 

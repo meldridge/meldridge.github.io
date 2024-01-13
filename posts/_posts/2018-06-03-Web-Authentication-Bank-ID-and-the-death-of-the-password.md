@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Web Authentication, BankID, and the death of passwords
-image: "/images/handelsbanken-bankid-login-cropped.png"
+image: "https://markeldo.com/images/handelsbanken-bankid-login-cropped.png"
 excerpt: In my last email I mentioned Alex Stamos' Twitter takedown of the 'Digi-ID' authentication solution. Buried in the exchange was a mention by Stamos of the <em>Web Authentication</em> standard, which is something you'll be hearing a lot more about in coming months. 
 ---
 
@@ -42,7 +42,7 @@ The usual process for to authenticate a user is:
 
 Below is an example of what this looks like. The image on the left is the login screen for the Handelsbanken mobile app. After entering your _personnummer_, you're redirected to the Mobile BankID app to verify your identity. Once you've verified (either with a fingerprint or a PIN code), you're sent back to the Handelsbanken app as an authenticated user.
 
-![Logging into Handelsbanken using Mobile BankID](/images/handelsbanken-bankid-login.png)
+![Logging into Handelsbanken using Mobile BankID](https://markeldo.com/images/handelsbanken-bankid-login.png)
 
 BankID is ubiquitous in Sweden, and for most of the services you'll encounter as a resident, there is no username and password. You login to services using your personnummer, and you authenticate using Mobile BankID on your phone.
 

@@ -35,8 +35,8 @@ Of course, I can't really crow too loudly here since I made the same mistake a c
 
 There was also the New York Times, with something which should bring a smile to the face to anyone who's been involved in a Reply-All war:
 
-<a href="https://twitter.com/benthompson/status/1000172240367857664"><img src="/images/ben-thompson-nyt-gdpr.png" alt="Tweet by Ben Thompson" class="tweet"/></a>
-<a href="https://twitter.com/benthompson/status/1000173313103089664"><img src="/images/ben-thompson-nyt-gdpr-2.png" alt="Tweet by Ben Thompson" class="tweet"/></a>
+<a href="https://twitter.com/benthompson/status/1000172240367857664"><img src="https://markeldo.com/images/ben-thompson-nyt-gdpr.png" alt="Tweet by Ben Thompson" class="tweet"/></a>
+<a href="https://twitter.com/benthompson/status/1000173313103089664"><img src="https://markeldo.com/images/ben-thompson-nyt-gdpr-2.png" alt="Tweet by Ben Thompson" class="tweet"/></a>
 
 (Incidentally, if you're not already reading Ben Thompson's [Stratechery](https://stratechery.com/) blog, I'd highly recommend it. The podcast is also excellent.)
 
@@ -44,7 +44,7 @@ A large number of American news websites and [other services](https://www.thever
 
 USA Today, however, did something different: for European users, they disabled all of their tracking scripts:
 
-<a href="https://twitter.com/paulcalvano/status/1000094333524201473"><img src="/images/paul-calvano-usa-today-gdpr.png" alt="Tweet by Paul Calvano" class="tweet"/></a>
+<a href="https://twitter.com/paulcalvano/status/1000094333524201473"><img src="https://markeldo.com/images/paul-calvano-usa-today-gdpr.png" alt="Tweet by Paul Calvano" class="tweet"/></a>
 
 That probably says more about modern website practices (and [business models](https://stratechery.com/2017/the-local-news-business-model/)*) than anything else, but it's a nice little perk of GDPR.
 
