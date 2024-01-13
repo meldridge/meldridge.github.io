@@ -80,6 +80,10 @@ plugins:
   - jekyll-redirect-from  
   - jekyll-paginate
 
+# Force jekyll-feed to generate more posts for RSS 
+feed:
+  posts_limit: 2
+
 # Exclude these files from your production _site
 exclude:
   - Gemfile

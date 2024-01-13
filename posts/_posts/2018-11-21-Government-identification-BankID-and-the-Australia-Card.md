@@ -1,6 +1,6 @@
 ---
 title: "Government Identification: BankID and the Australia Card"
-image: "/images/bankid-card.jpg"
+image: "https://markeldo.com/images/bankid-card.jpg"
 excerpt: "One of the less fun aspects of moving countries is that you're a walking edge-case for many IT systems. Being an expat also means becoming intimately familiar with all of the differences in how government services verify the identity of their users."
 ---
 
@@ -20,7 +20,7 @@ I've covered the Swedish BankID identity and authentication system in a [previou
 
 The system relies upon a physical BankID card issued by your bank. It's a fairly standard [smart card](https://en.wikipedia.org/wiki/Smart_card), containing a chip similar to the one in a modern credit card. The combination this card and a PIN allows you to prove—to a legally accepted degree of certainty—that you are who you say you are.
 
-![A BankID card and reader](/images/bankid-card.jpg)
+![A BankID card and reader](https://markeldo.com/images/bankid-card.jpg)
 <em class="caption">A card reader and Swedish ID card (technically not a BankID card, in this case).</em>
 
 In modern usage, the primary job of this card is to set up [Mobile BankID](https://support.bankid.com/sv/bankid/mobilt-bankid) on a smartphone, which is significantly more convenient for most uses at the expense of being a slightly less trustworthy authentication method compared to connecting the BankID card and reader directly to a PC.

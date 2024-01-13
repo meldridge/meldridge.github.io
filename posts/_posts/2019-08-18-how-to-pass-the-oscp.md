@@ -1,6 +1,6 @@
 ---
 title: "How to pass the OSCP"
-image: /images/offsec.jpg
+image: https://markeldo.com/images/offsec.jpg
 excerpt: "A short set of tips for students attempting the Offensive Security Certified Professional (OSCP) certification exam."
 ---
 
