@@ -18,7 +18,7 @@ There is a disappointing lack of detail regarding exactly how the attackers got 
 
 Dr Chris Culnane, a co-author on the paper I wrote as part of the iVote work, tweeted this (entirely justified) *"I told you so"*:
 
-<a href="https://twitter.com/chrisculnane/status/1166567064162709504"><img src="/images/culnane-incapsula-breach.PNG" alt="Tweet by Chris Culnane" class="tweet"/></a>
+<a href="https://twitter.com/chrisculnane/status/1166567064162709504"><img src="https://markeldo.com/images/culnane-incapsula-breach.PNG" alt="Tweet by Chris Culnane" class="tweet"/></a>
 
 In related news, Dr Vanessa Teague recently penned a [detailed response](https://www.themandarin.com.au/114746-wheres-the-proof-internet-voting-is-secure-a-response-to-victorias-electoral-commissioner/) to Victoria's Electoral Commissioner regarding online voting (written before this latest Imperva breach was made public), which is worth reading in full.  
 
@@ -42,7 +42,7 @@ When it comes to sniffing information from hospital pagers, the barrier is even 
 
 Balint Seeber has been presenting on this topic for [almost a decade now](https://www.youtube.com/watch?v=pbgeLRvjirI&t=9m48s) (I've mentioned his work [previously](https://markeldo.com/Email-update-Aircraft-hacking-using-software-defined-radio/)):
 
-[<img alt="Hospital Pager Systems" src="/images/balint-seeber-all-your-RFz_pagers.png" width="600">](https://www.youtube.com/watch?v=pbgeLRvjirI&t=9m48s)
+[<img alt="Hospital Pager Systems" src="https://markeldo.com/images/balint-seeber-all-your-RFz_pagers.png" width="600">](https://www.youtube.com/watch?v=pbgeLRvjirI&t=9m48s)
 
 The proper solution is for hospitals to move to a secure pager/messaging system which includes proper encryption and authentication of messages, but this is just one more item on [long list](https://www.theverge.com/2019/4/4/18293817/cybersecurity-hospitals-health-care-scan-simulation) of security issues plaguing the healthcare industry.
 
@@ -58,7 +58,7 @@ This outcome shouldn't be surprising, given the incentives involved. Consumers d
 
 As [SwiftOnSecurity](https://twitter.com/SwiftOnSecurity/status/920078661235089408) aptly put it:
 
-<a href="https://twitter.com/SwiftOnSecurity/status/920078661235089408"><img src="/images/swiftonsecurity-consumer-electronics.png" alt="Tweet by SwiftOnSecurity" class="tweet"/></a>
+<a href="https://twitter.com/SwiftOnSecurity/status/920078661235089408"><img src="https://markeldo.com/images/swiftonsecurity-consumer-electronics.png" alt="Tweet by SwiftOnSecurity" class="tweet"/></a>
 
 This is a classic *negative externality*: millions of insecure  devices with internet connectivity which will inevitably be owned and [used to attack others](https://www.csoonline.com/article/3258748/the-mirai-botnet-explained-how-teen-scammers-and-cctv-cameras-almost-brought-down-the-internet.html). 
 
