@@ -82,7 +82,7 @@ plugins:
 
 # Force jekyll-feed to generate more posts for RSS 
 feed:
-  posts_limit: 1
+  posts_limit: 200
 
 # Exclude these files from your production _site
 exclude:
