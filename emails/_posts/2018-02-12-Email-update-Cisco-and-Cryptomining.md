@@ -81,4 +81,4 @@ It's only a matter of time until we have another major attack on the scale of No
 
 As always, it's easy to throw your hands in the air, but remember: the bad guys aren't perfect. The best defence is to get the basic hygiene right:
 
-<a href="https://twitter.com/thegrugq/status/950418262772260864"><img src="https://markeldo.com/images/grugq-not-everything-is-APT-2.png" alt="Tweet by the grugq" class="tweet"/></a>
+<a href="https://twitter.com/thegrugq/status/950418262772260864"><img src="/images/grugq-not-everything-is-APT-2.png" alt="Tweet by the grugq" class="tweet"/></a>

@@ -2,7 +2,7 @@
 layout: post
 title: Security gatekeeping in a DevOps world
 redirect_from: "/Email-update-Security-gatekeeping-in-a-DevOps-world/"
-image: "https://markeldo.com/images/security-gatekeeping.jpg"
+image: "/images/security-gatekeeping.jpg"
 excerpt: In a modern DevOps environment, development teams manage the security of their own systems. In an environment where deployments happen several times a day, this model scales far better than the historical practice of security acting as a gatekeeper to production. 
 ---
 

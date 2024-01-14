@@ -1,7 +1,7 @@
 ---
 layout: email
 title: Technical literacy vs fluency, blockchain, and OSCP proctoring
-image: "https://markeldo.com/images/bitcoin-bitmain.jpg"
+image: "/images/bitcoin-bitmain.jpg"
 ---
 
 Good morning.
@@ -46,7 +46,7 @@ mine at a hash rate where you stand a decent chance of producing winning
 blocks at a semi-frequent rate, you are looking at building something like
 this:
 >
-> ![Bitmain Bitcoin mining farm](https://markeldo.com/images/bitcoin-bitmain.jpg)
+> ![Bitmain Bitcoin mining farm](/images/bitcoin-bitmain.jpg)
 >
 >Where datacenters like that might inspire awe, the absolutely ridiculous
 aspect of it is the actual useful work being accomplished by that

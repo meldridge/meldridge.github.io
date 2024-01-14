@@ -11,7 +11,7 @@ First, on Meltdown and Spectre, [Alex Ionescu](https://twitter.com/aionescu/stat
 
 This has worked spectacularly well until now - when we suddenly have to face the fact that optimising for single-user requires making security trade-offs that aren't appropriate when you're sharing your CPU with other people. Remember: Meltdown and Spectre wouldn't have been nearly as much of a big deal if it wasn't for the fact that nearly all of modern tech uses virtualised cloud services.
 
-<a href="https://twitter.com/aionescu/status/949028481056190464"><img src="https://markeldo.com/images/ionescu-multi-tenant-computing.png" alt="Tweet by Alex Ionescu" class="tweet"/></a>
+<a href="https://twitter.com/aionescu/status/949028481056190464"><img src="/images/ionescu-multi-tenant-computing.png" alt="Tweet by Alex Ionescu" class="tweet"/></a>
 
 Joe Fitz has also written an excellent twitter thread explaining why these issues are going to be so hard to fix, and why Intel can't just ship new CPUs without these vulnerabilities: altering the design of a CPU is kind of a big deal.
 
@@ -21,7 +21,7 @@ Joe Fitz has also written an excellent twitter thread explaining why these issue
 
 And finally, the grugq and Matt Tait teamed up to deliver what is now my favourite summary of good information security practice in a [single tweet](https://twitter.com/thegrugq/status/950418262772260864):
 
-<a href="https://twitter.com/thegrugq/status/950418262772260864"><img src="https://markeldo.com/images/grugq-not-everything-is-APT-2.png" alt="Tweet by the grugq" class="tweet"/></a>
+<a href="https://twitter.com/thegrugq/status/950418262772260864"><img src="/images/grugq-not-everything-is-APT-2.png" alt="Tweet by the grugq" class="tweet"/></a>
 
 Print out some A3 posters of this one and staple it to various parts of your IT department. Thank me later.
 

@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Security is always a trade-off
-image: "https://markeldo.com/images/security-trade-off-cropped.png"
+image: "/images/security-trade-off-cropped.png"
 excerpt: Everything we do in the security industry is a trade-off between convenience and security. The important thing is to be honest about the compromises you are making, and why they are necessary.
 ---
 
 Trade-offs occur everywhere in engineering. Take [leverage](https://en.wikipedia.org/wiki/Lever) for example:
 
-<img src="https://markeldo.com/images/leverage.jpg" alt="Leverage" style="width: 100%; max-width: 500px; display: block; margin: 0 auto;"/>
+<img src="/images/leverage.jpg" alt="Leverage" style="width: 100%; max-width: 500px; display: block; margin: 0 auto;"/>
 
 Leverage allows us to amplify a small force, by applying it at the end of a long lever. This is extremely useful, because it means we can move very large objects with much less effort than if we applied the force directly.
 
@@ -21,7 +21,7 @@ Everything we do in the security industry is a trade-off between convenience and
 
 The latter is what I like to call the *"turn everything off and go home"* approach to security. After all, you can't remotely hack a server if it's always off, and no one can steal your corporate information if you never do any work! 
 
-<img src="https://markeldo.com/images/meme-cant-get-hacked2.jpg" alt="Can't get hacked if everything is off" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
+<img src="/images/meme-cant-get-hacked2.jpg" alt="Can't get hacked if everything is off" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
 <em class="caption">Problem solved.</em>
 
 This is an extreme example, but we're all familiar with compromising convenience for security. Having to lock your computer is annoying, but we accept it as a necessary security precaution. Legitimate email gets caught in spam folders, but we still see the filtering as worthwhile.
@@ -44,7 +44,7 @@ We also have to compromise between security and convenience in our personal live
 
 In this example, we can look at convenience and security as if they were a spectrum: one extreme representing maximum convenience (minimum security), and the other representing maximum security (minimum convenience).
 
-![Security trade-offs in password practices](https://markeldo.com/images/security-trade-off-cropped.png)
+![Security trade-offs in password practices](/images/security-trade-off-cropped.png)
 <em class="caption">Security is always a trade-off</em>
 
 The most convenient password is not to have one at all, but for these online services I'm forced to pick *something*. In that case, the easiest solution is to just use something ridiculously obvious for the password (like the word `"password"`), and use the same one for every service.

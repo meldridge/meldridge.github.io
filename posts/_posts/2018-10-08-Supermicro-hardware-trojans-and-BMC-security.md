@@ -1,11 +1,11 @@
 ---
 layout: post
 title: Supermicro, hardware trojans, and BMC security
-image: "https://markeldo.com/images/supermicro-bmc-cropped.jpg"
+image: "/images/supermicro-bmc-cropped.jpg"
 excerpt: "We need to take two things much more seriously: the security of our supply-chain, and the security of our baseboard management controllers."
 ---
 
-![supermicro-bmc-cropped](https://markeldo.com/images/supermicro-bmc-cropped.jpg)
+![supermicro-bmc-cropped](/images/supermicro-bmc-cropped.jpg)
 <em class="caption">A Supermicro B1DRi board, showing the baseboard management controller (Source: <a href="https://img.alicdn.com/imgextra/i4/53172813/TB2KWHEAv5TBuNjSspcXXbnGFXa_!!53172813.jpg">Alibaba</a>)</em>
 
 Bloomberg broke [this story](https://www.bloomberg.com/news/features/2018-10-04/the-big-hack-how-china-used-a-tiny-chip-to-infiltrate-america-s-top-companies) last week, and it's an incredible read. 
@@ -22,7 +22,7 @@ The story would be enough of a bombshell on its own, but making things more inte
 
 As a few people [pointed out](https://twitter.com/SwiftOnSecurity/status/1047946250035875841), this sort of direct and specific refutation isn't what you'd expect to see from SEC-regulated companies unless they're very sure that they'll be proven right by a subsequent investigation. It's a weird situation to be in.
 
-<a href="https://twitter.com/TheRegister/status/1047952621762297857"><img src="https://markeldo.com/images/supermicro-register-antimatter.png" alt="Tweet by The Register" class="tweet"/></a>
+<a href="https://twitter.com/TheRegister/status/1047952621762297857"><img src="/images/supermicro-register-antimatter.png" alt="Tweet by The Register" class="tweet"/></a>
 
 The Register also published [this piece](https://www.theregister.co.uk/2018/10/04/supermicro_bloomberg/) on the Bloomberg claims which provides a good summary of the story and the significance of the Apple and Amazon denials. The grugq also has a good writeup of the story [here](https://medium.com/@thegrugq/supply-chain-security-speculation-b7b6357a5d05), and Patrick Gray released a Risky Business [feature interview](https://risky.biz/RB516_feature/) on the Bloomberg story and hardware attacks generally.
 
@@ -70,7 +70,7 @@ Unfortunately, BMC security has historically been... poor. As the grugq succinct
 
 It gets worse. Back in 2014, it was made public that Supermicro's BMC [would send you the plaintext admin password](https://arstechnica.com/information-technology/2014/06/at-least-32000-servers-broadcast-admin-passwords-in-the-clear-advisory-warns/) if you just sent a particular HTTP GET request to a certain port:
 
-<a href="https://twitter.com/cynicalsecurity/status/479743473344872448"><img src="https://markeldo.com/images/supermicro-psblock.png" alt="Tweet by Arrigo Triulzi" class="tweet"/></a>
+<a href="https://twitter.com/cynicalsecurity/status/479743473344872448"><img src="/images/supermicro-psblock.png" alt="Tweet by Arrigo Triulzi" class="tweet"/></a>
 
 That's right: send a GET request to a particular port on the BMC interface, and the server will dutifully send you the admin password.  I've had great fun with this one on previous engagements.
 

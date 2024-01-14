@@ -1,7 +1,7 @@
 ---
 layout: email
 title: AMSI for Office macros, iPhone authenticated pointers, reinventing the URL, and infosec resilience
-image: "https://markeldo.com/images/word-macro-2.png"
+image: "/images/word-macro-2.png"
 excerpt: "Office macros are incredibly useful when it comes to obtaining an initial foothold on a network, because they're one of the only ways to guarantee reliable code execution."
 ---
 
@@ -36,7 +36,7 @@ Of course, Office macros don't automatically execute when opened, but it's very 
 
 For example, below is one I prepared earlier:
 
-<img src="https://markeldo.com/images/word-macro-2.png" alt="Malicious Word macro" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
+<img src="/images/word-macro-2.png" alt="Malicious Word macro" style="width: 100%; max-width: 500px; display: block; margin: 0 auto; "/>
 <em class="caption">Go on, tell me you wouldn't fall for that on a Monday morning.</em>
 
 According to Cofense (formerly PhishMe), Office documents containing malicious macros accounted for [45% of malware delivery mechanisms](https://cofense.com/microsoft-office-macros-still-leader-malware-delivery/) in the month to 13 September.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Guest speech at the 2014 Heathfield High School Presentation Night
-image: https://markeldo.com/images/2014-HHS-presentation-night-speech.jpg
+image: /images/2014-HHS-presentation-night-speech.jpg
 excerpt: This is a transcript of a speech made on 28 October 2014 to Heathfield High School, my alma mater. Heathfield is located in the Adelaide Hills, South Australia.
 ---
 

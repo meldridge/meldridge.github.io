@@ -29,7 +29,7 @@ I'm only a quarter of the way through, but it's already one of my favourite piec
 
 This tweet by Aaron Toponce perfectly summarises the problem with common approaches to password 'complexity':
 
-<a href="https://twitter.com/AaronToponce/status/988761412464857088"><img src="https://markeldo.com/images/toponce-password-complexity.png" alt="Tweet by Aaron Toponce" class="tweet"/></a>
+<a href="https://twitter.com/AaronToponce/status/988761412464857088"><img src="/images/toponce-password-complexity.png" alt="Tweet by Aaron Toponce" class="tweet"/></a>
 
 
 We've discussed this issue in previous emails, and Troy Hunt's [Pwned Passwords](https://www.troyhunt.com/ive-just-launched-pwned-passwords-version-2/) project has done an excellent job of highlighting the right way to help users select good passwords: focus on length rather than arbitrary complexity measurements, suggest that they use phrases rather than single words, and blacklist the passwords which are known to be in attacker wordlists so that they can't choose "Password123!" or "Summer2018!".
