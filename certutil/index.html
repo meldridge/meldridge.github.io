@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>certutil -dstemplate Parser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #0d1117;
+      --surface:    #161b22;
+      --surface2:   #21262d;
+      --border:     #30363d;
+      --border-sub: #21262d;
+      --text:       #e6edf3;
+      --muted:      #8b949e;
+      --subtle:     #6e7681;
+      --accent:     #58a6ff;
+      --green:      #3fb950;
+      --red:        #f85149;
+      --orange:     #d29922;
+      --yellow:     #e3b341;
+    }
+
+    body {
+      font-family: 'Figtree', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a { color: var(--muted); text-decoration: none; }
+    a:hover { color: var(--text); }
+
+    /* ── Nav ───────────────────────────────────────────── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+    }
+    nav .site { font-weight: 600; color: var(--text); }
+    nav .site:hover { color: var(--accent); }
+
+    /* ── Main ──────────────────────────────────────────── */
+    main {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.925rem;
+      margin-bottom: 0.4rem;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      color: var(--accent);
+    }
+
+    .hint {
+      font-size: 0.8rem;
+      color: var(--subtle);
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── Input section ─────────────────────────────────── */
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 160px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.775rem;
+      padding: 0.875rem 1rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    textarea:focus { border-color: var(--accent); }
+    textarea::placeholder { color: var(--subtle); }
+
+    .btn-row {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+
+    button {
+      padding: 0.45rem 1.1rem;
+      border-radius: 6px;
+      font-family: 'Figtree', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.12s;
+      line-height: 1;
+    }
+    .btn-p { background: var(--accent); color: #0d1117; }
+    .btn-p:hover { background: #79c0ff; }
+    .btn-s { background: transparent; color: var(--muted); border-color: var(--border); }
+    .btn-s:hover { color: var(--text); border-color: var(--muted); }
+
+    /* ── Error ─────────────────────────────────────────── */
+    .error {
+      padding: 0.7rem 1rem;
+      background: rgba(248,81,73,0.08);
+      border: 1px solid rgba(248,81,73,0.3);
+      border-radius: 6px;
+      color: var(--red);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Summary bar ───────────────────────────────────── */
+    .summary {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 0.875rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin: 1.25rem 0 1rem;
+      font-size: 0.875rem;
+      flex-wrap: wrap;
+    }
+    .stat { display: flex; align-items: baseline; gap: 0.35rem; }
+    .stat-n {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .stat-l { color: var(--muted); }
+    .stat-n.red    { color: var(--red); }
+    .stat-n.orange { color: var(--orange); }
+    .stat-n.green  { color: var(--green); }
+    .summary-note  { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
+
+    /* ── Template cards ────────────────────────────────── */
+    .cards { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .card.crit { border-color: rgba(248,81,73,0.4); }
+    .card.high  { border-color: rgba(210,153,34,0.4); }
+
+    .card-hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1.1rem;
+      background: var(--surface2);
+      cursor: pointer;
+      user-select: none;
+      gap: 0.75rem;
+      border-bottom: 1px solid transparent;
+      transition: background 0.12s;
+    }
+    .card-hdr:hover { background: #2d333b; }
+    .card-hdr.open  { border-bottom-color: var(--border-sub); }
+
+    .tpl-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .tpl-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--subtle);
+      margin-left: 0.5rem;
+    }
+
+    .hdr-right { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+
+    .badges { display: flex; gap: 0.3rem; }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 0.18rem 0.45rem;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+    .b-crit   { background: rgba(248,81,73,0.14); color: var(--red);    border: 1px solid rgba(248,81,73,0.3); }
+    .b-high   { background: rgba(210,153,34,0.14); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
+    .b-clean  { background: rgba(63,185,80,0.1);  color: var(--green);  border: 1px solid rgba(63,185,80,0.25); }
+
+    .chevron {
+      color: var(--subtle);
+      font-size: 0.75rem;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .chevron.open { transform: rotate(180deg); }
+
+    /* Card body */
+    .card-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease;
+    }
+    .card-body.open { max-height: 2000px; }
+
+    .card-inner { padding: 1.1rem; }
+
+    /* ── ESC alert boxes ──────────────────────────────── */
+    .esc-box {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+      font-size: 0.845rem;
+      align-items: flex-start;
+    }
+    .esc-box.crit {
+      background: rgba(248,81,73,0.07);
+      border: 1px solid rgba(248,81,73,0.25);
+    }
+    .esc-box.high {
+      background: rgba(210,153,34,0.07);
+      border: 1px solid rgba(210,153,34,0.25);
+    }
+    .esc-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.78rem;
+      flex-shrink: 0;
+      padding-top: 0.05rem;
+    }
+    .esc-box.crit .esc-tag { color: var(--red); }
+    .esc-box.high .esc-tag { color: var(--yellow); }
+    .esc-desc { color: var(--text); line-height: 1.45; }
+    .esc-note {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 0.25rem;
+    }
+
+    /* ── Props grid ───────────────────────────────────── */
+    .props {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 0.9rem;
+    }
+    @media (max-width: 640px) { .props { grid-template-columns: 1fr; } }
+
+    .prop {
+      background: var(--bg);
+      border: 1px solid var(--border-sub);
+      border-radius: 6px;
+      padding: 0.8rem 0.9rem;
+    }
+
+    .prop-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 0.55rem;
+    }
+
+    .flag-hex {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--subtle);
+      margin-bottom: 0.35rem;
+    }
+
+    .flag-list { list-style: none; }
+
+    .fi {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.12rem 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--subtle);
+    }
+    .fi.on       { color: var(--muted); }
+    .fi.on.warn  { color: var(--yellow); }
+    .fi.on.crit  { color: var(--red); }
+    .fi.on.good  { color: var(--green); }
+
+    .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: var(--border);
+    }
+    .fi.on       .dot { background: var(--muted); }
+    .fi.on.warn  .dot { background: var(--yellow); }
+    .fi.on.crit  .dot { background: var(--red); }
+    .fi.on.good  .dot { background: var(--green); }
+
+    .eku-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.12rem 0;
+      font-size: 0.76rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .eku-name { color: var(--text); }
+    .eku-oid  { color: var(--subtle); font-size: 0.7rem; }
+    .eku-row.danger .eku-name { color: var(--red); }
+    .eku-row.danger .eku-oid  { color: rgba(248,81,73,0.5); }
+    .eku-row.notable .eku-name { color: var(--yellow); }
+
+    .ep-row {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      padding: 0.1rem 0;
+      color: var(--muted);
+    }
+    .ep-row.low { color: var(--red); }
+
+    .nodata {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem;
+      color: var(--subtle);
+      font-style: italic;
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 1.5rem 2rem;
+      color: var(--subtle);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    footer a { color: var(--muted); }
+
+    .hidden { display: none !important; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://markeldo.com/" class="site">Mark Eldridge</a>
+  <a href="https://markeldo.com/">Posts</a>
+  <a href="https://markeldo.com/emails/">Emails</a>
+  <a href="https://markeldo.com/about/">About</a>
+</nav>
+
+<main>
+  <h1>certutil -dstemplate Parser</h1>
+  <p class="subtitle">
+    Decode AD certificate template flags and surface potential ESC misconfigurations from raw
+    <code>certutil -dstemplate</code> output. All processing is local — nothing is submitted anywhere.
+  </p>
+  <p class="hint">Run <code>certutil -dstemplate</code> on a domain-joined system and paste the output below.</p>
+
+  <div>
+    <label for="inp">certutil -dstemplate output</label>
+    <textarea id="inp" spellcheck="false" placeholder="Paste certutil -dstemplate output here..."></textarea>
+    <div class="btn-row">
+      <button class="btn-p" onclick="parse()">Parse</button>
+      <button class="btn-s" onclick="loadSample()">Load sample</button>
+      <button class="btn-s" onclick="clearAll()">Clear</button>
+    </div>
+  </div>
+
+  <div id="err" class="error hidden"></div>
+  <div id="summary" class="summary hidden"></div>
+  <div id="out"></div>
+</main>
+
+<footer>
+  Made by <a href="https://markeldo.com">Mark Eldridge</a> &middot;
+  All processing local in browser &middot;
+  <a href="https://github.com/meldridge">GitHub</a>
+</footer>
+
+<script>
+/* ── EKU map ────────────────────────────────────────────────────────────── */
+const EKUS = {
+  '1.3.6.1.5.5.7.3.1':       { n: 'Server Authentication',       r: 0 },
+  '1.3.6.1.5.5.7.3.2':       { n: 'Client Authentication',       r: 2 },
+  '1.3.6.1.5.5.7.3.3':       { n: 'Code Signing',                r: 0 },
+  '1.3.6.1.5.5.7.3.4':       { n: 'Email Protection',            r: 0 },
+  '1.3.6.1.5.5.7.3.8':       { n: 'Time Stamping',               r: 0 },
+  '1.3.6.1.5.5.7.3.9':       { n: 'OCSP Signing',                r: 0 },
+  '1.3.6.1.4.1.311.20.2.2':  { n: 'Smart Card Logon',            r: 2 },
+  '1.3.6.1.4.1.311.10.3.4':  { n: 'Encrypting File System',      r: 0 },
+  '1.3.6.1.4.1.311.20.2.1':  { n: 'Certificate Request Agent',   r: 1 },
+  '2.5.29.37.0':              { n: 'Any Purpose',                 r: 2 },
+  '1.3.6.1.5.2.3.4':         { n: 'PKINIT Client Auth',          r: 2 },
+  '1.3.6.1.4.1.311.10.3.11': { n: 'Key Recovery',                r: 0 },
+  '1.3.6.1.4.1.311.10.3.1':  { n: 'Trust List Signing',          r: 0 },
+  '1.3.6.1.4.1.311.21.6':    { n: 'Key Recovery Agent',          r: 0 },
+  '1.3.6.1.4.1.311.10.3.12': { n: 'Document Signing',            r: 0 },
+};
+
+const CLIENT_AUTH = new Set(['1.3.6.1.5.5.7.3.2','1.3.6.1.4.1.311.20.2.2','1.3.6.1.5.2.3.4']);
+
+/* ── Flag bit definitions ────────────────────────────────────────────────── */
+const ENROLL_FLAGS = [
+  { b: 0x00000001, n: 'INCLUDE_SYMMETRIC_ALGORITHMS',               r: 0 },
+  { b: 0x00000002, n: 'PEND_ALL_REQUESTS  (manager approval req.)', r: 3 },
+  { b: 0x00000004, n: 'PUBLISH_TO_KRA_CONTAINER',                   r: 0 },
+  { b: 0x00000008, n: 'PUBLISH_TO_DS',                              r: 0 },
+  { b: 0x00000010, n: 'AUTO_ENROLLMENT_CHECK_USER_DS_CERT',         r: 0 },
+  { b: 0x00000020, n: 'AUTO_ENROLLMENT',                            r: 0 },
+  { b: 0x00000040, n: 'PREVIOUS_APPROVAL_VALIDATE_REENROLLMENT',    r: 0 },
+  { b: 0x00000100, n: 'USER_INTERACTION_REQUIRED',                  r: 0 },
+  { b: 0x00000400, n: 'REMOVE_INVALID_CERT_FROM_PERSONAL_STORE',    r: 0 },
+  { b: 0x00000800, n: 'ALLOW_ENROLL_ON_BEHALF_OF',                  r: 1 },
+  { b: 0x00001000, n: 'ADD_OCSP_NOCHECK',                           r: 0 },
+  { b: 0x00004000, n: 'NO_REVOCATION_INFO_IN_CERTS',                r: 0 },
+  { b: 0x00080000, n: 'NO_SECURITY_EXTENSION',                      r: 1 },
+];
+
+const NAME_FLAGS = [
+  { b: 0x00000001, n: 'ENROLLEE_SUPPLIES_SUBJECT',                  r: 2 },
+  { b: 0x00000002, n: 'ADD_EMAIL',                                  r: 0 },
+  { b: 0x00000004, n: 'ADD_OBJ_GUID',                               r: 0 },
+  { b: 0x00000008, n: 'OLD_CERT_SUPPLIES_SUBJECT_AND_ALT_NAME',     r: 0 },
+  { b: 0x00000100, n: 'ADD_DIRECTORY_PATH',                         r: 0 },
+  { b: 0x00010000, n: 'ENROLLEE_SUPPLIES_SUBJECT_ALT_NAME',         r: 2 },
+  { b: 0x00400000, n: 'SUBJECT_ALT_REQUIRE_DOMAIN_DNS',             r: 0 },
+  { b: 0x00800000, n: 'SUBJECT_ALT_REQUIRE_SPN',                    r: 0 },
+  { b: 0x01000000, n: 'SUBJECT_ALT_REQUIRE_DIRECTORY_GUID',         r: 0 },
+  { b: 0x02000000, n: 'SUBJECT_ALT_REQUIRE_UPN',                    r: 0 },
+  { b: 0x04000000, n: 'SUBJECT_ALT_REQUIRE_EMAIL',                  r: 0 },
+  { b: 0x08000000, n: 'SUBJECT_ALT_REQUIRE_DNS',                    r: 0 },
+  { b: 0x10000000, n: 'SUBJECT_REQUIRE_DNS_AS_CN',                  r: 0 },
+  { b: 0x20000000, n: 'SUBJECT_REQUIRE_EMAIL',                      r: 0 },
+  { b: 0x40000000, n: 'SUBJECT_REQUIRE_COMMON_NAME',                r: 0 },
+];
+
+// r: 0=neutral 1=notable(amber) 2=critical(red) 3=good(green)
+
+const LOW_PRIV = [
+  /authenticated users/i,
+  /domain users/i,
+  /\beveryone\b/i,
+  /nt authority\\interactive/i,
+  /domain computers/i,
+];
+
+/* ── SDDL enrollment parser ─────────────────────────────────────────────── */
+const ENROLL_OID = '0e10c968-78fb-11d2-90d4-00c04f79dc55';
+const SID_MAP = {
+  'DA': 'DOMAIN\\Domain Admins',
+  'DU': 'DOMAIN\\Domain Users',
+  'DC': 'DOMAIN\\Domain Computers',
+  'DD': 'DOMAIN\\Domain Controllers',
+  'ED': 'NT AUTHORITY\\Enterprise Domain Controllers',
+  'AU': 'NT AUTHORITY\\Authenticated Users',
+  'RS': 'DOMAIN\\RAS and IAS Servers',
+  'BA': 'BUILTIN\\Administrators',
+  'CA': 'DOMAIN\\Cert Publishers',
+  'S-1-1-0': 'Everyone',
+  'S-1-5-11': 'NT AUTHORITY\\Authenticated Users',
+};
+
+function parseSddlEnrollment(sddl) {
+  const principals = [];
+  const aceRe = /\(([^)]+)\)/g;
+  let m;
+  while ((m = aceRe.exec(sddl)) !== null) {
+    const parts = m[1].split(';');
+    if (parts.length < 6) continue;
+    if (parts[0] !== 'OA') continue;
+    if (!parts[3].toLowerCase().includes(ENROLL_OID)) continue;
+    const sid = parts[5];
+    const name = SID_MAP[sid] || sid;
+    if (name && !principals.includes(name)) principals.push(name);
+  }
+  return principals;
+}
+
+/* ── Parser ─────────────────────────────────────────────────────────────── */
+function parseCertutil(raw) {
+  const text = raw.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  const lines = text.split('\n');
+  const templates = [];
+  let cur = null;
+  const SKIP = new Set(['version', 'templatelist']);
+
+  for (const line of lines) {
+
+    // ── INF format: [SectionName] ──────────────────────────────────────────
+    const infSec = line.match(/^\[(.+)\]$/);
+    if (infSec) {
+      if (cur) templates.push(cur);
+      const nm = infSec[1].trim();
+      cur = SKIP.has(nm.toLowerCase()) ? null
+          : { name: nm, cn: null, displayName: null,
+              enrollF: null, nameF: null, raSig: 0, ekus: [], enroll: [] };
+      inSec = false;
+      continue;
+    }
+
+    if (!cur) continue;
+    const t = line.trim();
+    if (!t) continue;
+
+    // ── INF attribute: key = "v1", "v2" ───────────────────────────────────
+    const infAttr = t.match(/^([\w-]+)\s*=\s*(.+)/);
+    if (infAttr) {
+      const key = infAttr[1].toLowerCase();
+      const raw2 = infAttr[2];
+      const qVals = [];
+      const qRe = /"([^"]*)"/g; let qm;
+      while ((qm = qRe.exec(raw2)) !== null) qVals.push(qm[1]);
+      const vals = qVals.length ? qVals : [raw2.trim()];
+      const sv = vals[0];
+      if (key === 'cn') cur.cn = sv;
+      else if (key === 'displayname') cur.displayName = sv;
+      else if (key === 'mspki-enrollment-flag') cur.enrollF = parseInt(sv);
+      else if (key === 'mspki-certificate-name-flag') cur.nameF = parseInt(sv);
+      else if (key === 'mspki-ra-signature') cur.raSig = parseInt(sv);
+      else if (key === 'pkiextendedkeyusage') { for (const v of vals) if (v) cur.ekus.push(v); }
+      else if (key === 'ntsecuritydescriptor') cur.enroll = parseSddlEnrollment(sv);
+      continue;
+    }
+
+  }
+  if (cur) templates.push(cur);
+  return templates;
+}
+
+/* ── ESC detection ──────────────────────────────────────────────────────── */
+function detectESC(t) {
+  const issues = [];
+  const subjOn  = t.nameF !== null && (t.nameF & 0x1) !== 0;
+  const sanOn   = t.nameF !== null && (t.nameF & 0x10000) !== 0;
+  const hasCA   = t.ekus.some(e => CLIENT_AUTH.has(e));
+  const hasAny  = t.ekus.includes('2.5.29.37.0');
+  const hasRA   = t.ekus.includes('1.3.6.1.4.1.311.20.2.1');
+  const lowPriv = t.enroll.some(p => LOW_PRIV.some(rx => rx.test(p)));
+  const noPerms = t.enroll.length === 0;
+  const mgr     = t.enrollF !== null && (t.enrollF & 0x2) !== 0;
+  const ra      = t.raSig > 0;
+
+  if ((subjOn || sanOn) && hasCA) {
+    if (lowPriv) {
+      const mit = [];
+      if (mgr) mit.push('manager approval required');
+      if (ra)  mit.push(`${t.raSig} authorized signature(s) required`);
+      issues.push({ type:'ESC1', sev: mit.length ? 'high':'crit',
+        desc: 'Enrollee-supplied subject/SAN with Client Authentication EKU and low-privileged enrollment.',
+        mit, noPerms: false });
+    } else if (noPerms) {
+      issues.push({ type:'ESC1', sev:'high',
+        desc: 'Enrollee-supplied subject/SAN with Client Authentication EKU — enrollment permissions not in output.',
+        mit:[], noPerms: true });
+    }
+  }
+
+  if (hasAny && (lowPriv || noPerms)) {
+    issues.push({ type:'ESC2', sev:'crit',
+      desc: 'Any Purpose EKU — certificates can be used for any purpose including client authentication.',
+      mit:[], noPerms });
+  } else if (t.ekus.length === 0 && (lowPriv || noPerms)) {
+    issues.push({ type:'ESC2', sev:'high',
+      desc: 'No EKU defined — certificates are usable for any purpose.',
+      mit:[], noPerms });
+  }
+
+  if (hasRA && (lowPriv || noPerms)) {
+    issues.push({ type:'ESC3', sev:'high',
+      desc: 'Certificate Request Agent EKU — enables enrollment on behalf of other principals.',
+      mit:[], noPerms });
+  }
+
+  return issues;
+}
+
+/* ── Render helpers ─────────────────────────────────────────────────────── */
+function h(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderFlags(defs, val) {
+  if (val === null) return `<span class="nodata">not found in output</span>`;
+  const hex = '0x' + (val >>> 0).toString(16).toUpperCase().padStart(8,'0');
+  let out = `<div class="flag-hex">${hex} (${val})</div><ul class="flag-list">`;
+  for (const f of defs) {
+    const on = (val & f.b) !== 0;
+    if (!on) continue;
+    const cls = f.r===2?'on crit':f.r===1?'on warn':f.r===3?'on good':'on';
+    out += `<li class="fi ${cls}"><span class="dot"></span>${h(f.n)}</li>`;
+  }
+  out += '</ul>';
+  return out;
+}
+
+function renderEKUs(ekus) {
+  if (!ekus.length) return `<span class="nodata">none defined (any purpose)</span>`;
+  return ekus.map(oid => {
+    const info = EKUS[oid];
+    const nm   = info ? info.n : oid;
+    const cls  = info ? (info.r===2?'danger':info.r===1?'notable':'') : '';
+    return `<div class="eku-row ${cls}"><span class="eku-name">${h(nm)}</span>`
+         + (info ? `<span class="eku-oid">${h(oid)}</span>` : '')
+         + `</div>`;
+  }).join('');
+}
+
+function renderEnroll(perms) {
+  if (!perms.length) return `<span class="nodata">not present in output</span>`;
+  return perms.map(p => {
+    const low = LOW_PRIV.some(rx => rx.test(p));
+    return `<div class="ep-row${low?' low':''}">${h(p)}</div>`;
+  }).join('');
+}
+
+function renderCard(t, idx) {
+  const issues = detectESC(t);
+  const hasCrit = issues.some(x => x.sev==='crit');
+  const hasHigh = issues.some(x => x.sev==='high');
+  const cardCls = hasCrit ? 'card crit' : hasHigh ? 'card high' : 'card';
+
+  const badges = issues.length
+    ? issues.map(i => `<span class="badge ${i.sev==='crit'?'b-crit':'b-high'}">${i.type}</span>`).join('')
+    : `<span class="badge b-clean">CLEAN</span>`;
+
+  const disp = t.displayName || t.cn || t.name;
+  const sub  = disp !== t.name ? `<span class="tpl-sub">${h(t.name)}</span>` : '';
+
+  const escBoxes = issues.map(i => {
+    const note = i.mit.length
+      ? `<div class="esc-note">Partially mitigated: ${h(i.mit.join(', '))}</div>`
+      : i.noPerms
+      ? `<div class="esc-note">Enrollment permissions not found — run certutil with sufficient privileges to see ACL.</div>`
+      : '';
+    return `<div class="esc-box ${i.sev}">
+      <span class="esc-tag">${i.type}</span>
+      <div><div class="esc-desc">${h(i.desc)}</div>${note}</div>
+    </div>`;
+  }).join('');
+
+  const raSigRow = t.raSig > 0
+    ? `<div style="margin-top:0.4rem;font-size:0.76rem;font-family:'JetBrains Mono',monospace;color:var(--green)">
+        ✓ ${t.raSig} authorized signature(s) required</div>`
+    : '';
+
+  return `
+  <div class="${cardCls}" id="c${idx}">
+    <div class="card-hdr" onclick="toggle(${idx})" id="ch${idx}">
+      <div style="display:flex;align-items:baseline;min-width:0;overflow:hidden">
+        <span class="tpl-name">${h(disp)}</span>${sub}
+      </div>
+      <div class="hdr-right">
+        <div class="badges">${badges}</div>
+        <span class="chevron" id="cv${idx}">▼</span>
+      </div>
+    </div>
+    <div class="card-body" id="cb${idx}">
+      <div class="card-inner">
+        ${escBoxes}
+        <div class="props">
+          <div class="prop">
+            <div class="prop-title">Extended Key Usage</div>
+            ${renderEKUs(t.ekus)}
+          </div>
+          <div class="prop">
+            <div class="prop-title">Enroll Permissions</div>
+            ${renderEnroll(t.enroll)}${raSigRow}
+          </div>
+          <div class="prop">
+            <div class="prop-title">Certificate Name Flags</div>
+            ${renderFlags(NAME_FLAGS, t.nameF)}
+          </div>
+          <div class="prop">
+            <div class="prop-title">Enrollment Flags</div>
+            ${renderFlags(ENROLL_FLAGS, t.enrollF)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggle(idx) {
+  document.getElementById(`cb${idx}`).classList.toggle('open');
+  document.getElementById(`cv${idx}`).classList.toggle('open');
+  document.getElementById(`ch${idx}`).classList.toggle('open');
+}
+
+/* ── Main actions ───────────────────────────────────────────────────────── */
+function parse() {
+  const raw = document.getElementById('inp').value.trim();
+  const errEl  = document.getElementById('err');
+  const sumEl  = document.getElementById('summary');
+  const outEl  = document.getElementById('out');
+
+  errEl.classList.add('hidden');
+
+  if (!raw) {
+    errEl.textContent = 'Please paste certutil -dstemplate output above.';
+    errEl.classList.remove('hidden');
+    sumEl.classList.add('hidden');
+    outEl.innerHTML = '';
+    return;
+  }
+
+  const tmpls = parseCertutil(raw);
+  if (!tmpls.length) {
+    errEl.textContent = 'No certificate templates found. Ensure you have pasted the full output of certutil -dstemplate.';
+    errEl.classList.remove('hidden');
+    sumEl.classList.add('hidden');
+    outEl.innerHTML = '';
+    return;
+  }
+
+  const allIssues = tmpls.map(detectESC);
+  const nCrit = allIssues.filter(i => i.some(x => x.sev==='crit')).length;
+  const nHigh = allIssues.filter(i => i.some(x => x.sev==='high' && !i.some(y => y.sev==='crit'))).length;
+  const nIssues = allIssues.filter(i => i.length > 0).length;
+
+  sumEl.innerHTML = `
+    <div class="stat"><span class="stat-n">${tmpls.length}</span><span class="stat-l">templates</span></div>
+    <div style="color:var(--border)">|</div>
+    <div class="stat"><span class="stat-n ${nCrit?'red':'green'}">${nCrit}</span><span class="stat-l">critical</span></div>
+    <div class="stat"><span class="stat-n ${nHigh?'orange':'green'}">${nHigh}</span><span class="stat-l">high</span></div>
+    <div class="summary-note">${nIssues ? nIssues+' template'+(nIssues!==1?'s':'')+' with potential ESC conditions' : 'No ESC conditions detected'}</div>`;
+  sumEl.classList.remove('hidden');
+
+  // Sort: critical first, high second, clean last
+  const sorted = tmpls.map((t,i) => ({t, issues: allIssues[i], i}))
+    .sort((a,b) => {
+      const s = x => x.some(i=>i.sev==='crit') ? 2 : x.some(i=>i.sev==='high') ? 1 : 0;
+      return s(b.issues) - s(a.issues);
+    });
+
+  outEl.innerHTML = `<div class="cards">${sorted.map(({t,i}) => renderCard(t, i)).join('')}</div>`;
+
+  // Auto-expand cards with issues
+  sorted.forEach(({issues, i}) => {
+    if (issues.length) {
+      document.getElementById(`cb${i}`)?.classList.add('open');
+      document.getElementById(`cv${i}`)?.classList.add('open');
+      document.getElementById(`ch${i}`)?.classList.add('open');
+    }
+  });
+}
+
+function clearAll() {
+  document.getElementById('inp').value = '';
+  document.getElementById('out').innerHTML = '';
+  document.getElementById('err').classList.add('hidden');
+  document.getElementById('summary').classList.add('hidden');
+}
+
+function loadSample() {
+  document.getElementById('inp').value =
+`[Version]
+Signature = "$Windows NT$"
+
+[User]
+    cn = "User"
+    displayName = "User"
+    pKIExtendedKeyUsage = "1.3.6.1.4.1.311.10.3.4", "1.3.6.1.5.5.7.3.4", "1.3.6.1.5.5.7.3.2"
+    msPKI-RA-Signature = "0"
+    msPKI-Enrollment-Flag = "41"
+    msPKI-Certificate-Name-Flag = "-1509949440"
+    nTSecurityDescriptor = "D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DU)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-111-222-333-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;LCRPLORC;;;AU)"
+
+[WebServer]
+    cn = "WebServer"
+    displayName = "Web Server"
+    pKIExtendedKeyUsage = "1.3.6.1.5.5.7.3.1"
+    msPKI-RA-Signature = "0"
+    msPKI-Enrollment-Flag = "0"
+    msPKI-Certificate-Name-Flag = "1"
+    nTSecurityDescriptor = "D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-111-222-333-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;LCRPLORC;;;AU)"
+
+[VulnESC1]
+    cn = "VulnESC1"
+    displayName = "Vulnerable Web Server (ESC1)"
+    pKIExtendedKeyUsage = "1.3.6.1.5.5.7.3.2", "1.3.6.1.5.5.7.3.1"
+    msPKI-RA-Signature = "0"
+    msPKI-Enrollment-Flag = "32"
+    msPKI-Certificate-Name-Flag = "1"
+    nTSecurityDescriptor = "D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DU)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-111-222-333-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;LCRPLORC;;;AU)"
+
+[MitigatedESC1]
+    cn = "MitigatedESC1"
+    displayName = "Web Server (Manager Approval)"
+    pKIExtendedKeyUsage = "1.3.6.1.5.5.7.3.2"
+    msPKI-RA-Signature = "0"
+    msPKI-Enrollment-Flag = "34"
+    msPKI-Certificate-Name-Flag = "1"
+    nTSecurityDescriptor = "D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DU)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-111-222-333-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;LCRPLORC;;;AU)"
+
+[EnrollmentAgent]
+    cn = "EnrollmentAgent"
+    displayName = "Enrollment Agent (ESC3)"
+    pKIExtendedKeyUsage = "1.3.6.1.4.1.311.20.2.1"
+    msPKI-RA-Signature = "0"
+    msPKI-Enrollment-Flag = "32"
+    msPKI-Certificate-Name-Flag = "-2113929216"
+    nTSecurityDescriptor = "D:PAI(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DA)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;DU)(OA;;RPWPCR;0e10c968-78fb-11d2-90d4-00c04f79dc55;;S-1-5-21-111-222-333-519)(A;;CCDCLCSWRPWPDTLOSDRCWDWO;;;DA)(A;;LCRPLORC;;;AU)"
+
+[TemplateList]
+    Template = "User"
+    Template = "WebServer"
+    Template = "VulnESC1"
+    Template = "MitigatedESC1"
+    Template = "EnrollmentAgent"
+CertUtil: -dsTemplate command completed successfully.`;
+  parse();
+}
+</script>
+</body>
+</html>
