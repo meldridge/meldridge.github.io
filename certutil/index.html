@@ -220,6 +220,7 @@
     }
     .b-crit   { background: rgba(248,81,73,0.14); color: var(--red);    border: 1px solid rgba(248,81,73,0.3); }
     .b-high   { background: rgba(210,153,34,0.14); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
+    .b-medium { background: rgba(88,166,255,0.12); color: var(--accent); border: 1px solid rgba(88,166,255,0.3); }
     .b-clean  { background: rgba(63,185,80,0.1);  color: var(--green);  border: 1px solid rgba(63,185,80,0.25); }
 
     .chevron {
@@ -258,6 +259,10 @@
       background: rgba(210,153,34,0.07);
       border: 1px solid rgba(210,153,34,0.25);
     }
+    .esc-box.medium {
+      background: rgba(88,166,255,0.06);
+      border: 1px solid rgba(88,166,255,0.2);
+    }
     .esc-tag {
       font-family: 'JetBrains Mono', monospace;
       font-weight: 700;
@@ -267,6 +272,7 @@
     }
     .esc-box.crit .esc-tag { color: var(--red); }
     .esc-box.high .esc-tag { color: var(--yellow); }
+    .esc-box.medium .esc-tag { color: var(--accent); }
     .esc-desc { color: var(--text); line-height: 1.45; }
     .esc-note {
       color: var(--muted);
@@ -393,7 +399,7 @@
 <main>
   <h1>certutil -dstemplate Parser</h1>
   <p class="subtitle">
-    All processing is local — nothing is submitted anywhere.
+    All processing is local.
   </p>
   <p class="hint">Run <code>certutil -dstemplate</code> on a domain-joined system and paste the output below.</p>
 
@@ -534,8 +540,8 @@ function parseCertutil(raw) {
       const nm = infSec[1].trim();
       cur = SKIP.has(nm.toLowerCase()) ? null
           : { name: nm, cn: null, displayName: null,
-              enrollF: null, nameF: null, raSig: 0, ekus: [], enroll: [] };
-      inSec = false;
+              enrollF: null, nameF: null, raSig: 0, schemaVer: null,
+              ekus: [], raAppPolicies: [], enroll: [] };
       continue;
     }
 
@@ -558,7 +564,9 @@ function parseCertutil(raw) {
       else if (key === 'mspki-enrollment-flag') cur.enrollF = parseInt(sv);
       else if (key === 'mspki-certificate-name-flag') cur.nameF = parseInt(sv);
       else if (key === 'mspki-ra-signature') cur.raSig = parseInt(sv);
+      else if (key === 'mspki-template-schema-version') cur.schemaVer = parseInt(sv);
       else if (key === 'pkiextendedkeyusage') { for (const v of vals) if (v) cur.ekus.push(v); }
+      else if (key === 'mspki-ra-application-policies') { for (const v of vals) if (v) cur.raAppPolicies.push(v); }
       else if (key === 'ntsecuritydescriptor') cur.enroll = parseSddlEnrollment(sv);
       continue;
     }
@@ -569,18 +577,25 @@ function parseCertutil(raw) {
 }
 
 /* ── ESC detection ──────────────────────────────────────────────────────── */
+const SERVER_AUTH = '1.3.6.1.5.5.7.3.1';
+const RA_OID      = '1.3.6.1.4.1.311.20.2.1';
+
 function detectESC(t) {
   const issues = [];
-  const subjOn  = t.nameF !== null && (t.nameF & 0x1) !== 0;
-  const sanOn   = t.nameF !== null && (t.nameF & 0x10000) !== 0;
-  const hasCA   = t.ekus.some(e => CLIENT_AUTH.has(e));
-  const hasAny  = t.ekus.includes('2.5.29.37.0');
-  const hasRA   = t.ekus.includes('1.3.6.1.4.1.311.20.2.1');
-  const lowPriv = t.enroll.some(p => LOW_PRIV.some(rx => rx.test(p)));
-  const noPerms = t.enroll.length === 0;
-  const mgr     = t.enrollF !== null && (t.enrollF & 0x2) !== 0;
-  const ra      = t.raSig > 0;
+  const subjOn    = t.nameF !== null && (t.nameF & 0x1) !== 0;
+  const sanOn     = t.nameF !== null && (t.nameF & 0x10000) !== 0;
+  const hasCA     = t.ekus.some(e => CLIENT_AUTH.has(e));
+  const hasSrvAuth= t.ekus.includes(SERVER_AUTH);
+  const hasAny    = t.ekus.includes('2.5.29.37.0');
+  const hasRA     = t.ekus.includes(RA_OID);
+  const hasRAinApp= t.raAppPolicies.includes(RA_OID);
+  const noSecExt  = t.enrollF !== null && (t.enrollF & 0x80000) !== 0;
+  const lowPriv   = t.enroll.some(p => LOW_PRIV.some(rx => rx.test(p)));
+  const noPerms   = t.enroll.length === 0;
+  const mgr       = t.enrollF !== null && (t.enrollF & 0x2) !== 0;
+  const ra        = t.raSig > 0;
 
+  // ESC1: enrollee-supplied subject + client auth + low-priv enroll
   if ((subjOn || sanOn) && hasCA) {
     if (lowPriv) {
       const mit = [];
@@ -596,6 +611,7 @@ function detectESC(t) {
     }
   }
 
+  // ESC2: Any Purpose EKU (or no EKU) + low-priv enroll
   if (hasAny && (lowPriv || noPerms)) {
     issues.push({ type:'ESC2', sev:'crit',
       desc: 'Any Purpose EKU — certificates can be used for any purpose including client authentication.',
@@ -606,9 +622,38 @@ function detectESC(t) {
       mit:[], noPerms });
   }
 
+  // ESC3: Certificate Request Agent EKU in EKU list (Condition 1)
   if (hasRA && (lowPriv || noPerms)) {
     issues.push({ type:'ESC3', sev:'high',
       desc: 'Certificate Request Agent EKU — enables enrollment on behalf of other principals.',
+      mit:[], noPerms });
+  }
+
+  // ESC3 Condition 2: RA OID in msPKI-RA-Application-Policies — can be enrolled into using an RA cert
+  if (hasRAinApp && (lowPriv || noPerms)) {
+    issues.push({ type:'ESC3', sev:'high',
+      desc: 'Enrollment Agent OID in RA Application Policies — a holder of an Enrollment Agent certificate can request a certificate from this template on behalf of another user.',
+      mit:[], noPerms });
+  }
+
+  // ESC9: NO_SECURITY_EXTENSION flag + client auth + low-priv enroll
+  if (noSecExt && hasCA && (lowPriv || noPerms)) {
+    issues.push({ type:'ESC9', sev:'medium',
+      desc: 'NO_SECURITY_EXTENSION flag set — certificates lack the szOID_NTDS_CA_SECURITY_EXT SID extension, allowing weak certificate binding attacks if UPN/dNSHostName can be modified.',
+      mit:[], noPerms });
+  }
+
+  // ESC15: Schema Version 1 + low-priv enroll (CVE-2024-49019 / EKUwu)
+  if (t.schemaVer === 1 && (lowPriv || noPerms)) {
+    issues.push({ type:'ESC15', sev: lowPriv ? 'high' : 'medium',
+      desc: 'Schema Version 1 template with low-privileged enrollment — if CVE-2024-49019 is unpatched, arbitrary Application Policies (including Client Authentication) can be injected at enrolment time.',
+      mit:[], noPerms });
+  }
+
+  // ESC17: enrollee-supplied subject + Server Auth (not client auth) + low-priv enroll
+  if ((subjOn || sanOn) && hasSrvAuth && !hasCA && (lowPriv || noPerms)) {
+    issues.push({ type:'ESC17', sev:'medium',
+      desc: 'Enrollee-supplied SAN with Server Authentication EKU and low-privileged enrollment — allows impersonation of servers for Machine-in-the-Middle attacks.',
       mit:[], noPerms });
   }
 
@@ -661,7 +706,7 @@ function renderCard(t, idx) {
   const cardCls = hasCrit ? 'card crit' : hasHigh ? 'card high' : 'card';
 
   const badges = issues.length
-    ? issues.map(i => `<span class="badge ${i.sev==='crit'?'b-crit':'b-high'}">${i.type}</span>`).join('')
+    ? issues.map(i => `<span class="badge ${i.sev==='crit'?'b-crit':i.sev==='high'?'b-high':'b-medium'}">${i.type}</span>`).join('')
     : `<span class="badge b-clean">CLEAN</span>`;
 
   const disp = t.displayName || t.cn || t.name;
@@ -755,7 +800,8 @@ function parse() {
 
   const allIssues = tmpls.map(detectESC);
   const nCrit = allIssues.filter(i => i.some(x => x.sev==='crit')).length;
-  const nHigh = allIssues.filter(i => i.some(x => x.sev==='high' && !i.some(y => y.sev==='crit'))).length;
+  const nHigh = allIssues.filter(i => i.some(x => x.sev==='high') && !i.some(x => x.sev==='crit')).length;
+  const nMed  = allIssues.filter(i => i.some(x => x.sev==='medium') && !i.some(x => x.sev==='crit') && !i.some(x => x.sev==='high')).length;
   const nIssues = allIssues.filter(i => i.length > 0).length;
 
   sumEl.innerHTML = `
@@ -763,13 +809,14 @@ function parse() {
     <div style="color:var(--border)">|</div>
     <div class="stat"><span class="stat-n ${nCrit?'red':'green'}">${nCrit}</span><span class="stat-l">critical</span></div>
     <div class="stat"><span class="stat-n ${nHigh?'orange':'green'}">${nHigh}</span><span class="stat-l">high</span></div>
+    <div class="stat"><span class="stat-n ${nMed?'':'green'}" style="${nMed?'color:var(--accent)':''}">${nMed}</span><span class="stat-l">medium</span></div>
     <div class="summary-note">${nIssues ? nIssues+' template'+(nIssues!==1?'s':'')+' with potential ESC conditions' : 'No ESC conditions detected'}</div>`;
   sumEl.classList.remove('hidden');
 
   // Sort: critical first, high second, clean last
   const sorted = tmpls.map((t,i) => ({t, issues: allIssues[i], i}))
     .sort((a,b) => {
-      const s = x => x.some(i=>i.sev==='crit') ? 2 : x.some(i=>i.sev==='high') ? 1 : 0;
+      const s = x => x.some(i=>i.sev==='crit') ? 3 : x.some(i=>i.sev==='high') ? 2 : x.some(i=>i.sev==='medium') ? 1 : 0;
       return s(b.issues) - s(a.issues);
     });
 
