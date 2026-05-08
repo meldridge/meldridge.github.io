@@ -91,6 +91,8 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - vendor
+  - .bundle
 
 # Include these files (which would normally be hidden)
 include: [".well-known"]

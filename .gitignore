@@ -7,3 +7,5 @@ _site
 node_modules
 package.json
 Gemfile
+vendor/
+Gemfile.lock
