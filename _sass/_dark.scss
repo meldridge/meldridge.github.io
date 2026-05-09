@@ -1,0 +1,113 @@
+//
+// DARK MODE
+//
+// Applied either explicitly (`<html data-theme="dark">`) or via the user's
+// browser preference when they have not chosen "light" manually.
+// Tool pages (e.g. /sid, /certutil) opt out via `data-theme-locked="light"`.
+//
+
+@mixin dark-theme {
+  body {
+    background: #1a1a1a;
+    color: #d4d4d4;
+  }
+
+  h1, h2, h3, h4, h5, h6 { color: #f0f0f0; }
+  h4 { color: #a0a0a0; }
+
+  a, a:hover, a:active { color: #6ba8e0; }
+
+  // Headings and dates that wrap a link should keep their muted colour
+  // rather than picking up the accent blue.
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+  .date a { color: inherit; }
+
+  .date,
+  .site-description,
+  em.caption,
+  footer,
+  .emails-description,
+  .newsletter-description,
+  .post .footnotes {
+    color: #a0a0a0;
+  }
+
+  .site-name { color: #d4d4d4; }
+
+  .masthead { border-bottom-color: #333; }
+
+  nav a {
+    color: #d4d4d4;
+
+    @include mobile {
+      color: #6ba8e0;
+    }
+  }
+
+  .posts > .post {
+    border-bottom-color: #333;
+
+    .date { color: #a0a0a0; }
+  }
+
+  .post {
+    blockquote { background: #262626; }
+    img.tweet { border-color: #333; }
+  }
+
+  .pagination {
+    a {
+      background-color: #262626;
+      color: #d4d4d4;
+    }
+    a:hover {
+      background-color: #333;
+      color: #d4d4d4;
+    }
+    .page_number { color: #d4d4d4; }
+  }
+
+  .wrapper-footer {
+    background-color: #1f1f1f;
+    border-color: #333;
+  }
+
+  ::-moz-selection,
+  ::selection {
+    color: #fff;
+    background: #4183C4;
+  }
+
+  // Code blocks: dark surface; the existing Solarized accent colors carry
+  // over reasonably, but a few hardcoded greys read poorly on a dark bg.
+  pre.highlight {
+    background-color: #1f2933;
+    border-color: #2d3b48;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .highlight .nx { color: #93A1A1; }
+  .highlight .gh,
+  .highlight .gu { color: #d08758; }
+
+  // Theme toggle reflects the *resolved* theme: shows the sun (click to go
+  // light) when dark is active.
+  .theme-toggle {
+    color: #d4d4d4;
+    .theme-icon-sun { display: inline; }
+    .theme-icon-moon { display: none; }
+    &:hover { color: #6ba8e0; }
+  }
+}
+
+// Manual override: user clicked the toggle and chose dark.
+:root[data-theme="dark"] {
+  @include dark-theme;
+}
+
+// Auto: follow system preference unless the user has manually chosen light.
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme-locked]) {
+    @include dark-theme;
+  }
+}
