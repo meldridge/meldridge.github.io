@@ -421,7 +421,38 @@ footer {
   color: $gray;
 }
 
+// Theme toggle button (dark-mode switch in the masthead)
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  padding: 4px 8px;
+  background: none;
+  border: none;
+  color: $darkGray;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+
+  // Light is the default — show the moon (click to go dark).
+  .theme-icon-sun { display: none; }
+  .theme-icon-moon { display: inline; }
+
+  &:hover { color: $blue; }
+  &:focus-visible {
+    outline: 2px solid $blue;
+    outline-offset: 2px;
+  }
+
+  @include mobile {
+    margin: 0 10px;
+  }
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+@import "dark";
