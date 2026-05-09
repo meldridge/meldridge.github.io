@@ -39,11 +39,14 @@
             <a href="{{ site.baseurl }}/">Posts</a>
             <a href="{{ site.baseurl }}/emails">Emails</a>
             <a href="{{ site.baseurl }}/about">About</a>
+            {% unless page.force_light %}
             <button id="theme-toggle" class="theme-toggle" type="button"
-                    aria-label="Toggle dark mode" title="Toggle dark mode">
+                    aria-label="Toggle dark mode" title="Toggle dark mode"
+                    aria-pressed="false">
               <span class="theme-icon-moon" aria-hidden="true">☾</span>
               <span class="theme-icon-sun" aria-hidden="true">☀</span>
             </button>
+            {% endunless %}
           </nav>
         </header>
       </div>
@@ -61,6 +64,7 @@
       </div>
     </div>
 
+    {% unless page.force_light %}
     <script>
       (function () {
         var btn = document.getElementById('theme-toggle');
@@ -74,24 +78,31 @@
           return media && media.matches ? 'dark' : 'light';
         }
 
+        function syncPressed() {
+          btn.setAttribute('aria-pressed', resolved() === 'dark' ? 'true' : 'false');
+        }
+
+        syncPressed();
+
         btn.addEventListener('click', function () {
           var next = resolved() === 'dark' ? 'light' : 'dark';
           root.setAttribute('data-theme', next);
           try { localStorage.setItem('theme', next); } catch (e) {}
+          syncPressed();
         });
 
-        // If the user has not chosen explicitly, follow live system changes.
+        // When the user hasn't chosen explicitly, system theme changes flip
+        // the resolved theme via CSS — keep aria-pressed in sync so the
+        // toggle's announced state matches what the user sees.
         if (media && media.addEventListener) {
           media.addEventListener('change', function () {
-            try {
-              if (localStorage.getItem('theme')) return;
-            } catch (e) {}
-            // No data-theme attribute means we're already following the
-            // media query — nothing to do, CSS will repaint.
+            try { if (localStorage.getItem('theme')) return; } catch (e) {}
+            syncPressed();
           });
         }
       })();
     </script>
+    {% endunless %}
 
     {% include analytics.html %}
   </body>

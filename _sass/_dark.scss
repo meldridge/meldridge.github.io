@@ -3,7 +3,10 @@
 //
 // Applied either explicitly (`<html data-theme="dark">`) or via the user's
 // browser preference when they have not chosen "light" manually.
-// Tool pages (e.g. /sid, /certutil) opt out via `data-theme-locked="light"`.
+// Tool pages (e.g. /sid, /certutil) set `force_light: true` in their front
+// matter, which causes the layout to add a boolean `data-theme-locked`
+// attribute on <html>; the auto-dark media query below skips elements
+// carrying that attribute.
 //
 
 @mixin dark-theme {
