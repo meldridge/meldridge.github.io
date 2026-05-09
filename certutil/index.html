@@ -1,428 +1,343 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>certutil -dstemplate Parser</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+---
+layout: page
+title: certutil -dstemplate Parser
+description: Parse certutil -dstemplate output and surface ESC1/2/3/9/15/17 conditions on AD certificate templates.
+---
 
-    :root {
-      --bg:         #0d1117;
-      --surface:    #161b22;
-      --surface2:   #21262d;
-      --border:     #30363d;
-      --border-sub: #21262d;
-      --text:       #e6edf3;
-      --muted:      #8b949e;
-      --subtle:     #6e7681;
-      --accent:     #58a6ff;
-      --green:      #3fb950;
-      --red:        #f85149;
-      --orange:     #d29922;
-      --yellow:     #e3b341;
-    }
+<style>
+  /* tool-page tokens */
+  .ct {
+    --ct-bg: #fafafa;
+    --ct-border: #ddd;
+    --ct-border-sub: #eee;
+    --ct-text: #333;
+    --ct-muted: #666;
+    --ct-subtle: #888;
+    --ct-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
-    body {
-      font-family: 'Figtree', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.6;
-    }
+    --ct-blue: #4183C4;
+    --ct-blue-tint: #eaf2fa;
+    --ct-blue-border: #b1cce7;
+    --ct-blue-text: #2c6aa3;
 
-    a { color: var(--muted); text-decoration: none; }
-    a:hover { color: var(--text); }
+    --ct-red: #a61e1e;
+    --ct-red-tint: #fdecec;
+    --ct-red-border: #e8b3b3;
 
-    /* ── Nav ───────────────────────────────────────────── */
-    nav {
-      border-bottom: 1px solid var(--border);
-      padding: 0.9rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      font-size: 0.875rem;
-    }
-    nav .site { font-weight: 600; color: var(--text); }
-    nav .site:hover { color: var(--accent); }
+    --ct-amber: #8a5a00;
+    --ct-amber-tint: #fff7e6;
+    --ct-amber-border: #e8cd8c;
 
-    /* ── Main ──────────────────────────────────────────── */
-    main {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 2.5rem 2rem 4rem;
-    }
+    --ct-green: #0b6b2d;
+    --ct-green-tint: #e9f5ec;
+    --ct-green-border: #a8d6b3;
+  }
 
-    h1 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
+  .ct code,
+  .ct .mono { font-family: var(--ct-mono); }
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 0.925rem;
-      margin-bottom: 0.4rem;
-    }
+  .ct .hint {
+    color: var(--ct-muted);
+    font-size: 0.95rem;
+    margin: 0 0 1.25em;
+  }
 
-    code {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85em;
-      color: var(--accent);
-    }
+  /* Input */
+  .ct label {
+    display: block;
+    font-weight: bold;
+    margin: 0 0 8px;
+  }
+  .ct textarea {
+    width: 100%;
+    height: 160px;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: var(--ct-text);
+    font: inherit;
+    font-family: var(--ct-mono);
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    resize: vertical;
+  }
+  .ct textarea:focus,
+  .ct button:focus {
+    outline: 2px solid var(--ct-blue);
+    outline-offset: 1px;
+  }
 
-    .hint {
-      font-size: 0.8rem;
-      color: var(--subtle);
-      margin-bottom: 1.75rem;
-    }
+  .ct .btn-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0 0;
+  }
+  .ct button {
+    padding: 8px 14px;
+    border: 1px solid #999;
+    background: #fff;
+    color: var(--ct-text);
+    cursor: pointer;
+    font: inherit;
+  }
+  .ct button:hover { background: #f3f3f3; }
+  .ct .btn-p {
+    background: var(--ct-blue);
+    border-color: var(--ct-blue);
+    color: #fff;
+  }
+  .ct .btn-p:hover { background: #346da3; }
 
-    /* ── Input section ─────────────────────────────────── */
-    label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
+  /* Error */
+  .ct .error {
+    padding: 10px 14px;
+    background: var(--ct-red-tint);
+    border: 1px solid var(--ct-red-border);
+    color: var(--ct-red);
+    margin: 1em 0;
+  }
 
-    textarea {
-      width: 100%;
-      height: 160px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.775rem;
-      padding: 0.875rem 1rem;
-      resize: vertical;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-    textarea:focus { border-color: var(--accent); }
-    textarea::placeholder { color: var(--subtle); }
+  /* Summary */
+  .ct .summary {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 12px 16px;
+    background: var(--ct-bg);
+    border: 1px solid var(--ct-border);
+    margin: 1.25em 0 1em;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+  .ct .stat { display: flex; align-items: baseline; gap: 0.35rem; }
+  .ct .stat-n {
+    font-family: var(--ct-mono);
+    font-weight: bold;
+    font-size: 1.05rem;
+  }
+  .ct .stat-l { color: var(--ct-muted); }
+  .ct .stat-n.red    { color: var(--ct-red); }
+  .ct .stat-n.orange { color: var(--ct-amber); }
+  .ct .stat-n.green  { color: var(--ct-green); }
+  .ct .stat-n.blue   { color: var(--ct-blue-text); }
+  .ct .stat-sep { color: var(--ct-border); }
+  .ct .summary-note { color: var(--ct-muted); font-size: 0.85rem; margin-left: auto; }
 
-    .btn-row {
-      display: flex;
-      gap: 0.6rem;
-      margin-top: 0.6rem;
-    }
+  /* Cards */
+  .ct .cards { display: flex; flex-direction: column; gap: 10px; margin: 0; }
+  .ct .card {
+    background: #fff;
+    border: 1px solid var(--ct-border);
+    overflow: hidden;
+  }
+  .ct .card.crit { border-color: var(--ct-red-border); }
+  .ct .card.high { border-color: var(--ct-amber-border); }
 
-    button {
-      padding: 0.45rem 1.1rem;
-      border-radius: 6px;
-      font-family: 'Figtree', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.12s;
-      line-height: 1;
-    }
-    .btn-p { background: var(--accent); color: #0d1117; }
-    .btn-p:hover { background: #79c0ff; }
-    .btn-s { background: transparent; color: var(--muted); border-color: var(--border); }
-    .btn-s:hover { color: var(--text); border-color: var(--muted); }
+  .ct .card-hdr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--ct-bg);
+    cursor: pointer;
+    user-select: none;
+    gap: 12px;
+    border-bottom: 1px solid transparent;
+  }
+  .ct .card-hdr:hover { background: #f3f3f3; }
+  .ct .card-hdr.open { border-bottom-color: var(--ct-border-sub); }
 
-    /* ── Error ─────────────────────────────────────────── */
-    .error {
-      padding: 0.7rem 1rem;
-      background: rgba(248,81,73,0.08);
-      border: 1px solid rgba(248,81,73,0.3);
-      border-radius: 6px;
-      color: var(--red);
-      font-size: 0.875rem;
-      margin-bottom: 1rem;
-    }
+  .ct .card-hdr-title {
+    display: flex;
+    align-items: baseline;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .ct .tpl-name {
+    font-family: var(--ct-mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ct-text);
+  }
+  .ct .tpl-sub {
+    font-family: var(--ct-mono);
+    font-size: 0.78rem;
+    color: var(--ct-subtle);
+    margin-left: 0.5rem;
+  }
 
-    /* ── Summary bar ───────────────────────────────────── */
-    .summary {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      padding: 0.875rem 1.25rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      margin: 1.25rem 0 1rem;
-      font-size: 0.875rem;
-      flex-wrap: wrap;
-    }
-    .stat { display: flex; align-items: baseline; gap: 0.35rem; }
-    .stat-n {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 600;
-      font-size: 1.05rem;
-    }
-    .stat-l { color: var(--muted); }
-    .stat-n.red    { color: var(--red); }
-    .stat-n.orange { color: var(--orange); }
-    .stat-n.green  { color: var(--green); }
-    .summary-note  { color: var(--muted); font-size: 0.8rem; margin-left: auto; }
+  .ct .hdr-right { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+  .ct .badges { display: flex; gap: 0.3rem; }
+  .ct .badge {
+    font-family: var(--ct-mono);
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    letter-spacing: 0.02em;
+    border: 1px solid;
+  }
+  .ct .b-crit   { background: var(--ct-red-tint);   color: var(--ct-red);       border-color: var(--ct-red-border); }
+  .ct .b-high   { background: var(--ct-amber-tint); color: var(--ct-amber);     border-color: var(--ct-amber-border); }
+  .ct .b-medium { background: var(--ct-blue-tint);  color: var(--ct-blue-text); border-color: var(--ct-blue-border); }
+  .ct .b-clean  { background: var(--ct-green-tint); color: var(--ct-green);     border-color: var(--ct-green-border); }
 
-    /* ── Template cards ────────────────────────────────── */
-    .cards { display: flex; flex-direction: column; gap: 0.75rem; }
+  .ct .chevron {
+    color: var(--ct-subtle);
+    font-size: 0.75rem;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .ct .chevron.open { transform: rotate(180deg); }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .card.crit { border-color: rgba(248,81,73,0.4); }
-    .card.high  { border-color: rgba(210,153,34,0.4); }
+  .ct .card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.28s ease;
+  }
+  .ct .card-body.open { max-height: 2000px; }
+  .ct .card-inner { padding: 14px; }
 
-    .card-hdr {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.8rem 1.1rem;
-      background: var(--surface2);
-      cursor: pointer;
-      user-select: none;
-      gap: 0.75rem;
-      border-bottom: 1px solid transparent;
-      transition: background 0.12s;
-    }
-    .card-hdr:hover { background: #2d333b; }
-    .card-hdr.open  { border-bottom-color: var(--border-sub); }
+  /* ESC alerts */
+  .ct .esc-box {
+    display: flex;
+    gap: 12px;
+    padding: 10px 12px;
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    align-items: flex-start;
+    border: 1px solid;
+  }
+  .ct .esc-box.crit   { background: var(--ct-red-tint);   border-color: var(--ct-red-border); }
+  .ct .esc-box.high   { background: var(--ct-amber-tint); border-color: var(--ct-amber-border); }
+  .ct .esc-box.medium { background: var(--ct-blue-tint);  border-color: var(--ct-blue-border); }
+  .ct .esc-tag {
+    font-family: var(--ct-mono);
+    font-weight: bold;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .ct .esc-box.crit   .esc-tag { color: var(--ct-red); }
+  .ct .esc-box.high   .esc-tag { color: var(--ct-amber); }
+  .ct .esc-box.medium .esc-tag { color: var(--ct-blue-text); }
+  .ct .esc-desc { color: var(--ct-text); line-height: 1.45; }
+  .ct .esc-note {
+    color: var(--ct-muted);
+    font-size: 0.82rem;
+    margin-top: 0.25rem;
+  }
 
-    .tpl-name {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-    .tpl-sub {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--subtle);
-      margin-left: 0.5rem;
-    }
+  /* Props grid */
+  .ct .props {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  @media (max-width: 640px) { .ct .props { grid-template-columns: 1fr; } }
+  .ct .prop {
+    background: var(--ct-bg);
+    border: 1px solid var(--ct-border-sub);
+    padding: 10px 12px;
+  }
+  .ct .prop-title {
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ct-muted);
+    font-family: var(--ct-mono);
+    margin: 0 0 8px;
+  }
 
-    .hdr-right { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+  .ct .flag-hex {
+    font-family: var(--ct-mono);
+    font-size: 0.8rem;
+    color: var(--ct-subtle);
+    margin: 0 0 6px;
+  }
+  .ct .flag-list { list-style: none; margin: 0; padding: 0; }
+  .ct .fi {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 1px 0;
+    font-family: var(--ct-mono);
+    font-size: 0.78rem;
+    color: var(--ct-subtle);
+  }
+  .ct .fi.on      { color: var(--ct-muted); }
+  .ct .fi.on.warn { color: var(--ct-amber); }
+  .ct .fi.on.crit { color: var(--ct-red); }
+  .ct .fi.on.good { color: var(--ct-green); }
+  .ct .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--ct-border);
+  }
+  .ct .fi.on      .dot { background: var(--ct-muted); }
+  .ct .fi.on.warn .dot { background: var(--ct-amber); }
+  .ct .fi.on.crit .dot { background: var(--ct-red); }
+  .ct .fi.on.good .dot { background: var(--ct-green); }
 
-    .badges { display: flex; gap: 0.3rem; }
+  .ct .eku-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 1px 0;
+    font-size: 0.78rem;
+    font-family: var(--ct-mono);
+  }
+  .ct .eku-name { color: var(--ct-text); }
+  .ct .eku-oid  { color: var(--ct-subtle); font-size: 0.72rem; }
+  .ct .eku-row.danger  .eku-name { color: var(--ct-red); }
+  .ct .eku-row.danger  .eku-oid  { color: var(--ct-red-border); }
+  .ct .eku-row.notable .eku-name { color: var(--ct-amber); }
 
-    .badge {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      font-weight: 600;
-      padding: 0.18rem 0.45rem;
-      border-radius: 4px;
-      letter-spacing: 0.02em;
-    }
-    .b-crit   { background: rgba(248,81,73,0.14); color: var(--red);    border: 1px solid rgba(248,81,73,0.3); }
-    .b-high   { background: rgba(210,153,34,0.14); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
-    .b-medium { background: rgba(88,166,255,0.12); color: var(--accent); border: 1px solid rgba(88,166,255,0.3); }
-    .b-clean  { background: rgba(63,185,80,0.1);  color: var(--green);  border: 1px solid rgba(63,185,80,0.25); }
+  .ct .ep-row {
+    font-family: var(--ct-mono);
+    font-size: 0.78rem;
+    padding: 1px 0;
+    color: var(--ct-muted);
+  }
+  .ct .ep-row.low { color: var(--ct-red); }
+  .ct .ra-sig-note {
+    margin-top: 6px;
+    font-size: 0.78rem;
+    font-family: var(--ct-mono);
+    color: var(--ct-green);
+  }
 
-    .chevron {
-      color: var(--subtle);
-      font-size: 0.75rem;
-      transition: transform 0.2s;
-      display: inline-block;
-    }
-    .chevron.open { transform: rotate(180deg); }
+  .ct .nodata {
+    font-family: var(--ct-mono);
+    font-size: 0.78rem;
+    color: var(--ct-subtle);
+    font-style: italic;
+  }
 
-    /* Card body */
-    .card-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.28s ease;
-    }
-    .card-body.open { max-height: 2000px; }
+  .ct .hidden { display: none !important; }
+</style>
 
-    .card-inner { padding: 1.1rem; }
-
-    /* ── ESC alert boxes ──────────────────────────────── */
-    .esc-box {
-      display: flex;
-      gap: 0.75rem;
-      padding: 0.7rem 0.9rem;
-      border-radius: 6px;
-      margin-bottom: 0.6rem;
-      font-size: 0.845rem;
-      align-items: flex-start;
-    }
-    .esc-box.crit {
-      background: rgba(248,81,73,0.07);
-      border: 1px solid rgba(248,81,73,0.25);
-    }
-    .esc-box.high {
-      background: rgba(210,153,34,0.07);
-      border: 1px solid rgba(210,153,34,0.25);
-    }
-    .esc-box.medium {
-      background: rgba(88,166,255,0.06);
-      border: 1px solid rgba(88,166,255,0.2);
-    }
-    .esc-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 700;
-      font-size: 0.78rem;
-      flex-shrink: 0;
-      padding-top: 0.05rem;
-    }
-    .esc-box.crit .esc-tag { color: var(--red); }
-    .esc-box.high .esc-tag { color: var(--yellow); }
-    .esc-box.medium .esc-tag { color: var(--accent); }
-    .esc-desc { color: var(--text); line-height: 1.45; }
-    .esc-note {
-      color: var(--muted);
-      font-size: 0.78rem;
-      margin-top: 0.25rem;
-    }
-
-    /* ── Props grid ───────────────────────────────────── */
-    .props {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-top: 0.9rem;
-    }
-    @media (max-width: 640px) { .props { grid-template-columns: 1fr; } }
-
-    .prop {
-      background: var(--bg);
-      border: 1px solid var(--border-sub);
-      border-radius: 6px;
-      padding: 0.8rem 0.9rem;
-    }
-
-    .prop-title {
-      font-size: 0.68rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 0.55rem;
-    }
-
-    .flag-hex {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      color: var(--subtle);
-      margin-bottom: 0.35rem;
-    }
-
-    .flag-list { list-style: none; }
-
-    .fi {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.12rem 0;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      color: var(--subtle);
-    }
-    .fi.on       { color: var(--muted); }
-    .fi.on.warn  { color: var(--yellow); }
-    .fi.on.crit  { color: var(--red); }
-    .fi.on.good  { color: var(--green); }
-
-    .dot {
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      background: var(--border);
-    }
-    .fi.on       .dot { background: var(--muted); }
-    .fi.on.warn  .dot { background: var(--yellow); }
-    .fi.on.crit  .dot { background: var(--red); }
-    .fi.on.good  .dot { background: var(--green); }
-
-    .eku-row {
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      padding: 0.12rem 0;
-      font-size: 0.76rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .eku-name { color: var(--text); }
-    .eku-oid  { color: var(--subtle); font-size: 0.7rem; }
-    .eku-row.danger .eku-name { color: var(--red); }
-    .eku-row.danger .eku-oid  { color: rgba(248,81,73,0.5); }
-    .eku-row.notable .eku-name { color: var(--yellow); }
-
-    .ep-row {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      padding: 0.1rem 0;
-      color: var(--muted);
-    }
-    .ep-row.low { color: var(--red); }
-
-    .nodata {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      color: var(--subtle);
-      font-style: italic;
-    }
-
-    /* ── Footer ──────────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 1.5rem 2rem;
-      color: var(--subtle);
-      font-size: 0.8rem;
-      border-top: 1px solid var(--border);
-      margin-top: 2rem;
-    }
-    footer a { color: var(--muted); }
-
-    .hidden { display: none !important; }
-
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="https://markeldo.com/" class="site">Mark Eldridge</a>
-  <a href="https://markeldo.com/">Posts</a>
-  <a href="https://markeldo.com/emails/">Emails</a>
-  <a href="https://markeldo.com/about/">About</a>
-</nav>
-
-<main>
-  <h1>certutil -dstemplate Parser</h1>
-  <p class="subtitle">
-    All processing is local.
+<div class="ct">
+  <p class="hint">
+    Run <code>certutil -dstemplate</code> on a domain-joined system and paste the output below.
+    All processing is local — nothing is sent over the network.
   </p>
-  <p class="hint">Run <code>certutil -dstemplate</code> on a domain-joined system and paste the output below.</p>
 
   <div>
     <label for="inp">certutil -dstemplate output</label>
     <textarea id="inp" spellcheck="false" placeholder="Paste certutil -dstemplate output here..."></textarea>
     <div class="btn-row">
-      <button class="btn-p" onclick="parse()">Parse</button>
-      <button class="btn-s" onclick="loadSample()">Load sample</button>
-      <button class="btn-s" onclick="clearAll()">Clear</button>
+      <button id="parseBtn" class="btn-p" type="button">Parse</button>
+      <button id="sampleBtn" type="button">Load sample</button>
+      <button id="clearBtn" type="button">Clear</button>
     </div>
   </div>
 
   <div id="err" class="error hidden"></div>
   <div id="summary" class="summary hidden"></div>
   <div id="out"></div>
-</main>
-
-<footer>
-  Made by <a href="https://markeldo.com">Mark Eldridge</a> &middot;
-  All processing local in browser &middot;
-  <a href="https://github.com/meldridge">GitHub</a>
-</footer>
+</div>
 
 <script>
 /* ── EKU map ────────────────────────────────────────────────────────────── */
@@ -532,8 +447,6 @@ function parseCertutil(raw) {
   const SKIP = new Set(['version', 'templatelist']);
 
   for (const line of lines) {
-
-    // ── INF format: [SectionName] ──────────────────────────────────────────
     const infSec = line.match(/^\[(.+)\]$/);
     if (infSec) {
       if (cur) templates.push(cur);
@@ -549,7 +462,6 @@ function parseCertutil(raw) {
     const t = line.trim();
     if (!t) continue;
 
-    // ── INF attribute: key = "v1", "v2" ───────────────────────────────────
     const infAttr = t.match(/^([\w-]+)\s*=\s*(.+)/);
     if (infAttr) {
       const key = infAttr[1].toLowerCase();
@@ -570,7 +482,6 @@ function parseCertutil(raw) {
       else if (key === 'ntsecuritydescriptor') cur.enroll = parseSddlEnrollment(sv);
       continue;
     }
-
   }
   if (cur) templates.push(cur);
   return templates;
@@ -595,7 +506,6 @@ function detectESC(t) {
   const mgr       = t.enrollF !== null && (t.enrollF & 0x2) !== 0;
   const ra        = t.raSig > 0;
 
-  // ESC1: enrollee-supplied subject + client auth + low-priv enroll
   if ((subjOn || sanOn) && hasCA) {
     if (lowPriv) {
       const mit = [];
@@ -611,7 +521,6 @@ function detectESC(t) {
     }
   }
 
-  // ESC2: Any Purpose EKU (or no EKU) + low-priv enroll
   if (hasAny && (lowPriv || noPerms)) {
     issues.push({ type:'ESC2', sev:'crit',
       desc: 'Any Purpose EKU — certificates can be used for any purpose including client authentication.',
@@ -622,35 +531,30 @@ function detectESC(t) {
       mit:[], noPerms });
   }
 
-  // ESC3: Certificate Request Agent EKU in EKU list (Condition 1)
   if (hasRA && (lowPriv || noPerms)) {
     issues.push({ type:'ESC3', sev:'high',
       desc: 'Certificate Request Agent EKU — enables enrollment on behalf of other principals.',
       mit:[], noPerms });
   }
 
-  // ESC3 Condition 2: RA OID in msPKI-RA-Application-Policies — can be enrolled into using an RA cert
   if (hasRAinApp && (lowPriv || noPerms)) {
     issues.push({ type:'ESC3', sev:'high',
       desc: 'Enrollment Agent OID in RA Application Policies — a holder of an Enrollment Agent certificate can request a certificate from this template on behalf of another user.',
       mit:[], noPerms });
   }
 
-  // ESC9: NO_SECURITY_EXTENSION flag + client auth + low-priv enroll
   if (noSecExt && hasCA && (lowPriv || noPerms)) {
     issues.push({ type:'ESC9', sev:'medium',
       desc: 'NO_SECURITY_EXTENSION flag set — certificates lack the szOID_NTDS_CA_SECURITY_EXT SID extension, allowing weak certificate binding attacks if UPN/dNSHostName can be modified.',
       mit:[], noPerms });
   }
 
-  // ESC15: Schema Version 1 + low-priv enroll (CVE-2024-49019 / EKUwu)
   if (t.schemaVer === 1 && (lowPriv || noPerms)) {
     issues.push({ type:'ESC15', sev: lowPriv ? 'high' : 'medium',
       desc: 'Schema Version 1 template with low-privileged enrollment — if CVE-2024-49019 is unpatched, arbitrary Application Policies (including Client Authentication) can be injected at enrolment time.',
       mit:[], noPerms });
   }
 
-  // ESC17: enrollee-supplied subject + Server Auth (not client auth) + low-priv enroll
   if ((subjOn || sanOn) && hasSrvAuth && !hasCA && (lowPriv || noPerms)) {
     issues.push({ type:'ESC17', sev:'medium',
       desc: 'Enrollee-supplied SAN with Server Authentication EKU and low-privileged enrollment — allows impersonation of servers for Machine-in-the-Middle attacks.',
@@ -725,14 +629,13 @@ function renderCard(t, idx) {
   }).join('');
 
   const raSigRow = t.raSig > 0
-    ? `<div style="margin-top:0.4rem;font-size:0.76rem;font-family:'JetBrains Mono',monospace;color:var(--green)">
-        ✓ ${t.raSig} authorized signature(s) required</div>`
+    ? `<div class="ra-sig-note">✓ ${t.raSig} authorized signature(s) required</div>`
     : '';
 
   return `
   <div class="${cardCls}" id="c${idx}">
-    <div class="card-hdr" onclick="toggle(${idx})" id="ch${idx}">
-      <div style="display:flex;align-items:baseline;min-width:0;overflow:hidden">
+    <div class="card-hdr" data-idx="${idx}" id="ch${idx}">
+      <div class="card-hdr-title">
         <span class="tpl-name">${h(disp)}</span>${sub}
       </div>
       <div class="hdr-right">
@@ -806,14 +709,13 @@ function parse() {
 
   sumEl.innerHTML = `
     <div class="stat"><span class="stat-n">${tmpls.length}</span><span class="stat-l">templates</span></div>
-    <div style="color:var(--border)">|</div>
+    <div class="stat-sep">|</div>
     <div class="stat"><span class="stat-n ${nCrit?'red':'green'}">${nCrit}</span><span class="stat-l">critical</span></div>
     <div class="stat"><span class="stat-n ${nHigh?'orange':'green'}">${nHigh}</span><span class="stat-l">high</span></div>
-    <div class="stat"><span class="stat-n ${nMed?'':'green'}" style="${nMed?'color:var(--accent)':''}">${nMed}</span><span class="stat-l">medium</span></div>
+    <div class="stat"><span class="stat-n ${nMed?'blue':'green'}">${nMed}</span><span class="stat-l">medium</span></div>
     <div class="summary-note">${nIssues ? nIssues+' template'+(nIssues!==1?'s':'')+' with potential ESC conditions' : 'No ESC conditions detected'}</div>`;
   sumEl.classList.remove('hidden');
 
-  // Sort: critical first, high second, clean last
   const sorted = tmpls.map((t,i) => ({t, issues: allIssues[i], i}))
     .sort((a,b) => {
       const s = x => x.some(i=>i.sev==='crit') ? 3 : x.some(i=>i.sev==='high') ? 2 : x.some(i=>i.sev==='medium') ? 1 : 0;
@@ -822,7 +724,10 @@ function parse() {
 
   outEl.innerHTML = `<div class="cards">${sorted.map(({t,i}) => renderCard(t, i)).join('')}</div>`;
 
-  // Auto-expand cards with issues
+  outEl.querySelectorAll('.card-hdr').forEach(hdr => {
+    hdr.addEventListener('click', () => toggle(hdr.dataset.idx));
+  });
+
   sorted.forEach(({issues, i}) => {
     if (issues.length) {
       document.getElementById(`cb${i}`)?.classList.add('open');
@@ -839,9 +744,7 @@ function clearAll() {
   document.getElementById('summary').classList.add('hidden');
 }
 
-function loadSample() {
-  document.getElementById('inp').value =
-`[Version]
+const SAMPLE = `[Version]
 Signature = "$Windows NT$"
 
 [User]
@@ -896,8 +799,13 @@ Signature = "$Windows NT$"
     Template = "MitigatedESC1"
     Template = "EnrollmentAgent"
 CertUtil: -dsTemplate command completed successfully.`;
+
+function loadSample() {
+  document.getElementById('inp').value = SAMPLE;
   parse();
 }
+
+document.getElementById('parseBtn').addEventListener('click', parse);
+document.getElementById('sampleBtn').addEventListener('click', loadSample);
+document.getElementById('clearBtn').addEventListener('click', clearAll);
 </script>
-</body>
-</html>
