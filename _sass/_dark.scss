@@ -101,6 +101,43 @@
     .theme-icon-moon { display: none; }
     &:hover { color: #6ba8e0; }
   }
+
+  // /certutil tool page: rebind its --ct-* tokens to dark-friendly values.
+  // The component CSS in `_certutil.scss` already flows colour through these
+  // variables, so the layout doesn't change — only the palette does.
+  .ct {
+    --ct-bg: #1f1f1f;
+    --ct-surface: #181818;
+    --ct-border: #333;
+    --ct-border-sub: #2a2a2a;
+    --ct-text: #d4d4d4;
+    --ct-muted: #a0a0a0;
+    --ct-subtle: #808080;
+
+    --ct-input-bg: #1f1f1f;
+    --ct-input-border: #444;
+    --ct-btn-bg: #262626;
+    --ct-btn-border: #444;
+    --ct-btn-hover-bg: #333;
+
+    --ct-blue: #6ba8e0;
+    --ct-blue-hover: #87b7e0;
+    --ct-blue-tint: #1b2735;
+    --ct-blue-border: #2d4a6b;
+    --ct-blue-text: #87b7e0;
+
+    --ct-red: #e57373;
+    --ct-red-tint: #2a1818;
+    --ct-red-border: #4a2828;
+
+    --ct-amber: #d4a14a;
+    --ct-amber-tint: #2a2418;
+    --ct-amber-border: #4a3f28;
+
+    --ct-green: #6ec472;
+    --ct-green-tint: #1a2a1d;
+    --ct-green-border: #2a4a30;
+  }
 }
 
 // Manual override: user clicked the toggle and chose dark.
