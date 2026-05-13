@@ -36,12 +36,15 @@ This is why the two `defaults` blocks at the bottom of `_config.yml` exist. If y
 
 ## Tool pages: `/sid` and `/certutil`
 
-These are standalone single-page tools (encoders/parsers) at `sid/index.html` and `certutil/index.html`. Two conventions specific to them:
+These are single-page tools (encoders/parsers). Each tool is split across three files:
 
-1. **Self-contained**: scripts and styles are inlined into the HTML so the file works as a download for offline use. Don't extract JS to a separate file without checking with the user first — this was an explicit design choice.
-2. **`force_light: true`** in front matter opts the page out of dark mode. `_layouts/default.html` checks this and emits a boolean `data-theme-locked` attribute on `<html>`; the dark CSS media query and the toggle button are both gated on its absence.
+- `<tool>/index.html` — thin HTML shell. Front matter sets `layout: page`; the body is markup only, with `<script src="{{ site.baseurl }}/<tool>/<tool>.js" defer></script>` at the bottom.
+- `<tool>/<tool>.js` — the tool's logic, wrapped in an IIFE so its constants don't leak to `window`.
+- `_sass/_<tool>.scss` — the tool's styles, scoped under a parent class (`.ct` for certutil, `.sid` for sid) to keep them out of the rest of the site. Imported from `style.scss` before `_dark`.
 
-Tool-specific styles in these files are scoped (e.g. `.ct` parent class on certutil) to avoid leaking into the blog.
+Each partial defines `--<tool>-*` CSS custom properties for every colour it uses, and `_sass/_dark.scss`'s `dark-theme` mixin rebinds those tokens to dark-friendly values. This is how the tools participate in the site's dark mode (system preference + the toggle in the nav) without any tool-specific dark-mode code. When adding a new tool page, follow the same pattern.
+
+The `force_light: true` front-matter mechanism is still wired in `_layouts/default.html` as an escape hatch (it adds `data-theme-locked` on `<html>` and suppresses the toggle button), but no page currently uses it.
 
 ## Dark mode
 

@@ -2,102 +2,21 @@
 layout: page
 title: AD SID Extension Encoder
 description: Generate the DER-encoded Microsoft NTDS Object SID certificate extension value from an Active Directory SID.
-force_light: true
 ---
-
-<style>
-  .tool-panel {
-    border: 1px solid #eee;
-    background: #fafafa;
-    padding: 18px;
-    margin: 1.5em 0;
-  }
-  .tool-panel label {
-    display: block;
-    font-weight: bold;
-    margin: 0 0 8px;
-  }
-  .tool-panel input,
-  .tool-panel textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #ccc;
-    background: #fff;
-    color: #333;
-    font: inherit;
-  }
-  .tool-panel textarea {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 0.95rem;
-    min-height: 150px;
-    resize: vertical;
-    word-break: break-all;
-  }
-  .tool-panel input:focus,
-  .tool-panel textarea:focus,
-  .tool-actions button:focus {
-    outline: 2px solid #4183C4;
-    outline-offset: 1px;
-  }
-  .tool-actions {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin: 14px 0;
-  }
-  .tool-actions button {
-    padding: 8px 14px;
-    border: 1px solid #999;
-    background: #fff;
-    color: #333;
-    cursor: pointer;
-    font: inherit;
-  }
-  .tool-actions button:hover { background: #f3f3f3; }
-  .tool-actions button.primary {
-    background: #4183C4;
-    border-color: #4183C4;
-    color: #fff;
-  }
-  .tool-actions button.primary:hover { background: #346da3; }
-  .tool-status {
-    min-height: 1.5em;
-    margin: 0 0 14px;
-    font-weight: bold;
-  }
-  .tool-status.ok   { color: #0b6b2d; }
-  .tool-status.warn { color: #8a5a00; }
-  .tool-status.err  { color: #a61e1e; }
-  .tool-meta {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 6px 12px;
-    margin: 14px 0 0;
-    font-size: 0.95rem;
-  }
-  .tool-meta dt { color: #666; }
-  .tool-meta dd {
-    margin: 0;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  }
-  @media (max-width: 600px) {
-    .tool-meta { grid-template-columns: 1fr; }
-    .tool-meta dt { padding-top: 6px; }
-  }
-</style>
 
 <p>
   Generate the DER-encoded Microsoft NTDS Object SID certificate extension value from an Active Directory SID.
   All processing happens locally in your browser.
 </p>
 
-<div class="tool-panel">
+<div class="sid">
   <label for="sidInput">Active Directory SID</label>
   <input id="sidInput" type="text" spellcheck="false" autocomplete="off"
          placeholder="S-1-5-21-1111111111-2222222222-3333333333-1234">
 
   <div class="tool-actions">
     <button id="generateBtn" type="button" class="primary">Generate</button>
+    <button id="sampleBtn" type="button">Load sample</button>
     <button id="copyBtn" type="button">Copy hex</button>
     <button id="clearBtn" type="button">Clear</button>
   </div>
@@ -125,122 +44,4 @@ force_light: true
     [0]
       OCTET STRING &lt;ASCII SID string bytes&gt;</pre>
 
-<script>
-  const sidInput = document.getElementById('sidInput');
-  const hexOutput = document.getElementById('hexOutput');
-  const statusEl = document.getElementById('status');
-  const sidLengthEl = document.getElementById('sidLength');
-  const derLengthEl = document.getElementById('derLength');
-
-  function setStatus(message, type = '') {
-    statusEl.textContent = message;
-    statusEl.className = `tool-status ${type}`.trim();
-  }
-
-  function looksLikeSid(value) {
-    return /^S-\d+(?:-\d+)+$/i.test(value.trim());
-  }
-
-  function derLengthBytes(length) {
-    if (!Number.isInteger(length) || length < 0) {
-      throw new Error('Invalid DER length.');
-    }
-    if (length < 128) {
-      return [length];
-    }
-    const bytes = [];
-    let value = length;
-    while (value > 0) {
-      bytes.unshift(value & 0xff);
-      value = Math.floor(value / 256);
-    }
-    return [0x80 | bytes.length, ...bytes];
-  }
-
-  function tlv(tag, valueBytes) {
-    return [tag, ...derLengthBytes(valueBytes.length), ...valueBytes];
-  }
-
-  function bytesToHex(bytes) {
-    return bytes.map(b => b.toString(16).padStart(2, '0')).join('');
-  }
-
-  function encodeSidExtensionHex(sid) {
-    const sidBytes = Array.from(new TextEncoder().encode(sid));
-    const oidValueBytes = [0x2b, 0x06, 0x01, 0x04, 0x01, 0x82, 0x37, 0x19, 0x02, 0x01];
-    const oidTlv = tlv(0x06, oidValueBytes);
-    const octet = tlv(0x04, sidBytes);
-    const innerA0 = tlv(0xA0, octet);
-    const outerA0 = tlv(0xA0, [...oidTlv, ...innerA0]);
-    const sequence = tlv(0x30, outerA0);
-    return {
-      hex: bytesToHex(sequence),
-      sidByteLength: sidBytes.length,
-      derByteLength: sequence.length
-    };
-  }
-
-  function generate() {
-    const sid = sidInput.value.trim();
-
-    if (!sid) {
-      hexOutput.value = '';
-      sidLengthEl.textContent = '0';
-      derLengthEl.textContent = '0';
-      setStatus('Enter a SID.', 'warn');
-      return;
-    }
-
-    if (!looksLikeSid(sid)) {
-      hexOutput.value = '';
-      sidLengthEl.textContent = '0';
-      derLengthEl.textContent = '0';
-      setStatus('That does not look like a SID in S-1-... format.', 'err');
-      return;
-    }
-
-    const result = encodeSidExtensionHex(sid);
-    hexOutput.value = result.hex;
-    sidLengthEl.textContent = `${result.sidByteLength} bytes`;
-    derLengthEl.textContent = `${result.derByteLength} bytes`;
-    setStatus('DER hex generated successfully.', 'ok');
-  }
-
-  async function copyHex() {
-    const value = hexOutput.value.trim();
-
-    if (!value) {
-      setStatus('Nothing to copy yet.', 'warn');
-      return;
-    }
-
-    try {
-      await navigator.clipboard.writeText(value);
-      setStatus('Hex copied to clipboard.', 'ok');
-    } catch {
-      hexOutput.focus();
-      hexOutput.select();
-      setStatus('Clipboard access failed. Output selected for manual copy.', 'warn');
-    }
-  }
-
-  function clearAll() {
-    sidInput.value = '';
-    hexOutput.value = '';
-    sidLengthEl.textContent = '0';
-    derLengthEl.textContent = '0';
-    setStatus('');
-    sidInput.focus();
-  }
-
-  document.getElementById('generateBtn').addEventListener('click', generate);
-  document.getElementById('copyBtn').addEventListener('click', copyHex);
-  document.getElementById('clearBtn').addEventListener('click', clearAll);
-
-  sidInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      generate();
-    }
-  });
-</script>
+<script src="{{ site.baseurl }}/sid/sid.js" defer></script>
