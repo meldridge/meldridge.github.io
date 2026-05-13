@@ -196,6 +196,41 @@
     --sudo-green-tint: #1a2a1d;
     --sudo-green-border: #2a4a30;
   }
+
+  // /whoami tool page: rebind its --whoami-* tokens to dark-friendly values.
+  .whoami {
+    --whoami-bg: #1f1f1f;
+    --whoami-surface: #181818;
+    --whoami-border: #333;
+    --whoami-border-sub: #2a2a2a;
+    --whoami-text: #d4d4d4;
+    --whoami-muted: #a0a0a0;
+    --whoami-subtle: #808080;
+
+    --whoami-input-bg: #1f1f1f;
+    --whoami-input-border: #444;
+    --whoami-btn-bg: #262626;
+    --whoami-btn-border: #444;
+    --whoami-btn-hover-bg: #333;
+
+    --whoami-blue: #6ba8e0;
+    --whoami-blue-hover: #87b7e0;
+    --whoami-blue-tint: #1b2735;
+    --whoami-blue-border: #2d4a6b;
+    --whoami-blue-text: #87b7e0;
+
+    --whoami-red: #e57373;
+    --whoami-red-tint: #2a1818;
+    --whoami-red-border: #4a2828;
+
+    --whoami-amber: #d4a14a;
+    --whoami-amber-tint: #2a2418;
+    --whoami-amber-border: #4a3f28;
+
+    --whoami-green: #6ec472;
+    --whoami-green-tint: #1a2a1d;
+    --whoami-green-border: #2a4a30;
+  }
 }
 
 // Manual override: user clicked the toggle and chose dark.
