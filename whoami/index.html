@@ -1,0 +1,29 @@
+---
+layout: page
+title: whoami /all Parser
+description: Parse Windows whoami /all output and surface dangerous privileges and high-value group memberships.
+---
+
+<div class="whoami">
+  <p class="hint">
+    Run <code>whoami /all</code> on a Windows host and paste the output below.
+    All processing is local &mdash; nothing is sent over the network.
+    Subsets (<code>whoami /priv</code>, <code>whoami /groups</code>, <code>whoami /user</code>) are accepted too &mdash; missing sections are simply skipped.
+  </p>
+
+  <div>
+    <label for="inp">whoami /all output</label>
+    <textarea id="inp" spellcheck="false" placeholder="Paste whoami /all output here..."></textarea>
+    <div class="btn-row">
+      <button id="parseBtn" class="btn-p" type="button">Parse</button>
+      <button id="sampleBtn" type="button">Load sample</button>
+      <button id="clearBtn" type="button">Clear</button>
+    </div>
+  </div>
+
+  <div id="err" class="error hidden" role="alert"></div>
+  <div id="summary" class="summary hidden" aria-live="polite"></div>
+  <div id="out"></div>
+</div>
+
+<script src="{{ site.baseurl }}/whoami/whoami.js" defer></script>

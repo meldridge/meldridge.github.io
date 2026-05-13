@@ -1,0 +1,286 @@
+//
+// /whoami tool page styles.
+//
+// All selectors are scoped under `.whoami` so they don't leak onto the blog.
+// Colours flow through `--whoami-*` custom properties; the dark theme rebinds
+// these in `_sass/_dark.scss`'s `dark-theme` mixin.
+//
+
+.whoami {
+  --whoami-bg: #fafafa;
+  --whoami-surface: #fff;
+  --whoami-border: #ddd;
+  --whoami-border-sub: #eee;
+  --whoami-text: #333;
+  --whoami-muted: #666;
+  --whoami-subtle: #888;
+  --whoami-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  --whoami-input-bg: #fff;
+  --whoami-input-border: #ccc;
+  --whoami-btn-bg: #fff;
+  --whoami-btn-border: #999;
+  --whoami-btn-hover-bg: #f3f3f3;
+
+  --whoami-blue: #4183C4;
+  --whoami-blue-hover: #346da3;
+  --whoami-blue-tint: #eaf2fa;
+  --whoami-blue-border: #b1cce7;
+  --whoami-blue-text: #2c6aa3;
+
+  --whoami-red: #a61e1e;
+  --whoami-red-tint: #fdecec;
+  --whoami-red-border: #e8b3b3;
+
+  --whoami-amber: #8a5a00;
+  --whoami-amber-tint: #fff7e6;
+  --whoami-amber-border: #e8cd8c;
+
+  --whoami-green: #0b6b2d;
+  --whoami-green-tint: #e9f5ec;
+  --whoami-green-border: #a8d6b3;
+}
+
+.whoami code,
+.whoami .mono { font-family: var(--whoami-mono); }
+
+.whoami .hint {
+  color: var(--whoami-muted);
+  font-size: 0.95rem;
+  margin: 0 0 1.25em;
+}
+
+// Input
+.whoami label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+.whoami textarea {
+  width: 100%;
+  height: 200px;
+  background: var(--whoami-input-bg);
+  border: 1px solid var(--whoami-input-border);
+  color: var(--whoami-text);
+  font: inherit;
+  font-family: var(--whoami-mono);
+  font-size: 0.85rem;
+  padding: 10px 12px;
+  resize: vertical;
+}
+.whoami textarea:focus,
+.whoami button:focus {
+  outline: 2px solid var(--whoami-blue);
+  outline-offset: 1px;
+}
+
+.whoami .btn-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0 0;
+}
+.whoami button {
+  padding: 8px 14px;
+  border: 1px solid var(--whoami-btn-border);
+  background: var(--whoami-btn-bg);
+  color: var(--whoami-text);
+  cursor: pointer;
+  font: inherit;
+}
+.whoami button:hover { background: var(--whoami-btn-hover-bg); }
+.whoami .btn-p {
+  background: var(--whoami-blue);
+  border-color: var(--whoami-blue);
+  color: #fff;
+}
+.whoami .btn-p:hover {
+  background: var(--whoami-blue-hover);
+  border-color: var(--whoami-blue-hover);
+}
+
+// Error
+.whoami .error {
+  padding: 10px 14px;
+  background: var(--whoami-red-tint);
+  border: 1px solid var(--whoami-red-border);
+  color: var(--whoami-red);
+  margin: 1em 0;
+}
+
+// Summary
+.whoami .summary {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 12px 16px;
+  background: var(--whoami-bg);
+  border: 1px solid var(--whoami-border);
+  margin: 1.25em 0 1em;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+.whoami .stat { display: flex; align-items: baseline; gap: 0.35rem; }
+.whoami .stat-n {
+  font-family: var(--whoami-mono);
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+.whoami .stat-l { color: var(--whoami-muted); }
+.whoami .stat-n.red    { color: var(--whoami-red); }
+.whoami .stat-n.orange { color: var(--whoami-amber); }
+.whoami .stat-n.blue   { color: var(--whoami-blue-text); }
+.whoami .stat-n.green  { color: var(--whoami-green); }
+.whoami .summary-note { color: var(--whoami-muted); font-size: 0.85rem; margin-left: auto; }
+
+// Cards
+.whoami .cards { display: flex; flex-direction: column; gap: 12px; margin: 0; }
+.whoami .card {
+  background: var(--whoami-surface);
+  border: 1px solid var(--whoami-border);
+}
+.whoami .card-title {
+  padding: 10px 14px;
+  background: var(--whoami-bg);
+  border-bottom: 1px solid var(--whoami-border-sub);
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.whoami .card-count {
+  color: var(--whoami-subtle);
+  font-family: var(--whoami-mono);
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+.whoami .card-inner { padding: 12px 14px; }
+
+// User row
+.whoami .user-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+.whoami .user-name {
+  font-family: var(--whoami-mono);
+  font-weight: 600;
+}
+.whoami .sid-link {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--whoami-blue-text);
+}
+.whoami .sid-link:hover { text-decoration: underline; }
+.whoami .sid-arrow { color: var(--whoami-subtle); font-size: 0.75rem; }
+
+// Findings list
+.whoami .finding-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+.whoami .finding {
+  padding: 8px 10px;
+  margin: 0 0 6px;
+  border: 1px solid;
+  font-size: 0.88rem;
+}
+.whoami .finding.sev-crit { background: var(--whoami-red-tint);   border-color: var(--whoami-red-border); }
+.whoami .finding.sev-high { background: var(--whoami-amber-tint); border-color: var(--whoami-amber-border); }
+.whoami .finding.sev-info { background: var(--whoami-blue-tint);  border-color: var(--whoami-blue-border); }
+.whoami .finding-empty {
+  padding: 8px 10px;
+  margin: 0 0 6px;
+  background: var(--whoami-green-tint);
+  border: 1px solid var(--whoami-green-border);
+  color: var(--whoami-green);
+  font-size: 0.88rem;
+}
+.whoami .finding-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.whoami .finding-name {
+  font-weight: 600;
+  color: var(--whoami-text);
+}
+.whoami .finding-meta {
+  color: var(--whoami-subtle);
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+.whoami .finding-state {
+  font-size: 0.78rem;
+  margin-left: auto;
+}
+.whoami .finding-state.state-enabled  { color: var(--whoami-red); font-weight: 600; }
+.whoami .finding-state.state-disabled { color: var(--whoami-subtle); }
+.whoami .finding-note {
+  color: var(--whoami-text);
+  font-size: 0.85rem;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+// Badges
+.whoami .badge {
+  font-family: var(--whoami-mono);
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  letter-spacing: 0.02em;
+  border: 1px solid;
+}
+.whoami .b-crit { background: var(--whoami-red-tint);   color: var(--whoami-red);       border-color: var(--whoami-red-border); }
+.whoami .b-high { background: var(--whoami-amber-tint); color: var(--whoami-amber);     border-color: var(--whoami-amber-border); }
+.whoami .b-info { background: var(--whoami-blue-tint);  color: var(--whoami-blue-text); border-color: var(--whoami-blue-border); }
+
+// All-rows tables (inside <details>)
+.whoami .all-table {
+  margin-top: 6px;
+  border-top: 1px solid var(--whoami-border-sub);
+  padding-top: 8px;
+}
+.whoami .all-table > summary {
+  cursor: pointer;
+  color: var(--whoami-muted);
+  font-size: 0.85rem;
+  padding: 4px 0;
+  user-select: none;
+}
+.whoami .all-table > summary:hover { color: var(--whoami-text); }
+.whoami .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+.whoami .data-table th,
+.whoami .data-table td {
+  text-align: left;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--whoami-border-sub);
+  vertical-align: top;
+}
+.whoami .data-table th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--whoami-muted);
+  font-weight: bold;
+  font-family: var(--whoami-mono);
+}
+.whoami .data-table tr.flagged.sev-crit td:first-child { box-shadow: inset 3px 0 0 var(--whoami-red); }
+.whoami .data-table tr.flagged.sev-high td:first-child { box-shadow: inset 3px 0 0 var(--whoami-amber); }
+.whoami .data-table tr.flagged.sev-info td:first-child { box-shadow: inset 3px 0 0 var(--whoami-blue-text); }
+.whoami .data-table .state-enabled  { color: var(--whoami-red); font-weight: 600; }
+.whoami .data-table .state-disabled { color: var(--whoami-subtle); }
+.whoami .data-table .subtle { color: var(--whoami-muted); }
+
+.whoami .hidden { display: none !important; }
