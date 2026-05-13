@@ -201,28 +201,51 @@
     </div>`;
   }
 
+  // The canonical label from WELL_KNOWN_SIDS / DOMAIN_RIDS is worth
+  // surfacing when it differs from the local part of the raw group name —
+  // e.g. on a German Windows host "VORDEFINIERT\Sicherungsoperatoren" maps
+  // to the canonical "BUILTIN\Backup Operators".
+  function canonicalHint(rawName, label) {
+    if (!label) return '';
+    const localPart    = (rawName || '').split('\\').pop().trim().toLowerCase();
+    const canonicalLoc = label.split('\\').pop().trim().toLowerCase();
+    if (!localPart || !canonicalLoc) return '';
+    if (localPart === canonicalLoc) return '';
+    return label;
+  }
+
   function renderGroupsPanel(parsed) {
     if (!parsed.groups || parsed.groups.length === 0) return '';
     const classified = parsed.groups.map(g => ({ g, c: classifyGroup(g) }));
     const flagged = classified.filter(x => x.c).sort((a, b) => sevRank(b.c.sev) - sevRank(a.c.sev));
 
     const flaggedHtml = flagged.length
-      ? flagged.map(({ g, c }) => `
+      ? flagged.map(({ g, c }) => {
+          const hint = canonicalHint(g.name, c.label);
+          const hintHtml = hint ? `<span class="finding-canonical mono" title="Canonical name">≡ ${h(hint)}</span>` : '';
+          return `
         <li class="finding sev-${c.sev}">
           <div class="finding-head">
-            <span class="finding-name mono">${h(g.name)}</span>${badge(c.sev)}
+            <span class="finding-name mono">${h(g.name)}</span>${hintHtml}${badge(c.sev)}
           </div>
           <div class="finding-meta mono">${h(g.sid || '')}</div>
           <div class="finding-note">${h(c.note)}</div>
-        </li>`).join('')
+        </li>`;
+        }).join('')
       : '<li class="finding-empty">No high-value groups detected.</li>';
 
-    const allRows = classified.map(({ g, c }) => `
+    const allRows = classified.map(({ g, c }) => {
+      const hint = c ? canonicalHint(g.name, c.label) : '';
+      const nameCell = hint
+        ? `<span class="mono">${h(g.name)}</span> <span class="mono subtle" title="Canonical name">≡ ${h(hint)}</span>`
+        : `<span class="mono">${h(g.name)}</span>`;
+      return `
       <tr class="${c ? 'flagged sev-' + c.sev : ''}">
-        <td class="mono">${h(g.name)}</td>
+        <td>${nameCell}</td>
         <td class="mono">${h(g.sid)}</td>
         <td class="mono subtle">${h(g.type)}</td>
-      </tr>`).join('');
+      </tr>`;
+    }).join('');
 
     return `<div class="card">
       <div class="card-title">Groups <span class="card-count">${parsed.groups.length}</span></div>

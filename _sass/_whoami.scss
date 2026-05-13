@@ -210,6 +210,12 @@
   font-weight: 600;
   color: var(--whoami-text);
 }
+.whoami .finding-canonical {
+  color: var(--whoami-subtle);
+  font-size: 0.78rem;
+  font-weight: normal;
+}
+.whoami .data-table .subtle[title] { cursor: help; }
 .whoami .finding-meta {
   color: var(--whoami-subtle);
   font-size: 0.78rem;
