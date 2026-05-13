@@ -162,6 +162,41 @@
     --sid-err:  #e57373;
   }
 
+  // /sudo tool page: rebind its --sudo-* tokens to dark-friendly values.
+  .sudo {
+    --sudo-bg: #1f1f1f;
+    --sudo-surface: #181818;
+    --sudo-border: #333;
+    --sudo-border-sub: #2a2a2a;
+    --sudo-text: #d4d4d4;
+    --sudo-muted: #a0a0a0;
+    --sudo-subtle: #808080;
+
+    --sudo-input-bg: #1f1f1f;
+    --sudo-input-border: #444;
+    --sudo-btn-bg: #262626;
+    --sudo-btn-border: #444;
+    --sudo-btn-hover-bg: #333;
+
+    --sudo-blue: #6ba8e0;
+    --sudo-blue-hover: #87b7e0;
+    --sudo-blue-tint: #1b2735;
+    --sudo-blue-border: #2d4a6b;
+    --sudo-blue-text: #87b7e0;
+
+    --sudo-red: #e57373;
+    --sudo-red-tint: #2a1818;
+    --sudo-red-border: #4a2828;
+
+    --sudo-amber: #d4a14a;
+    --sudo-amber-tint: #2a2418;
+    --sudo-amber-border: #4a3f28;
+
+    --sudo-green: #6ec472;
+    --sudo-green-tint: #1a2a1d;
+    --sudo-green-border: #2a4a30;
+  }
+
   // /whoami tool page: rebind its --whoami-* tokens to dark-friendly values.
   .whoami {
     --whoami-bg: #1f1f1f;

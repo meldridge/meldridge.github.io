@@ -1,0 +1,29 @@
+---
+layout: page
+title: sudo -l Parser
+description: Parse Linux sudo -l output and highlight binaries that grant root via GTFOBins, plus NOPASSWD/env_keep/SETENV smells.
+---
+
+<div class="sudo">
+  <p class="hint">
+    Run <code>sudo -l</code> (or <code>sudo -ll</code>) as the target user on a Linux host and paste the output below.
+    All processing is local &mdash; nothing is sent over the network.
+    Each allowed binary is cross-referenced against a curated <a href="https://gtfobins.github.io/" target="_blank" rel="noopener">GTFOBins</a> set; binaries not in the curated list are linked out so nothing is silently missed.
+  </p>
+
+  <div>
+    <label for="inp">sudo -l output</label>
+    <textarea id="inp" spellcheck="false" placeholder="Paste sudo -l output here..."></textarea>
+    <div class="btn-row">
+      <button id="parseBtn" class="btn-p" type="button">Parse</button>
+      <button id="sampleBtn" type="button">Load sample</button>
+      <button id="clearBtn" type="button">Clear</button>
+    </div>
+  </div>
+
+  <div id="err" class="error hidden" role="alert"></div>
+  <div id="summary" class="summary hidden" aria-live="polite"></div>
+  <div id="out"></div>
+</div>
+
+<script src="{{ site.baseurl }}/sudo/sudo.js" defer></script>
