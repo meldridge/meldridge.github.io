@@ -18,7 +18,7 @@ bundle exec jekyll serve --host 127.0.0.1 --port 4000 --watch
 - `posts/_posts/` — blog posts (paginated on the index).
 - `emails/_posts/` — archived newsletter issues, listed at `/emails`.
 - `drafts/` — unpublished drafts (pass `--drafts` to `jekyll serve` to preview).
-- `sid/`, `certutil/` — self-contained single-page tools (encoders/parsers). The HTML is intentionally inlined so each page works as an offline download.
+- `sid/`, `certutil/` — single-page tools (encoders/parsers). Each tool is a thin HTML shell plus a JS file in the same directory; its styles are a Sass partial in `_sass/` and follow the site's dark mode.
 - `_layouts/`, `_includes/`, `_sass/` — templates and styles. Dark mode lives in `_sass/_dark.scss` plus a pre-paint script in `_layouts/default.html`.
 
 See [`CLAUDE.md`](./CLAUDE.md) for more detail on the conventions and gotchas.

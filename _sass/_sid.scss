@@ -1,0 +1,122 @@
+//
+// /sid tool page styles.
+//
+// `.sid` is the outer panel and also the scoping prefix. Colours flow
+// through `--sid-*` custom properties; the dark theme rebinds these in
+// `_sass/_dark.scss`'s `dark-theme` mixin.
+//
+
+.sid {
+  --sid-bg: #fafafa;
+  --sid-border: #eee;
+  --sid-text: #333;
+  --sid-muted: #666;
+  --sid-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --sid-input-bg: #fff;
+  --sid-input-border: #ccc;
+  --sid-btn-bg: #fff;
+  --sid-btn-border: #999;
+  --sid-btn-hover-bg: #f3f3f3;
+
+  --sid-blue: #4183C4;
+  --sid-blue-hover: #346da3;
+
+  --sid-ok:   #0b6b2d;
+  --sid-warn: #8a5a00;
+  --sid-err:  #a61e1e;
+
+  border: 1px solid var(--sid-border);
+  background: var(--sid-bg);
+  padding: 18px;
+  margin: 1.5em 0;
+}
+
+.sid label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.sid input,
+.sid textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--sid-input-border);
+  background: var(--sid-input-bg);
+  color: var(--sid-text);
+  font: inherit;
+}
+
+.sid textarea {
+  font-family: var(--sid-mono);
+  font-size: 0.95rem;
+  min-height: 150px;
+  resize: vertical;
+  word-break: break-all;
+}
+
+.sid input:focus,
+.sid textarea:focus,
+.sid .tool-actions button:focus {
+  outline: 2px solid var(--sid-blue);
+  outline-offset: 1px;
+}
+
+.sid .tool-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+
+.sid .tool-actions button {
+  padding: 8px 14px;
+  border: 1px solid var(--sid-btn-border);
+  background: var(--sid-btn-bg);
+  color: var(--sid-text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.sid .tool-actions button:hover { background: var(--sid-btn-hover-bg); }
+
+.sid .tool-actions button.primary {
+  background: var(--sid-blue);
+  border-color: var(--sid-blue);
+  color: #fff;
+}
+
+.sid .tool-actions button.primary:hover {
+  background: var(--sid-blue-hover);
+  border-color: var(--sid-blue-hover);
+}
+
+.sid .tool-status {
+  min-height: 1.5em;
+  margin: 0 0 14px;
+  font-weight: bold;
+}
+
+.sid .tool-status.ok   { color: var(--sid-ok); }
+.sid .tool-status.warn { color: var(--sid-warn); }
+.sid .tool-status.err  { color: var(--sid-err); }
+
+.sid .tool-meta {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 6px 12px;
+  margin: 14px 0 0;
+  font-size: 0.95rem;
+}
+
+.sid .tool-meta dt { color: var(--sid-muted); }
+.sid .tool-meta dd {
+  margin: 0;
+  font-family: var(--sid-mono);
+}
+
+@media (max-width: 600px) {
+  .sid .tool-meta { grid-template-columns: 1fr; }
+  .sid .tool-meta dt { padding-top: 6px; }
+}

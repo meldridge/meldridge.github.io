@@ -138,6 +138,29 @@
     --ct-green-tint: #1a2a1d;
     --ct-green-border: #2a4a30;
   }
+
+  // /sid tool page: rebind its --sid-* tokens to dark-friendly values.
+  // The component CSS in `_sid.scss` already flows colour through these
+  // variables, so the layout doesn't change — only the palette does.
+  .sid {
+    --sid-bg: #1f1f1f;
+    --sid-border: #2a2a2a;
+    --sid-text: #d4d4d4;
+    --sid-muted: #a0a0a0;
+
+    --sid-input-bg: #1f1f1f;
+    --sid-input-border: #444;
+    --sid-btn-bg: #262626;
+    --sid-btn-border: #444;
+    --sid-btn-hover-bg: #333;
+
+    --sid-blue: #6ba8e0;
+    --sid-blue-hover: #87b7e0;
+
+    --sid-ok:   #6ec472;
+    --sid-warn: #d4a14a;
+    --sid-err:  #e57373;
+  }
 }
 
 // Manual override: user clicked the toggle and chose dark.
