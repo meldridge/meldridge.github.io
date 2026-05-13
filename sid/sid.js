@@ -108,7 +108,15 @@
     sidInput.focus();
   }
 
+  const SAMPLE_SID = 'S-1-5-21-1111111111-2222222222-3333333333-1234';
+
+  function loadSample() {
+    sidInput.value = SAMPLE_SID;
+    generate();
+  }
+
   document.getElementById('generateBtn').addEventListener('click', generate);
+  document.getElementById('sampleBtn').addEventListener('click', loadSample);
   document.getElementById('copyBtn').addEventListener('click', copyHex);
   document.getElementById('clearBtn').addEventListener('click', clearAll);
 
