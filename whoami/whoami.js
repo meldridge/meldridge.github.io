@@ -191,7 +191,7 @@
     if (!parsed.user || parsed.user.length === 0) return '';
     const rows = parsed.user.map(u => {
       const sidCell = u.sid
-        ? `<a class="sid-link" href="../sid/?sid=${encodeURIComponent(u.sid)}" title="Encode this SID with /sid"><span class="mono">${h(u.sid)}</span><span class="sid-arrow"> → /sid</span></a>`
+        ? `<span class="user-sid">${h(u.sid)}</span>`
         : '';
       return `<div class="user-row"><span class="user-name">${h(u.user)}</span>${sidCell}</div>`;
     }).join('');

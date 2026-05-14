@@ -1,10 +1,8 @@
-//
-// /sudo tool page styles.
-//
-// All selectors are scoped under `.sudo` so they don't leak onto the blog.
-// Colours flow through `--sudo-*` custom properties; the dark theme rebinds
-// these in `_sass/_dark.scss`'s `dark-theme` mixin.
-//
+/*
+ * /sudo tool page styles. Selectors are scoped under `.sudo`. Colours flow
+ * through `--sudo-*` custom properties; the dark-mode blocks at the bottom
+ * rebind those tokens for the manual toggle and the system preference.
+ */
 
 .sudo {
   --sudo-bg: #fafafa;
@@ -52,7 +50,6 @@
 
 .sudo .hint a { color: var(--sudo-blue-text); }
 
-// Input
 .sudo label {
   display: block;
   font-weight: bold;
@@ -101,7 +98,6 @@
   border-color: var(--sudo-blue-hover);
 }
 
-// Error
 .sudo .error {
   padding: 10px 14px;
   background: var(--sudo-red-tint);
@@ -110,7 +106,6 @@
   margin: 1em 0;
 }
 
-// Summary
 .sudo .summary {
   display: flex;
   align-items: center;
@@ -135,7 +130,6 @@
 .sudo .stat-n.green  { color: var(--sudo-green); }
 .sudo .summary-note { color: var(--sudo-muted); font-size: 0.85rem; margin-left: auto; }
 
-// Cards
 .sudo .cards { display: flex; flex-direction: column; gap: 12px; margin: 0; }
 .sudo .card {
   background: var(--sudo-surface);
@@ -160,7 +154,6 @@
 .sudo .card-inner { padding: 12px 14px; }
 .sudo .rules-inner { display: flex; flex-direction: column; gap: 10px; }
 
-// User row
 .sudo .user-row {
   display: flex;
   align-items: baseline;
@@ -171,7 +164,6 @@
 .sudo .user-name { font-weight: 600; }
 .sudo .user-host { color: var(--sudo-subtle); font-size: 0.85rem; }
 
-// Rule card
 .sudo .card.rule {
   border-left: 3px solid var(--sudo-border);
 }
@@ -194,7 +186,6 @@
 .sudo .rule-neg   { color: var(--sudo-subtle); font-style: italic; font-size: 0.78rem; }
 .sudo .rule-body  { padding: 10px 12px; }
 
-// Tag badges (NOPASSWD, SETENV, etc.)
 .sudo .tag-badge {
   font-family: var(--sudo-mono);
   font-size: 0.7rem;
@@ -210,7 +201,6 @@
 .sudo .tag-badge.tag-setenv   { background: var(--sudo-amber-tint); color: var(--sudo-amber);     border-color: var(--sudo-amber-border); }
 .sudo .tag-badge.tag-noexec   { background: var(--sudo-blue-tint);  color: var(--sudo-blue-text); border-color: var(--sudo-blue-border); }
 
-// Findings
 .sudo .finding {
   padding: 8px 10px;
   margin: 0 0 6px;
@@ -243,7 +233,6 @@
 }
 .sudo .finding-note a { color: var(--sudo-blue-text); }
 
-// Badges (CRITICAL / HIGH / INFO)
 .sudo .badge {
   font-family: var(--sudo-mono);
   font-size: 0.7rem;
@@ -257,3 +246,75 @@
 .sudo .b-info { background: var(--sudo-blue-tint);  color: var(--sudo-blue-text); border-color: var(--sudo-blue-border); }
 
 .sudo .hidden { display: none !important; }
+
+/* Dark mode token rebinding — manual toggle. */
+html[data-theme="dark"] .sudo {
+  --sudo-bg: #1f1f1f;
+  --sudo-surface: #181818;
+  --sudo-border: #333;
+  --sudo-border-sub: #2a2a2a;
+  --sudo-text: #d4d4d4;
+  --sudo-muted: #a0a0a0;
+  --sudo-subtle: #808080;
+
+  --sudo-input-bg: #1f1f1f;
+  --sudo-input-border: #444;
+  --sudo-btn-bg: #262626;
+  --sudo-btn-border: #444;
+  --sudo-btn-hover-bg: #333;
+
+  --sudo-blue: #6ba8e0;
+  --sudo-blue-hover: #87b7e0;
+  --sudo-blue-tint: #1b2735;
+  --sudo-blue-border: #2d4a6b;
+  --sudo-blue-text: #87b7e0;
+
+  --sudo-red: #e57373;
+  --sudo-red-tint: #2a1818;
+  --sudo-red-border: #4a2828;
+
+  --sudo-amber: #d4a14a;
+  --sudo-amber-tint: #2a2418;
+  --sudo-amber-border: #4a3f28;
+
+  --sudo-green: #6ec472;
+  --sudo-green-tint: #1a2a1d;
+  --sudo-green-border: #2a4a30;
+}
+
+/* Dark mode token rebinding — system preference (unless user picked light). */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .sudo {
+    --sudo-bg: #1f1f1f;
+    --sudo-surface: #181818;
+    --sudo-border: #333;
+    --sudo-border-sub: #2a2a2a;
+    --sudo-text: #d4d4d4;
+    --sudo-muted: #a0a0a0;
+    --sudo-subtle: #808080;
+
+    --sudo-input-bg: #1f1f1f;
+    --sudo-input-border: #444;
+    --sudo-btn-bg: #262626;
+    --sudo-btn-border: #444;
+    --sudo-btn-hover-bg: #333;
+
+    --sudo-blue: #6ba8e0;
+    --sudo-blue-hover: #87b7e0;
+    --sudo-blue-tint: #1b2735;
+    --sudo-blue-border: #2d4a6b;
+    --sudo-blue-text: #87b7e0;
+
+    --sudo-red: #e57373;
+    --sudo-red-tint: #2a1818;
+    --sudo-red-border: #4a2828;
+
+    --sudo-amber: #d4a14a;
+    --sudo-amber-tint: #2a2418;
+    --sudo-amber-border: #4a3f28;
+
+    --sudo-green: #6ec472;
+    --sudo-green-tint: #1a2a1d;
+    --sudo-green-border: #2a4a30;
+  }
+}

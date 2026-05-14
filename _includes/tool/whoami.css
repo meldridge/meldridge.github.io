@@ -1,10 +1,8 @@
-//
-// /whoami tool page styles.
-//
-// All selectors are scoped under `.whoami` so they don't leak onto the blog.
-// Colours flow through `--whoami-*` custom properties; the dark theme rebinds
-// these in `_sass/_dark.scss`'s `dark-theme` mixin.
-//
+/*
+ * /whoami tool page styles. Selectors are scoped under `.whoami`. Colours
+ * flow through `--whoami-*` custom properties; the dark-mode blocks at the
+ * bottom rebind those tokens for the manual toggle and the system pref.
+ */
 
 .whoami {
   --whoami-bg: #fafafa;
@@ -50,7 +48,6 @@
   margin: 0 0 1.25em;
 }
 
-// Input
 .whoami label {
   display: block;
   font-weight: bold;
@@ -99,7 +96,6 @@
   border-color: var(--whoami-blue-hover);
 }
 
-// Error
 .whoami .error {
   padding: 10px 14px;
   background: var(--whoami-red-tint);
@@ -108,7 +104,6 @@
   margin: 1em 0;
 }
 
-// Summary
 .whoami .summary {
   display: flex;
   align-items: center;
@@ -133,7 +128,6 @@
 .whoami .stat-n.green  { color: var(--whoami-green); }
 .whoami .summary-note { color: var(--whoami-muted); font-size: 0.85rem; margin-left: auto; }
 
-// Cards
 .whoami .cards { display: flex; flex-direction: column; gap: 12px; margin: 0; }
 .whoami .card {
   background: var(--whoami-surface);
@@ -157,7 +151,6 @@
 }
 .whoami .card-inner { padding: 12px 14px; }
 
-// User row
 .whoami .user-row {
   display: flex;
   align-items: baseline;
@@ -169,15 +162,12 @@
   font-family: var(--whoami-mono);
   font-weight: 600;
 }
-.whoami .sid-link {
+.whoami .user-sid {
+  font-family: var(--whoami-mono);
   font-size: 0.85rem;
-  text-decoration: none;
-  color: var(--whoami-blue-text);
+  color: var(--whoami-muted);
 }
-.whoami .sid-link:hover { text-decoration: underline; }
-.whoami .sid-arrow { color: var(--whoami-subtle); font-size: 0.75rem; }
 
-// Findings list
 .whoami .finding-list {
   list-style: none;
   padding: 0;
@@ -234,7 +224,6 @@
   line-height: 1.4;
 }
 
-// Badges
 .whoami .badge {
   font-family: var(--whoami-mono);
   font-size: 0.7rem;
@@ -247,7 +236,6 @@
 .whoami .b-high { background: var(--whoami-amber-tint); color: var(--whoami-amber);     border-color: var(--whoami-amber-border); }
 .whoami .b-info { background: var(--whoami-blue-tint);  color: var(--whoami-blue-text); border-color: var(--whoami-blue-border); }
 
-// All-rows tables (inside <details>)
 .whoami .all-table {
   margin-top: 6px;
   border-top: 1px solid var(--whoami-border-sub);
@@ -290,3 +278,75 @@
 .whoami .data-table .subtle { color: var(--whoami-muted); }
 
 .whoami .hidden { display: none !important; }
+
+/* Dark mode token rebinding — manual toggle. */
+html[data-theme="dark"] .whoami {
+  --whoami-bg: #1f1f1f;
+  --whoami-surface: #181818;
+  --whoami-border: #333;
+  --whoami-border-sub: #2a2a2a;
+  --whoami-text: #d4d4d4;
+  --whoami-muted: #a0a0a0;
+  --whoami-subtle: #808080;
+
+  --whoami-input-bg: #1f1f1f;
+  --whoami-input-border: #444;
+  --whoami-btn-bg: #262626;
+  --whoami-btn-border: #444;
+  --whoami-btn-hover-bg: #333;
+
+  --whoami-blue: #6ba8e0;
+  --whoami-blue-hover: #87b7e0;
+  --whoami-blue-tint: #1b2735;
+  --whoami-blue-border: #2d4a6b;
+  --whoami-blue-text: #87b7e0;
+
+  --whoami-red: #e57373;
+  --whoami-red-tint: #2a1818;
+  --whoami-red-border: #4a2828;
+
+  --whoami-amber: #d4a14a;
+  --whoami-amber-tint: #2a2418;
+  --whoami-amber-border: #4a3f28;
+
+  --whoami-green: #6ec472;
+  --whoami-green-tint: #1a2a1d;
+  --whoami-green-border: #2a4a30;
+}
+
+/* Dark mode token rebinding — system preference (unless user picked light). */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .whoami {
+    --whoami-bg: #1f1f1f;
+    --whoami-surface: #181818;
+    --whoami-border: #333;
+    --whoami-border-sub: #2a2a2a;
+    --whoami-text: #d4d4d4;
+    --whoami-muted: #a0a0a0;
+    --whoami-subtle: #808080;
+
+    --whoami-input-bg: #1f1f1f;
+    --whoami-input-border: #444;
+    --whoami-btn-bg: #262626;
+    --whoami-btn-border: #444;
+    --whoami-btn-hover-bg: #333;
+
+    --whoami-blue: #6ba8e0;
+    --whoami-blue-hover: #87b7e0;
+    --whoami-blue-tint: #1b2735;
+    --whoami-blue-border: #2d4a6b;
+    --whoami-blue-text: #87b7e0;
+
+    --whoami-red: #e57373;
+    --whoami-red-tint: #2a1818;
+    --whoami-red-border: #4a2828;
+
+    --whoami-amber: #d4a14a;
+    --whoami-amber-tint: #2a2418;
+    --whoami-amber-border: #4a3f28;
+
+    --whoami-green: #6ec472;
+    --whoami-green-tint: #1a2a1d;
+    --whoami-green-border: #2a4a30;
+  }
+}

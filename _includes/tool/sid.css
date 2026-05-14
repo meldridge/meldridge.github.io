@@ -1,10 +1,8 @@
-//
-// /sid tool page styles.
-//
-// `.sid` is the outer panel and also the scoping prefix. Colours flow
-// through `--sid-*` custom properties; the dark theme rebinds these in
-// `_sass/_dark.scss`'s `dark-theme` mixin.
-//
+/*
+ * /sid tool page styles. `.sid` is the outer panel and the scoping prefix.
+ * Colours flow through `--sid-*` custom properties; the dark-mode blocks at
+ * the bottom rebind those tokens for the manual toggle and the system pref.
+ */
 
 .sid {
   --sid-bg: #fafafa;
@@ -119,4 +117,48 @@
 @media (max-width: 600px) {
   .sid .tool-meta { grid-template-columns: 1fr; }
   .sid .tool-meta dt { padding-top: 6px; }
+}
+
+/* Dark mode token rebinding — manual toggle. */
+html[data-theme="dark"] .sid {
+  --sid-bg: #1f1f1f;
+  --sid-border: #2a2a2a;
+  --sid-text: #d4d4d4;
+  --sid-muted: #a0a0a0;
+
+  --sid-input-bg: #1f1f1f;
+  --sid-input-border: #444;
+  --sid-btn-bg: #262626;
+  --sid-btn-border: #444;
+  --sid-btn-hover-bg: #333;
+
+  --sid-blue: #6ba8e0;
+  --sid-blue-hover: #87b7e0;
+
+  --sid-ok:   #6ec472;
+  --sid-warn: #d4a14a;
+  --sid-err:  #e57373;
+}
+
+/* Dark mode token rebinding — system preference (unless user picked light). */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .sid {
+    --sid-bg: #1f1f1f;
+    --sid-border: #2a2a2a;
+    --sid-text: #d4d4d4;
+    --sid-muted: #a0a0a0;
+
+    --sid-input-bg: #1f1f1f;
+    --sid-input-border: #444;
+    --sid-btn-bg: #262626;
+    --sid-btn-border: #444;
+    --sid-btn-hover-bg: #333;
+
+    --sid-blue: #6ba8e0;
+    --sid-blue-hover: #87b7e0;
+
+    --sid-ok:   #6ec472;
+    --sid-warn: #d4a14a;
+    --sid-err:  #e57373;
+  }
 }

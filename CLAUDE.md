@@ -44,28 +44,39 @@ These are single-page tools (encoders/parsers) for security assessment — paste
 
 - `/sid` — encode a Windows SID as the DER hex needed for an LDAP `userCertificate`-style extension.
 - `/certutil` — parse `certutil -dump` output and surface findings (EKU, key usage, validity, etc.).
-- `/whoami` — parse Windows `whoami /all` (or any subset: `/user`, `/groups`, `/priv`) and flag dangerous privileges (SeImpersonate, SeDebug, SeBackup/Restore, …) and high-value group memberships by SID (Backup Operators, DnsAdmins, Domain/Enterprise Admins, …). Localised group names are handled via SID match; the canonical name is surfaced as a subtitle when the raw name differs. SID-cell links into `/sid/?sid=…` so the round-trip works.
+- `/whoami` — parse Windows `whoami /all` (or any subset: `/user`, `/groups`, `/priv`) and flag dangerous privileges (SeImpersonate, SeDebug, SeBackup/Restore, …) and high-value group memberships by SID (Backup Operators, DnsAdmins, Domain/Enterprise Admins, …). Localised group names are handled via SID match; the canonical name is surfaced as a subtitle when the raw name differs.
 - `/sudo` — parse Linux `sudo -l` output and cross-reference each allowed binary against an embedded curated GTFOBins lookup (~50 entries), with link-out to `gtfobins.github.io` for anything not in the curated set. Flags `NOPASSWD`/`SETENV`, dangerous `Defaults env_keep` entries (`LD_PRELOAD`, `LD_LIBRARY_PATH`, `PYTHONPATH`, …), shell-equivalent runas targets, and command-path wildcards.
 
-Each tool is split across three files:
+**Each tool page is self-contained.** The built HTML at `_site/<tool>/index.html` has its CSS and JS inlined; no `<link rel="stylesheet">` and no `<script src=>` survive. Save-as on the live URL produces a file that works on an air-gapped machine: dark mode (manual toggle + system preference), the tool's parser, and clipboard interactions all run from one file. The tools are also independent of each other — none of them link or depend on another.
 
-- `<tool>/index.html` — thin HTML shell. Front matter sets `layout: page`; the body is markup only, with `<script src="{{ site.baseurl }}/<tool>/<tool>.js" defer></script>` at the bottom.
-- `<tool>/<tool>.js` — the tool's logic, wrapped in an IIFE so its constants don't leak to `window`.
-- `_sass/_<tool>.scss` — the tool's styles, scoped under a parent class (`.ct` for certutil, `.sid` for sid, `.whoami` for whoami, `.sudo` for sudo) to keep them out of the rest of the site. Imported from `style.scss` before `_dark`.
+Each tool is split across three source files plus a shared layout:
 
-Each partial defines `--<tool>-*` CSS custom properties for every colour it uses, and `_sass/_dark.scss`'s `dark-theme` mixin rebinds those tokens to dark-friendly values. This is how the tools participate in the site's dark mode (system preference + the toggle in the nav) without any tool-specific dark-mode code. When adding a new tool page, follow the same pattern.
+- `<tool>/index.html` — thin HTML shell. Front matter sets `layout: tool` and `tool: <name>` (matches the CSS/JS filenames). Body is markup only — no `<script src=>` tag; the layout inlines it.
+- `<tool>/<tool>.js` — the tool's logic, wrapped in an IIFE so its constants don't leak to `window`. Inlined into the page at build time via `{% include_relative <tool>.js %}`, so the file must not contain `{{` or `{%` (Liquid would try to render those). End-of-body inlining means we lose the `defer` attribute that the source file would imply, but the script still runs after DOM parse.
+- `_includes/tool/<tool>.css` — the tool's styles, scoped under a parent class (`.ct` for certutil, `.sid` for sid, `.whoami` for whoami, `.sudo` for sudo). Plain CSS, **not SCSS** — Liquid `{% include %}` dumps the file verbatim, so SCSS-only syntax like `//` line comments would leak through and break parsing.
+- `_layouts/tool.html` — the minimal layout. Inlines `_includes/tool/base.css` (typography, theme toggle, body-level dark mode), then `_includes/tool/{{ page.tool }}.css`, then the pre-paint theme script, then `{% include_relative {{ page.tool }}.js %}`, then the theme-toggle click handler. No masthead/nav/footer chrome — just a title bar with the theme toggle and a small `markeldo.com` credit.
 
-The `force_light: true` front-matter mechanism is still wired in `_layouts/default.html` as an escape hatch (it adds `data-theme-locked` on `<html>` and suppresses the toggle button), but no page currently uses it.
+Each per-tool CSS file defines `--<tool>-*` CSS custom properties for every colour it uses and rebinds those same tokens twice at the bottom: under `html[data-theme="dark"] .<class>` (manual-toggle path) and inside `@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) .<class> { … } }` (system-preference path). Both blocks carry the same declarations — duplication is the cost of inlining CSS rather than going through SCSS's `dark-theme` mixin. When adding a new tool page, follow the same pattern.
+
+The `force_light: true` front-matter mechanism is still wired in `_layouts/default.html` for blog pages as an escape hatch (it adds `data-theme-locked` on `<html>` and suppresses the toggle button), but no page currently uses it, and the new `_layouts/tool.html` doesn't honour it — tool pages always offer the toggle.
 
 ## Dark mode
 
-Lives in three places:
+There are two separate dark-mode paths now, one per layout family:
+
+**Blog (`_layouts/default.html` → posts/emails/pages):**
 
 - `_sass/_dark.scss` — a single `dark-theme` mixin, applied via `:root[data-theme="dark"]` and `@media (prefers-color-scheme: dark)` (the latter excludes elements with `data-theme-locked`).
 - `_layouts/default.html` — pre-paint inline script that reads `localStorage.theme` and sets `data-theme` *before* first render (FOUC-prevention). The toggle button (and its handler script) are wrapped in `{% unless page.force_light %}` so they aren't emitted on locked pages.
 - `style.scss` — toggle button base styling, imports `_dark` last.
 
-When adding new colours: prefer adding overrides inside the existing `dark-theme` mixin so both the manual and auto paths stay in sync. The toggle keeps `aria-pressed` synced with the resolved theme on init, click, and system-preference change.
+**Tool pages (`_layouts/tool.html`):**
+
+- All CSS, including the dark-mode declarations, is inlined into the single built HTML. The token-rebinding lives in `_includes/tool/base.css` (page chrome) and `_includes/tool/<tool>.css` (the tool's component palette), with both selectors (`html[data-theme="dark"]` and `@media (prefers-color-scheme: dark)`) written out explicitly.
+- The pre-paint script and toggle click handler are inlined in `_layouts/tool.html` itself.
+- The toggle keeps `aria-pressed` synced with the resolved theme on init, click, and system-preference change — same logic as the blog path, just duplicated rather than shared.
+
+When adding new colours: pick the right path. Blog chrome → `_sass/_dark.scss` mixin. Tool-page tokens → the per-tool CSS file in `_includes/tool/`, in both the `html[data-theme="dark"]` and `@media (prefers-color-scheme: dark)` blocks.
 
 ## Conventions worth knowing
 
