@@ -126,11 +126,4 @@
       generate();
     }
   });
-
-  // Pre-fill from ?sid=... so other tool pages (e.g. /whoami) can link in.
-  const initialSid = new URLSearchParams(window.location.search).get('sid');
-  if (initialSid && looksLikeSid(initialSid)) {
-    sidInput.value = initialSid.trim();
-    generate();
-  }
 })();

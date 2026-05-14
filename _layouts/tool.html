@@ -1,0 +1,87 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} — markeldo.com</title>
+    <meta name="description" content="{{ page.description }}">
+
+    <style>
+{% include tool/base.css %}
+{% include tool/{{ page.tool }}.css %}
+    </style>
+
+    <script>
+      // Apply persisted theme before paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'dark' || saved === 'light') {
+            document.documentElement.setAttribute('data-theme', saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="tool-header">
+      <h1>{{ page.title }}</h1>
+      <button id="theme-toggle" class="theme-toggle" type="button"
+              aria-label="Toggle dark mode" title="Toggle dark mode"
+              aria-pressed="false">
+        <span class="theme-icon-moon" aria-hidden="true">☾</span>
+        <span class="theme-icon-sun" aria-hidden="true">☀</span>
+      </button>
+    </header>
+
+    <main class="tool-main">
+      {{ content }}
+    </main>
+
+    <footer class="tool-footer">
+      <a href="https://markeldo.com/">markeldo.com</a>
+    </footer>
+
+    <script>
+{% include_relative {{ page.tool }}.js %}
+    </script>
+
+    <script>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var root = document.documentElement;
+        var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+        function resolved() {
+          var explicit = root.getAttribute('data-theme');
+          if (explicit === 'dark' || explicit === 'light') return explicit;
+          return media && media.matches ? 'dark' : 'light';
+        }
+
+        function syncPressed() {
+          btn.setAttribute('aria-pressed', resolved() === 'dark' ? 'true' : 'false');
+        }
+
+        syncPressed();
+
+        btn.addEventListener('click', function () {
+          var next = resolved() === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+          syncPressed();
+        });
+
+        if (media && media.addEventListener) {
+          media.addEventListener('change', function () {
+            try { if (localStorage.getItem('theme')) return; } catch (e) {}
+            syncPressed();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

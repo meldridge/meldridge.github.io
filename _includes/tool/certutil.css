@@ -1,10 +1,8 @@
-//
-// /certutil tool page styles.
-//
-// All selectors are scoped under `.ct` so they don't leak onto the blog.
-// Colours flow through `--ct-*` custom properties; the dark theme rebinds
-// these in `_sass/_dark.scss`'s `dark-theme` mixin.
-//
+/*
+ * /certutil tool page styles. Selectors are scoped under `.ct`. Colours flow
+ * through `--ct-*` custom properties; the dark-mode blocks at the bottom
+ * rebind those tokens for the manual toggle and the system preference.
+ */
 
 .ct {
   --ct-bg: #fafafa;
@@ -50,7 +48,6 @@
   margin: 0 0 1.25em;
 }
 
-// Input
 .ct label {
   display: block;
   font-weight: bold;
@@ -99,7 +96,6 @@
   border-color: var(--ct-blue-hover);
 }
 
-// Error
 .ct .error {
   padding: 10px 14px;
   background: var(--ct-red-tint);
@@ -108,7 +104,6 @@
   margin: 1em 0;
 }
 
-// Summary
 .ct .summary {
   display: flex;
   align-items: center;
@@ -134,7 +129,6 @@
 .ct .stat-sep { color: var(--ct-border); }
 .ct .summary-note { color: var(--ct-muted); font-size: 0.85rem; margin-left: auto; }
 
-// Cards
 .ct .cards { display: flex; flex-direction: column; gap: 10px; margin: 0; }
 .ct .card {
   background: var(--ct-surface);
@@ -144,8 +138,6 @@
 .ct .card.crit { border-color: var(--ct-red-border); }
 .ct .card.high { border-color: var(--ct-amber-border); }
 
-// `.card-hdr` is rendered as a real <button>; reset native button styling
-// so it lays out like the previous <div> did.
 .ct .card-hdr {
   display: flex;
   align-items: center;
@@ -215,7 +207,6 @@
 .ct .card.open .card-body { max-height: 2000px; }
 .ct .card-inner { padding: 14px; }
 
-// ESC alerts
 .ct .esc-box {
   display: flex;
   gap: 12px;
@@ -244,7 +235,6 @@
   margin-top: 0.25rem;
 }
 
-// Props grid
 .ct .props {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -334,3 +324,75 @@
 }
 
 .ct .hidden { display: none !important; }
+
+/* Dark mode token rebinding — manual toggle. */
+html[data-theme="dark"] .ct {
+  --ct-bg: #1f1f1f;
+  --ct-surface: #181818;
+  --ct-border: #333;
+  --ct-border-sub: #2a2a2a;
+  --ct-text: #d4d4d4;
+  --ct-muted: #a0a0a0;
+  --ct-subtle: #808080;
+
+  --ct-input-bg: #1f1f1f;
+  --ct-input-border: #444;
+  --ct-btn-bg: #262626;
+  --ct-btn-border: #444;
+  --ct-btn-hover-bg: #333;
+
+  --ct-blue: #6ba8e0;
+  --ct-blue-hover: #87b7e0;
+  --ct-blue-tint: #1b2735;
+  --ct-blue-border: #2d4a6b;
+  --ct-blue-text: #87b7e0;
+
+  --ct-red: #e57373;
+  --ct-red-tint: #2a1818;
+  --ct-red-border: #4a2828;
+
+  --ct-amber: #d4a14a;
+  --ct-amber-tint: #2a2418;
+  --ct-amber-border: #4a3f28;
+
+  --ct-green: #6ec472;
+  --ct-green-tint: #1a2a1d;
+  --ct-green-border: #2a4a30;
+}
+
+/* Dark mode token rebinding — system preference (unless user picked light). */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .ct {
+    --ct-bg: #1f1f1f;
+    --ct-surface: #181818;
+    --ct-border: #333;
+    --ct-border-sub: #2a2a2a;
+    --ct-text: #d4d4d4;
+    --ct-muted: #a0a0a0;
+    --ct-subtle: #808080;
+
+    --ct-input-bg: #1f1f1f;
+    --ct-input-border: #444;
+    --ct-btn-bg: #262626;
+    --ct-btn-border: #444;
+    --ct-btn-hover-bg: #333;
+
+    --ct-blue: #6ba8e0;
+    --ct-blue-hover: #87b7e0;
+    --ct-blue-tint: #1b2735;
+    --ct-blue-border: #2d4a6b;
+    --ct-blue-text: #87b7e0;
+
+    --ct-red: #e57373;
+    --ct-red-tint: #2a1818;
+    --ct-red-border: #4a2828;
+
+    --ct-amber: #d4a14a;
+    --ct-amber-tint: #2a2418;
+    --ct-amber-border: #4a3f28;
+
+    --ct-green: #6ec472;
+    --ct-green-tint: #1a2a1d;
+    --ct-green-border: #2a4a30;
+  }
+}
