@@ -6,7 +6,7 @@ excerpt: "A short set of tips for students attempting the Offensive Security Cer
 
 *This is a short set of tips for students attempting the Offensive Security Certified Professional (OSCP) certification exam. Originally this was forked from a GitHub Gist by [unfo](https://github.com/unfo) and then modified. The original can still be found [here](https://gist.github.com/unfo/5ddc85671dcf39f877aaf5dce105fac3).*
 
-*Note that these tips were written in late 2016 and are somewhat dated now. I'd strongly recommend reading Alex Dib's ["Passing OSCP"](https://scund00r.com/all/oscp/2018/02/25/passing-oscp.html) blog post as well.*
+*Note that these tips were written in late 2016 and are now very out of date. I'd strongly recommend reading Alex Dib's ["Passing OSCP"](https://scund00r.com/all/oscp/2018/02/25/passing-oscp.html) blog post as well.*
 
 <hr/>
 <br/>
