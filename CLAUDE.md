@@ -8,6 +8,10 @@ Personal blog at https://markeldo.com — a Jekyll 3 site originally forked from
 
 The custom domain is set via `CNAME`. Pushes to `master` trigger the build on GitHub.
 
+## Workflow: branch + PR for every change
+
+**`master` is protected — direct pushes are rejected.** Every change must land via a branch and a pull request, including doc-only edits to `README.md` or `CLAUDE.md`. Before making any edit, check the current branch; if it's `master`, create a feature branch first (`git checkout -b <short-name>`), do the work there, push the branch, and open a PR with `gh pr create`.
+
 ## Local development
 
 ```sh
@@ -34,13 +38,20 @@ This is why the two `defaults` blocks at the bottom of `_config.yml` exist. If y
 
 `drafts/` contains `*.md` files that are **not** built by default (Jekyll convention). Use `--drafts` on `jekyll serve` to preview.
 
-## Tool pages: `/sid` and `/certutil`
+## Tool pages: `/sid`, `/certutil`, `/whoami`, `/sudo`
 
-These are single-page tools (encoders/parsers). Each tool is split across three files:
+These are single-page tools (encoders/parsers) for security assessment — paste output from a built-in Windows/Linux utility and have it parsed client-side, so no third-party binary has to land on a client's network.
+
+- `/sid` — encode a Windows SID as the DER hex needed for an LDAP `userCertificate`-style extension.
+- `/certutil` — parse `certutil -dump` output and surface findings (EKU, key usage, validity, etc.).
+- `/whoami` — parse Windows `whoami /all` (or any subset: `/user`, `/groups`, `/priv`) and flag dangerous privileges (SeImpersonate, SeDebug, SeBackup/Restore, …) and high-value group memberships by SID (Backup Operators, DnsAdmins, Domain/Enterprise Admins, …). Localised group names are handled via SID match; the canonical name is surfaced as a subtitle when the raw name differs. SID-cell links into `/sid/?sid=…` so the round-trip works.
+- `/sudo` — parse Linux `sudo -l` output and cross-reference each allowed binary against an embedded curated GTFOBins lookup (~50 entries), with link-out to `gtfobins.github.io` for anything not in the curated set. Flags `NOPASSWD`/`SETENV`, dangerous `Defaults env_keep` entries (`LD_PRELOAD`, `LD_LIBRARY_PATH`, `PYTHONPATH`, …), shell-equivalent runas targets, and command-path wildcards.
+
+Each tool is split across three files:
 
 - `<tool>/index.html` — thin HTML shell. Front matter sets `layout: page`; the body is markup only, with `<script src="{{ site.baseurl }}/<tool>/<tool>.js" defer></script>` at the bottom.
 - `<tool>/<tool>.js` — the tool's logic, wrapped in an IIFE so its constants don't leak to `window`.
-- `_sass/_<tool>.scss` — the tool's styles, scoped under a parent class (`.ct` for certutil, `.sid` for sid) to keep them out of the rest of the site. Imported from `style.scss` before `_dark`.
+- `_sass/_<tool>.scss` — the tool's styles, scoped under a parent class (`.ct` for certutil, `.sid` for sid, `.whoami` for whoami, `.sudo` for sudo) to keep them out of the rest of the site. Imported from `style.scss` before `_dark`.
 
 Each partial defines `--<tool>-*` CSS custom properties for every colour it uses, and `_sass/_dark.scss`'s `dark-theme` mixin rebinds those tokens to dark-friendly values. This is how the tools participate in the site's dark mode (system preference + the toggle in the nav) without any tool-specific dark-mode code. When adding a new tool page, follow the same pattern.
 
